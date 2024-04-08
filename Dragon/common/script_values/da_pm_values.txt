@@ -1,0 +1,2553 @@
+﻿
+#Shortage goods, balance(delta) is negative (-) .
+#Surplus goods, balance(delta) is positive (+) .
+groceries_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:groceries.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:groceries.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+grain_state_goods_price = {
+	value = 20
+	multiply = {
+		add = 1
+		add = sg:grain.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:grain.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+sugar_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:sugar.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:sugar.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+fish_state_goods_price = {
+	value = 20
+	multiply = {
+		add = 1
+		add = sg:fish.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:fish.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+iron_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:iron.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:iron.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+meat_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:meat.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:meat.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+oil_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:oil.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:oil.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+liquor_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:liquor.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:liquor.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+glass_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:glass.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:glass.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+clothes_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:clothes.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:clothes.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+fabric_state_goods_price = {
+	value = 20
+	multiply = {
+		add = 1
+		add = sg:fabric.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:fabric.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+dye_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:dye.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:dye.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+tools_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:tools.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:tools.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+electricity_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:electricity.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:electricity.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+luxury_clothes_state_goods_price = {
+	value = 60
+	multiply = {
+		add = 1
+		add = sg:luxury_clothes.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:luxury_clothes.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+silk_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:silk.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:silk.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+rubber_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:rubber.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:rubber.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+furniture_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:furniture.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:furniture.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+wood_state_goods_price = {
+	value = 20
+	multiply = {
+		add = 1
+		add = sg:wood.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:wood.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+luxury_furniture_state_goods_price = {
+	value = 60
+	multiply = {
+		add = 1
+		add = sg:luxury_furniture.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:luxury_furniture.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+hardwood_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:hardwood.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:hardwood.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+lead_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:lead.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:lead.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+porcelain_state_goods_price = {
+	value = 70
+	multiply = {
+		add = 1
+		add = sg:porcelain.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:porcelain.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+steel_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:steel.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:steel.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+paper_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:paper.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:paper.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+sulfur_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:sulfur.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:sulfur.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+fertilizer_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:fertilizer.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:fertilizer.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+explosives_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:explosives.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:explosives.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+coal_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:coal.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:coal.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+engines_state_goods_price = {
+	value = 60
+	multiply = {
+		add = 1
+		add = sg:engines.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:engines.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+automobiles_state_goods_price = {
+	add = 100
+	multiply = {
+		add = 1
+		add = sg:automobiles.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:automobiles.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+clippers_state_goods_price = {
+	value = 60
+	multiply = {
+		add = 1
+		add = sg:clippers.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:clippers.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+steamers_state_goods_price = {
+	value = 70
+	multiply = {
+		add = 1
+		add = sg:steamers.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:steamers.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+manowars_state_goods_price = {
+	value = 70
+	multiply = {
+		add = 1
+		add = sg:manowars.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:manowars.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+ironclads_state_goods_price = {
+	value = 80
+	multiply = {
+		add = 1
+		add = sg:ironclads.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:ironclads.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+tanks_state_goods_price = {
+	value = 80
+	multiply = {
+		add = 1
+		add = sg:tanks.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:tanks.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+aeroplanes_state_goods_price = {
+	value = 80
+	multiply = {
+		add = 1
+		add = sg:aeroplanes.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:aeroplanes.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+radios_state_goods_price = {
+	value = 80
+	multiply = {
+		add = 1
+		add = sg:radios.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:radios.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+telephones_state_goods_price = {
+	value = 70
+	multiply = {
+		add = 1
+		add = sg:telephones.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:telephones.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+gold_state_goods_price = {
+	value = 100
+}
+coffee_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:coffee.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:coffee.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+tobacco_state_goods_price = {
+	value = 40
+	multiply = {
+		add = 1
+		add = sg:tobacco.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:tobacco.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+fruit_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:fruit.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:fruit.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+wine_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:wine.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:wine.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+services_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:services.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:services.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+fine_art_state_goods_price = {
+	value = 200
+	multiply = {
+		add = 1
+		add = sg:fine_art.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:fine_art.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+tea_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:tea.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:tea.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+opium_state_goods_price = {
+	value = 50
+	multiply = {
+		add = 1
+		add = sg:opium.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:opium.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+transportation_state_goods_price = {
+	value = 30
+	multiply = {
+		add = 1
+		add = sg:transportation.state_goods_pricier
+	}
+	if = {
+		limit = { market.mg:transportation.market_goods_sell_orders < 1 }
+		multiply = 1000
+	}
+}
+
+da_state_profit_pm_baking_powder = {
+	value = groceries_state_goods_price
+	multiply = 120
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = 80
+	}
+	subtract = {
+		value = sugar_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_sweeteners = {
+	value = groceries_state_goods_price
+	multiply = 65
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = sugar_state_goods_price
+		multiply = 15
+	}
+}
+da_state_profit_pm_bakery = {
+	value = groceries_state_goods_price
+	multiply = 45
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = 40
+	}
+}
+
+da_state_profit_pm_disabled_canning = {
+	value = 0
+}
+da_state_profit_pm_cannery = {
+	value = groceries_state_goods_price
+	multiply = 30
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = -20
+	}
+	subtract = {
+		value = meat_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_cannery_fish = {
+	value = groceries_state_goods_price
+	multiply = 30
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = -20
+	}
+	subtract = {
+		value = fish_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_vacuum_canning = {
+	value = groceries_state_goods_price
+	multiply = 60
+
+	subtract = {
+		value = grain_state_goods_price
+		multiply = -30
+	}
+	subtract = {
+		value = fish_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = meat_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 5
+	}
+}
+
+da_state_profit_pm_disabled_distillery = {
+	value = 0
+}
+da_state_profit_pm_pot_stills = {
+	value = liquor_state_goods_price
+	multiply = 60
+	add = {
+		value = groceries_state_goods_price
+		multiply = -30
+	}
+
+	subtract = {
+		value = sugar_state_goods_price
+		multiply = 25
+	}
+}
+da_state_profit_pm_patent_stills = {
+	value = liquor_state_goods_price
+	multiply = 100
+	add = {
+		value = groceries_state_goods_price
+		multiply = -40
+	}
+
+	subtract = {
+		value = sugar_state_goods_price
+		multiply = 25
+	}
+	subtract = {
+		value = glass_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_handsewn_clothes = {
+	value = clothes_state_goods_price
+	multiply = 45
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 40
+	}
+}
+da_state_profit_pm_dye_workshops = {
+	value = clothes_state_goods_price
+	multiply = 60
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_sewing_machines = {
+	value = clothes_state_goods_price
+	multiply = 100
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 60
+	}
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_electric_sewing_machines = {
+	value = clothes_state_goods_price
+	multiply = 140
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 60
+	}
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_no_luxury_clothes = {
+	value = 0
+}
+da_state_profit_pm_craftsman_sewing = {
+	value = luxury_clothes_state_goods_price
+	multiply = 30
+	add = {
+		value = clothes_state_goods_price
+		multiply = -30
+	}
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = -15
+	}
+	subtract = {
+		value = silk_state_goods_price
+		multiply = 15
+	}
+}
+da_state_profit_pm_elastics = {
+	value = luxury_clothes_state_goods_price
+	multiply = 70
+	add = {
+		value = clothes_state_goods_price
+		multiply = -70
+	}
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = -35
+	}
+	subtract = {
+		value = silk_state_goods_price
+		multiply = 35
+	}
+	subtract = {
+		value = rubber_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_handcrafted_furniture = {
+	value = furniture_state_goods_price
+	multiply = 45
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_lathe = {
+	value = furniture_state_goods_price
+	multiply = 65
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_mechanized_workshops = {
+	value = furniture_state_goods_price
+	multiply = 110
+
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 50
+	}
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_no_luxuries = {
+	value = 0
+}
+da_state_profit_pm_luxury_furniture = {
+	value = luxury_furniture_state_goods_price
+	multiply = 25
+	add = {
+		value = furniture_state_goods_price
+		multiply = -25
+	}
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = -15
+	}
+	subtract = {
+		value = hardwood_state_goods_price
+		multiply = 15
+	}
+}
+da_state_profit_pm_precision_tools = {
+	value = luxury_furniture_state_goods_price
+	multiply = 55
+	add = {
+		value = furniture_state_goods_price
+		multiply = -55
+	}
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = -25
+	}
+	subtract = {
+		value = hardwood_state_goods_price
+		multiply = 25
+	}
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_forest_glass = {
+	value = glass_state_goods_price
+	multiply = 30
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_leaded_glass = {
+	value = glass_state_goods_price
+	multiply = 40
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = lead_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_crystal_glass = {
+	value = glass_state_goods_price
+	multiply = 70
+
+	subtract = {
+		value = lead_state_goods_price
+		multiply = 35
+	}
+}
+da_state_profit_pm_houseware_plastics = {
+	value = glass_state_goods_price
+	multiply = 110
+
+	subtract = {
+		value = lead_state_goods_price
+		multiply = 35
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 25
+	}
+}
+
+da_state_profit_pm_disabled_ceramics = {
+	value = 0
+}
+da_state_profit_pm_ceramics = {
+	value = porcelain_state_goods_price
+	multiply = 20
+	add = {
+		value = glass_state_goods_price
+		multiply = -20
+	}
+
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_bone_china = {
+	value = porcelain_state_goods_price
+	multiply = 55
+	add = {
+		value = glass_state_goods_price
+		multiply = -55
+	}
+
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 15
+	}
+}
+
+
+da_state_profit_pm_rubber_grips = {
+	value = tools_state_goods_price
+	multiply = 120
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = rubber_state_goods_price
+		multiply = 20
+	}
+}
+da_state_profit_pm_steel = {
+	value = tools_state_goods_price
+	multiply = 80
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_pig_iron = {
+	value = tools_state_goods_price
+	multiply = 60
+
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_crude_tools = {
+	value = tools_state_goods_price
+	multiply = 30
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+
+da_state_profit_pm_pulp_pressing = {
+	value = paper_state_goods_price
+	multiply = 40
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_sulfite_pulping = {
+	value = paper_state_goods_price
+	multiply = 70
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_bleached_paper = {
+	value = paper_state_goods_price
+	multiply = 100
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = dye_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_artificial_fertilizers = {
+	value = fertilizer_state_goods_price
+	multiply = 90
+
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_improved_fertilizer = {
+	value = fertilizer_state_goods_price
+	multiply = 140
+
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_nitrogen_fixation = {
+	value = fertilizer_state_goods_price
+	multiply = 200
+
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 20
+	}
+}
+
+da_state_profit_pm_no_explosives_production = {
+	value = 0
+}
+da_state_profit_pm_leblanc_process = {
+	value = explosives_state_goods_price
+	multiply = 50
+
+	subtract = {
+		value = fertilizer_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 20
+	}
+}
+da_state_profit_pm_ammonia-soda_process = {
+	value = explosives_state_goods_price
+	multiply = 80
+
+	subtract = {
+		value = fertilizer_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = paper_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_vacuum_evaporation = {
+	value = explosives_state_goods_price
+	multiply = 110
+
+	subtract = {
+		value = fertilizer_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = paper_state_goods_price
+		multiply = 20
+	}
+}
+da_state_profit_pm_brine_electrolysis = {
+	value = explosives_state_goods_price
+	multiply = 150
+
+	subtract = {
+		value = fertilizer_state_goods_price
+		multiply = 50
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = paper_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 20
+	}
+}
+
+da_state_profit_pm_dye_production = {
+	value = dye_state_goods_price
+	multiply = 80
+
+	subtract = {
+		value = fertilizer_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = sulfur_state_goods_price
+		multiply = 20
+	}
+}
+
+da_state_profit_pm_no_artificial_fibers = {
+	value = 0
+}
+da_state_profit_pm_rayon = {
+	value = silk_state_goods_price
+	multiply = 40
+	add = {
+		value = dye_state_goods_price
+		multiply = -40
+	}
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 40
+	}
+}
+
+da_state_profit_pm_blister_steel_process = {
+	value = steel_state_goods_price
+	multiply = 65
+
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 40
+	}
+}
+da_state_profit_pm_bessemer_process = {
+	value = steel_state_goods_price
+	multiply = 90
+
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 60
+	}
+}
+da_state_profit_pm_open_hearth_process = {
+	value = steel_state_goods_price
+	multiply = 120
+
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 90
+	}
+}
+da_state_profit_pm_electric_arc_process = {
+	value = steel_state_goods_price
+	multiply = 150
+
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 100
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 30
+	}
+}
+
+da_state_profit_pm_steam_engines = {
+	value = engines_state_goods_price
+	multiply = 40
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_electric_engines = {
+	value = engines_state_goods_price
+	multiply = 80
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 30
+	}
+}
+da_state_profit_pm_diesel_engines = {
+	value = engines_state_goods_price
+	multiply = 120
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 50
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 50
+	}
+}
+
+da_state_profit_pm_automobiles_disabled = {
+	value = 0
+}
+da_state_profit_pm_automobile_production = {
+	value = automobiles_state_goods_price
+	multiply = 25
+	add = {
+		value = engines_state_goods_price
+		multiply = -20
+	}
+
+	subtract = {
+		value = rubber_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 20
+	}
+}
+
+da_state_profit_pm_basic_shipbuilding = {
+	value = clippers_state_goods_price
+	multiply = 35
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 20
+	}
+}
+da_state_profit_pm_complex_shipbuilding = {
+	value = clippers_state_goods_price
+	multiply = 70
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = hardwood_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_metal_shipbuilding = {
+	value = steamers_state_goods_price
+	multiply = 60
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_arc_welding_shipbuilding = {
+	value = steamers_state_goods_price
+	multiply = 80
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 30
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 10
+	}
+}
+
+da_state_profit_pm_military_shipbuilding_wooden = {
+	value = manowars_state_goods_price
+	multiply = 35
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_military_shipbuilding_wooden_2 = {
+	value = manowars_state_goods_price
+	multiply = 45
+
+	subtract = {
+		value = wood_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = fabric_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = iron_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = hardwood_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_military_shipbuilding_steam = {
+	value = ironclads_state_goods_price
+	multiply = 55
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 40
+	}
+	subtract = {
+		value = coal_state_goods_price
+		multiply = 20
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_military_shipbuilding_steam_2 = {
+	value = ironclads_state_goods_price
+	multiply = 70
+
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 50
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 35
+	}
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 15
+	}
+}
+
+da_state_profit_pm_no_tank_production = {
+	value = 0
+}
+da_state_profit_pm_tank_production = {
+	value = tanks_state_goods_price
+	multiply = 40
+	add = {
+		value = aeroplanes_state_goods_price
+		multiply = -10
+	}
+
+	subtract = {
+		value = engines_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = oil_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = steel_state_goods_price
+		multiply = 20
+	}
+}
+
+da_state_profit_pm_no_radios = {
+	value = 0
+}
+da_state_profit_pm_radios = {
+	value = radios_state_goods_price
+	multiply = 40
+	add = {
+		value = telephones_state_goods_price
+		multiply = -20
+	}
+
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 50
+	}
+}
+
+da_state_profit_pm_simple_forestry = {
+	value = wood_state_goods_price
+	multiply = 30
+}
+da_state_profit_pm_saw_mills = {
+	value = wood_state_goods_price
+	multiply = 60
+
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_electric_saw_mills = {
+	value = wood_state_goods_price
+	multiply = 100
+
+	subtract = {
+		value = tools_state_goods_price
+		multiply = 10
+	}
+	subtract = {
+		value = electricity_state_goods_price
+		multiply = 5
+	}
+}
+
+da_state_profit_pm_no_hardwood = {
+	value = 0
+}
+da_state_profit_pm_hardwood = {
+	value = hardwood_state_goods_price
+	multiply = 10
+	multiply = {
+		value = 1
+		add = modifier:goods_output_hardwood_mult
+	}
+	add = {
+		value = wood_state_goods_price
+		multiply = -20
+	}
+}
+da_state_profit_pm_increased_hardwood = {
+	value = hardwood_state_goods_price
+	multiply = 20
+	multiply = {
+		value = 1
+		add = modifier:goods_output_hardwood_mult
+	}
+	add = {
+		value = wood_state_goods_price
+		multiply = -40
+	}
+}
+
+da_state_profit_default_building_rubber_plantation = {
+	value = rubber_state_goods_price
+	multiply = 30
+}
+da_state_profit_automatic_irrigation_building_rubber_plantation = {
+	value = rubber_state_goods_price
+	multiply = 60
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_simple_fishing = {
+	value = fish_state_goods_price
+	multiply = 25
+}
+da_state_profit_pm_fishing_trawlers = {
+	value = fish_state_goods_price
+	multiply = 50
+	add = {
+		value = clippers_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_steam_trawlers = {
+	value = fish_state_goods_price
+	multiply = 100
+	add = {
+		value = steamers_state_goods_price
+		multiply = -5
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -15
+	}
+}
+
+da_state_profit_pm_simple_whaling = {
+	value = meat_state_goods_price
+	multiply = 5
+	add = {
+		value = oil_state_goods_price
+		multiply = 5
+	}
+}
+da_state_profit_pm_wooden_whaling_ships = {
+	value = meat_state_goods_price
+	multiply = 10
+	add = {
+		value = oil_state_goods_price
+		multiply = 20
+	}
+	add = {
+		value = clippers_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_steam_whaling_ships = {
+	value = meat_state_goods_price
+	multiply = 20
+	add = {
+		value = oil_state_goods_price
+		multiply = 40
+	}
+	add = {
+		value = steamers_state_goods_price
+		multiply = -5
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -20
+	}
+}
+
+da_state_profit_pm_steam_derricks = {
+	value = oil_state_goods_price
+	multiply = 60
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_combustion_derricks = {
+	value = oil_state_goods_price
+	multiply = 100
+	add = {
+		value = engines_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_picks_and_shovels_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 25
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_atmospheric_engine_pump_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 40
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_condensing_engine_pump_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 60
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_diesel_pump_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 90
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_no_explosives = {
+	value = 0
+}
+
+da_state_profit_pm_nitroglycerin_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 15
+	add = {
+		value = explosives_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_dynamite_building_coal_mine = {
+	value = coal_state_goods_price
+	multiply = 25
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_picks_and_shovels_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 20
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_atmospheric_engine_pump_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 40
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_condensing_engine_pump_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 60
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_diesel_pump_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 70
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_nitroglycerin_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 12
+	add = {
+		value = explosives_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_dynamite_building_iron_mine = {
+	value = iron_state_goods_price
+	multiply = 20
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_picks_and_shovels_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 20
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_atmospheric_engine_pump_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 40
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_condensing_engine_pump_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 60
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_diesel_pump_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 70
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_nitroglycerin_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 12
+	add = {
+		value = explosives_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_dynamite_building_lead_mine = {
+	value = lead_state_goods_price
+	multiply = 20
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_picks_and_shovels_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 20
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_atmospheric_engine_pump_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 40
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_condensing_engine_pump_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 60
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_diesel_pump_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 80
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_nitroglycerin_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 10
+	add = {
+		value = explosives_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_dynamite_building_sulfur_mine = {
+	value = sulfur_state_goods_price
+	multiply = 20
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_picks_and_shovels_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 10
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_atmospheric_engine_pump_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 20
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_condensing_engine_pump_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 30
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_diesel_pump_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 40
+	add = {
+		value = tools_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_nitroglycerin_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 5
+	add = {
+		value = explosives_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_dynamite_building_gold_mine = {
+	value = gold_state_goods_price
+	multiply = 10
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+}
+
+da_state_profit_pm_simple_farming = {
+	value = grain_state_goods_price
+	multiply = 20
+}
+da_state_profit_pm_soil_enriching_farming = {
+	value = grain_state_goods_price
+	multiply = 40
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_fertilization = {
+	value = grain_state_goods_price
+	multiply = 80
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_chemical_fertilizer = {
+	value = grain_state_goods_price
+	multiply = 120
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -40
+	}
+}
+
+
+da_state_profit_pm_no_secondary = {
+	value = 0
+}
+da_state_profit_pm_potatoes = {
+	value = liquor_state_goods_price
+	multiply = 15
+	add = {
+		value = grain_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_apple_orchards = {
+	value = sugar_state_goods_price
+	multiply = 5
+	add = {
+		value = grain_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = fruit_state_goods_price
+		multiply = 10
+	}
+}
+da_state_profit_pm_citrus_orchards = {
+	value = sugar_state_goods_price
+	multiply = 5
+	add = {
+		value = grain_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = fruit_state_goods_price
+		multiply = 7
+	}
+}
+da_state_profit_pm_vineyards = {
+	value = wine_state_goods_price
+	multiply = 8
+	add = {
+		value = grain_state_goods_price
+		multiply = -15
+	}
+}
+
+da_state_profit_pm_simple_farming_building_rice_farm = {
+	value = grain_state_goods_price
+	multiply = 40
+}
+da_state_profit_pm_soil_enriching_farming_building_rice_farm = {
+	value = grain_state_goods_price
+	multiply = 80
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -20
+	}
+}
+da_state_profit_pm_fertilization_building_rice_farm = {
+	value = grain_state_goods_price
+	multiply = 160
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -40
+	}
+}
+da_state_profit_pm_chemical_fertilizer_building_rice_farm = {
+	value = grain_state_goods_price
+	multiply = 240
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = -80
+	}
+}
+
+da_state_profit_pm_fig_orchards_building_rice_farm = {
+	value = sugar_state_goods_price
+	multiply = 12
+	add = {
+		value = grain_state_goods_price
+		multiply = -30
+	}
+	add = {
+		value = fruit_state_goods_price
+		multiply = 12
+	}
+}
+da_state_profit_pm_fig_orchards = {
+	value = sugar_state_goods_price
+	multiply = 9
+	add = {
+		value = grain_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = fruit_state_goods_price
+		multiply = 6
+	}
+}
+
+da_state_profit_pm_vineyards_building_maize_farm = {
+	value = wine_state_goods_price
+	multiply = 6
+	add = {
+		value = grain_state_goods_price
+		multiply = -12
+	}
+}
+
+
+da_state_profit_pm_simple_ranch = {
+	value = fabric_state_goods_price
+	multiply = 10
+	add = {
+		value = grain_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_sheep_farms = {
+	value = fabric_state_goods_price
+	multiply = 20
+	add = {
+		value = grain_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = 5
+	}
+	add = {
+		value = meat_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_intensive_grazing_ranch = {
+	value = fabric_state_goods_price
+	multiply = 30
+	add = {
+		value = grain_state_goods_price
+		multiply = -20
+	}
+	add = {
+		value = fertilizer_state_goods_price
+		multiply = 10
+	}
+	add = {
+		value = meat_state_goods_price
+		multiply = -10
+	}
+}
+
+
+da_state_profit_pm_open_air_stockyards = {
+	value = meat_state_goods_price
+	multiply = 10
+}
+da_state_profit_pm_butchering_tools = {
+	value = meat_state_goods_price
+	multiply = 20
+	add = {
+		value = tools_state_goods_price
+		multiply = -5
+	}
+}
+da_state_profit_pm_slaughterhouses = {
+	value = meat_state_goods_price
+	multiply = 30
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_mechanized_slaughtering = {
+	value = meat_state_goods_price
+	multiply = 45
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_coffee_plantation = {
+	value = coffee_state_goods_price
+	multiply = 20
+}
+da_state_profit_automatic_irrigation_building_coffee_plantation = {
+	value = coffee_state_goods_price
+	multiply = 40
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_cotton_plantation = {
+	value = fabric_state_goods_price
+	multiply = 40
+}
+da_state_profit_automatic_irrigation_building_cotton_plantation = {
+	value = coffee_state_goods_price
+	multiply = 100
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_dye_plantation = {
+	value = dye_state_goods_price
+	multiply = 25
+}
+da_state_profit_automatic_irrigation_building_dye_plantation = {
+	value = dye_state_goods_price
+	multiply = 50
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_opium_plantation = {
+	value = opium_state_goods_price
+	multiply = 20
+}
+da_state_profit_automatic_irrigation_building_opium_plantation = {
+	value = opium_state_goods_price
+	multiply = 50
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_tea_plantation = {
+	value = tea_state_goods_price
+	multiply = 20
+}
+da_state_profit_automatic_irrigation_building_tea_plantation = {
+	value = tea_state_goods_price
+	multiply = 40
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_tobacco_plantation = {
+	value = tobacco_state_goods_price
+	multiply = 25
+}
+da_state_profit_automatic_irrigation_building_tobacco_plantation = {
+	value = tea_state_goods_price
+	multiply = 50
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_sugar_plantation = {
+	value = sugar_state_goods_price
+	multiply = 30
+}
+da_state_profit_automatic_irrigation_building_sugar_plantation = {
+	value = sugar_state_goods_price
+	multiply = 60
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_banana_plantation = {
+	value = fruit_state_goods_price
+	multiply = 30
+}
+da_state_profit_automatic_irrigation_building_banana_plantation = {
+	value = fruit_state_goods_price
+	multiply = 60
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_silk_plantation = {
+	value = silk_state_goods_price
+	multiply = 20
+}
+da_state_profit_automatic_irrigation_building_silk_plantation = {
+	value = silk_state_goods_price
+	multiply = 40
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_default_building_vineyard_plantation = {
+	value = wine_state_goods_price
+	multiply = 20
+}
+da_state_profit_automatic_irrigation_building_vineyard_plantation = {
+	value = wine_state_goods_price
+	multiply = 40
+	add = {
+		value = engines_state_goods_price
+		multiply = -5
+	}
+}
+
+da_state_profit_pm_market_stalls = {
+	value = services_state_goods_price
+	multiply = 15
+}
+da_state_profit_pm_market_squares = {
+	value = services_state_goods_price
+	multiply = 20
+	add = {
+		value = wood_state_goods_price
+		multiply = -1
+	}
+	add = {
+		value = glass_state_goods_price
+		multiply = -1
+	}
+}
+da_state_profit_pm_covered_markets = {
+	value = services_state_goods_price
+	multiply = 25
+	add = {
+		value = steel_state_goods_price
+		multiply = -1
+	}
+	add = {
+		value = glass_state_goods_price
+		multiply = -2
+	}
+}
+da_state_profit_pm_arcades = {
+	value = services_state_goods_price
+	multiply = 30
+	add = {
+		value = steel_state_goods_price
+		multiply = -2
+	}
+	add = {
+		value = glass_state_goods_price
+		multiply = -2
+	}
+	add = {
+		value = electricity_state_goods_price
+		multiply = -1
+	}
+}
+
+da_state_profit_pm_no_street_lighting = {
+	value = 0
+}
+da_state_profit_pm_gas_streetlights = {
+	value = services_state_goods_price
+	multiply = 2
+	add = {
+		value = coal_state_goods_price
+		multiply = -1
+	}
+}
+da_state_profit_pm_electric_streetlights = {
+	value = services_state_goods_price
+	multiply = 10
+	add = {
+		value = electricity_state_goods_price
+		multiply = -3
+	}
+}
+
+da_state_profit_pm_no_public_transport = {
+	value = transportation_state_goods_price
+	multiply = 5
+}
+da_state_profit_pm_public_trams = {
+	value = transportation_state_goods_price
+	multiply = 8
+	add = {
+		value = engines_state_goods_price
+		multiply = -1
+	}
+}
+da_state_profit_pm_public_motor_carriages = {
+	value = transportation_state_goods_price
+	multiply = 10
+	add = {
+		value = automobiles_state_goods_price
+		multiply = -1
+	}
+}
+
+da_state_profit_pm_traditional_art = {
+	value = fine_art_state_goods_price
+	multiply = 4
+	add = {
+		value = paper_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_realist_art = {
+	value = fine_art_state_goods_price
+	multiply = 5
+	add = {
+		value = paper_state_goods_price
+		multiply = -15
+	}
+}
+da_state_profit_pm_photographic_art = {
+	value = fine_art_state_goods_price
+	multiply = 7
+	add = {
+		value = paper_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = tools_state_goods_price
+		multiply = -8
+	}
+}
+da_state_profit_pm_film_art = {
+	value = fine_art_state_goods_price
+	multiply = 8
+	add = {
+		value = paper_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = electricity_state_goods_price
+		multiply = -2
+	}
+}
+
+da_state_profit_pm_hydroelectric_plant = {
+	value = electricity_state_goods_price
+	multiply = 50
+	add = {
+		value = engines_state_goods_price
+		multiply = -10
+	}
+}
+da_state_profit_pm_coal-fired_plant = {
+	value = electricity_state_goods_price
+	multiply = 100
+	add = {
+		value = engines_state_goods_price
+		multiply = -15
+	}
+	add = {
+		value = coal_state_goods_price
+		multiply = -30
+	}
+}
+da_state_profit_pm_oil-fired_plant = {
+	value = electricity_state_goods_price
+	multiply = 150
+	add = {
+		value = engines_state_goods_price
+		multiply = -20
+	}
+	add = {
+		value = oil_state_goods_price
+		multiply = -40
+	}
+}
+
+da_state_construction_pm_wooden_buildings = {
+	add = {
+		value = wood_state_goods_price
+		multiply = -75
+	}
+	add = {
+		value = fabric_state_goods_price
+		multiply = -25
+	}
+	divide = 2
+}
+da_state_construction_pm_iron_frame_buildings = {
+	add = {
+		value = wood_state_goods_price
+		multiply = -40
+	}
+	add = {
+		value = fabric_state_goods_price
+		multiply = -20
+	}
+	add = {
+		value = iron_state_goods_price
+		multiply = -50
+	}
+	add = {
+		value = tools_state_goods_price
+		multiply = -10
+	}
+	divide = 5
+}
+da_state_construction_pm_steel_frame_buildings = {
+	add = {
+		value = steel_state_goods_price
+		multiply = -50
+	}
+	add = {
+		value = glass_state_goods_price
+		multiply = -40
+	}
+	add = {
+		value = explosives_state_goods_price
+		multiply = -10
+	}
+	add = {
+		value = tools_state_goods_price
+		multiply = -20
+	}
+	divide = 10
+}
+da_state_construction_pm_arc_welded_buildings = {
+	add = {
+		value = steel_state_goods_price
+		multiply = -50
+	}
+	add = {
+		value = glass_state_goods_price
+		multiply = -40
+	}
+	add = {
+		value = explosives_state_goods_price
+		multiply = -20
+	}
+	add = {
+		value = tools_state_goods_price
+		multiply = -40
+	}
+	add = {
+		value = electricity_state_goods_price
+		multiply = -40
+	}
+	divide = 15
+}
+
+da_value_max_2 = {
+	if = {
+		limit = { scope:_1 > scope:_2 }
+		value = scope:_1
+	}
+	else = { value = scope:_2 }
+}
+
+da_value_max_3 = {
+	if = {
+		limit = { scope:_1 > scope:_2 }
+		if = {
+			limit = { scope:_1 > scope:_3 }
+			value = scope:_1
+		}
+		else = {
+			value = scope:_3
+		}
+	}
+	else_if = {
+		limit = { scope:_2 > scope:_3 }
+		value = scope:_2
+	}
+	else = { value = scope:_3 }
+}
+
+da_test_value = {
+	value = 100
+	save_temporary_value_as = _1
+	value = 200
+	save_temporary_value_as = _2
+	value = -100
+	save_temporary_value_as = _3
+	value = da_value_max_3
+}
+
+# goods_output_liquor_mult goods_output_small_arms_mult goods_output_wine_mult goods_output_radio_mult goods_output_artillery_mult goods_output_electricity_mult goods_output_hardwood_mult

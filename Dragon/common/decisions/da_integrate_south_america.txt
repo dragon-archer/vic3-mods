@@ -1,0 +1,165 @@
+﻿da_integrate_south_america = {
+	is_shown = {
+		NOT = { country_is_in_south_america = yes }
+		any_subject_or_below = {
+			country_is_in_south_america = yes
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = can_integrate_south_america_tt
+			OR = {
+				any_subject_or_below = {
+					capital.region = sr:region_brazil
+					save_temporary_scope_as = t
+					sr:region_brazil = {
+						any_scope_state = {
+							owner = {
+								is_subject_of = root
+								NOT = { this = scope:t }
+							}
+						}
+					}
+				}
+				any_subject_or_below = {
+					capital.region = sr:region_la_plata
+					save_temporary_scope_as = t
+					sr:region_la_plata = {
+						any_scope_state = {
+							owner = {
+								is_subject_of = root
+								NOT = { this = scope:t }
+							}
+						}
+					}
+				}
+				any_subject_or_below = {
+					capital.region = sr:region_andes
+					save_temporary_scope_as = t
+					sr:region_andes = {
+						any_scope_state = {
+							owner = {
+								is_subject_of = root
+								NOT = { this = scope:t }
+							}
+						}
+					}
+				}
+				any_subject_or_below = {
+					capital.region = sr:region_gran_colombia
+					save_temporary_scope_as = t
+					sr:region_gran_colombia = {
+						any_scope_state = {
+							owner = {
+								is_subject_of = root
+								NOT = { this = scope:t }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	when_taken = {
+		ordered_country = {
+			limit = {
+				is_subject_of = root
+				capital.region = sr:region_brazil
+			}
+			order_by = gdp
+			save_scope_as = brazil_scope
+		}
+		ordered_country = {
+			limit = {
+				is_subject_of = root
+				capital.region = sr:region_la_plata
+			}
+			order_by = gdp
+			save_scope_as = la_plata_scope
+		}
+		ordered_country = {
+			limit = {
+				is_subject_of = root
+				capital.region = sr:region_andes
+			}
+			order_by = gdp
+			save_scope_as = andes_scope
+		}
+		ordered_country = {
+			limit = {
+				is_subject_of = root
+				capital.region = sr:region_gran_colombia
+			}
+			order_by = gdp
+			save_scope_as = gran_colombia_scope
+		}
+		if = {
+			limit = { exists = scope:brazil_scope }
+			sr:region_brazil = {
+				every_scope_state = {
+					limit = {
+						owner = {
+							is_subject_of = root
+							NOT = { this = scope:brazil_scope }
+						}
+					}
+					set_state_owner = scope:brazil_scope
+					set_state_type = incorporated
+				}
+			}
+			clear_saved_scope = brazil_scope
+		}
+		if = {
+			limit = { exists = scope:la_plata_scope }
+			sr:region_la_plata = {
+				every_scope_state = {
+					limit = {
+						owner = {
+							is_subject_of = root
+							NOT = { this = scope:la_plata_scope }
+						}
+					}
+					set_state_owner = scope:la_plata_scope
+					set_state_type = incorporated
+				}
+			}
+			clear_saved_scope = la_plata_scope
+		}
+		if = {
+			limit = { exists = scope:andes_scope }
+			sr:region_andes = {
+				every_scope_state = {
+					limit = {
+						owner = {
+							is_subject_of = root
+							NOT = { this = scope:andes_scope }
+						}
+					}
+					set_state_owner = scope:andes_scope
+					set_state_type = incorporated
+				}
+			}
+			clear_saved_scope = andes_scope
+		}
+		if = {
+			limit = { exists = scope:gran_colombia_scope }
+			sr:region_gran_colombia = {
+				every_scope_state = {
+					limit = {
+						owner = {
+							is_subject_of = root
+							NOT = { this = scope:gran_colombia_scope }
+						}
+					}
+					set_state_owner = scope:gran_colombia_scope
+					set_state_type = incorporated
+				}
+			}
+			clear_saved_scope = gran_colombia_scope
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+}

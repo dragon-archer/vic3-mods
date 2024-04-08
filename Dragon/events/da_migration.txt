@@ -1,0 +1,172 @@
+﻿namespace = da_migration
+# DA Migaration
+
+da_migration.1 = {
+	type = country_event
+	placement = scope:migration_target_state
+	# Borrowed from original
+	title = sa_migration.1.t
+	desc = sa_migration.1.d
+	flavor = sa_migration.1.f
+	event_image = {
+		video = "southamerica_factory_opening"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		ordered_country = {
+			limit = {
+				NOR = {
+					this = root
+					market = root.market
+					has_variable = da_rejected_target
+				}
+				country_can_have_mass_migration_to = root
+				any_scope_culture = {
+					culture_can_have_mass_migration_to_country = root
+					prev = {
+						culture_percent_country = {
+							target = prev
+							value >= 0.1 # TODO
+						}
+					}
+				}
+				total_population >= 1000000 # 1M
+			}
+			order_by = {
+				# integer_range = { # Base with some randomness
+				# 	min = 75
+				# 	max = 125
+				# }
+				value = 100
+				multiply = { # Population factor
+					value = total_population
+					divide = 5000000 # 5M
+					min = 0.2
+					max = 10
+				}
+				# Rank factor
+				if = {
+					limit = { country_rank < rank_value:major_power }
+					multiply = 2
+				}
+				else_if = {
+					limit = { country_rank > rank_value:major_power }
+					multiply = 0.5
+				}
+				# Religion factor
+				if = {
+					limit = { religion = root.religion }
+					multiply = 2
+				}
+				else_if = {
+					limit = { NOT = { religion = { shares_heritage_trait_with_state_religion = root } } }
+					multiply = 0.5
+				}
+				# SoL factor, 1 SoL diff = 25%
+				multiply = {
+					subtract = average_sol
+					add = root.average_sol
+					multiply = 0.25
+					add = 1
+					min = 0.2
+					max = 5
+				}
+				# Already migration
+				if = {
+					limit = { is_mass_migration_origin = yes }
+					multiply = 0.1
+				}
+			}
+			save_scope_as = migration_country
+			ordered_scope_culture = {
+				limit = {
+					culture_can_have_mass_migration_to_country = ROOT
+					prev = {
+						culture_percent_country = {
+							target = prev
+							value >= 0.1 # TODO
+						}
+					}
+				}
+				order_by = {
+					# integer_range = { # Base with some randomness
+					# 	min = 75
+					# 	max = 125
+					# }
+					value = 100
+					if = {
+						limit = { culture_is_discriminated_in = prev }
+						multiply = 2
+					}
+					if = {
+						limit = { culture_is_discriminated_in = root }
+						multiply = 0.5
+					}
+					if = {
+						limit = { is_primary_culture_of = prev }
+						multiply = 0.5
+					}
+				}
+				save_scope_as = migration_culture
+			}
+		}
+		ordered_scope_state = {
+			limit = {
+				state_is_eligible_as_mass_migration_target = yes
+				NOT = { has_variable = da_rejected_target }
+			}
+			order_by = {
+				value = da_migration_target_score
+				add = {
+					every_neighbouring_state = {
+						limit = { owner = root }
+						add = da_migration_target_score
+					}
+					multiply = 0.2
+				}
+				# multiply = {
+				# 	integer_range = { # Some randomness
+				# 		min = 75
+				# 		max = 125
+				# 	}
+				# }
+			}
+			save_scope_as = migration_target_state
+		}
+	}
+
+	option = {
+		name = sa_migration.1.a
+		default_option = yes
+		scope:migration_target_state = {
+			create_mass_migration = {
+				origin = scope:migration_country
+				culture = scope:migration_culture
+			}
+			set_variable = { name = da_rejected_target days = 365 }
+		}
+	}
+
+	option = {
+		name = da_migration.b
+		scope:migration_target_state = {
+			set_variable = { name = da_rejected_target days = 30 }
+		}
+		trigger_event = { id = da_migration.1 popup = yes }
+	}
+
+	option = {
+		name = da_migration.c
+		scope:migration_country = {
+			set_variable = { name = da_rejected_target days = 30 }
+		}
+		trigger_event = { id = da_migration.1 popup = yes }
+	}
+}

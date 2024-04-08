@@ -1,0 +1,189 @@
+﻿da_return_treaty_port = {
+	is_shown = {
+		OR = {
+			any_scope_state = {
+				is_treaty_port = yes
+				state_region = {
+					NOT = { has_variable = da_keep_split_var }
+					any_scope_state = {
+						owner = {
+							da_is_firm_subject_of_root = yes
+						}
+					}
+				}
+			}
+			any_firm_subject = {
+				save_temporary_scope_as = o
+				any_scope_state = {
+					is_treaty_port = yes
+					state_region = {
+						NOT = { has_variable = da_keep_split_var }
+						any_scope_state = {
+							OR = {
+								owner = root
+								owner = {
+									da_is_firm_subject_of_root = yes
+									NOT = { this = scope:o }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = da_has_treaty_port_of_subject_tt
+	}
+
+	when_taken = {
+		every_firm_subject = {
+			save_temporary_scope_as = o
+			every_scope_state = {
+				limit = {
+					is_treaty_port = yes
+					state_region = {
+						NOT = { has_variable = da_keep_split_var }
+						any_scope_state = {
+							OR = {
+								owner = root
+								owner = {
+									da_is_firm_subject_of_root = yes
+									NOT = { this = scope:o }
+								}
+							}
+						}
+					}
+				}
+				state_region = {
+					random_scope_state = {
+						limit = {
+							OR = {
+								owner = root
+								owner = {
+									da_is_firm_subject_of_root = yes
+									NOT = { this = scope:o }
+								}
+							}
+						}
+						owner = {
+							save_temporary_scope_as = t
+						}
+					}
+				}
+				set_state_owner = scope:t
+				save_scope_as = last_state
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_treaty_port = yes
+				state_region = {
+					NOT = { has_variable = da_keep_split_var }
+					any_scope_state = {
+						OR = {
+							owner = root
+							owner = { is_subject_of = root }
+						}
+						count = all
+					}
+					any_scope_state = {
+						owner = { da_is_firm_subject_of_root = yes }
+					}
+				}
+			}
+			state_region = {
+				random_scope_state = {
+					limit = { owner = { da_is_firm_subject_of_root = yes } }
+					owner = { save_temporary_scope_as = t }
+				}
+			}
+			set_state_owner = scope:t
+			save_scope_as = last_state
+		}
+		da_post_notification = { _ = da_decision_return_treaty_port }
+	}
+
+	ai_chance = {
+		base = 100
+	}
+}
+
+da_merge_split_state = {
+	is_shown = {
+		any_firm_subject = {
+			any_scope_state = {
+				is_capital = no
+				save_temporary_scope_as = _
+				state_region = {
+					NOT = { has_variable = da_keep_split_var }
+					any_scope_state = {
+						OR = {
+							owner = root
+							AND = {
+								owner = { da_is_firm_subject_of_root = yes }
+								is_largest_state_in_region = yes
+								NOT = { this = scope:_ }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = da_merge_split_state_tt
+	}
+
+	when_taken = {
+		every_firm_subject = {
+			every_scope_state = {
+				limit = {
+					is_capital = no
+					state_region = {
+						NOT = { has_variable = da_keep_split_var }
+						any_scope_state = {
+							owner = root
+						}
+					}
+				}
+				set_state_owner = root
+				save_scope_as = last_state
+			}
+			every_scope_state = {
+				limit = {
+					is_capital = no
+					is_largest_state_in_region = no
+					state_region = {
+						NOT = { has_variable = da_keep_split_var }
+						any_scope_state = {
+							owner = { da_is_firm_subject_of_root = yes }
+						}
+					}
+				}
+				state_region = {
+					every_scope_state = {
+						limit = {
+							is_largest_state_in_region = yes
+							owner = { da_is_firm_subject_of_root = yes }
+						}
+						owner = { save_temporary_scope_as = _ }
+					}
+				}
+				if = {
+					limit = { exists = scope:_ }
+					set_state_owner = scope:_
+					save_scope_as = last_state
+					clear_saved_scope = _
+				}
+			}
+		}
+		da_post_notification = { _ = da_decision_merge_split_state }
+	}
+
+	ai_chance = {
+		base = 100
+	}
+}

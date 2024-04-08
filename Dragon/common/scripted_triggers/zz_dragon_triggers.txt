@@ -1,0 +1,82 @@
+﻿da_is_firm_subject_of_root = {
+	is_subject_of = root
+	NOT = { is_subject_type = subject_type_customs_union }
+}
+
+da_is_in_extended_mode = {
+	OR = {
+		exists = scope:da_extended_mode
+		has_global_variable = da_globally_enabled_extended_mode_var
+	}
+}
+
+da_newly_reloaded = {
+	cu:north_german = {
+		NOT = { has_variable = da_test_reload_var }
+	}
+}
+
+da_is_banning_military = {
+	custom_description = {
+		text = da_is_banning_military_tt
+		has_variable = da_ban_military_var
+	}
+}
+
+da_is_banning_shipyard = {
+	custom_description = {
+		text = da_is_banning_shipyard_tt
+		has_variable = da_ban_shipyard_var
+	}
+}
+
+da_overlord_is_banning_military = {
+	is_subject = yes
+	overlord ?= { da_is_banning_military = yes }
+}
+
+da_overlord_is_banning_shipyard = {
+	is_subject = yes
+	overlord ?= { da_is_banning_shipyard = yes }
+}
+
+# Debt
+da_debt_not_in_cooldown = {
+	custom_tooltip = {
+		text = da_issue_debt_cooldown
+		NOT = { has_variable = da_recent_issued_debt_var }
+	}
+}
+
+# Require: _, the container
+da_debt_already_extended = {
+	custom_description = {
+		text = da_debt_is_extended_tt
+		$_$ = { has_variable = da_debt_already_extended_var }
+	}
+}
+
+# _1 = building_type _2 = pm_method
+# regex: NOT = \{\n.*is_production_method_active = \{\n.*building_type = (\w+)\n.*production_method = (\w+)\n.*\n.*
+#     -> da_auto_change_pm_trigger = { _1 = $1 _2 = $2 }
+da_auto_change_pm_trigger = {
+	has_building = $_1$
+	NOR = {
+		is_production_method_active = {
+			building_type = $_1$
+			production_method = $_2$
+		}
+		has_variable = da_recent_auto_changed_pm_var
+	}
+	can_activate_production_method = {
+		building_type = $_1$
+		production_method = $_2$
+	}
+}
+
+da_autopm_worth_change = {
+	$_1$ >= {
+		value = $_2$
+		multiply = 1.2 # stickness
+	}
+}

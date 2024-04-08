@@ -1,0 +1,88 @@
+﻿pm_default_building_empire_center = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.05
+			state_conversion_mult = 0.05
+			state_assimilation_mult = 0.05
+			state_migration_pull_mult = 0.05
+			country_bureaucracy_mult = 0.05
+			country_authority_mult = 0.05
+			country_influence_mult = 0.05
+			country_prestige_mult = 0.05
+			country_legitimacy_base_add = 5
+			country_max_weekly_construction_progress_add = 10 # 5
+			country_max_companies_add = 1
+			unit_experience_gain_mult = 0.5
+			state_pop_qualifications_mult = 1
+			country_da_assimilation_mult = 0.5
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_migration_pull_mult = 0.25
+			building_throughput_add = 0.1
+			building_group_bg_monuments_throughput_add = -0.1
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 1000
+		}
+	}
+}
+
+pm_no_focus_building_university = {
+	texture = "gfx/interface/icons/law_icons/no_schools.dds"
+}
+
+pm_literacy_focus_building_university = {
+	texture = "gfx/interface/icons/institution_icons/schools.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_weekly_innovation_add = -1
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.015
+		}
+	}
+}
+
+pm_qualification_focus_building_university = {
+	texture = "gfx/interface/icons/law_icons/census_voting.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_weekly_innovation_add = -1
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pop_qualifications_mult = 0.15
+		}
+	}
+}
+
+pm_innovation_focus_building_university = {
+	texture = "gfx/interface/icons/generic_icons/innovation.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_weekly_innovation_add = 3
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pop_qualifications_mult = -0.05
+		}
+	}
+}

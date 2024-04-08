@@ -1,0 +1,220 @@
+﻿### Constants
+@max_battles_to_win_state = 4
+@min_victory_score = 100
+@hazardous_terrain_factor = 3 # 0.03
+@forested_terrain_factor = 2 # 0.02
+@elevated_terrain_factor = 1 # 0.01
+
+@max_occupation_cost = @[max_battles_to_win_state * min_victory_score]
+
+concentration_of_defensive_mobilized_battalions = {
+	value = num_mobilized_units_in_theater
+	divide = num_provinces_in_theater
+}
+
+# Require: scope:_, the number of provinces
+# range [1, 400], norm 200
+da_map_num_provinces = {
+	value = 0
+	if = {
+		limit = { scope:_ > 0 }
+		add = {
+			value = scope:_
+			divide = 2
+			max = 5
+		}
+		add = {
+			value = scope:_
+			divide = 4
+			max = 5
+		}
+		add = {
+			value = scope:_
+			divide = 16
+			max = 5
+		}
+		add = {
+			value = scope:_
+			divide = 64
+			max = 3
+		}
+		add = {
+			value = scope:_
+			divide = 256
+			max = 2
+		}
+		min = 1
+	}
+}
+
+provinces_with_hazardous_terrain = {
+	every_province = {
+		if = {
+			limit = { has_label = label_hazardous }
+			add = 1
+		}
+	}
+}
+
+provinces_with_forested_terrain = {
+	every_province = {
+		if = {
+			limit = { has_label = label_forested }
+			add = 1
+		}
+	}
+}
+
+provinces_with_elevated_terrain = {
+	every_province = {
+		if = {
+			limit = { has_label = label_elevated }
+			add = 1
+		}
+	}
+}
+
+# range [1, 400], norm 200
+occupation_cost_from_state_population = {
+	add = {
+		value = state_population
+		divide = 1000
+		max = 150
+	}
+	add = {
+		value = state_population
+		divide = 10000
+		max = 150
+	}
+	add = {
+		value = state_population
+		divide = 100000
+		max = 50
+	}
+	add = {
+		value = state_population
+		divide = 1000000
+		max = 50
+	}
+	min = 1
+}
+
+# range [1, 20], norm 10
+occupation_cost_from_num_provinces = {
+	value = num_provinces
+	save_temporary_value_as = _
+	value = da_map_num_provinces
+}
+
+# root = state
+# is_advancing_side = true if the state is being occupied
+occupation_cost = {
+	# population of the state sets the base cost
+	value = {
+		value = occupation_cost_from_state_population
+		multiply = occupation_cost_from_num_provinces
+		multiply = 0.1 # 0.15 # norm 200 * norm 10 -> (2 * @max_occupation_cost)
+		round = yes
+		max = @max_occupation_cost
+		min = 10
+		desc = "OCCUPATION_COST_FROM_PUPULATION_AND_NUM_PROVINCES"
+	}
+
+	save_temporary_value_as = base_cost
+	# cost increases for every province with difficult terrain, up to a limit set by infrastructure used in the state
+	if = {
+		limit = { provinces_with_hazardous_terrain > 0 }
+		add = {
+			value = scope:base_cost
+			multiply  = provinces_with_hazardous_terrain
+			divide = num_provinces
+			multiply = @hazardous_terrain_factor
+			desc = "OCCUPATION_COST_FROM_NUM_HAZARDOUS_PROVINCES"
+		}
+	}
+
+	if = {
+		limit = { provinces_with_forested_terrain > 0 }
+		add = {
+			value = scope:base_cost
+			multiply =  provinces_with_forested_terrain
+			divide = num_provinces
+			multiply = @forested_terrain_factor
+			desc = "OCCUPATION_COST_FROM_NUM_FORESTED_PROVINCES"
+		}
+	}
+	if = {
+		limit = { provinces_with_elevated_terrain > 0 }
+		add = {
+			value = scope:base_cost
+			multiply =  provinces_with_elevated_terrain
+			divide = num_provinces
+			multiply = @hazardous_terrain_factor
+			desc = "OCCUPATION_COST_FROM_NUM_ELEVATED_PROVINCES"
+		}
+	}
+
+	save_temporary_value_as = pre_infra_cost
+	# for every 20 points of infrastructure usage in the state, 1x multiple of difficult terrain bonus is negated
+	if = {
+		limit = { infrastructure_usage > 1 }
+		value = {
+			value = scope:pre_infra_cost
+			subtract = {
+				value = scope:base_cost
+				multiply = infrastructure_usage
+				multiply = 0.01 # 100 -> -1
+			}
+			min = scope:base_cost
+			desc = "OCCUPATION_COST_FROM_INFRASTRUCTURE_USAGE"
+		}
+	}
+
+	# cost increases for the occupier if there are more mobilized enemy battalions in the theater than there are provinces
+	theater = {
+		if = {
+			limit = {
+				scope:is_advancing_side = yes
+				concentration_of_defensive_mobilized_battalions > 1
+			}
+			multiply = {
+				value = concentration_of_defensive_mobilized_battalions
+				max = 10
+			}
+			desc = "OCCUPATION_COST_FROM_CONCENTRATION_OF_BATTALIONS"
+		}
+	}
+
+	save_temporary_value_as = pre_max_cost
+	if = {
+		limit = { scope:pre_max_cost > @max_occupation_cost }
+		max = @max_occupation_cost
+		desc = "OCCUPATION_COST_MAX_VALUE_REACHED"
+	}
+}
+
+# root = battleside
+battle_victory_score = {
+	value = {
+		value = 100
+		desc = "BATTLE_VICTORY_BASE"
+	}
+
+	multiply = {
+		value = 1
+		add = modifier:unit_occupation_mult
+		min = 0
+		desc = "BATTLE_VICTORY_UNIT_OCCUPATION_MULT"
+	}
+
+	save_temporary_value_as = pre_min_amount_cap
+	if = {
+		limit = { scope:pre_min_amount_cap < @min_victory_score }
+		min = @min_victory_score
+		desc = "BATTLE_VICTORY_MIN_VALUE_REACHED"
+	}
+
+	# Starting / Final Battalions on winning / losing side
+	# Starting / Final Morale on winning / losing side
+	# General scope of winning / losing side (for modifier access)
+}

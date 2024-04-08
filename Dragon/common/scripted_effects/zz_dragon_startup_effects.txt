@@ -1,0 +1,419 @@
+﻿da_reload_effect = {
+	cu:north_german = { set_variable = da_test_reload_var }
+	da_post_notification = { _ = da_reloaded_notification }
+	da_merge_cultures_clear = yes
+	if = {
+		limit = { has_global_variable = da_minor_cultures_merged_var }
+		da_merge_minor_cultures = yes
+	}
+	if = {
+		limit = { has_global_variable = da_ger_cultures_merged_var }
+		da_merge_german_cultures = yes
+	}
+	if = {
+		limit = { has_global_variable = da_ita_cultures_merged_var }
+		da_merge_italian_cultures = yes
+	}
+	if = {
+		limit = { has_global_variable = da_usa_cultures_merged_var }
+		da_merge_usa_cultures = yes
+	}
+	if = {
+		limit = { has_global_variable = da_hre_cultures_merged_var }
+		da_merge_hre_cultures = yes
+	}
+	if = {
+		limit = { has_global_variable = da_bra_nor_cultures_merged_var }
+		da_merge_cultures = { _1 = cu:brazilian _2 = cu:nordestino }
+	}
+	if = {
+		limit = { has_global_variable = da_bra_sul_cultures_merged_var }
+		da_merge_cultures = { _1 = cu:brazilian _2 = cu:sulista }
+	}
+	if = {
+		limit = { has_global_variable = da_bra_pau_cultures_merged_var }
+		da_merge_cultures = { _1 = cu:brazilian _2 = cu:paulista }
+	}
+	if = {
+		limit = { has_global_variable = da_bra_ama_cultures_merged_var }
+		da_merge_cultures = { _1 = cu:brazilian _2 = cu:amazonic }
+	}
+}
+
+# Should be called after germany is formed
+da_merge_german_cultures = {
+	set_global_variable = da_ger_cultures_merged_var
+	da_merge_cultures = { _1 = cu:north_german _2 = cu:south_german }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:alemannic }
+}
+
+da_merge_italian_cultures = {
+	set_global_variable = da_ita_cultures_merged_var
+	da_merge_cultures = { _1 = cu:north_italian _2 = cu:south_italian }
+}
+
+da_merge_hre_cultures = {
+	set_global_variable = da_hre_cultures_merged_var
+	da_merge_cultures_if_extended = { _1 = cu:serb _2 = cu:slovene }
+	da_merge_cultures_if_extended = { _1 = cu:polish _2 = cu:czech }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:polish }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:dutch }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:north_italian }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:serb }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:wallonian }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:french }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:hungarian }
+	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:romanian }
+}
+
+da_merge_usa_cultures = {
+	set_global_variable = da_usa_cultures_merged_var
+	da_merge_cultures = { _1 = cu:yankee _2 = cu:dixie }
+}
+
+# Option: scope:da_extended_mode, toggle whether to merge cultures with different but nearly meaningless traits, e.g: french and breton
+# Note: religion is ignored
+da_merge_minor_cultures = {
+	set_global_variable = da_minor_cultures_merged_var
+	# Europe
+	da_merge_cultures = { _1 = cu:dutch _2 = cu:flemish }
+	da_merge_cultures = { _1 = cu:dutch _2 = cu:boer }
+	da_merge_cultures = { _1 = cu:swedish _2 = cu:danish }
+	da_merge_cultures = { _1 = cu:swedish _2 = cu:norwegian }
+	da_merge_cultures = { _1 = cu:swedish _2 = cu:icelandic }
+	da_merge_cultures = { _1 = cu:sami _2 = cu:ugrian }
+	da_merge_cultures = { _1 = cu:british _2 = cu:scottish }
+	da_merge_cultures_if_extended = { _1 = cu:british _2 = cu:welsh }
+	da_merge_cultures = { _1 = cu:south_italian _2 = cu:maltese }
+	da_merge_cultures_if_extended = { _1 = cu:spanish _2 = cu:basque }
+	da_merge_cultures_if_extended = { _1 = cu:spanish _2 = cu:catalan }
+	da_merge_cultures = { _1 = cu:portuguese _2 = cu:galician }
+	da_merge_cultures = { _1 = cu:french _2 = cu:occitan }
+	da_merge_cultures = { _1 = cu:french _2 = cu:cajun }
+	da_merge_cultures_if_extended = { _1 = cu:french _2 = cu:breton }
+	da_merge_cultures_if_extended = { _1 = cu:french _2 = cu:francoprovencal }
+	da_merge_cultures = { _1 = cu:serb _2 = cu:croat }
+	da_merge_cultures = { _1 = cu:serb _2 = cu:bulgarian }
+	da_merge_cultures = { _1 = cu:serb _2 = cu:bosniak }
+	da_merge_cultures_if_extended = { _1 = cu:polish _2 = cu:slovak }
+	da_merge_cultures = { _1 = cu:czech _2 = cu:sorb }
+	da_merge_cultures_if_extended = { _1 = cu:lithuanian _2 = cu:latvian }
+	da_merge_cultures_if_extended = { _1 = cu:lithuanian _2 = cu:estonian }
+	da_merge_cultures = { _1 = cu:russian _2 = cu:byelorussian }
+	da_merge_cultures = { _1 = cu:russian _2 = cu:ukrainian }
+	da_merge_cultures = { _1 = cu:georgian _2 = cu:armenian }
+	da_merge_cultures = { _1 = cu:georgian _2 = cu:circassian }
+	da_merge_cultures_if_extended = { _1 = cu:azerbaijani _2 = cu:north_caucasian }
+	da_merge_cultures_if_extended = { _1 = cu:sephardic _2 = cu:ashkenazi }
+
+	# Asia
+	da_merge_cultures_if_extended = { _1 = cu:misri _2 = cu:maghrebi }
+	da_merge_cultures = { _1 = cu:misri _2 = cu:mashriqi }
+	da_merge_cultures = { _1 = cu:misri _2 = cu:bedouin }
+	da_merge_cultures = { _1 = cu:misri _2 = cu:berber }
+	da_merge_cultures = { _1 = cu:misri _2 = cu:yemenite }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:uzbek }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:kirgiz }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:tajik }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:uighur }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:pashtun }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:baluchi }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:hazara }
+	da_merge_cultures = { _1 = cu:kazak _2 = cu:turkmen }
+	da_merge_cultures = { _1 = cu:persian _2 = cu:kurdish }
+	da_merge_cultures = { _1 = cu:siberian _2 = cu:yakut }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:bihari }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:oriya }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:sinhala }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:avadhi }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:kanauji }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:panjabi }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:kashmiri }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:gujarati }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:marathi }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:sindi }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:rajput }
+	da_merge_cultures = { _1 = cu:assamese _2 = cu:manipuri }
+	da_merge_cultures = { _1 = cu:kannada _2 = cu:malayalam }
+	da_merge_cultures = { _1 = cu:kannada _2 = cu:tamil }
+	da_merge_cultures = { _1 = cu:kannada _2 = cu:telegu }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:dayak }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:batak }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:filipino }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:moro }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:moluccan }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:malay }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:bornean }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:sumatran }
+	da_merge_cultures = { _1 = cu:javan _2 = cu:balinese }
+	da_merge_cultures = { _1 = cu:khmer _2 = cu:mon }
+	da_merge_cultures = { _1 = cu:khmer _2 = cu:khmu }
+	da_merge_cultures = { _1 = cu:thai _2 = cu:lao }
+	da_merge_cultures = { _1 = cu:thai _2 = cu:shan }
+	da_merge_cultures = { _1 = cu:burmese _2 = cu:kachin }
+	da_merge_cultures = { _1 = cu:burmese _2 = cu:karen }
+	da_merge_cultures_if_extended = { _1 = cu:han _2 = cu:hakka }
+	da_merge_cultures = { _1 = cu:hakka _2 = cu:min }
+	da_merge_cultures = { _1 = cu:hakka _2 = cu:yue }
+	da_merge_cultures_if_extended = { _1 = cu:tibetan _2 = cu:yi }
+
+	# Oceania
+	da_merge_cultures = { _1 = cu:polynesian _2 = cu:hawaiian }
+	da_merge_cultures = { _1 = cu:polynesian _2 = cu:melanesian }
+	da_merge_cultures = { _1 = cu:polynesian _2 = cu:micronesian }
+	da_merge_cultures = { _1 = cu:polynesian _2 = cu:maori }
+	da_merge_cultures = { _1 = cu:polynesian _2 = cu:yuanzhumin }
+
+	# North America
+	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:dakota }
+	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:muskogean }
+	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:algonquian }
+	da_merge_cultures = { _1 = cu:zapotec _2 = cu:mayan }
+	da_merge_cultures = { _1 = cu:zapotec _2 = cu:nahua }
+	da_merge_cultures = { _1 = cu:zapotec _2 = cu:tarascan }
+	da_merge_cultures = { _1 = cu:zapotec _2 = cu:mixtec }
+	da_merge_cultures = { _1 = cu:zapotec _2 = cu:miskito }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:pueblo }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:inuit }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:cree }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:navajo }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:athabaskan }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:salish }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:nez_perce }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:siouan }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:comanche }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:iroquoian }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:caddoan }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:paiute }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:hokan }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:apache }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:oodham }
+
+	# South America
+	# TODO Find if south america support merge
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:guarani }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:aimara }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:amazonian }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:patagonian }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:guajiro }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:tupinamba }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:muisca }
+	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:cariban }
+
+	# Africa
+	da_merge_cultures = { _1 = cu:akan _2 = cu:bambara }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:bassa }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:dyula }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:edo }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:ewe }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:fon }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:fulbe }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:hausa }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:ibibio }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:ibo }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:kissi }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:kru }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:mande }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:mossi }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:senufo }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:songhai }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:tiv }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:tuareg }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:wolof }
+	da_merge_cultures = { _1 = cu:akan _2 = cu:yoruba }
+	da_merge_cultures = { _1 = cu:haratin _2 = cu:bidan }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:fang }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:luba }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:lunda }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:mongo }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:equatorial_bantu }
+	da_merge_cultures = { _1 = cu:bakongo _2 = cu:fluvian_bantu }
+	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:kanuri }
+	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:sara }
+	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:teda }
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:afar }
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:oromo }
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:sidama }
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:tigray }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:azande }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:beja }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:dinka }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:fur }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:luo }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:maasai }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:nuer }
+	da_merge_cultures = { _1 = cu:nilotic _2 = cu:nuba }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:kikuyu }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:ruanda }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:rundi }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:sukuma }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:swahili }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:unyamwezi }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:lacustrine_bantu }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:chewa }
+	da_merge_cultures = { _1 = cu:baganda _2 = cu:herero }
+	da_merge_cultures = { _1 = cu:somali _2 = cu:sudanese }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:makua }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:nguni }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:ovimbundu }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:sena }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:shona }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:sotho }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:tonga }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:tswana }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:xhosa }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:yao }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:zulu }
+	da_merge_cultures = { _1 = cu:lomwe _2 = cu:kavango_bantu }
+}
+
+# Option: scope:da_extended_mode, toggle whether to annex c:HAN and s:STATE_SAVOY
+da_merge_minor_countries = {
+	if = {
+		limit = { NOT = { has_global_variable = da_merged_minor_countries_var } }
+		set_global_variable = da_merged_minor_countries_var
+		if = {
+			limit = { da_is_in_extended_mode = yes }
+			s:STATE_BRUNSWICK.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
+			s:STATE_ELBE.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
+			s:STATE_HANNOVER.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
+			da_annex_if_exists_2 = { _1 = c:HAN _2 = c:HAM }
+		}
+		c:PRU ?= {
+			every_country = {
+				limit = {
+					NOT = { this = prev }
+					NOT = { c:HAN ?= this }
+					OR = {
+						any_primary_culture = { this = cu:north_german }
+						c:BAD ?= this
+						c:BAV ?= this
+						c:WUR ?= this
+						c:HOH ?= this
+					}
+				}
+				prev ?= { da_annex_if_exists = { _ = prev } }
+			}
+			# if = {
+			# 	limit = { da_is_in_extended_mode = yes }
+			# 	s:STATE_ALSACE_LORRAINE.region_state:FRA ?= { da_set_state_owner = { _ = prev } }
+			# }
+		}
+		c:SAR ?= {
+			every_country = {
+				limit = {
+					NOT = { this = prev }
+					OR = {
+						any_primary_culture = { this = cu:north_italian }
+						any_primary_culture = { this = cu:south_italian }
+					}
+				}
+				prev ?= { da_annex_if_exists = { _ = prev } }
+			}
+			s:STATE_PROVENCE.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
+			if = {
+				limit = { da_is_in_extended_mode = yes }
+				s:STATE_SAVOY.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
+				s:STATE_CORSICA.region_state:FRA ?= { da_set_state_owner = { _ = c:SAR } }
+				s:STATE_MALTA.region_state:GBR ?= { da_set_state_owner = { _ = c:SAR } }
+			}
+		}
+		c:SHW ?= {
+			if = {
+				limit = { NOT = { exists = c:ETH } }
+				every_country = {
+					limit = {
+						NOT = { this = prev }
+						OR = {
+							any_primary_culture = { this = cu:amhara }
+							any_primary_culture = { this = cu:oromo }
+							any_primary_culture = { this = cu:afar }
+						}
+					}
+					prev ?= { da_annex_if_exists = { _ = prev } }
+				}
+			}
+		}
+		c:MJT ?= {
+			every_country = {
+				limit = {
+					NOT = { this = prev }
+					any_primary_culture = { this = cu:somali }
+				}
+				prev ?= { da_annex_if_exists = { _ = prev } }
+			}
+		}
+		c:NEJ ?= {
+			every_country = {
+				limit = {
+					NOT = { this = prev }
+					OR = {
+						any_primary_culture = { this = cu:yemenite }
+						c:JAB ?= this
+						c:HDJ ?= this
+						c:ABU ?= this
+						c:BHN ?= this
+					}
+				}
+				prev ?= { da_annex_if_exists = { _ = prev } }
+			}
+		}
+		c:UCA ?= {
+			if = {
+				limit = { exists = c:MKT }
+				add_loyalists = { value = 0.25 }
+				da_annex_if_exists = { _ = c:MKT }
+			}
+		}
+		c:BUG ?= {
+			every_country = {
+				limit = {
+					NOT = { this = prev }
+					OR = {
+						any_primary_culture = { this = cu:baganda }
+						c:BRD ?= this
+						c:RWD ?= this
+						c:ACH ?= this
+					}
+				}
+				prev ?= { da_annex_if_exists = { _ = prev } }
+			}
+		}
+		c:DEI ?= {
+			every_subject_or_below = {
+				prev = { da_annex_if_exists = { _ = prev } }
+			}
+			if = {
+				limit = { exists = c:ACE }
+				da_annex_if_exists = { _ = c:ACE }
+				da_annex_if_exists = { _ = c:SAK }
+				da_annex_if_exists = { _ = c:BAL }
+				da_annex_if_exists = { _ = c:LAN }
+				da_annex_if_exists = { _ = c:BRU }
+				da_annex_if_exists = { _ = c:STG }
+				da_annex_if_exists = { _ = c:KTI }
+				da_annex_if_exists = { _ = c:BLG }
+				da_annex_if_exists = { _ = c:SUL }
+				da_annex_if_exists = { _ = c:BTN }
+			}
+		}
+		da_annex_if_exists_2 = { _1 = c:KAL _2 = c:MAK }
+		da_annex_if_exists_2 = { _1 = c:CHI _2 = c:TIB }
+		da_annex_if_exists_2 = { _1 = c:NEP _2 = c:SIK }
+		da_annex_if_exists_2 = { _1 = c:NEP _2 = c:BHU }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:CMI }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:LUA }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:CHP }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:JOH }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:PRK }
+		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:SEL }
+		da_annex_if_exists_2 = { _1 = c:DAI _2 = c:CAM }
+		da_annex_if_exists_2 = { _1 = c:PHI _2 = c:MGD }
+		da_annex_if_exists_2 = { _1 = c:SGU _2 = c:KRT }
+		da_annex_if_exists_2 = { _1 = c:GRE _2 = c:ION }
+		da_annex_if_exists_2 = { _1 = c:TUR _2 = c:MON }
+		# da_annex_if_exists_2 = { _1 = c:TUR _2 = c:SER }
+		# da_annex_if_exists_2 = { _1 = c:TUR _2 = c:MOL }
+		# da_annex_if_exists_2 = { _1 = c:TUR _2 = c:WAL }
+	}
+}

@@ -1,0 +1,2034 @@
+﻿cnm_release_work_force = {
+	#dough_rollers for building_food_industry
+	if = {
+		limit = {
+			owner = { has_technology_researched = dough_rollers }
+			not = {
+				is_production_method_active = {
+					building_type = building_food_industry
+					production_method = pm_automated_bakery
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_food_industry
+			production_method = pm_automated_bakery
+		}
+	}
+	#mechanized_workshops/electrical_capacitors for building_textile_mills
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = electrical_capacitors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_textile_mills
+					production_method = pm_automatic_power_looms
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_textile_mills
+			production_method = pm_automatic_power_looms
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = mechanized_workshops
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_textile_mills
+					production_method = pm_mechanized_looms
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_textile_mills
+			production_method = pm_mechanized_looms
+		}
+	}
+	#automatic_bottle_blowers for building_glassworks
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = automatic_bottle_blowers
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_glassworks
+					production_method = pm_automatic_bottle_blowers
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_glassworks
+			production_method = pm_automatic_bottle_blowers
+		}
+	}
+	#building_furniture_manufacturies
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_furniture_manufacturies
+					production_method = pm_assembly_lines_building_furniture_manufacturies
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_furniture_manufacturies
+			production_method = pm_assembly_lines_building_furniture_manufacturies
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_furniture_manufacturies
+					production_method = pm_rotary_valve_engine_building_furniture_manufacturies
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_furniture_manufacturies
+			production_method = pm_rotary_valve_engine_building_furniture_manufacturies
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = watertube_boiler
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_furniture_manufacturies
+					production_method = pm_watertube_boiler_building_furniture_manufacturies
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_furniture_manufacturies
+			production_method = pm_watertube_boiler_building_furniture_manufacturies
+		}
+	}
+	#building_tooling_workshops
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_tooling_workshops
+					production_method = pm_assembly_lines_building_tooling_workshops
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tooling_workshops
+			production_method = pm_assembly_lines_building_tooling_workshops
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_tooling_workshops
+					production_method = pm_rotary_valve_engine_building_tooling_workshops
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tooling_workshops
+			production_method = pm_rotary_valve_engine_building_tooling_workshops
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = watertube_boiler
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_tooling_workshops
+					production_method = pm_watertube_boiler_building_tooling_workshops
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tooling_workshops
+			production_method = pm_watertube_boiler_building_tooling_workshops
+		}
+	}
+	#building_motor_industry
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_motor_industry
+					production_method = pm_assembly_lines_building_motor_industry
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_motor_industry
+			production_method = pm_assembly_lines_building_motor_industry
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_motor_industry
+					production_method = pm_rotary_valve_engine_building_motor_industry
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_motor_industry
+			production_method = pm_rotary_valve_engine_building_motor_industry
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = watertube_boiler
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_motor_industry
+					production_method = pm_watertube_boiler_building_motor_industry
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_motor_industry
+			production_method = pm_watertube_boiler_building_motor_industry
+		}
+	}
+	#building_arms_industry
+	# if = {
+	# 	limit = {
+	# 		owner = {
+	# 			has_technology_researched = conveyors
+	# 		}
+	# 		not = {
+	# 			is_production_method_active = {
+	# 				building_type = building_arms_industry
+	# 				production_method = pm_assembly_lines_building_arms_industry
+	# 			}
+	# 		}
+	# 	}
+	# 	activate_production_method = {
+	# 		building_type = building_arms_industry
+	# 		production_method = pm_assembly_lines_building_arms_industry
+	# 	}
+	# }
+	# else_if = {
+	# 	limit = {
+	# 		owner = {
+	# 			has_technology_researched = rotary_valve_engine
+	# 		}
+	# 		not = {
+	# 			is_production_method_active = {
+	# 				building_type = building_arms_industry
+	# 				production_method = pm_rotary_valve_engine_building_arms_industry
+	# 			}
+	# 		}
+	# 	}
+	# 	activate_production_method = {
+	# 		building_type = building_arms_industry
+	# 		production_method = pm_rotary_valve_engine_building_arms_industry
+	# 	}
+	# }
+	#building_artillery_foundries
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_artillery_foundries
+					production_method = pm_assembly_lines_building_arms_industry
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_artillery_foundries
+			production_method = pm_assembly_lines_building_arms_industry
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_artillery_foundries
+					production_method = pm_rotary_valve_engine_building_arms_industry
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_artillery_foundries
+			production_method = pm_rotary_valve_engine_building_arms_industry
+		}
+	}
+	#building_munition_plants
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_munition_plants
+					production_method = pm_assembly_lines_building_munition_plants
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_munition_plants
+			production_method = pm_assembly_lines_building_munition_plants
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_munition_plants
+					production_method = pm_rotary_valve_engine_building_munition_plants
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_munition_plants
+			production_method = pm_rotary_valve_engine_building_munition_plants
+		}
+	}
+	#building_paper_mills
+	# if = {
+	# 	limit = {
+	# 		owner = {
+	# 			has_technology_researched = rotary_valve_engine
+	# 		}
+	# 		not = {
+	# 			is_production_method_active = {
+	# 				building_type = building_paper_mills
+	# 				production_method = pm_rotary_valve_engine_building_paper_mills
+	# 			}
+	# 		}
+	# 	}
+	# 	activate_production_method = {
+	# 		building_type = building_paper_mills
+	# 		production_method = pm_rotary_valve_engine_building_paper_mills
+	# 	}
+	# }
+	# else_if = {
+	# 	limit = {
+	# 		owner = {
+	# 			has_technology_researched = watertube_boiler
+	# 		}
+	# 		not = {
+	# 			is_production_method_active = {
+	# 				building_type = building_paper_mills
+	# 				production_method = pm_watertube_boiler_building_paper_mills
+	# 			}
+	# 		}
+	# 	}
+	# 	activate_production_method = {
+	# 		building_type = building_paper_mills
+	# 		production_method = pm_watertube_boiler_building_paper_mills
+	# 	}
+	# }
+	#building_steel_mills
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = rotary_valve_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_steel_mills
+					production_method = pm_rotary_valve_engine_building_steel_mills
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_steel_mills
+			production_method = pm_rotary_valve_engine_building_steel_mills
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = watertube_boiler
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_steel_mills
+					production_method = pm_watertube_boiler_building_steel_mills
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_steel_mills
+			production_method = pm_watertube_boiler_building_steel_mills
+		}
+	}
+	#pmg_transportation_building_logging_camp
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = electric_railway
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_log_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_log_carts
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_rail_transport_building_logging_camp
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_rail_transport_building_logging_camp
+		}
+	}
+	#pmg_equipment building_logging_camp
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = combustion_engine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_chainsaws
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_chainsaws
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_steam_donkey_building_logging_camp
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_steam_donkey_building_logging_camp
+		}
+	}
+	#building_rye_farm
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = compression_ignition
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_rye_farm
+					production_method = pm_compression_ignition_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rye_farm
+			production_method = pm_compression_ignition_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = mechanized_farming
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_rye_farm
+					production_method = pm_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rye_farm
+			production_method = pm_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = threshing_machine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_rye_farm
+					production_method = pm_steam_threshers
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rye_farm
+			production_method = pm_steam_threshers
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_rye_farm
+					production_method = pm_tools
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rye_farm
+			production_method = pm_tools
+		}
+	}
+	#building_wheat_farm
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = compression_ignition
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_wheat_farm
+					production_method = pm_compression_ignition_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_wheat_farm
+			production_method = pm_compression_ignition_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = mechanized_farming
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_wheat_farm
+					production_method = pm_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_wheat_farm
+			production_method = pm_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = threshing_machine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_wheat_farm
+					production_method = pm_steam_threshers
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_wheat_farm
+			production_method = pm_steam_threshers
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_wheat_farm
+					production_method = pm_tools
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_wheat_farm
+			production_method = pm_tools
+		}
+	}
+	#building_maize_farm
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = compression_ignition
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_maize_farm
+					production_method = pm_compression_ignition_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_maize_farm
+			production_method = pm_compression_ignition_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = mechanized_farming
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_maize_farm
+					production_method = pm_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_maize_farm
+			production_method = pm_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = threshing_machine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_maize_farm
+					production_method = pm_steam_threshers
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_maize_farm
+			production_method = pm_steam_threshers
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_maize_farm
+					production_method = pm_tools
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_maize_farm
+			production_method = pm_tools
+		}
+	}
+	#building_millet_farm
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = compression_ignition
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_millet_farm
+					production_method = pm_compression_ignition_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_millet_farm
+			production_method = pm_compression_ignition_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = mechanized_farming
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_millet_farm
+					production_method = pm_tractors
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_millet_farm
+			production_method = pm_tractors
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = threshing_machine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_millet_farm
+					production_method = pm_steam_threshers
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_millet_farm
+			production_method = pm_steam_threshers
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_millet_farm
+					production_method = pm_tools
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_millet_farm
+			production_method = pm_tools
+		}
+	}
+	#building_rice_farm
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = threshing_machine
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_rice_farm
+					production_method = pm_steam_threshers_building_rice_farm
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rice_farm
+			production_method = pm_steam_threshers_building_rice_farm
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_rice_farm
+					production_method = pm_tools_building_rice_farm
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rice_farm
+			production_method = pm_tools_building_rice_farm
+		}
+	}
+	#trench_works/electrical_generation for building_livestock_ranch
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = electrical_generation
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_electric_fencing
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_electric_fencing
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = trench_works
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_barbed_wire_fences
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_barbed_wire_fences
+		}
+	}
+	#building_livestock_ranch
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = flash_freezing
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_refrigerated_rail_cars_building_livestock_ranch
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_refrigerated_rail_cars_building_livestock_ranch
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = pasteurization
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_refrigerated_storage_building_livestock_ranch
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_refrigerated_storage_building_livestock_ranch
+		}
+	}
+	#building_fishing_wharf
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = flash_freezing
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_fishing_wharf
+					production_method = pm_flash_freezing_building_fishing_wharf
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_fishing_wharf
+			production_method = pm_flash_freezing_building_fishing_wharf
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = electric_railway
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_fishing_wharf
+					production_method = pm_refrigerated_rail_cars_building_fishing_wharf
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_fishing_wharf
+			production_method = pm_refrigerated_rail_cars_building_fishing_wharf
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = pasteurization
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_fishing_wharf
+					production_method = pm_refrigerated_storage_building_fishing_wharf
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_fishing_wharf
+			production_method = pm_refrigerated_storage_building_fishing_wharf
+		}
+	}
+	#building_whaling_station
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = flash_freezing
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_whaling_station
+					production_method = pm_flash_freezing_building_whaling_station
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_whaling_station
+			production_method = pm_flash_freezing_building_whaling_station
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = electric_railway
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_whaling_station
+					production_method = pm_refrigerated_rail_cars_building_whaling_station
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_whaling_station
+			production_method = pm_refrigerated_rail_cars_building_whaling_station
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = pasteurization
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_whaling_station
+					production_method = pm_refrigerated_storage_building_whaling_station
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_whaling_station
+			production_method = pm_refrigerated_storage_building_whaling_station
+		}
+	}
+	#building_coal_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_coal_mine
+					production_method = pm_steam_donkey_building_coal_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coal_mine
+			production_method = pm_steam_donkey_building_coal_mine
+		}
+	}
+	#building_iron_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_iron_mine
+					production_method = pm_steam_donkey_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_iron_mine
+			production_method = pm_steam_donkey_mine
+		}
+	}
+	#building_lead_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_lead_mine
+					production_method = pm_steam_donkey_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_lead_mine
+			production_method = pm_steam_donkey_mine
+		}
+	}
+	#building_sulfur_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_sulfur_mine
+					production_method = pm_steam_donkey_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sulfur_mine
+			production_method = pm_steam_donkey_mine
+		}
+	}
+	#building_gold_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steam_donkey
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_gold_mine
+					production_method = pm_steam_donkey_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_gold_mine
+			production_method = pm_steam_donkey_mine
+		}
+	}
+	#railways for building_coal_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_coal_mine
+					production_method = pm_rail_transport_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coal_mine
+			production_method = pm_rail_transport_mine
+		}
+	}
+	#railways for building_iron_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_iron_mine
+					production_method = pm_rail_transport_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_iron_mine
+			production_method = pm_rail_transport_mine
+		}
+	}
+	#railways for building_lead_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_lead_mine
+					production_method = pm_rail_transport_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_lead_mine
+			production_method = pm_rail_transport_mine
+		}
+	}
+	#railways for building_sulfur_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_sulfur_mine
+					production_method = pm_rail_transport_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sulfur_mine
+			production_method = pm_rail_transport_mine
+		}
+	}
+	#railways for building_gold_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_gold_mine
+					production_method = pm_rail_transport_mine
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_gold_mine
+			production_method = pm_rail_transport_mine
+		}
+	}
+
+
+	#railways for building_coffee_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_coffee_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coffee_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_cotton_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_cotton_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_cotton_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_dye_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_dye_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_dye_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_opium_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_opium_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_opium_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+
+	#railways for building_tea_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_tea_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tea_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_tobacco_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_tobacco_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tobacco_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_sugar_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_sugar_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sugar_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_banana_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_banana_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_banana_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_silk_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_silk_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_silk_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_vineyard_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_vineyard_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_vineyard_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+	#railways for building_rubber_plantation
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_rubber_plantation
+					production_method = pm_steam_rail_transport
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rubber_plantation
+			production_method = pm_steam_rail_transport
+		}
+	}
+
+	#steel_railway_cars/railways for building_oil_rig
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = steel_railway_cars
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_oil_rig
+					production_method = pm_tanker_cars
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_oil_rig
+			production_method = pm_tanker_cars
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_oil_rig
+					production_method = pm_rail_transport_building_oil_rig
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_oil_rig
+			production_method = pm_rail_transport_building_oil_rig
+		}
+	}
+
+
+}
+cnm_reduce_unemployment = {
+	#dough_rollers for building_food_industry
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_food_industry
+					production_method = pm_manual_dough_processing
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_food_industry
+			production_method = pm_manual_dough_processing
+		}
+	}
+	#mechanized_workshops/electrical_capacitors for building_textile_mills
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_textile_mills
+					production_method = pm_traditional_looms
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_textile_mills
+			production_method = pm_traditional_looms
+		}
+	}
+	#automatic_bottle_blowers for building_glassworks
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_glassworks
+					production_method = pm_manual_glassblowing
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_glassworks
+			production_method = pm_manual_glassblowing
+		}
+	}
+	#building_furniture_manufacturies
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_furniture_manufacturies
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_furniture_manufacturies
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_tooling_workshops
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_tooling_workshops
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tooling_workshops
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_motor_industry
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_motor_industry
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_motor_industry
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_arms_industry
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_arms_industry
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_arms_industry
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_artillery_foundries
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_artillery_foundries
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_artillery_foundries
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_munition_plants
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = conveyors
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_munition_plants
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_munition_plants
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_paper_mills
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_paper_mills
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_paper_mills
+			production_method = pm_automation_disabled
+		}
+	}
+	#building_steel_mills
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_steel_mills
+					production_method = pm_automation_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_steel_mills
+			production_method = pm_automation_disabled
+		}
+	}
+	#pmg_transportation_building_logging_camp
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_road_carts
+		}
+	}
+	#pmg_equipment building_logging_camp
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_logging_camp
+					production_method = pm_no_equipment
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_logging_camp
+			production_method = pm_no_equipment
+		}
+	}
+	#building_rye_farm
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_rye_farm
+					production_method = pm_tools_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rye_farm
+			production_method = pm_tools_disabled
+		}
+	}
+	#building_wheat_farm
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_wheat_farm
+					production_method = pm_tools_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_wheat_farm
+			production_method = pm_tools_disabled
+		}
+	}
+	#building_maize_farm
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_maize_farm
+					production_method = pm_tools_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_maize_farm
+			production_method = pm_tools_disabled
+		}
+	}
+	#building_millet_farm
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_millet_farm
+					production_method = pm_tools_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_millet_farm
+			production_method = pm_tools_disabled
+		}
+	}
+	#building_rice_farm
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_rice_farm
+					production_method = pm_tools_disabled
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rice_farm
+			production_method = pm_tools_disabled
+		}
+	}
+	#trench_works/electrical_generation for building_livestock_ranch
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_standard_fences
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_standard_fences
+		}
+	}
+	#pmg_refrigeration_building_livestock_ranch
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_livestock_ranch
+					production_method = pm_unrefrigerated
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_livestock_ranch
+			production_method = pm_unrefrigerated
+		}
+	}
+	#pmg_refrigeration_building_fishing_wharf
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_fishing_wharf
+					production_method = pm_unrefrigerated
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_fishing_wharf
+			production_method = pm_unrefrigerated
+		}
+	}
+	#pmg_refrigeration_building_whaling_station
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_whaling_station
+					production_method = pm_unrefrigerated
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_whaling_station
+			production_method = pm_unrefrigerated
+		}
+	}
+	#building_coal_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_coal_mine
+					production_method = pm_no_steam_automation
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coal_mine
+			production_method = pm_no_steam_automation
+		}
+	}
+	#building_iron_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_iron_mine
+					production_method = pm_no_steam_automation
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_iron_mine
+			production_method = pm_no_steam_automation
+		}
+	}
+	#building_lead_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_lead_mine
+					production_method = pm_no_steam_automation
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_lead_mine
+			production_method = pm_no_steam_automation
+		}
+	}
+	#building_sulfur_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_sulfur_mine
+					production_method = pm_no_steam_automation
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sulfur_mine
+			production_method = pm_no_steam_automation
+		}
+	}
+	#building_gold_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_gold_mine
+					production_method = pm_no_steam_automation
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_gold_mine
+			production_method = pm_no_steam_automation
+		}
+	}
+	#railways for building_coal_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_coal_mine
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coal_mine
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_iron_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_iron_mine
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_iron_mine
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_lead_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_lead_mine
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_lead_mine
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_sulfur_mine
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_sulfur_mine
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sulfur_mine
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_gold_mine
+	if = {
+		limit = {
+			owner = {
+				has_technology_researched = railways
+			}
+			not = {
+				is_production_method_active = {
+					building_type = building_gold_mine
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_gold_mine
+			production_method = pm_road_carts
+		}
+	}
+
+
+	#railways for building_coffee_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_coffee_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_coffee_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_cotton_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_cotton_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_cotton_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_dye_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_dye_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_dye_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_opium_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_opium_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_opium_plantation
+			production_method = pm_road_carts
+		}
+	}
+
+	#railways for building_tea_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_tea_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tea_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_tobacco_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_tobacco_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_tobacco_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_sugar_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_sugar_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_sugar_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_banana_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_banana_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_banana_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_silk_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_silk_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_silk_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_vineyard_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_vineyard_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_vineyard_plantation
+			production_method = pm_road_carts
+		}
+	}
+	#railways for building_rubber_plantation
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_rubber_plantation
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_rubber_plantation
+			production_method = pm_road_carts
+		}
+	}
+
+	#steel_railway_cars/railways for building_oil_rig
+	if = {
+		limit = {
+			not = {
+				is_production_method_active = {
+					building_type = building_oil_rig
+					production_method = pm_road_carts
+				}
+			}
+		}
+		activate_production_method = {
+			building_type = building_oil_rig
+			production_method = pm_road_carts
+		}
+	}
+
+}

@@ -1,0 +1,241 @@
+﻿# Loaded from minting income
+max_gdp = {
+	value = define:NEconomy|COUNTRY_GDP_MODIFIER_DIVISOR
+	multiply = define:NEconomy|COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER
+}
+
+# 0.0075% of GDP, rounded to nearest 10
+money_amount_multiplier_very_small = {
+	value = gdp
+	max = max_gdp
+	divide = 10000
+	multiply = 0.075
+	round = yes
+	min = 1
+	multiply = 10
+}
+
+# 0.015% of GDP, rounded to nearest 100
+money_amount_multiplier_small = {
+	value = gdp
+	max = max_gdp
+	divide = 100000
+	multiply = 0.15
+	round = yes
+	min = 1
+	multiply = 100
+}
+
+# 0.025% of GDP, rounded to nearest 100
+money_amount_multiplier_medium = {
+	value = gdp
+	max = max_gdp
+	divide = 100000
+	multiply = 0.25
+	round = yes
+	min = 1
+	multiply = 100
+}
+
+# 0.05% of GDP, rounded to nearest 1000
+money_amount_multiplier_large = {
+	value = gdp
+	max = max_gdp
+	divide = 1000000
+	multiply = 0.5
+	round = yes
+	min = 1
+	multiply = 1000
+}
+
+# 0.1% of GDP, rounded to nearest 1000
+money_amount_multiplier_very_large = {
+	value = gdp
+	max = max_gdp
+	divide = 1000000
+	# multiply = 1.0
+	round = yes
+	min = 1
+	multiply = 1000
+}
+
+# 5% of GDP, rounded to nearest 10000
+money_amount_gdp_percent_5 = {
+	value = gdp
+	max = max_gdp
+	divide = 200000
+	round = yes
+	min = 1
+	multiply = 10000
+}
+
+# Borrowed from cnm
+
+da_not_enough_worker_thereshold = 5000
+
+da_state_available_workers = {
+	value = da_state_subsistence_workers
+	add = da_state_unemployed
+}
+
+da_state_available_workers_safe = {
+	value = da_state_available_workers
+	min = 1
+}
+
+da_state_unemployed = {
+	add = state_population
+	multiply = state_unemployment_rate
+	round = yes
+}
+
+da_state_subsistence_workers = {
+	every_scope_building = {
+		limit = {
+			is_subsistence_building = yes
+		}
+		add = {
+			add = {
+				add = modifier:building_employment_peasants_add
+				add = modifier:building_employment_clergymen_add
+				add = modifier:building_employment_aristocrats_add
+				add = modifier:building_employment_farmers_add
+				add = modifier:building_employment_bureaucrats_add
+			}
+			multiply = occupancy
+			round = yes
+		}
+	}
+}
+
+# DA Migration
+da_migration_target_score = {
+	value = 100 # Base
+	multiply = { # Population factor
+		value = 1000000 # 1M
+		divide = state_population
+		min = 0.5
+		max = 2
+	}
+	multiply = { # Unemployment rate
+		value = 1
+		subtract = state_unemployment_rate
+	}
+	multiply = { # Avaliable worker factor
+		value = 50000 # 50K
+		divide = da_state_available_workers_safe
+		min = 0.25
+		max = 4
+	}
+	if = { # Capital bonus
+		limit = { is_capital = yes }
+		multiply = 2
+	}
+	multiply = { # SoL factor, 1 SoL diff = 25%
+		value = average_sol
+		subtract = root.average_sol
+		multiply = 0.25
+		add = 1
+		min = 0.2
+		max = 5
+	}
+	multiply = { # Apply original migration pull factor
+		value = modifier:state_migration_pull_mult
+		multiply = 0.5
+		add = 1
+		min = 0.5
+		max = 2
+	}
+	# Already migration target
+	if = {
+		limit = { state_is_eligible_as_mass_migration_target = no }
+		multiply = 0
+	}
+	if = {
+		limit = {
+			any_neighbouring_state = { is_mass_migration_target = yes }
+		}
+		multiply = 0.1
+	}
+}
+
+da_total_pops_cnt = {
+	every_country = {
+		every_scope_pop = {
+			add = 1
+		}
+	}
+}
+
+da_our_pops_cnt = {
+	every_scope_pop = {
+		add = 1
+	}
+}
+
+# 20% of GDP, round to nearest 1000
+da_max_debt_value = {
+	value = gdp
+	divide = 5000
+	round = yes
+	min = 1
+	multiply = 1000
+}
+
+da_issued_debt_value = {
+	if = {
+		limit = { has_variable = da_issued_debt_var }
+		value = var:da_issued_debt_var
+	}
+}
+
+da_leftover_debt_value = {
+	value = da_max_debt_value
+	subtract = da_issued_debt_value
+	min = 0
+}
+
+da_interest_rate = {
+	value = modifier:country_loan_interest_rate_add
+	multiply = {
+		value = 1
+		add = modifier:country_loan_interest_rate_mult
+	}
+	multiply = { # Special discount for first 4 debt
+		value = 4
+		subtract = da_debt_count
+		min = 0
+		multiply = -0.25
+		add = 1
+	}
+}
+
+da_debt_duration = 5 # in year
+
+da_debt_interest_multiplier = {
+	value = da_interest_rate
+	multiply = da_debt_duration
+	add = 1
+}
+
+# 2% of GDP, round to nearest 1000
+da_single_debt_value = {
+	value = gdp
+	divide = 50000
+	round = yes
+	min = 1
+	multiply = 1000
+	max = da_leftover_debt_value
+}
+
+da_single_debt_total_value = {
+	value = da_single_debt_value
+	multiply = da_debt_interest_multiplier
+}
+
+da_debt_count = {
+	every_character_in_void = {
+		limit = { has_variable = da_debt_container_var }
+		add = 1
+	}
+}

@@ -1,0 +1,105 @@
+﻿namespace = marx_events
+
+# Marx Spawns
+marx_events.1 = {
+	type = country_event
+
+	title = marx_events.1.t
+	desc = marx_events.1.d
+	flavor = marx_events.1.f
+
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		has_technology_researched = socialism
+		NAND = {
+			has_global_variable = marx_happened
+			OR = {
+				is_player = no
+				has_global_variable = marx_happened_player
+			}
+		}
+		empty_agitator_slots >= 1
+	}
+
+	immediate = {
+		set_global_variable = {
+			name = marx_happened
+		}
+		if = {
+			limit = { is_player = yes }
+			set_global_variable = marx_happened_player
+		}
+	}
+
+	option = { #support socialism not marx
+		name = marx_events.1.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = modifier_supported_marx
+				months = normal_modifier_time
+			}
+		}
+		create_character = {
+			first_name = Karl_Heinrich
+			last_name = Marx
+			historical = yes
+			is_agitator = yes
+			interest_group = ig_trade_unions
+			female = no
+			dna = dna_karl_marx
+			ideology = ideology_communist
+			religion = rel:atheist
+			traits = {
+				ambitious imperious meticulous innovative charismatic wrathful
+				masterful_diplomat expert_political_operator firebrand expert_colonial_administrator
+				master_bureaucrat erudite literary engineer
+			}
+		}
+	}
+
+	option = { #promote him / marxista porque me va la marxa
+		name = marx_events.1.b
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = modifier_promoted_marx
+				months = normal_modifier_time
+			}
+		}
+		create_character = {
+			first_name = Karl_Heinrich
+			last_name = Marx
+			historical = yes
+			ig_leader = yes
+			interest_group = ig_trade_unions
+			female = no
+			dna = dna_karl_marx
+			ideology = ideology_communist
+			religion = rel:atheist
+			traits = {
+				ambitious imperious meticulous innovative charismatic wrathful
+				masterful_diplomat expert_political_operator firebrand expert_colonial_administrator
+				master_bureaucrat erudite literary engineer
+			}
+		}
+	}
+
+	option = { #get rid of this man
+		name = marx_events.1.c
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = modifier_ditched_marx
+				months = normal_modifier_time
+			}
+		}
+	}
+}

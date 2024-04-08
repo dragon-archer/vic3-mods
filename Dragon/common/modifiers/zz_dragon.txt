@@ -1,0 +1,110 @@
+﻿### Overide
+efficient_bureaucracy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_construction_mult = 0.25 # 0.10
+}
+
+# Applied if state is above 'in turmoil' threshold
+state_turmoil = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_tax_waste_add = 0.25
+	state_migration_pull_mult = -0.25
+	state_construction_mult = -0.125
+}
+
+# Applied if state is above 'high turmoil' threshold
+state_turmoil_high = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_tax_waste_add = 0.5
+	state_migration_pull_mult = -0.5
+	state_construction_mult = -0.25
+}
+
+# Applied if state is above 'extreme turmoil' threshold
+state_turmoil_extreme = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_tax_waste_add = 1.0
+	state_migration_pull_mult = -0.75
+	state_construction_mult = -0.5
+}
+
+# Scales with country literacy rate
+country_literacy_rate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_weekly_innovation_max_add = 150 # 150
+	country_tech_spread_add = 75 # 75
+}
+
+# Scales with number of excess innovation points
+excess_innovation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_tech_spread_add = 0.2
+	country_weekly_innovation_max_add = 0.1 # 0
+}
+
+market_capital_state = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_infrastructure_mult = 0.25
+	state_market_access_price_impact = 1 # Market capital should always have full market access
+	state_migration_pull_mult = 0.5
+}
+
+the_algerian_fiasco = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_prestige_mult = -0.3
+}
+
+literacy_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	state_birth_rate_mult = -0.1 	# scaled by pop literacy
+	state_radicals_from_sol_change_mult = 0.2 # Literate pops are more likely to complain
+}
+
+declared_bankruptcy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_prestige_mult = -0.5
+	country_loan_interest_rate_mult = 0.25 # 0.5
+	unit_offense_mult = -0.75 # -0.5
+	unit_defense_mult = -0.75 # -0.5
+	state_radicals_from_sol_change_mult = 1.0
+	state_construction_mult = -0.5 # -0.75
+}
+
+#### New
+da_approval = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 1
+}
+
+da_disable_private_construction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_private_construction_allocation_mult = -1
+	country_disable_investment_pool = yes
+	tax_dividends_add = 0.20
+}
+
+da_obligation_gain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 1
+}
+
+da_obligation_loss = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+da_communism_colony_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.2
+	building_group_bg_plantations_throughput_add = 0.2
+	building_group_bg_mining_throughput_add = 0.2
+	state_migration_pull_mult = 0.5
+	state_loyalists_from_sol_change_mult = 0.5
+	state_radicals_from_sol_change_mult = -0.5
+}
+
+da_communism_colony_modifier_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_factor = 1.0
+	interest_group_pop_attraction_mult = 1.0
+}

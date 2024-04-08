@@ -1,0 +1,374 @@
+﻿namespace = da
+
+da.200 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		has_game_rule = autonomous_investment_pool
+		has_modifier = da_disable_private_construction
+	}
+
+	immediate = {
+		while = {
+			limit = { investment_pool > 1000000 }
+			add_investment_pool  = -1000000
+			add_treasury = 1000000
+		}
+		while = {
+			limit = { investment_pool > 10000 }
+			add_investment_pool  = -10000
+			add_treasury = 10000
+		}
+	}
+}
+
+da.300 = {
+	type = country_event
+	placement = ROOT
+	title = da.300.t
+	desc = da.300.desc
+	event_image = { video = "unspecific_signed_contract" }
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	duration = 3
+	trigger = {}
+
+	option = {
+		name = da.300.a
+		default_option = yes
+		change_relations = { country = scope:target_country value = 30 }
+		scope:target_country = { set_owes_obligation_to = { country = root setting = no } }
+	}
+	option = {
+		name = da.300.b
+		change_relations = { country = scope:target_country value = 20 }
+		scope:target_country = { set_owes_obligation_to = { country = root setting = no } }
+		add_modifier = {
+			name = da_obligation_gain
+			multiplier = scope:target_country.money_amount_multiplier_medium
+			months = short_modifier_time
+		}
+		scope:target_country = {
+			add_modifier = {
+				name = da_obligation_loss
+				multiplier = scope:target_country.money_amount_multiplier_medium
+				months = short_modifier_time
+			}
+		}
+	}
+	option = {
+		name = da.300.c
+		change_relations = { country = scope:target_country value = -10 }
+		scope:target_country = { set_owes_obligation_to = { country = root setting = no } }
+		add_treasury = scope:target_country.money_amount_gdp_percent_5
+		scope:target_country = { add_treasury = { value = money_amount_gdp_percent_5 multiply = -1 } }
+		add_modifier = {
+			name = da_obligation_gain
+			multiplier = scope:target_country.money_amount_multiplier_large
+			months = short_modifier_time
+		}
+		scope:target_country = {
+			add_modifier = {
+				name = da_obligation_loss
+				multiplier = scope:target_country.money_amount_multiplier_large
+				months = short_modifier_time
+			}
+		}
+	}
+	option = {
+		name = da.300.d
+	}
+}
+
+da.1000 = { # Table
+	type = country_event
+	placement = ROOT
+	title = da.1000.t
+	desc = {
+		triggered_desc = {
+			trigger = {
+				da_is_in_extended_mode = yes
+			}
+			desc = da.1000.d.extend_on
+		}
+		triggered_desc = {
+			trigger = {
+				da_is_in_extended_mode = no
+			}
+			desc = da.1000.d.extend_off
+		}
+	}
+
+	event_image = { video = "unspecific_signed_contract" }
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	duration = 3
+
+	trigger = { is_player = yes }
+
+	option = {
+		name = da.1000.turn_on_extended_mode
+		show_as_unavailable = { always = yes }
+		da_enable_global_extended_mode = yes
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
+		name = da.1000.turn_off_extended_mode
+		show_as_unavailable = { always = yes }
+		da_disable_global_extended_mode = yes
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
+		name = da.1000.merge_minor_countries
+		show_as_unavailable = { always = yes }
+		da_merge_minor_countries = yes
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
+		name = da.1000.merge_minor_cultures
+		show_as_unavailable = { always = yes }
+		da_merge_minor_cultures = yes
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
+		name = da.1000.quit
+		default_option = yes
+	}
+}
+
+da.1 = { # Entry
+	type = country_event
+	placement = ROOT
+
+	title = da.1.t
+	desc = da.1.d
+	flavor = da.1.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+		is_player = yes
+	}
+
+	option = {
+		name = da.1.a
+		default_option = yes
+		# add_treasury = 10000000
+		# add_journal_entry = { type = je_da_manager }
+		# create_character = { # General
+		# 	is_general = yes
+		# 	first_name = Giuseppe
+		# 	last_name = Garibaldi
+		# 	historical = yes
+		# 	dna = dna_giuseppe_garibaldi
+		# 	female = no
+		# 	age = 36
+		# 	interest_group = ig_trade_unions
+		# 	traits = {
+		# 		direct cruel # Offensive
+		# 		meticulous # Both
+		# 		# tactful # Defensive
+		# 		expert_artillery_commander expert_offensive_planner # Offensive
+		# 		# defense_in_depth_specialist expert_defensive_strategist # Defensive
+		# 	}
+		# }
+		# trigger_event = corn_laws.1
+		# s:STATE_DZUNGARIA.region_state:RUS ?= { da_set_state_owner = { _ = c:CHI }
+		# s:STATE_NIGER_DELTA.region_state:GBR ?= { set_state_owner = c:USA }
+		# annex = c:KNG
+		# every_scope_diplomatic_pact = {
+		# 	limit = { is_diplomatic_action_type = alliance }
+		# 	random_participant = {
+		# 		limit = { NOT = { this = root } }
+		# 		save_scope_as = t
+		# 	}
+		# 	root = { remove_diplomatic_pact = { country = scope:t type = alliance } }
+		# }
+		# c:EGY = { activate_law = law_type:law_slavery_banned }
+		# every_diplomatic_play = {
+		# 	limit = {
+		# 		initiator_is = c:GBR
+		# 	}
+		# 	end_play = yes
+		# }
+
+		# s:STATE_WALLONIA = { set_variable = da_keep_split_var }
+		every_scope_war = { add_war_war_support = { target = defender_warleader value = -200 } }
+		# ig:ig_petty_bourgeoisie = {
+		# 	remove_ideology = ideology_reactionary
+		# 	add_ideology = ideology_modernizer
+		# }
+		# c:GER = { add_treasury = 5000000 }
+		# py:liberal_party = { remove_ig_from_party = root.ig:ig_petty_bourgeoisie }
+		# c:TUR = { annex = c:NEJ }
+		# add_technology_progress = { progress = 3500 technology = nitroglycerin } ig_intelligentsia ig_industrialists
+		# ig:ig_intelligentsia.leader = { set_ideology = i:ideology_atheist }
+		# recalculate_pop_ig_support = yes
+		# update_party_support = yes
+		# change_infamy = -20
+		# add_technology_researched = socialism
+		# c:GER = { add_loyalists = { value = 0.05 } }
+		# c:FRA = { add_loyalists = { value = 0.05 } }
+		# remove_variable = da_recent_issued_debt_var
+		# da_reload_effect = yes
+		# c:GBR = { set_owes_obligation_to = { country = root setting = yes } }
+		ruler = {
+			# remove_trait = grifter
+			# add_trait = meticulous
+			# add_trait = wrathful
+			# add_trait = ambitious
+			# remove_trait = inspirational_orator
+			# add_trait = imperious
+			# set_ideology = i:ideology_social_democrat
+			# add_trait = masterful_diplomat
+			# add_trait = expert_colonial_administrator
+			# add_trait = expert_political_operator
+			# add_trait = firebrand
+			# add_trait = erudite
+			# add_trait = literary
+			# add_trait = engineer
+			# add_trait = master_bureaucrat
+		}
+		# c:FRA = {
+		# 	remove_taxed_goods = g:sugar
+		# 	remove_taxed_goods = g:meat
+		# 	remove_taxed_goods = g:porcelain
+		# 	add_taxed_goods = g:liquor
+		# 	add_taxed_goods = g:wine
+		# 	add_taxed_goods = g:tobacco
+		# 	add_taxed_goods = g:services
+		# 	add_taxed_goods = g:transportation
+		# 	# add_taxed_goods = g:luxury_clothes
+		# 	add_taxed_goods = g:luxury_furniture
+		# }
+	}
+	option = {
+		name = da.1.b
+	}
+	option = {
+		name = da.1.c
+		trigger_event = { id = da.1000 popup = yes }
+	}
+	option = {
+		name = da.1.e
+		if = {
+			limit = { da_debt_count > 0 }
+			ordered_character_in_void = {
+				limit = {
+					has_variable = da_debt_container_var
+				}
+				order_by = age
+				max = 20
+				check_range_bounds = no
+				save_scope_as = object
+				custom_tooltip = da_debt_report_tt
+			}
+		}
+		else = {
+			custom_tooltip = da_no_debt_tt
+		}
+	}
+}
+
+da.9999 = { # Suppress error
+	type = country_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		save_temporary_scope_value_as = { name = da_extended_mode value = yes }
+		s:STATE_WALLONIA = { set_variable = da_keep_split_var }
+		if = {
+			limit = {
+				is_target_in_variable_list = {
+					name = da_merged_from_var
+					target = yes
+				}
+				var:da_our_pops_cnt_var > 0
+				var:da_total_pops_cnt_var > 0
+				var:da_debt_timer_var > 0
+			}
+		}
+	}
+}
+
+namespace = da_debt
+
+da_debt.1 = {
+	type = country_event
+	placement = ROOT
+	title = da_debt.1.t
+	desc = da_debt.1.d
+	flavor = da_debt.1.f
+	event_image = { video = "unspecific_signed_contract" }
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	duration = 3
+	trigger = {
+		da_debt_count > 0
+	}
+
+	immediate = {
+		ordered_character_in_void = {
+			limit = {
+				has_variable = da_debt_container_var
+			}
+			order_by = age
+			save_scope_as = object
+		}
+		set_variable = {
+			name = da_temp_extend_debt_total_size_var
+			value = {
+				value = scope:object.var:da_debt_total_size_var
+				multiply = da_debt_interest_multiplier
+			}
+			months = 4
+		}
+	}
+
+	option = {
+		name = da_debt.1.a
+		default_option = yes
+		custom_tooltip = {
+			text = da_payback_debt_tt
+			add_treasury = { subtract = scope:object.var:da_debt_total_size_var }
+			change_variable = {
+				name = da_issued_debt_var
+				subtract = scope:object.var:da_debt_issued_size_var
+			}
+			da_remove_debt_container = { _ = scope:object }
+		}
+	}
+
+	option = {
+		name = da_debt.1.b
+		trigger = {
+			da_debt_not_in_cooldown = yes
+			NOT = { da_debt_already_extended = { _ = scope:object } }
+		}
+		show_as_unavailable = { always = yes }
+		highlighted_option = yes
+		custom_tooltip = {
+			text = da_extend_debt_tt
+			change_variable = {
+				name = da_issued_debt_var
+				subtract = scope:object.var:da_debt_issued_size_var
+			}
+			save_temporary_scope_value_as = { name = da_debt_is_extending value = yes }
+			da_create_debt_container = {
+				ISSUED_SIZE = scope:object.var:da_debt_total_size_var
+				TOTAL_SIZE = var:da_temp_extend_debt_total_size_var
+				DURATION = da_debt_duration
+			}
+			da_remove_debt_container = { _ = scope:object }
+		}
+		custom_tooltip = da_extend_debt_only_once_tt
+	}
+}

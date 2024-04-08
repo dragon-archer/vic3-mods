@@ -1,0 +1,12 @@
+{
+	"name": "Dragonland 1.6",
+	"id": "dragon-archer.dragon",
+	"version": "1.6.2.20240408",
+	"supported_game_version": "1.6.*",
+	"short_description": "",
+	"tags": [],
+	"relationships": [],
+	"game_custom_data": {
+		"multiplayer_synchronized": true
+	}
+}

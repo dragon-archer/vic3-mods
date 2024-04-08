@@ -1,4 +1,14 @@
+# Base
 /*
 !.gitignore
+
+# Dragon
+!/Dragon/
+/Dragon/*.md
+/Dragon/*.conf
+
+# Integrated Cultures
 !/Integrated Cultures/
+
+# Paradox Bug Fix
 !/Paradox Bug Fix/

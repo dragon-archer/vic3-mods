@@ -1,0 +1,383 @@
+﻿## Base
+# Require: $_$, the notification type
+da_post_notification = {
+	save_scope_as = taker
+	every_country = {
+		limit = { is_player = yes }
+		post_notification = $_$
+	}
+}
+
+da_enable_global_extended_mode = {
+	if = {
+		limit = { NOT = { has_global_variable = da_globally_enabled_extended_mode_var } }
+		set_global_variable = da_globally_enabled_extended_mode_var
+		custom_tooltip = da_enable_global_extended_mode_tt
+		custom_tooltip = da_extended_mode_effect
+	}
+	else = {
+		custom_tooltip = da_already_enabled_global_extended_mode_tt
+	}
+}
+
+da_disable_global_extended_mode = {
+	if = {
+		limit = { NOT = { has_global_variable = da_globally_enabled_extended_mode_var } }
+		custom_tooltip = da_havent_enabled_global_extended_mode_tt
+	}
+	else = {
+		remove_global_variable = da_globally_enabled_extended_mode_var
+		custom_tooltip = da_disable_global_extended_mode_tt
+	}
+}
+
+# Require: $_$, the text to be logged
+da_debug_log = {
+	debug_log = $_$
+	debug_log_scopes = yes
+}
+
+# Require: $_$, the new owner
+da_set_state_owner = {
+	set_state_owner = $_$
+	set_state_type = incorporated
+}
+
+# Require: $_$, the country to be annexed by THIS, no check for existsence
+# Replaced by annex_with_incorporation
+da_annex = {
+	show_as_tooltip = { annex = $_$ } # Avoid complicated loc
+	hidden_effect = {
+		$_$ = {
+			every_scope_state = {
+				limit = { is_incorporated = yes }
+				state_region = { set_variable = da_should_be_incorporated_var }
+			}
+		}
+		annex = $_$
+		every_scope_state = {
+			limit = { state_region = { has_variable = da_should_be_incorporated_var } }
+			state_region = { remove_variable = da_should_be_incorporated_var }
+			if = {
+				limit = { is_incorporated = no }
+				set_state_type = incorporated
+			}
+		}
+	}
+}
+
+# Require: $_$, the country to be annexed by THIS, with existence check
+da_annex_if_exists = {
+	if = {
+		limit = { exists = $_$ }
+		annex_with_incorporation = $_$
+	}
+}
+
+# Require: $_1$, the annexer
+#          $_2$, the country to be annexed
+da_annex_if_exists_2 = {
+	if = {
+		limit = {
+			exists = $_1$
+			exists = $_2$
+		}
+		$_2$ = { save_temporary_scope_as = _2 }
+		$_1$ = { annex_with_incorporation = scope:_2 }
+	}
+}
+
+# Require: VAR, VALUE
+da_set_or_add_var = {
+	if = {
+		limit = { has_variable = $VAR$ }
+		change_variable = { name = $VAR$ add = $VALUE$ }
+	}
+	else = {
+		set_variable = { name = $VAR$ value = $VALUE$ }
+	}
+}
+
+# INTERNAL
+# Forward $_1$ and $_2$ to da_merge_cultures if scope:da_extended_mode is on
+da_merge_cultures_if_extended = {
+	if = {
+		limit = { da_is_in_extended_mode = yes }
+		da_merge_cultures = { _1 = $_1$ _2 = $_2$ }
+	}
+}
+
+da_ban_military = {
+	custom_tooltip = {
+		text = da_ban_military_tt
+		set_variable = da_ban_military_var
+	}
+	every_firm_subject = {
+		limit = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_war_machine_industry
+					is_building_type = building_arms_industry
+					is_building_type = building_artillery_foundries
+					is_building_type = building_munition_plants
+				}
+				level > 0
+				is_under_construction = no
+			}
+		}
+		change_relations = {
+			country = root
+			value = {
+				value = -5
+				every_scope_building = {
+					limit = {
+						OR = {
+							is_building_type = building_war_machine_industry
+							is_building_type = building_arms_industry
+							is_building_type = building_artillery_foundries
+							is_building_type = building_munition_plants
+						}
+						level > 0
+					}
+					subtract = {
+						value = level
+						multiply = 2
+					}
+				}
+				min = -20
+			}
+		}
+		hidden_effect = {
+			every_scope_state = {
+				if = {
+					limit = { has_building = building_war_machine_industry }
+					remove_building = building_war_machine_industry
+				}
+				if = {
+					limit = { has_building = building_arms_industry }
+					remove_building = building_arms_industry
+				}
+				if = {
+					limit = { has_building = building_artillery_foundries }
+					remove_building = building_artillery_foundries
+				}
+				if = {
+					limit = { has_building = building_munition_plants }
+					remove_building = building_munition_plants
+				}
+			}
+		}
+	}
+}
+
+da_unban_military = {
+	custom_tooltip = {
+		text = da_unban_military_tt
+		remove_variable = da_ban_military_var
+	}
+}
+
+da_ban_shipyard = {
+	custom_tooltip = {
+		text = da_ban_shipyard_tt
+		set_variable = da_ban_shipyard_var
+	}
+	every_firm_subject = {
+		limit = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_shipyards
+					is_building_type = building_military_shipyards
+				}
+				is_under_construction = no
+				level > 0
+			}
+		}
+		change_relations = {
+			country = root
+			value = {
+				value = -5
+				every_scope_building = {
+					limit = {
+						OR = {
+							is_building_type = building_shipyards
+							is_building_type = building_military_shipyards
+						}
+						level > 0
+					}
+					subtract = {
+						value = level
+						multiply = 2
+					}
+				}
+				min = -20
+			}
+		}
+		hidden_effect = {
+			every_scope_state = {
+				if = {
+					limit = { has_building = building_shipyards }
+					remove_building = building_shipyards
+				}
+				if = {
+					limit = { has_building = building_military_shipyards }
+					remove_building = building_military_shipyards
+				}
+			}
+		}
+	}
+}
+
+da_unban_shipyard = {
+	custom_tooltip = {
+		text = da_unban_shipyard_tt
+		remove_variable = da_ban_shipyard_var
+	}
+}
+
+# Require: $_1$, the country tag
+#          $_2$, the state_region tag
+da_rhc_helper = {
+	if = {
+		limit = {
+			country_definition = cd:$_1$
+			owns_entire_state_region = $_2$
+			NOT = { s:$_2$ = { contains_capital_of = $_1$ } }
+		}
+		set_capital = $_2$
+	}
+}
+
+da_restore_historical_capital = {
+	if = {
+		limit = {
+			is_player = no
+			is_at_war = no
+		}
+		da_rhc_helper = { _1 = GER _2 = STATE_BRANDENBURG }
+		da_rhc_helper = { _1 = ITA _2 = STATE_LAZIO }
+		da_rhc_helper = { _1 = SCA _2 = STATE_SVEALAND }
+		da_rhc_helper = { _1 = PRU _2 = STATE_BRANDENBURG }
+		da_rhc_helper = { _1 = GBR _2 = STATE_HOME_COUNTIES }
+		da_rhc_helper = { _1 = FRA _2 = STATE_ILE_DE_FRANCE }
+		da_rhc_helper = { _1 = USA _2 = STATE_DISTRICT_OF_COLUMBIA }
+		da_rhc_helper = { _1 = RUS _2 = STATE_INGRIA }
+		da_rhc_helper = { _1 = AUS _2 = STATE_AUSTRIA }
+		da_rhc_helper = { _1 = CHI _2 = STATE_BEIJING }
+		da_rhc_helper = { _1 = TUR _2 = STATE_EASTERN_THRACE }
+	}
+}
+
+da_create_communism_subject_effect = {
+	set_strategy = ai_strategy_resource_expansion
+	set_strategy = ai_strategy_egalitarian_agenda
+	set_strategy = ai_strategy_socialism_in_one_country
+	add_modifier = {
+		name = da_communism_colony_modifier
+		months = very_long_modifier_time
+	}
+	ig:ig_trade_unions = {
+		leader = {
+			set_character_as_ruler = yes
+			set_ideology = i:ideology_communist
+		}
+		add_modifier = { name = da_communism_colony_modifier_ig years = 5 is_decaying = yes }
+	}
+	ig:ig_rural_folk.leader = { set_ideology = i:ideology_communist }
+	ig:ig_intelligentsia.leader = { set_ideology = i:ideology_communist }
+	ig:ig_armed_forces.leader = { set_ideology = i:ideology_communist }
+	every_interest_group = {
+		limit = { NOT = { leader = { has_ideology = i:ideology_communist } } }
+		add_modifier = { name = da_communism_colony_modifier_ig multiplier = -1 years = 5 is_decaying = yes }
+	}
+	set_ruling_interest_groups = { ig_trade_unions ig_rural_folk }
+	set_institution_investment_level = {
+		institution = institution_police
+		level = 1
+	}
+	set_institution_investment_level = {
+		institution = institution_home_affairs
+		level = 1
+	}
+	set_institution_investment_level = {
+		institution = institution_social_security
+		level = 1
+	}
+	set_institution_investment_level = {
+		institution = institution_workplace_safety
+		level = 1
+	}
+	set_institution_investment_level = {
+		institution = institution_health_system
+		level = 1
+	}
+	set_relations = { country = root value = 80 }
+	add_loyalists = { value = 0.2 strata = poor }
+	add_radicals = { value = 0.5 strata = rich }
+	recalculate_pop_ig_support = yes
+	update_party_support = yes
+	call_election = { months = 1 }
+}
+
+# Debt
+# Require: ISSUED_SIZE, TOTAL_SIZE, DURATION
+da_create_debt_container = {
+	hidden_effect = {
+		set_variable = { name = da_recent_issued_debt_var months = 6 }
+		da_set_or_add_var = { VAR = da_issued_debt_var VALUE = $ISSUED_SIZE$ }
+		create_character = {
+			age = 1 # Avoid being killed & used to sort
+			on_created = {
+				set_character_immortal = yes
+				place_character_in_void = 10000
+				set_variable = da_debt_container_var
+				set_variable = {
+					name = da_debt_timer_var
+					years = $DURATION$
+				}
+			}
+			save_scope_as = new_debt_container
+		}
+		set_variable = { name = da_debt_temp_issued_size_var value = $ISSUED_SIZE$ days = 2 }
+		set_variable = { name = da_debt_temp_total_size_var value = $TOTAL_SIZE$ days = 2 }
+		if = {
+			limit = { exists = scope:new_debt_container }
+			scope:new_debt_container = {
+				set_variable = {
+					name = da_debt_issued_size_var
+					value = prev.var:da_debt_temp_issued_size_var
+				}
+				set_variable = {
+					name = da_debt_total_size_var
+					value = prev.var:da_debt_temp_total_size_var
+				}
+				if = {
+					limit = { exists = scope:da_debt_is_extending }
+					set_variable = da_debt_already_extended_var
+				}
+			}
+		}
+		trigger_event = { id = da_debt.1 years = da_debt_duration popup = yes }
+	}
+}
+
+# Require: _ = the container
+da_remove_debt_container = {
+	hidden_effect = { $_$ = { kill_character = { hidden = yes } } }
+}
+
+# _1 = building_type _2 = pm_method
+## regex: activate_production_method = \{\n.*building_type = (\w+)\n.*production_method = (\w+)\n.*
+##     -> da_auto_change_pm = { _1 = $1 _2 = $2 }
+da_auto_change_pm = {
+	activate_production_method = {
+		building_type = $_1$
+		production_method = $_2$
+	}
+	random_scope_building = {
+		limit = { is_building_type = $_1$ }
+		save_scope_as = building_scope
+	}
+	set_variable = { name = da_recent_auto_changed_pm_var days = 14 }
+	da_post_notification = { _ = da_autopm_changed }
+}

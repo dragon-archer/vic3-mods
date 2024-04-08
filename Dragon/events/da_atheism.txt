@@ -1,0 +1,223 @@
+﻿namespace = da_atheism
+
+# Launcher event for da_atheism.1
+da_atheism.100 = {
+	type = state_event
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NAND = {
+					owner = {
+						has_law = law_type:law_state_atheism
+					}
+					any_scope_pop = {
+						has_pop_religion = atheist
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					modifier = {
+						if = {
+							limit = { has_global_variable = atheist_happened }
+							add = 50
+						}
+						if = {
+							limit = {
+								owner = {
+									has_law = law_type:law_state_religion
+								}
+							}
+							add = -40
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										has_law = law_type:law_total_separation
+										has_law = law_type:law_state_atheism
+									}
+								}
+							}
+							add = 100
+						}
+					}
+					if = {
+						limit = { owner = { is_player = yes } }
+						if = {
+							limit = {
+								owner = {
+									NOR = {
+										is_enacting_law = law_type:law_state_atheism
+										has_law = law_type:law_state_atheism
+										ig:ig_devout = { is_marginal = yes }
+									}
+								}
+							}
+							add_radicals_in_state = {
+								value = 0.1
+								pop_type = academics
+							}
+							add_loyalists_in_state = {
+								value = 0.05
+								pop_type = clergymen
+							}
+							convert_population = {
+								target = rel:atheist
+								value = 0.02
+							}
+						}
+						else = {
+							add_loyalists_in_state = {
+								value = 0.1
+								pop_type = academics
+							}
+							add_radicals_in_state = {
+								value = 0.05
+								pop_type = clergymen
+							}
+							convert_population = {
+								target = rel:atheist
+								value = 0.1
+							}
+						}
+					}
+					else = {
+						trigger_event = da_atheism.1
+					}
+				}
+				100 = {
+				}
+			}
+		}
+	}
+}
+
+# Atheist spread
+da_atheism.1 = {
+	type = state_event
+	placement = ROOT
+	title = da_atheism.1.t
+	desc = da_atheism.1.d
+	flavor = da_atheism.1.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = da_atheism.1.a
+		default_option = yes
+		add_loyalists_in_state = {
+			value = 0.1
+			pop_type = academics
+		}
+		add_radicals_in_state = {
+			value = 0.05
+			pop_type = clergymen
+		}
+		convert_population = {
+			target = rel:atheist
+			value = 0.1
+		}
+
+		# save_scope_as = new_atheist_state
+		# random_country = {
+			# limit = { is_player = yes }
+			# post_notification = new_atheist
+		# }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = da_atheism.1.b
+		add_radicals_in_state = {
+			value = 0.1
+			pop_type = academics
+		}
+		add_loyalists_in_state = {
+			value = 0.05
+			pop_type = clergymen
+		}
+		convert_population = {
+			target = rel:atheist
+			value = 0.02
+		}
+
+		ai_chance = {
+			base = 100
+			modifier = {
+				trigger = {
+					has_global_variable = atheist_happened
+				}
+				add = -50
+			}
+			modifier = {
+				trigger = {
+					owner = {
+						has_law = law_type:law_state_religion
+					}
+				}
+				add = 150
+			}
+			modifier = {
+				trigger = {
+					owner = {
+						OR = {
+							has_law = law_type:law_total_separation
+							has_law = law_type:law_state_atheism
+						}
+					}
+				}
+				add = -50
+			}
+		}
+	}
+	
+	option = {
+		name = da_atheism.1.c
+		add_radicals_in_state = {
+			value = 0.05
+		}
+		add_radicals_in_state = {
+			value = 0.1
+			pop_type = academics
+		}
+		add_loyalists_in_state = {
+			value = 0.1
+			pop_type = clergymen
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				trigger = {
+					has_global_variable = atheist_happened
+				}
+				add = -50
+			}
+			modifier = {
+				trigger = {
+					NOT = {
+						owner = {
+							has_law = law_type:law_state_religion
+						}
+					}
+				}
+				# multiply = 0
+				add = -100
+			}
+		}
+	}
+}

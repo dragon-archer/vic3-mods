@@ -1,0 +1,63 @@
+﻿new_atheist = {
+	type = country
+	group = "new_atheist_group"
+	texture = "gfx/interface/icons/notification_icons/pops.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_decision_return_treaty_port = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_decision_merge_split_state = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_reloaded_notification = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_law_pass = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_law_fail = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_law_ended = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+	days = 28
+}
+
+da_autopm_changed = {
+	type = country
+	group = "da_decision_ng"
+	texture = "gfx/interface/icons/notification_icons/buildings.dds"
+	notification_type = feed
+	days = 10
+}
