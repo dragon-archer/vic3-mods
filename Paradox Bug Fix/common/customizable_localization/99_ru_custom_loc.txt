@@ -1,0 +1,667 @@
+﻿####################################
+#   RUSSIAN CUSTOM LOCALISATION    #
+#    By Nikita SShredy Shogin      #
+####################################
+
+RU_CL_RP = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_RP_DEFAULT
+	}
+}
+
+RU_CL_DP = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_DP_DEFAULT
+	}
+}
+
+RU_CL_VP = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_VP_DEFAULT
+	}
+}
+
+RU_CL_TP = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_TP_DEFAULT
+	}
+}
+
+RU_CL_PP = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_PP_DEFAULT
+	}
+}
+
+RU_CUL_ADJ = {
+	type = culture
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CUL_ADJ_DEFAULT
+	}
+}
+
+RU_RL_ADJ_IE = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_IE_DEFAULT
+	}
+}
+
+RU_RL_ADJ_IH = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_IH_DEFAULT
+	}
+}
+
+RU_RL_ADJ_MI = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_MI_DEFAULT
+	}
+}
+
+RU_RL_ADJ_YU = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_YU_DEFAULT
+	}
+}
+
+RU_RL_ADJ_YA = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_YA_DEFAULT
+	}
+}
+
+RU_RL_ADJ_OE = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_OE_DEFAULT
+	}
+}
+
+RU_RL_ADJ_OI = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_OI_DEFAULT
+	}
+}
+
+RU_RL_ADJ_GO = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_GO_DEFAULT
+	}
+}
+
+RU_RL_ADJ_IM = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_ADJ_IM_DEFAULT
+	}
+}
+
+RU_RL_RP = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_RP_DEFAULT
+	}
+}
+
+RU_RL_DP = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_DP_DEFAULT
+	}
+}
+
+RU_RL_VP = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_VP_DEFAULT
+	}
+}
+
+RU_RL_TP = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_TP_DEFAULT
+	}
+}
+
+RU_RL_PP = {
+	type = religion
+	log_loc_errors = no
+	text = {
+		localization_key = RU_RL_PP_DEFAULT
+	}
+}
+
+RU_CL_END = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_DEFAULT
+	}
+}
+
+RU_CL_END_FEM = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_DEFAULT
+	}
+}
+
+RU_CL_END_T = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_DEFAULT
+	}
+}
+
+RU_CL_END_GUT = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_END_GUT_DEFAULT
+	}
+}
+
+RU_CL_END_UT = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = RU_CL_END_UT_DEFAULT
+	}
+}
+
+RU_GL_RP = {
+	type = goods
+	log_loc_errors = no
+	text = {
+		localization_key = RU_GL_RP_DEFAULT
+	}
+}
+
+RU_GL_DP = {
+	type = goods
+	log_loc_errors = no
+	text = {
+		localization_key = RU_GL_DP_DEFAULT
+	}
+}
+
+RU_GL_VP = {
+	type = goods
+	log_loc_errors = no
+	text = {
+		localization_key = RU_GL_VP_DEFAULT
+	}
+}
+
+RU_GL_TP = {
+	type = goods
+	log_loc_errors = no
+	text = {
+		localization_key = RU_GL_TP_DEFAULT
+	}
+}
+
+RU_GL_PP = {
+	type = goods
+	log_loc_errors = no
+	text = {
+		localization_key = RU_GL_PP_DEFAULT
+	}
+}
+
+RU_BL_RP = {
+	type = building
+	log_loc_errors = no
+	text = {
+		localization_key = RU_BL_RP_DEFAULT
+	}
+}
+
+RU_BL_DP = {
+	type = building
+	log_loc_errors = no
+	text = {
+		localization_key = RU_BL_DP_DEFAULT
+	}
+}
+
+RU_BL_VP = {
+	type = building
+	log_loc_errors = no
+	text = {
+		localization_key = RU_BL_VP_DEFAULT
+	}
+}
+
+RU_BL_TP = {
+	type = building
+	log_loc_errors = no
+	text = {
+		localization_key = RU_BL_TP_DEFAULT
+	}
+}
+
+RU_BL_PP = {
+	type = building
+	log_loc_errors = no
+	text = {
+		localization_key = RU_BL_PP_DEFAULT
+	}
+}
+
+RU_ML_ADJ = {
+	type = market
+	log_loc_errors = no
+	text = {
+		localization_key = RU_ML_ADJ_DEFAULT
+	}
+}
+
+RU_SL_END = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_END_DEFAULT
+	}
+}
+
+RU_CL_RANG_RP = {
+	type = country
+	random_valid = no
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			country_rank >= rank_value:great_power
+		}
+		localization_key = RANG_RP_great_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:major_power
+		}
+		localization_key = RANG_RP_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:minor_power
+		}
+		localization_key = RANG_RP_minor_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:insignificant_power
+		}
+		localization_key = RANG_RP_insignificant_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_major_power
+		}
+		localization_key = RANG_RP_unrecognized_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_regional_power
+		}
+		localization_key = RANG_RP_unrecognized_regional_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_power
+		}
+		localization_key = RANG_RP_unrecognized_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:decentralized_power
+		}
+		localization_key = RANG_RP_decentralized_power
+	}
+}
+RU_CL_RANG_DP = {
+	type = country
+	random_valid = no
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			country_rank >= rank_value:great_power
+		}
+		localization_key = RANG_DP_great_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:major_power
+		}
+		localization_key = RANG_DP_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:minor_power
+		}
+		localization_key = RANG_DP_minor_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:insignificant_power
+		}
+		localization_key = RANG_DP_insignificant_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_major_power
+		}
+		localization_key = RANG_DP_unrecognized_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_regional_power
+		}
+		localization_key = RANG_DP_unrecognized_regional_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_power
+		}
+		localization_key = RANG_DP_unrecognized_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:decentralized_power
+		}
+		localization_key = RANG_DP_decentralized_power
+	}
+}
+RU_CL_RANG_VP = {
+	type = country
+	random_valid = no
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			country_rank >= rank_value:great_power
+		}
+		localization_key = RANG_VP_great_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:major_power
+		}
+		localization_key = RANG_VP_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:minor_power
+		}
+		localization_key = RANG_VP_minor_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:insignificant_power
+		}
+		localization_key = RANG_VP_insignificant_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_major_power
+		}
+		localization_key = RANG_VP_unrecognized_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_regional_power
+		}
+		localization_key = RANG_VP_unrecognized_regional_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_power
+		}
+		localization_key = RANG_VP_unrecognized_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:decentralized_power
+		}
+		localization_key = RANG_VP_decentralized_power
+	}
+}
+RU_CL_RANG_TP = {
+	type = country
+	random_valid = no
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			country_rank >= rank_value:great_power
+		}
+		localization_key = RANG_TP_great_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:major_power
+		}
+		localization_key = RANG_TP_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:minor_power
+		}
+		localization_key = RANG_TP_minor_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:insignificant_power
+		}
+		localization_key = RANG_TP_insignificant_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_major_power
+		}
+		localization_key = RANG_TP_unrecognized_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_regional_power
+		}
+		localization_key = RANG_TP_unrecognized_regional_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_power
+		}
+		localization_key = RANG_TP_unrecognized_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:decentralized_power
+		}
+		localization_key = RANG_TP_decentralized_power
+	}
+}
+RU_CL_RANG_PP = {
+	type = country
+	random_valid = no
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			country_rank >= rank_value:great_power
+		}
+		localization_key = RANG_PP_great_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:major_power
+		}
+		localization_key = RANG_PP_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:minor_power
+		}
+		localization_key = RANG_PP_minor_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:insignificant_power
+		}
+		localization_key = RANG_PP_insignificant_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_major_power
+		}
+		localization_key = RANG_PP_unrecognized_major_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_regional_power
+		}
+		localization_key = RANG_PP_unrecognized_regional_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:unrecognized_power
+		}
+		localization_key = RANG_PP_unrecognized_power
+	}
+	text = {
+		trigger = {
+			country_rank = rank_value:decentralized_power
+		}
+		localization_key = RANG_PP_decentralized_power
+	}
+}
+
+RU_SL_CM_RP = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_RP
+	}
+}
+
+RU_SL_CM_DP = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_DP
+	}
+}
+
+RU_SL_CM_VP = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_VP
+	}
+}
+
+RU_SL_CM_TP = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_TP
+	}
+}
+
+RU_SL_CM_PP = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_PP
+	}
+}
+
+RU_SL_CM_ADJ = {
+	type = state_region
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_ADJ
+	}
+}
+
+RU_SL_RP = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_RP
+	}
+}
+
+RU_SL_DP = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_DP
+	}
+}
+
+RU_SL_VP = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_VP
+	}
+}
+
+RU_SL_TP = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_TP
+	}
+}
+
+RU_SL_PP = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_PP
+	}
+}
+
+RU_SL_ADJ = {
+	type = state
+	log_loc_errors = no
+	text = {
+		localization_key = RU_SL_DEFAULT_ADJ
+	}
+}

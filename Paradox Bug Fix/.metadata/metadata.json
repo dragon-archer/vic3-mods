@@ -1,0 +1,12 @@
+{
+	"name": "Paradox Bug Fix for 1.6",
+	"id": "dragon-archer.pbf",
+	"version": "1.6.2.240408",
+	"supported_game_version": "1.6.*",
+	"short_description": "帮蠢驴擦屁股",
+	"tags": [],
+	"relationships": [],
+	"game_custom_data": {
+		"multiplayer_synchronized": true
+	}
+}

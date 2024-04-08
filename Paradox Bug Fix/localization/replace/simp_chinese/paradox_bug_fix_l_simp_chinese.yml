@@ -1,0 +1,76 @@
+﻿l_simp_chinese:
+ # new
+ is_not_in_other_market_tt: "不在其它[concept_market]中"
+ is_in_other_market_tt: "在其它[concept_market]中"
+ FORMATION_PANEL_DEBUG_INFO: "啥玩意？"
+
+ # agitators_1
+ revolution_pulse1_events.18.a: "训斥[SCOPE.sCharacter('will_kill_for_peace_general').GetPrimaryRoleTitle]，否决计划。"
+ revolution_pulse1_events.18.b: "我们应该使用现成的方案来解决现在的问题。"
+ revolution_pulse1_events.18.c: "或许[SCOPE.sCharacter('will_kill_for_peace_general').GetPrimaryRoleTitle]可以想一个更仁慈的计划？"
+ sway_to_bonapartism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_bonapartism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_bonapartist').GetName]#!#!"
+ sway_to_legitimism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_legitimism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_legitimist').GetName]#!#!"
+ sway_to_orleanism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_orleanism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_orleanist').GetName]#!#!"
+
+ # agitators_6
+ agitator_legal_events.8.d: "原本对[SCOPE.sLaw('current_law_scope').GetName]议题持观望态度的[SCOPE.gsInterestGroup('dirty_dealers').GetName]，在一夜之间改变了看法。[SCOPE.gsInterestGroup('dirty_dealers').GetLeader.GetFullName]指称[SCOPE.sCharacter('supporting_agitator').GetFullName]策划了一项秘密交易。"
+
+ # ai_startegies
+ ai_attitude_human_desc: "[COUNTRY.GetName]受人类玩家控制，对[GetPlayer.GetName]的态度全由人类玩家决定。"
+
+ # core
+ CHARACTER_POSS_CHECK: "的"
+ CHARACTER_POSS: "的"
+ CHARACTER_POSS_SPECIAL: "的"
+
+ # concepts_l_simp_chinese.yml
+ concept_mobilization_option_desc: "一支[concept_army]在和平时期可以配置任意数量的$concept_mobilization_options$。每种$concept_mobilization_option_short$都会使其在[Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')]后产生一定的[Concept('concept_good','$concept_goods$')]成本，以及一项应用于$concept_army$内所有[Concept('concept_battalion','$concept_battalions$')]的效果。"
+ concept_recovery_rate_desc: "[concept_unit]承受的[concept_casualties]中存活的比率，有些会成为[concept_dependents]。可以通过#b [Concept('concept_mobilization_option','$concept_mobilization_options$')]提高#!。$concept_recovery_rate$会被敌人$concept_unit$的[concept_kill_rate]抵消。"
+
+ # customized_tooltips
+ DATA_RELIGION_NAME_TOOLTIP_INGAME_ADDED: "[Religion.GetCountryDiscriminationStatus(GetPlayer.Self)][AddLocalizationIf(NotEqualTo_int64(Religion.GetPopulation(GetPlayer.Self),'(int64)0'),'RELIGION_IN_COUNTRY_DESC')]"
+
+ # effects_l_simp_chinese.yml
+ EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
+ SET_STATE_OWNER: "[TARGET_COUNTRY.GetName]成为[STATE.GetName]的拥有者"
+ ## new
+ REMOVE_HOMELAND_THIRD: "[STATE_REGION.GetName]不再是#variable [TARGET_CULTURE.GetName]#!文化的[concept_homeland]"
+ ADD_TREASURY_EFFECT_NEGATIVE: "国家失去@money!$VALUE|-=$"
+ ADD_TREASURY_EFFECT_FIRST_NEGATIVE: "[COUNTRY.GetNameNoFlag]失去@money!$VALUE|-=$"
+ ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=$"
+
+ # interfaces
+ GOODS_PANEL_PRICE_COMPARE: "与[concept_base_price]相比#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!\n市场结余：#variable [Goods.GetMarketBuyAndSellOrdersBalance|=D+]#!"
+ UNIFICATION_SUPPORT_FOR_CANDIDATES_ENTRY: "[Country.GetName]：#tooltippable #tooltip:$BREAKDOWN_TAG$ #v $VALUE$#!#!#!"
+ GOODS_PRICE_DESC_FIXED: "[GOODS.GetTextIcon][GOODS.GetName]价格固定为[GOODS.GetMarketPriceWithTooltip|1]，永远不会改变。"
+ CONSTRUCTION_SPEED_BASE_TOOLTIP: "#tooltip_header @construction![concept_construction]#![AddLocalizationIf(Country.IsConstructionPaused, 'CONSTRUCTION_IS_PAUSED')]\n总计：#v [Country.CalcBaseConstructionSpeed|2]#!\n正在使用：#v [Country.CalcUsedConstruction|0]/[Country.CalcBaseConstructionSpeed|0]#!\n$TOOLTIP_DELIMITER$\n[Country.GetBaseConstructionSpeedDesc]"
+ COMBAT_UNIT_BATTALION_NAME_ONE: "第$NUM$$ORIGIN$"
+ FORMATIONS_NAME: "$COUNTRY_ADJECTIVE$第$NUM$$TYPE$"
+ LAW_ENACTMENT_PROGRESS_PHASES: "在#tooltippable #tooltip:[Law.GetTooltipTag],LAW_NEXT_CHECKPOINT_TIME_FACTORS_TOOLTIP [Law.GetCheckpointEndDate.GetString]#!#!有#tooltippable #tooltip:[Law.GetTooltipTag],CHECKPOINT_SUCCESS_CHANCE_BREAKDOWN [Law.GetCheckpointSuccessChance|v%0]#!#!概率推进至[Law.GetCountry.GetCustom(Law.GetNextEnactmentPhaseKey)|v]"
+ PROMOTION_EFFECTS_TOOLTIP: "[AddTextIf(IsValid(Character.GetPromoteCommand), Character.GetNextCommanderRankBenefits)]"
+ MAP_INTERACTION_MOVE_MARKET_CAPITAL_STATE_SELECT: "#header 将[concept_market_capital]迁移至[STATE.GetName]#!\n$TOOLTIP_DELIMITER$\n让[STATE.GetName]成为我们的[concept_market_capital]将给予其以下额外增益：\n[STATE.GetMarketCapitalEffectsDesc]\n\n迁移[concept_market_capital]会导致全国性的惩罚，在#V [GetDefine('NCountry', 'MOVE_MARKET_CAPITAL_COOLDOWN_YEARS')]#!年内逐渐衰退：\n[STATE.GetOwner.GetMoveMarketCapitalEffectsDesc]\n\n只要这些惩罚还在生效，我们就不能再迁移[concept_market_capital]。"
+ COUNTRY_NAME: "[ConcatIfNeitherEmpty('$PREFIX$','属')]$NAME$"
+ REVOLUTION_COUNTRY_NAME: "革命[ConcatIfNeitherEmpty('$PREFIX$','属')]$NAME$"
+ REVOLUTION_COUNTRY_ADJECTIVE: "革命[ConcatIfNeitherEmpty('$PREFIX$','属')]$ADJECTIVE$"
+ IG_APPROVES_OF_PREVIOUS_LAW_CHANGE: "@approves!$NAME$$CLOUT_OPTIONAL$#P #bold $concept_endorse$#!#!近期从[LAW_OTHER.GetName]到[LAW.GetName]的改革：#BOLD $APPROVAL_DELTA|+=$#!\n\n"
+ IG_DISAPPROVES_OF_PREVIOUS_LAW_CHANGE: "@disapproves!$NAME$$CLOUT_OPTIONAL$#N #bold $concept_opposes$#!#!近期从[LAW_OTHER.GetName]到[LAW.GetName]的改变：#BOLD $APPROVAL_DELTA|+=$#!\n\n"
+ FRONT_PARTICIPANT_ARMIES_BEYOND_FIVE_ENTRY: "[MILITARY_FORMATION.GetName]-@battalions!$MOB_STRING$[Concept('concept_mobilize_battalion','$concept_mobilize_battalion_mobilized_manpower$')]"
+ INVESTMENT_POOL: "[concept_investment_pool]：#tooltippable #tooltip:[GetPlayer.GetTooltipTag],INVESTMENT_POOL_BREAKDOWN #v @money![GetPlayer.GetInvestmentPool|D+]#!#!#!（变化：#v @money![GetPlayer.GetInvestmentPoolChange|D+=]#!）"
+ TRANSFER_RESULT_FORMATION: "[SelectLocalization(StagedFormation.HasValidFormation, 'TRANSFER_RESULT_HAS_FORMATION', 'TRANSFER_RESULT_NO_FORMATION')]"
+ TOOLTIP_STATE_SLAVE_IMPORT_STATES: "[STATE.GetName]上周总共从$STATES_LIST$进口了#variable $AMOUNT|+$#!奴隶"
+ TOOLTIP_STATE_SLAVE_EXPORT_STATES: "[STATE.GetName]上周总共向$STATES_LIST$出口了#variable $AMOUNT|+$#!奴隶"
+ MILITARY_FORMATION_COMMAND_LIMIT_TOOLTIP_ORGANIZATION_MAX: "#indent_newline:3 @warning!由于[concept_command_limit]不足，该[concept_military_formation]获得以下效果：\n[GetStaticModifier('low_command_limit').GetDesc]#!\n\n$BREAKDOWN$#!"
+ JOB_SATISFACTION_PER_SOL_ABOVE_COUNTRY_STRATA_SOL: "当前生活水平（#tooltippable #tooltip:[Pop.GetTooltipTag],TOOLTIP_POP_QOL [LabelingHelper.GetLabelForStandardOfLiving(Pop.GetCurrentStandardOfLiving)|v]（[Pop.GetCurrentStandardOfLiving|v]）#!#!）和[Pop.GetCountry.GetName][Pop.GetPopType.GetStrata]平均[concept_sol]（[LabelingHelper.GetLabelForStandardOfLiving(FixedPointToInt('(CFixedPoint)$AVERAGE$'))|v]（$AVERAGE|v1$））的差距：$VALUE|0+=$"
+
+ # modifiers
+ modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
+ modifier_building_group_bg_monuments_throughput_add_desc: "对$bg_monuments$投入和产出的增益或惩罚"
+
+ # states
+ STATE_SOUTHERN_MANCHURIA: "吉林"
+ STATE_NORTHERN_MANCHURIA: "黑龙江"
+ STATE_OUTER_MANCHURIA: "外东北"
+ STATE_SHENGJING: "辽宁"
+
+ # jomini/pops/pops_gui_l_simp_chinese.yml
+ CREATE_SOCIAL_PROFILE_ERROR: "错误：[CreateSocialProfile.GetErrorMessage]"
