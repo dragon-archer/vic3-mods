@@ -1,0 +1,12 @@
+{
+	"name": "文化合并1.6",
+	"id": "dragon-archer.culture",
+	"version": "1.6.240408",
+	"supported_game_version": "1.6.*",
+	"short_description": "",
+	"tags": [],
+	"relationships": [],
+	"game_custom_data": {
+		"multiplayer_synchronized": true
+	}
+}

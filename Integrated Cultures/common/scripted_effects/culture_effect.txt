@@ -1,0 +1,143 @@
+﻿da_merge_cultures_clear = {
+	every_in_global_list = {
+		variable = da_merged_cultures_var
+		remove_list_global_variable = {
+			name = da_merged_cultures_var
+			target = this
+		}
+	}
+}
+
+# Convert $_2$ to $_1$
+da_merge_cultures = {
+	$_1$ = { save_scope_as = culture_1 }
+	$_2$ = { save_scope_as = culture_2 }
+	if = {
+		limit = { scope:culture_1 = scope:culture_2 }
+		custom_tooltip = da_merge_culture_cant_merge_self_tt
+	}
+	else_if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = da_merged_cultures_var
+				target = scope:culture_2
+			}
+		}
+		scope:culture_2.var:da_merged_into_var ?= { save_scope_as = culture_0 }
+		custom_tooltip = da_merge_culture_already_merged_tt
+	}
+	else = {
+		if = {
+			limit = {
+				is_target_in_global_variable_list = {
+					name = da_merged_cultures_var
+					target = scope:culture_1
+				}
+			}
+			scope:culture_1.var:da_merged_into_var ?= { save_scope_as = culture_0 }
+			custom_tooltip = da_merge_culture_chain_reduce_tt
+			scope:culture_0 = { save_scope_as = culture_1 }
+		}
+		add_to_global_variable_list = {
+			name = da_merged_cultures_var
+			target = scope:culture_2
+		}
+		scope:culture_2 = { set_variable = { name = da_merged_into_var value = scope:culture_1 } }
+		scope:culture_1 = {
+			add_to_variable_list = {
+				name = da_merged_from_var
+				target = scope:culture_2
+			}
+		}
+		custom_tooltip = da_merge_cultures_tt_pre
+		scope:culture_2 = {
+			if = {
+				limit = { has_variable_list = da_merged_from_var }
+				every_in_list = {
+					variable = da_merged_from_var
+					save_scope_as = culture_3
+					custom_tooltip = da_merge_culture_chain_reduce_tt_2
+					scope:culture_2 = {
+						remove_list_variable = {
+							name = da_merged_from_var
+							target = scope:culture_3
+						}
+					}
+					scope:culture_1 = {
+						add_to_variable_list = {
+							name = da_merged_from_var
+							target = scope:culture_3
+						}
+					}
+					set_variable = { name = da_merged_into_var value = scope:culture_1 }
+				}
+			}
+		}
+		trigger_event = { on_action = on_da_merge_cultures days = 1 }
+	}
+}
+
+da_merge_cultures_impl = {
+	hidden_effect = {
+		set_global_variable = { name = da_merge_num_pops_global_var value = 0 }
+		set_global_variable = { name = da_merge_num_countries_global_var value = 0 }
+		set_global_variable = { name = da_merge_num_state_regions_global_var value = 0 }
+		set_global_variable = { name = da_merge_num_characters_global_var value = 0 }
+		set_global_variable = { name = da_merge_num_cultures_global_var value = 0 }
+		set_global_variable = { name = da_merge_num_cultures_effective_global_var value = 0 }
+		every_in_global_list = {
+			variable = da_merged_cultures_var
+			change_global_variable = { name = da_merge_num_cultures_global_var add = 1 }
+			set_variable = { name = da_merge_num_pops_var value = 0 }
+			set_variable = { name = da_merge_num_countries_var value = 0 }
+			set_variable = { name = da_merge_num_state_regions_var value = 0 }
+			set_variable = { name = da_merge_num_characters_var value = 0 }
+			if = { #TODO: Remove debug log if stable
+				limit = { NOT = { has_variable = da_merged_into_var } }
+				# debug_log ="\"Error: var:da_merged_into_var not exist for culture [THIS.GetCulture.GetName]\""
+				debug_log_scopes = yes
+			}
+			else = {
+				var:da_merged_into_var = { save_scope_as = culture_1 }
+				every_scope_pop = {
+					change_pop_culture = {
+						target = scope:culture_1
+						value = 1
+					}
+					prev = { change_variable = { name = da_merge_num_pops_var add = 1 } }
+					change_global_variable = { name = da_merge_num_pops_global_var add = 1 }
+				}
+				every_country = {
+					limit = { country_has_primary_culture = prev }
+					remove_primary_culture = prev
+					if = {
+						limit = { NOT = { country_has_primary_culture = scope:culture_1 } }
+						add_primary_culture = scope:culture_1
+					}
+					prev = { change_variable = { name = da_merge_num_countries_var add = 1 } }
+					change_global_variable = { name = da_merge_num_countries_global_var add = 1 }
+				}
+				every_state_region = {
+					limit = { is_homeland = prev }
+					remove_homeland = prev
+					if = {
+						limit = { NOT = { is_homeland = scope:culture_1 } }
+						add_homeland = scope:culture_1
+					}
+					prev = { change_variable = { name = da_merge_num_state_regions_var add = 1 } }
+					change_global_variable = { name = da_merge_num_state_regions_global_var add = 1 }
+				}
+				every_character = {
+					limit = { culture = prev }
+					change_character_culture = scope:culture_1
+					prev = { change_variable = { name = da_merge_num_characters_var add = 1 } }
+					change_global_variable = { name = da_merge_num_characters_global_var add = 1 }
+				}
+				if = {
+					limit = { da_merge_total > 0 }
+					change_global_variable = { name = da_merge_num_cultures_effective_global_var add = 1 }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+﻿# Require: $_$, check if it has been merged
+da_is_culture_merged = {
+	is_target_in_global_variable_list = {
+		name = da_merged_cultures_var
+		target = $_$
+	}
+}
+
+da_is_culture_not_merged = {
+	NOT = {
+		is_target_in_global_variable_list = {
+			name = da_merged_cultures_var
+			target = $_$
+		}
+	}
+}
+
+da_aus_trigger = {
+	OR = {
+		country_has_primary_culture = cu:australian
+		country_has_primary_culture = cu:aborigine
+		trigger_if = {
+			limit = { da_is_culture_merged = { _ = cu:maori } }
+			country_has_primary_culture = cu:polynesian
+		}
+		trigger_else = {
+			country_has_primary_culture = cu:maori
+		}
+	}
+}

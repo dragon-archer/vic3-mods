@@ -1,0 +1,28 @@
+﻿# Modifiers used as flags to determine if game rules are active or not go here
+# neutral: render as neutral rather than good or bad, most game rules should be neutral
+# boolean: render as Yes or No rather than 1 or 0, most game rules should be boolean in nature
+# invert: render a boolean true as No and boolean false as Yes, helpful for describing game rules where the default state (modifier non-existent) is the presence rather than absence of something
+
+country_da_assimilation_mult = {
+	good = yes
+	percent = yes
+	num_decimals = 0
+}
+
+country_da_assimilation_accepted_mult = {
+	good = yes
+	percent = yes
+	num_decimals = 0
+}
+
+country_da_assimilation_discriminated_mult = {
+	good = yes
+	percent = yes
+	num_decimals = 0
+}
+
+building_group_bg_monuments_throughput_add = {
+	good = yes
+	percent = yes
+	num_decimals = 0
+}

@@ -1,0 +1,239 @@
+﻿namespace = da_assimilation
+
+# Intro event for assimilation
+# Annual assimilation report
+da_assimilation.1 = {
+	type = country_event
+	placement = ROOT
+	title = da_assimilation.1.t
+	desc = da_assimilation.1.desc
+	flavor = da_assimilation.1.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_player = yes
+			has_law = law_type:law_multicultural
+			AND = {
+				total_population >= 1000000 # Gap: 1M population
+				OR = {
+					any_primary_culture = {
+						prev = {
+							culture_percent_country = {
+								target = prev
+								value >= 0.5 # Significant primary culure
+							}
+						}
+					}
+					AND = {
+						any_primary_culture = { count < 2 } # One primary culture
+						any_primary_culture = {
+							prev = {
+								culture_percent_country = {
+									target = prev
+									value >= 0.2 # Not insignificant
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_primary_culture = {
+			limit = {
+				prev = {
+					culture_percent_country = {
+						target = prev
+						value >= 0.5 # Significant primary culure
+					}
+				}
+			}
+			alternative_limit = { always = yes }
+			save_scope_as = prim_cu
+		}
+	}
+
+	# Dynamic homeland change
+	# Current gap: 10% to lose, 20% to gain
+	option = {
+		name = da_assimilation.1.a
+		trigger = {
+			any_scope_state = {
+				is_largest_state_in_region = yes
+				OR = {
+					any_scope_culture = {
+						has_homeland = prev
+						NOT = { is_primary_culture_of = root }
+						save_temporary_scope_as = tmp_cu
+						prev = {
+							culture_percent_state = {
+								target = scope:tmp_cu
+								value < da_assimilation_lose_homeland_factor
+							}
+						}
+					}
+					any_scope_culture = {
+						NOT = { has_homeland = prev }
+						is_primary_culture_of = root
+						save_temporary_scope_as = tmp_cu
+						prev = {
+							culture_percent_state = {
+								target = scope:tmp_cu
+								value > da_assimilation_gain_homeland_factor
+							}
+						}
+					}
+				}
+			}
+		}
+		show_as_unavailable = { always = yes }
+		every_scope_state = {
+			limit = { is_largest_state_in_region = yes }
+			every_scope_culture = {
+				limit = {
+					has_homeland = prev
+					NOT = { is_primary_culture_of = root }
+				}
+				save_temporary_scope_as = tmp_cu
+				if = {
+					limit = {
+						prev = {
+							culture_percent_state = {
+								target = scope:tmp_cu
+								value < da_assimilation_lose_homeland_factor
+							}
+						}
+					}
+					prev.state_region = { remove_homeland = scope:tmp_cu }
+				}
+			}
+			every_scope_culture = {
+				limit = {
+					NOT = { has_homeland = prev }
+					is_primary_culture_of = root
+				}
+				save_temporary_scope_as = tmp_cu
+				if = {
+					limit = {
+						prev = {
+							culture_percent_state = {
+								target = scope:tmp_cu
+								value > da_assimilation_gain_homeland_factor
+							}
+						}
+					}
+					prev.state_region = { add_homeland = scope:tmp_cu }
+				}
+			}
+		}
+		hidden_effect = { trigger_event = { id = da_assimilation.1 popup = yes } }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# Assimilate
+	# Current proportion: 5% base, 50% more from colonization affair, 50% more from modifier
+	option = {
+		name = da_assimilation.1.b
+		trigger = { NOT = { has_variable = da_recently_had_assimilated } }
+		show_as_unavailable = { always = yes }
+		if = {
+			limit = { has_variable = da_recently_had_assimilated }
+			custom_tooltip = da_assimilation.1.b.tt
+		}
+		else = {
+			custom_tooltip = da_assimilation.1.b
+			hidden_effect = {
+				set_variable = {
+					name = da_recently_had_assimilated
+					days = 180
+					value = yes
+				}
+				every_scope_pop = {
+					limit = { culture = { NOT = { is_primary_culture_of = root } } }
+					if = {
+						limit = { culture_accepted = yes }
+						change_pop_culture = {
+							target = scope:prim_cu
+							value = da_assimilation_accepted_rate
+						}
+					}
+					else = {
+						change_pop_culture = {
+							target = scope:prim_cu
+							value = da_assimilation_discriminated_rate
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { trigger_event = { id = da_assimilation.1 popup = yes } }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# Conversion
+	option = {
+		name = da_assimilation.1.c
+		trigger = { NOT = { has_variable = da_recently_had_conversioned } }
+		show_as_unavailable = { always = yes }
+		if = {
+			limit = { has_variable = da_recently_had_conversioned }
+			custom_tooltip = da_assimilation.1.c.tt
+		}
+		else = {
+			custom_tooltip = da_assimilation.1.c
+			hidden_effect = {
+				set_variable = {
+					name = da_recently_had_conversioned
+					days = 180
+					value = yes
+				}
+				every_scope_pop = {
+					limit = { NOT = { religion = root.religion } }
+					if = {
+						limit = { religion_accepted = yes }
+						change_pop_religion = {
+							target = root.religion
+							value = da_conversion_accepted_rate
+						}
+					}
+					else = {
+						change_pop_religion = {
+							target = root.religion
+							value = da_conversion_discriminated_rate
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { trigger_event = { id = da_assimilation.1 popup = yes } }
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = da_assimilation.1.d
+		default_option = yes
+		# trigger_event = da.1
+		ai_chance = {
+			base = 1
+		}
+	}
+}

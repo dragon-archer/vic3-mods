@@ -1,0 +1,43 @@
+﻿namespace = da_merge_cultures
+
+da_merge_cultures.1 = { # Actual merge & launch report
+	type = country_event
+	hidden = yes
+	immediate = {
+		if = { # Avoid spam
+			limit = { NOT = { has_global_variable = da_recently_merged_cultures } }
+			set_global_variable = { name = da_recently_merged_cultures value = yes days = 2 }
+			da_merge_cultures_impl = yes
+			if = {
+				limit = { da_merge_total_global > 0}
+				trigger_event = { id = da_merge_cultures.2 popup = yes }
+			}
+		}
+	}
+}
+
+da_merge_cultures.2 = {
+	type = country_event
+	placement = ROOT
+	title = da_merge_cultures.2.t
+	desc = da_merge_cultures.2.d
+	flavor = da_merge_cultures.2.f
+
+	event_image = { video = "unspecific_signed_contract" }
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	duration = 3
+
+	option = {
+		name = da_merge_cultures.2.a
+		ordered_in_global_list = {
+			limit = { da_merge_total > 0 }
+			variable = da_merged_cultures_var
+			order_by = da_merge_total
+			max = 20 # TODO check whether it is too big
+			check_range_bounds = no
+			save_scope_as = culture_2
+			var:da_merged_into_var = { save_scope_as = culture_1 }
+			custom_tooltip = da_merge_cultures_tt
+		}
+	}
+}

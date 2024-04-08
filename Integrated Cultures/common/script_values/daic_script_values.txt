@@ -1,0 +1,178 @@
+﻿# Assimilation
+# Scope: pop
+da_assimilation_gain_homeland_factor = 0.25
+da_assimilation_lose_homeland_factor = 0.1
+da_assimilation_base_rate = 0.02
+
+da_assimilation_homeland_factor = {
+	if = {
+		limit = { culture = { has_homeland = prev.state } }
+		value = 0.5
+	}
+	else = {
+		value = 1
+	}
+}
+
+da_assimilation_rate = {
+	value = da_assimilation_base_rate
+	multiply = {
+		value = 1
+		add = modifier:country_da_assimilation_mult
+	}
+	min = 0
+}
+
+da_assimilation_accepted_rate = {
+	value = da_assimilation_base_rate
+	multiply = {
+		value = 1
+		add = owner.modifier:country_da_assimilation_mult
+		add = owner.modifier:country_da_assimilation_accepted_mult
+	}
+	multiply = da_assimilation_homeland_factor
+	min = 0
+}
+
+da_assimilation_discriminated_rate = {
+	value = da_assimilation_base_rate
+	multiply = {
+		value = 1
+		add = owner.modifier:country_da_assimilation_mult
+		add = owner.modifier:country_da_assimilation_discriminated_mult
+	}
+	multiply = da_assimilation_homeland_factor
+	min = 0
+}
+
+# Conversion
+da_conversion_base_rate = 0.02
+da_conversion_accepted_factor = 2
+da_conversion_discriminated_factor = 1
+
+da_conversion_accepted_rate = {
+	value = da_conversion_base_rate
+	multiply = da_conversion_accepted_factor
+}
+
+da_conversion_discriminated_rate = {
+	value = da_conversion_base_rate
+	multiply = da_conversion_discriminated_factor
+}
+
+# Loc
+da_merge_num_pops = {
+	value = -1
+	if = {
+		limit = { exists = var:da_merge_num_pops_var }
+		add = var:da_merge_num_pops_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_countries = {
+	value = -1
+	if = {
+		limit = { exists = var:da_merge_num_countries_var }
+		add = var:da_merge_num_countries_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_state_regions = {
+	value = -1
+	if = {
+		limit = { exists = var:da_merge_num_state_regions_var }
+		add = var:da_merge_num_state_regions_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_characters = {
+	value = -1
+	if = {
+		limit = { exists = var:da_merge_num_characters_var }
+		add = var:da_merge_num_characters_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_total = {
+	value = 0
+	add = da_merge_num_characters
+	add = da_merge_num_pops
+	add = da_merge_num_countries
+	add = da_merge_num_state_regions
+}
+
+da_merge_num_pops_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_pops_global_var }
+		add = global_var:da_merge_num_pops_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_countries_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_countries_global_var }
+		add = global_var:da_merge_num_countries_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_state_regions_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_state_regions_global_var }
+		add = global_var:da_merge_num_state_regions_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_characters_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_characters_global_var }
+		add = global_var:da_merge_num_characters_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_cultures_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_cultures_global_var }
+		add = global_var:da_merge_num_cultures_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_num_cultures_effective_global = {
+	value = -1
+	if = {
+		limit = { exists = global_var:da_merge_num_cultures_effective_global_var }
+		add = global_var:da_merge_num_cultures_effective_global_var
+		add = 1
+		min = 0
+	}
+}
+
+da_merge_total_global = {
+	value = 0
+	add = da_merge_num_characters_global
+	add = da_merge_num_pops_global
+	add = da_merge_num_countries_global
+	add = da_merge_num_state_regions_global
+}

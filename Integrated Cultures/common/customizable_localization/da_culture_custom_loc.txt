@@ -1,0 +1,403 @@
+﻿# Dynamic culture names
+da_culture_north_german = {
+	type = country
+
+	text = {
+		localization_key = da_cu_middle_european
+		trigger = {	exists = c:HRE }
+	}
+	text = {
+		localization_key = da_cu_german
+		trigger = {
+			exists = c:GER
+			NOT = { exists = c:HRE }
+		}
+	}
+	text = {
+		localization_key = da_cu_north_german
+		fallback = yes
+	}
+}
+
+da_culture_north_italian = {
+	type = country
+
+	text = {
+		localization_key = da_cu_italian
+		trigger = { exists = c:ITA }
+	}
+	text = {
+		localization_key = da_cu_north_italian
+		fallback = yes
+	}
+}
+
+da_culture_yankee = {
+	type = country
+
+	text = {
+		localization_key = american_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:dixie } }
+	}
+	text = {
+		localization_key = da_cu_yankee
+		fallback = yes
+	}
+}
+
+da_culture_dutch = {
+	type = country
+
+	text = {
+		localization_key = beneluxian_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:flemish } }
+	}
+	text = {
+		localization_key = da_cu_dutch
+		fallback = yes
+	}
+}
+
+da_culture_swedish = {
+	type = country
+
+	text = {
+		localization_key = scandinavian_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:danish } }
+	}
+	text = {
+		localization_key = da_cu_swedish
+		fallback = yes
+	}
+}
+
+da_culture_british = {
+	type = country
+
+	text = {
+		localization_key = british_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:scottish } }
+	}
+	text = {
+		localization_key = da_cu_british
+		fallback = yes
+	}
+}
+
+da_culture_serb = {
+	type = country
+
+	text = {
+		localization_key = jugoslav
+		trigger = { da_is_culture_merged = { _ = cu:croat } }
+	}
+	text = {
+		localization_key = da_cu_serb
+		fallback = yes
+	}
+}
+
+da_culture_polish = {
+	type = country
+
+	text = {
+		localization_key = west_slavic
+		trigger = { da_is_culture_merged = { _ = cu:slovak } }
+	}
+	text = {
+		localization_key = da_cu_polish
+		fallback = yes
+	}
+}
+
+da_culture_lithuanian = {
+	type = country
+
+	text = {
+		localization_key = baltic_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:latvian } }
+	}
+	text = {
+		localization_key = da_cu_lithuanian
+		fallback = yes
+	}
+}
+
+da_culture_russian = {
+	type = country
+
+	text = {
+		localization_key = east_slavic
+		trigger = { da_is_culture_merged = { _ = cu:ukrainian } }
+	}
+	text = {
+		localization_key = da_cu_russian
+		fallback = yes
+	}
+}
+
+da_culture_georgian = {
+	type = country
+
+	text = {
+		localization_key = caucasus_group
+		trigger = { da_is_culture_merged = { _ = cu:armenian } }
+	}
+	text = {
+		localization_key = da_cu_georgian
+		fallback = yes
+	}
+}
+
+da_culture_sephardic = {
+	type = country
+
+	text = {
+		localization_key = jewish_group
+		trigger = { da_is_culture_merged = { _ = cu:ashkenazi } }
+	}
+	text = {
+		localization_key = da_cu_sephardic
+		fallback = yes
+	}
+}
+
+da_culture_misri = {
+	type = country
+
+	text = {
+		localization_key = ethnicity_arab
+		trigger = { da_is_culture_merged = { _ = cu:bedouin } }
+	}
+	text = {
+		localization_key = da_cu_misri
+		fallback = yes
+	}
+}
+
+da_culture_kazak = {
+	type = country
+
+	text = {
+		localization_key = central_asian_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:uzbek } }
+	}
+	text = {
+		localization_key = da_cu_kazak
+		fallback = yes
+	}
+}
+
+da_culture_bengali = {
+	type = country
+
+	text = {
+		localization_key = da_cu_hindustani
+		trigger = { da_is_culture_merged = { _ = cu:bihari } }
+	}
+	text = {
+		localization_key = da_cu_bengali
+		fallback = yes
+	}
+}
+
+da_culture_kannada = {
+	type = country
+
+	text = {
+		localization_key = da_cu_dravidian
+		trigger = { da_is_culture_merged = { _ = cu:malayalam } }
+	}
+	text = {
+		localization_key = da_cu_kannada
+		fallback = yes
+	}
+}
+
+da_culture_javan = {
+	type = country
+
+	text = {
+		localization_key = malay
+		trigger = { da_is_culture_merged = { _ = cu:dayak } }
+	}
+	text = {
+		localization_key = da_cu_javan
+		fallback = yes
+	}
+}
+
+da_culture_hakka = {
+	type = country
+
+	text = {
+		localization_key = da_cu_southern_chinese
+		trigger = {
+			da_is_culture_merged = { _ = cu:min }
+			da_is_culture_not_merged = { _ = cu:hakka }
+		}
+	}
+	text = {
+		localization_key = da_cu_hakka
+		fallback = yes
+	}
+}
+
+da_culture_polynesian = {
+	type = country
+
+	text = {
+		localization_key = oceanic_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:melanesian } }
+	}
+	text = {
+		localization_key = da_cu_polynesian
+		fallback = yes
+	}
+}
+
+da_culture_zapotec = {
+	type = country
+
+	text = {
+		localization_key = native_mesoamerican_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:mayan } }
+	}
+	text = {
+		localization_key = da_cu_zapotec
+		fallback = yes
+	}
+}
+
+da_culture_cherokee = {
+	type = country
+
+	text = {
+		localization_key = native_north_american_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:dakota } }
+	}
+	text = {
+		localization_key = da_cu_cherokee
+		fallback = yes
+	}
+}
+
+da_culture_dakota = {
+	type = country
+
+	text = {
+		localization_key = native_north_american_culture_group
+		trigger = {
+			da_is_culture_merged = { _ = cu:pueblo }
+			da_is_culture_not_merged = { _ = cu:dakota }
+		}
+	}
+	text = {
+		localization_key = da_cu_dakota
+		fallback = yes
+	}
+}
+
+da_culture_quechua = {
+	type = country
+
+	text = {
+		localization_key = native_south_american_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:guarani } }
+	}
+	text = {
+		localization_key = da_cu_quechua
+		fallback = yes
+	}
+}
+
+da_culture_akan = {
+	type = country
+
+	text = {
+		localization_key = west_african_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:bambara } }
+	}
+	text = {
+		localization_key = da_cu_akan
+		fallback = yes
+	}
+}
+
+da_culture_bakongo = {
+	type = country
+
+	text = {
+		localization_key = equatorial_bantu
+		trigger = { da_is_culture_merged = { _ = cu:fang } }
+	}
+	text = {
+		localization_key = da_cu_bakongo
+		fallback = yes
+	}
+}
+
+da_culture_baguirmi = {
+	type = country
+
+	text = {
+		localization_key = central_african_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:kanuri } }
+	}
+	text = {
+		localization_key = da_cu_baguirmi
+		fallback = yes
+	}
+}
+
+da_culture_amhara = {
+	type = country
+
+	text = {
+		localization_key = ethiopian
+		trigger = { da_is_culture_merged = { _ = cu:afar } }
+	}
+	text = {
+		localization_key = da_cu_amhara
+		fallback = yes
+	}
+}
+
+da_culture_nilotic = {
+	type = country
+
+	text = {
+		localization_key = east_african_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:azande } }
+	}
+	text = {
+		localization_key = da_cu_nilotic
+		fallback = yes
+	}
+}
+
+da_culture_baganda = {
+	type = country
+
+	text = {
+		localization_key = da_cu_east_african_bantu
+		trigger = { da_is_culture_merged = { _ = cu:kikuyu } }
+	}
+	text = {
+		localization_key = da_cu_baganda
+		fallback = yes
+	}
+}
+
+da_culture_lomwe = {
+	type = country
+
+	text = {
+		localization_key = southern_african_culture_group
+		trigger = { da_is_culture_merged = { _ = cu:makua } }
+	}
+	text = {
+		localization_key = da_cu_lomwe
+		fallback = yes
+	}
+}
