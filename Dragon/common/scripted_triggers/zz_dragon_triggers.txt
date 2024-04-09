@@ -80,3 +80,11 @@ da_autopm_worth_change = {
 		multiply = 1.2 # stickness
 	}
 }
+
+# Mark character
+da_character_is_marked = {
+	custom_description = {
+		text = da_character_is_marked_tt
+		has_variable = da_marked_char_var
+	}
+}

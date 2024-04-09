@@ -43,6 +43,38 @@ da_set_state_owner = {
 	set_state_type = incorporated
 }
 
+da_add_normal_modifier = {
+	add_modifier = {
+		name = $_$
+		months = normal_modifier_time
+	}
+}
+
+da_add_normal_modifier_doubled = {
+	add_modifier = {
+		name = $_$
+		months = normal_modifier_time
+		multiplier = 2
+	}
+}
+
+da_add_normal_decaying_modifier = {
+	add_modifier = {
+		name = $_$
+		months = normal_modifier_time
+		is_decaying = yes
+	}
+}
+
+da_add_normal_decaying_modifier_doubled = {
+	add_modifier = {
+		name = $_$
+		months = normal_modifier_time
+		is_decaying = yes
+		multiplier = 2
+	}
+}
+
 # Require: $_$, the country to be annexed by THIS, no check for existsence
 # Replaced by annex_with_incorporation
 da_annex = {
@@ -380,4 +412,19 @@ da_auto_change_pm = {
 	}
 	set_variable = { name = da_recent_auto_changed_pm_var days = 14 }
 	da_post_notification = { _ = da_autopm_changed }
+}
+
+# Mark character
+da_mark_character_effect = {
+	custom_tooltip = {
+		text = da_mark_character_tt
+		set_variable = da_marked_char_var
+	}
+}
+
+da_unmark_character_effect = {
+	custom_tooltip = {
+		text = da_unmark_character_tt
+		remove_variable = da_marked_char_var
+	}
 }

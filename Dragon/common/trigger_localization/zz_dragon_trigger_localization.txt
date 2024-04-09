@@ -12,3 +12,8 @@ da_debt_is_extended_tt = {
 	global = TRIGGER_DA_DEBT_IS_EXTENDED_TT
 	global_not = TRIGGER_DA_DEBT_IS_EXTENDED_TT_NOT
 }
+
+da_character_is_marked_tt = {
+	global = TRIGGER_DA_CHARACTER_IS_MARKED_TT
+	global_not = TRIGGER_DA_CHARACTER_IS_MARKED_TT_NOT
+}
