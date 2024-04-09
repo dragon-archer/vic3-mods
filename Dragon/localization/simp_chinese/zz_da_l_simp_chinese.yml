@@ -7,6 +7,7 @@
  literacy_penalty: "高识字率"
  BATTLE_VICTORY_MIN_VALUE_REACHED: "胜利分数下限"
  da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
+ da_aftermath_tt: "#bold 选择任意选项后的后果：#!\n"
 
  # Alert worker
  ag_da_not_enough_workers_in_state_group_name: "劳动力不足"
@@ -240,3 +241,19 @@
  deactive_luxury_goods_upgrade_manager: "不再自动平衡奢侈物资建筑"
  active_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
  deactive_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
+
+ # Mark character
+ da_mark_character_tt: "[THIS.GetCharacter.GetFullName]将被标记，可用于后续修改"
+ da_unmark_character_tt: "[THIS.GetCharacter.GetFullName]不再被标记"
+ TRIGGER_DA_CHARACTER_IS_MARKED_TT: "该[concept_character]#bold 已经#!被标记"
+ TRIGGER_DA_CHARACTER_IS_MARKED_TT_NOT: "该[concept_character]#bold 没有#!被标记"
+ da_mark_character: "标记[concept_character]"
+ da_unmark_character: "取消标记[concept_character]"
+ da_change_ideology: "改变[concept_ideology]"
+ da_console.1.t: "说服改变[concept_ideology]"
+ da_console.1.d: "你想让[SCOPE.sCha('char').GetFullName]改成什么[concept_ideology]？"
+ da_console.1.f: "“我可以听你的”，[SCOPE.sCha('char').GetFullName]如是说，“但是，代价是什么呢？”"
+ da_change_ideology_modifier_base: "公开游说亲政府派"
+ da_change_ideology_modifier_char: "向政府屈服"
+ da_change_ideology_modifier_ig: "不受欢迎的游说"
+ da_change_ideology_modifier_ruler: "割裂的意识形态"

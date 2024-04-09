@@ -1,0 +1,241 @@
+﻿namespace = da_console
+
+scripted_effect da_console_1_aftermath = { # For localization
+	custom_tooltip = da_aftermath_tt
+	da_add_normal_modifier = { _ = da_change_ideology_modifier_base }
+	scope:char = {
+		if = { # Agitator & Opposition *should* not be bribed by government
+			limit = {
+				OR = {
+					scope:interest_group = {
+						is_in_government = no
+						is_marginal = no
+					}
+					has_role = agitator
+				}
+			}
+			da_add_normal_modifier_doubled = { _ = da_change_ideology_modifier_char }
+		}
+		else = { da_add_normal_modifier = { _ = da_change_ideology_modifier_char } }
+		if = {
+			limit = { is_ruler = yes }
+			root = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ruler } }
+		}
+	}
+	scope:interest_group = {
+		if = {
+			limit = { is_powerful = yes }
+			da_add_normal_decaying_modifier_doubled = { _ = da_change_ideology_modifier_ig }
+		}
+		else = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ig } }
+	}
+}
+
+da_console.1 = { # Change idology
+	type = country_event
+	placement = ROOT
+	title = da_console.1.t
+	desc = da_console.1.d
+	flavor = da_console.1.f
+	event_image = { video = "votp_agitator_speaking" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+	trigger = {
+		exists = scope:char
+	}
+
+	immediate = {
+		scope:char.interest_group = { save_scope_as = interest_group }
+	}
+
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+	option = {
+		name = ideology_moderate
+		trigger = { scope:char = { da_ideology_moderate_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_moderate }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_traditionalist
+		trigger = { scope:char = { da_ideology_traditionalist_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_traditionalist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_atheist
+		trigger = { scope:char = { da_ideology_atheist_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_atheist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_republican_leader
+		trigger = { scope:char = { da_ideology_republican_leader_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_republican_leader }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_radical
+		trigger = { scope:char = { da_ideology_radical_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_radical }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_reformer
+		trigger = { scope:char = { da_ideology_reformer_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_reformer }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_feminist
+		trigger = { scope:char = { da_ideology_feminist_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_feminist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_abolitionist
+		trigger = { scope:char = { da_ideology_abolitionist_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_abolitionist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_slaver
+		trigger = { scope:char = { da_ideology_slaver_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_slaver }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_pacifist
+		trigger = { scope:char = { da_ideology_pacifist_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_pacifist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_jingoist_leader
+		trigger = { scope:char = { da_ideology_jingoist_leader_trigger = yes } }
+		scope:char = { set_ideology = i:ideology_jingoist_leader }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_royalist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_royalist } } }
+		scope:char = { set_ideology = i:ideology_royalist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_social_democrat
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_social_democrat } } }
+		scope:char = { set_ideology = i:ideology_social_democrat }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_communist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_communist } } }
+		scope:char = { set_ideology = i:ideology_communist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_vanguardist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_vanguardist } } }
+		scope:char = { set_ideology = i:ideology_vanguardist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_fascist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_fascist } } }
+		scope:char = { set_ideology = i:ideology_fascist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_anarchist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_anarchist } } }
+		scope:char = { set_ideology = i:ideology_anarchist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_ethno_nationalist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_ethno_nationalist } } }
+		scope:char = { set_ideology = i:ideology_ethno_nationalist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_theocrat
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_theocrat } } }
+		scope:char = { set_ideology = i:ideology_theocrat }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_market_liberal
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_market_liberal } } }
+		scope:char = { set_ideology = i:ideology_market_liberal }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_luddite
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_luddite } } }
+		scope:char = { set_ideology = i:ideology_luddite }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_authoritarian
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_authoritarian } } }
+		scope:char = { set_ideology = i:ideology_authoritarian }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_protectionist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_protectionist } } }
+		scope:char = { set_ideology = i:ideology_protectionist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_humanitarian
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_humanitarian } } }
+		scope:char = { set_ideology = i:ideology_humanitarian }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_jacksonian_democrat
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_jacksonian_democrat } } }
+		scope:char = { set_ideology = i:ideology_jacksonian_democrat }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_positivist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_positivist } } }
+		scope:char = { set_ideology = i:ideology_positivist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_land_reformer
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_land_reformer } } }
+		scope:char = { set_ideology = i:ideology_land_reformer }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_integralist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_integralist } } }
+		scope:char = { set_ideology = i:ideology_integralist }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_liberal_leader
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_liberal_leader } } }
+		scope:char = { set_ideology = i:ideology_liberal_leader }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_corporatist_leader
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_corporatist_leader } } }
+		scope:char = { set_ideology = i:ideology_corporatist_leader }
+		da_console_1_aftermath = yes
+	}
+	option = {
+		name = ideology_humanitarian_royalist
+		trigger = { scope:char = { da_ideology_trigger = { _ = ideology_humanitarian_royalist } } }
+		scope:char = { set_ideology = i:ideology_humanitarian_royalist }
+		da_console_1_aftermath = yes
+	}
+}
