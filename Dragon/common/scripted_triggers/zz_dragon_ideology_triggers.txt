@@ -1,0 +1,706 @@
+﻿## ideology
+## character scope
+## helper
+da_non_monarch_trigger = {
+	NAND = {
+		owner = { has_law = law_type:law_monarchy }
+		OR = {
+			is_ruler = yes
+			is_heir = yes
+		}
+	}
+}
+
+da_normal_ig_trigger = {
+	scope:interest_group = {
+		NOR = {
+			has_variable = communist_ig_var
+			has_variable = chose_vanguardism
+			has_variable = chose_fascism
+			has_variable = chose_conservatism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+# wrapper
+da_ideology_trigger = {
+	da_$_$_trigger = yes
+}
+
+# list
+da_ideology_moderate_trigger = {
+	NOT = { has_role = agitator }
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_traditionalist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_no_womens_rights
+			has_law = law_type:law_state_religion
+		}
+	}
+	NOT = { owner = { c:FRA ?= this } }
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_devout
+		}
+		NOR = {
+			has_variable = communist_ig_var
+			has_variable = chose_vanguardism
+			has_variable = chose_fascism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_atheist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			OR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+				has_law = law_type:law_council_republic
+			}
+			has_law = law_type:law_state_atheism
+		}
+	}
+	da_non_monarch_trigger = yes
+	owner = { has_technology_researched = realism }
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_republican_leader_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			OR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+			}
+			has_law = law_type:law_elected_bureaucrats
+		}
+	}
+	da_non_monarch_trigger = yes
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_radical_trigger = {
+	owner = { has_technology_researched = egalitarianism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			OR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+			}
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_protected_speech
+			has_law = law_type:law_guaranteed_liberties
+		}
+	}
+	NOT = { owner = { has_journal_entry = je_acw_countdown } }
+	da_non_monarch_trigger = yes
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_reformer_trigger = {
+	owner = {
+		has_technology_researched = egalitarianism
+		NOT = { has_technology_researched = feminism }
+	}
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_compulsory_primary_school
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_feminist_trigger = {
+	owner = {
+		has_technology_researched = feminism
+		NOT = { has_law = law_type:law_womens_suffrage }
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_abolitionist_trigger = {
+	owner = {
+		OR = {
+			NOT = { has_law = law_type:law_slavery_banned }
+			has_law = law_type:law_serfdom
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_devout
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_slaver_trigger = {
+	owner = { NOT = { has_law = law_type:law_slavery_banned } }
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_devout
+			is_interest_group_type = ig_rural_folk
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_pacifist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_national_militia
+			has_law = law_type:law_no_colonial_affairs
+		}
+	}
+	scope:interest_group = { NOT = { is_interest_group_type = ig_armed_forces } }
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_jingoist_leader_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_mass_conscription
+			has_law = law_type:law_colonial_exploitation
+		}
+	}
+	scope:interest_group = {
+		NOR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_rural_folk
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_royalist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = { has_law = law_type:law_monarchy }
+	}
+	owner = {
+		NOR = {
+			c:FRA ?= this
+			AND = {
+				any_interest_group = { has_ideology = ideology:ideology_republican_paternalistic }
+				NOT = { has_variable = brz_enduring_empire }
+			}
+			has_variable = monarchy_stamped_out_var
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_devout
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_armed_forces
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_social_democrat_trigger = {
+	owner = { has_technology_researched = socialism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_graduated_taxation
+			has_law = law_type:law_old_age_pension
+			has_law = law_type:law_worker_protections
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_devout
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_communist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_collectivized_agriculture
+			has_law = law_type:law_state_atheism
+			has_law = law_type:law_council_republic
+			has_law = law_type:law_worker_protections
+		}
+	}
+	da_non_monarch_trigger = yes
+	owner = { has_technology_researched = socialism }
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+		}
+		NOR = {
+			has_variable = chose_anarchism
+			has_variable = chose_vanguardism
+			has_variable = chose_fascism
+			has_variable = chose_conservatism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_vanguardist_trigger = {
+	owner = { has_technology_researched = socialism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_collectivized_agriculture
+			has_law = law_type:law_council_republic
+			has_law = law_type:law_command_economy
+			has_law = law_type:law_protectionism
+			has_law = law_type:law_single_party_state
+		}
+	}
+	da_non_monarch_trigger = yes
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+		}
+		NOR = {
+			has_variable = chose_anarchism
+			has_variable = chose_communism
+			has_variable = chose_fascism
+			has_variable = chose_conservatism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_fascist_trigger = {
+	owner = { has_technology_researched = mass_propaganda }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_autocracy
+			has_law = law_type:law_ethnostate
+			has_law = law_type:law_outlawed_dissent
+			has_law = law_type:law_militarized_police
+		}
+	}
+	scope:interest_group = {
+		NOR = {
+			has_variable = communist_ig_var
+			has_variable = chose_vanguardism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_anarchist_trigger = {
+	owner = { has_technology_researched = anarchism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_anarchy
+			has_law = law_type:law_national_militia
+			has_law = law_type:law_protected_speech
+			has_law = law_type:law_no_police
+			has_law = law_type:law_council_republic
+		}
+	}
+	da_non_monarch_trigger = yes
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+	scope:interest_group = {
+		NOR = {
+			has_variable = chose_vanguardism
+			has_variable = chose_communism
+			has_variable = chose_fascism
+			has_variable = chose_conservatism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_ethno_nationalist_trigger = {
+	owner = { has_technology_researched = pan-nationalism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_ethnostate
+			has_law = law_type:law_migration_controls
+		}
+	}
+	scope:interest_group = {
+		NOR = {
+			has_variable = chose_vanguardism
+			has_variable = communist_ig_var
+			has_variable = chose_fascism
+		}
+	}
+}
+
+da_ideology_theocrat_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_theocracy
+			has_law = law_type:law_state_religion
+		}
+	}
+	OR = {
+		owner = { has_law = law_type:law_theocracy }
+		scope:interest_group = { is_interest_group_type = ig_devout }
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_devout
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_market_liberal_trigger = {
+	owner = {
+		has_technology_researched = stock_exchange
+		ig:ig_industrialists ?= { is_marginal = no }
+	}
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_laissez_faire
+			has_law = law_type:law_child_labor_allowed
+			has_law = law_type:law_free_trade
+			has_law = law_type:law_commercialized_agriculture
+			has_law = law_type:law_no_migration_controls
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_industrialists
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_luddite_trigger = {
+	owner = {
+		has_technology_researched = romanticism
+		OR = {
+			has_law = law_type:law_command_economy
+			has_law = law_type:law_laissez_faire
+			has_law = law_type:law_interventionism
+		}
+	}
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_isolationism
+			has_law = law_type:law_industry_banned
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_devout
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_authoritarian_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_outlawed_dissent
+			has_law = law_type:law_secret_police
+			OR = {
+				has_law = law_type:law_oligarchy
+				has_law = law_type:law_autocracy
+			}
+		}
+	}
+	scope:interest_group = {
+		NAND = {
+			owner = { has_technology_researched = socialism }
+			is_interest_group_type = ig_trade_unions
+		}
+		NAND = {
+			is_interest_group_type = ig_petty_bourgeoisie
+			owner = { has_technology_researched = mass_propaganda }
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_protectionist_trigger = {
+	owner = {
+		has_technology_researched = international_trade
+		ig:ig_industrialists ?= { is_marginal = no }
+	}
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_protectionism
+			has_law = law_type:law_interventionism
+		}
+	}
+	scope:interest_group = { NOT = { is_interest_group_type = ig_devout } }
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_humanitarian_trigger = {
+	owner = { has_technology_researched = feminism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_multicultural
+			has_law = law_type:law_guaranteed_liberties
+			has_law = law_type:law_protected_speech
+			has_law = law_type:law_womens_suffrage
+			has_law = law_type:law_compulsory_primary_school
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_jacksonian_democrat_trigger = {
+	owner = {
+		exists = c:USA
+		OR = {
+			c:USA = this
+			civil_war_origin_country = c:USA
+		}
+		any_scope_character = { has_variable = is_andrew_jackson }
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_positivist_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_appointed_bureaucrats
+			has_law = law_type:law_technocracy
+			has_law = law_type:law_state_atheism
+			has_law = law_type:law_presidential_republic
+		}
+	}
+	da_non_monarch_trigger = yes
+	has_global_variable = positivism_invented
+	owner = { has_technology_researched = empiricism }
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_land_reformer_trigger = {
+	owner = { has_technology_researched = enclosure }
+	NAND = {
+		has_role = agitator
+		owner = {
+			NOT = { has_law = law_type:law_land_based_taxation }
+			OR = {
+				has_law = law_type:law_homesteading
+				has_law = law_type:law_collectivized_agriculture
+			}
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_integralist_trigger = {
+	owner = {
+		has_technology_researched = corporatism
+		any_primary_culture = {
+			OR = {
+				has_discrimination_trait = lusophone
+				has_discrimination_trait = hispanophone
+				has_discrimination_trait = francophone
+			}
+		}
+	}
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_autocracy
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_state_religion
+			has_law = law_type:law_militarized_police
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_devout
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_armed_forces
+		}
+		NOR = {
+			has_variable = communist_ig_var
+			has_variable = chose_vanguardism
+			has_variable = chose_conservatism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_liberal_leader_trigger = {
+	NAND = {
+		has_role = agitator
+		owner = {
+			OR = {
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_census_voting
+				has_law = law_type:law_wealth_voting
+				has_law = law_type:law_landed_voting
+			}
+			has_law = law_type:law_elected_bureaucrats
+		}
+	}
+	da_normal_ig_trigger = yes
+}
+
+da_ideology_corporatist_leader_trigger = {
+	owner = { has_technology_researched = corporatism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			NOT = { has_law = law_type:law_council_republic }
+			has_law = law_type:law_religious_schools
+			has_law = law_type:law_regulatory_bodies
+			has_law = law_type:law_wage_subsidies
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_devout
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_trade_unions
+		}
+		NOR = {
+			has_variable = communist_ig_var
+			has_variable = chose_vanguardism
+			has_variable = chose_fascism
+			has_variable = chose_ethno_nationalism
+		}
+	}
+}
+
+da_ideology_humanitarian_royalist_trigger = {
+	owner = { has_technology_researched = feminism }
+	NAND = {
+		has_role = agitator
+		owner = {
+			has_law = law_type:law_monarchy
+			has_law = law_type:law_multicultural
+			has_law = law_type:law_guaranteed_liberties
+			has_law = law_type:law_womens_suffrage
+			has_law = law_type:law_compulsory_primary_school
+		}
+	}
+	scope:interest_group = {
+		OR = {
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+	da_normal_ig_trigger = yes
+}
