@@ -1,0 +1,41 @@
+﻿namespace = da
+
+da.1 = { # Entry
+	type = country_event
+	placement = ROOT
+	title = da.1.t
+	desc = da.1.d
+	flavor = da.1.f
+	event_image = { video = "unspecific_signed_contract" }
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	duration = 3
+	trigger = { is_player = yes }
+
+	option = {
+		name = da.1.a
+		default_option = yes
+		# DEBUG ONLY
+	}
+	option = {
+		name = da.1.b
+	}
+	option = {
+		name = da.1.c
+		trigger_event = { id = da.1000 popup = yes }
+	}
+	option = {
+		name = da.1.e
+		if = {
+			limit = { da_debt_count > 0 }
+			ordered_character_in_void = {
+				limit = { has_variable = da_debt_container_var }
+				order_by = age
+				max = 20
+				check_range_bounds = no
+				save_scope_as = object
+				custom_tooltip = da_debt_report_tt
+			}
+		}
+		else = { custom_tooltip = da_no_debt_tt }
+	}
+}
