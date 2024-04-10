@@ -64,6 +64,7 @@ da_change_ideology = {
 
 	possible = {
 		da_character_is_marked = yes
+		owner ?= scope:actor
 	}
 
 	effect = {
