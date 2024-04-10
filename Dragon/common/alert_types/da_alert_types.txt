@@ -4,6 +4,7 @@
 
 	valid = {
 		da_state_available_workers < da_not_enough_worker_thereshold
+		is_under_colonization = no
 	}
 
 	open_panel = states_panel|buildings
