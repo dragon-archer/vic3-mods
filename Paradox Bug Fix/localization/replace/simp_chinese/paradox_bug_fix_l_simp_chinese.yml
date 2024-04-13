@@ -35,9 +35,12 @@
  SET_STATE_OWNER: "[TARGET_COUNTRY.GetName]成为[STATE.GetName]的拥有者"
  ## new
  REMOVE_HOMELAND_THIRD: "[STATE_REGION.GetName]不再是#variable [TARGET_CULTURE.GetName]#!文化的[concept_homeland]"
- ADD_TREASURY_EFFECT_NEGATIVE: "国家失去@money!$VALUE|-=$"
- ADD_TREASURY_EFFECT_FIRST_NEGATIVE: "[COUNTRY.GetNameNoFlag]失去@money!$VALUE|-=$"
- ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=$"
+ ADD_TREASURY_EFFECT_POSITIVE: "国家获得@money!$VALUE|+=k$"
+ ADD_TREASURY_EFFECT_NEGATIVE: "国家失去@money!$VALUE|-=k$"
+ ADD_TREASURY_EFFECT_FIRST_POSITIVE: "[COUNTRY.GetNameNoFlag]获得@money!$VALUE|+=k$"
+ ADD_TREASURY_EFFECT_FIRST_NEGATIVE: "[COUNTRY.GetNameNoFlag]失去@money!$VALUE|-=k$"
+ ADD_TREASURY_EFFECT_THIRD_POSITIVE: "[COUNTRY.GetName]获得@money!$VALUE|+=k$"
+ ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=k$"
 
  # interfaces
  GOODS_PANEL_PRICE_COMPARE: "与[concept_base_price]相比#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!\n市场结余：#variable [Goods.GetMarketBuyAndSellOrdersBalance|=D+]#!"
@@ -61,6 +64,8 @@
  TOOLTIP_STATE_SLAVE_EXPORT_STATES: "[STATE.GetName]上周总共向$STATES_LIST$出口了#variable $AMOUNT|+$#!奴隶"
  MILITARY_FORMATION_COMMAND_LIMIT_TOOLTIP_ORGANIZATION_MAX: "#indent_newline:3 @warning!由于[concept_command_limit]不足，该[concept_military_formation]获得以下效果：\n[GetStaticModifier('low_command_limit').GetDesc]#!\n\n$BREAKDOWN$#!"
  JOB_SATISFACTION_PER_SOL_ABOVE_COUNTRY_STRATA_SOL: "当前生活水平（#tooltippable #tooltip:[Pop.GetTooltipTag],TOOLTIP_POP_QOL [LabelingHelper.GetLabelForStandardOfLiving(Pop.GetCurrentStandardOfLiving)|v]（[Pop.GetCurrentStandardOfLiving|v]）#!#!）和[Pop.GetCountry.GetName][Pop.GetPopType.GetStrata]平均[concept_sol]（[LabelingHelper.GetLabelForStandardOfLiving(FixedPointToInt('(CFixedPoint)$AVERAGE$'))|v]（$AVERAGE|v1$））的差距：$VALUE|0+=$"
+ INCORPORATED_POPULATION: "已整合人口：[Country.GetIncorporatedPopulation|Kv]"
+ UNINCORPORATED_POPULATION: "未整合人口：[Country.GetPeopleAbroad|Kv]"
 
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
