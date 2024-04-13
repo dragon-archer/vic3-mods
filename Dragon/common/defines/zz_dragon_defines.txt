@@ -5,14 +5,31 @@
 	CONSTRUCTION_DEBT_RESUME_CRITICAL_CONSTRUCTION = 0.75 # If critical constructions are paused, resume once debt is this low relative to ceiling
 	CONSTRUCTION_DEBT_PAUSE_CRITICAL_CONSTRUCTION = 0.90 # If in this much relative debt to debt ceiling, pause all critical constructions 	
 
+	MONEY_SPENDING_MIN_RATIO_TO_CONSIDER_GOLD_RESERVES = 0.5 # 0.8 # How low of a income-to-expenses ratio does the AI need to have to try to cut spending regardless of how plentiful its gold reserves are (when at peace)
+	MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_SHOULD_HAVE = 10 # 20 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'should-have'
+	MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_WANTS_TO_HAVE = 20 # 40 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'wants-to-have'
 	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_SHOULD_HAVE = 0.01 # 0.1 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'should-have'
 	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_WANTS_TO_HAVE = 0.1 # 0.2 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'wants-to-have'
 	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_NICE_TO_HAVE = 0.2 # 0.3 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'nice-to-have'
-
+	MONEY_SPENDING_LAND_THREAT_THRESHOLD = 0.50 # 0.25 # If a hostile country has a more than this much larger army than AI does, it wants to increase military spending
+	MONEY_SPENDING_NAVY_THREAT_THRESHOLD = 0.75 # 0.50 # If a hostile country has a more than this much larger navy than AI does, it wants to increase military spending
+	MONEY_SPENDING_MILITARY_CRITICAL_THRESHOLD = 0.25 # 0.5 # If actual-to-wanted number of barracks/naval bases is below this, AI will not consider downsizing them further
 	MONEY_SPENDING_CONSTRUCTION_CRITICAL_THRESHOLD = 0.75 # 0.5 # If actual-to-wanted number of construction sector buildings is below this, AI considers it very important to get more
 
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_BASE = 2 # 0 # Base max number of goods AI wants to tax
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 3 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
+
+	PRODUCTION_BUILDING_OUTPUT_WANTED_INDUSTRIAL_GOODS_FACTOR = 0.5 # 0.25 # Add this value to a building for each unit of money worth of industrial goods that aren't overproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_WANTED_MILITARY_GOODS_FACTOR = 0.1 # 0.25 # Add this value to a building for each unit of money worth of military goods that aren't overproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_NEEDED_INDUSTRIAL_GOODS_FACTOR = 0.75 # 0.5 # Add this value to a building for each unit of money worth of industrial goods that are underproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_NEEDED_MILITARY_GOODS_FACTOR = 0.25 # 0.5 # Add this value to a building for each unit of money worth of military goods that are underproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_CAN_USE_INVESTMENT_POOL_MULT = 1.5 # 1.25 #  Total weight is multiplied by this if the building can be funded by the country's investment pool
+	PRODUCTION_BUILDING_DESIRED_INFRASTRUCTURE_SURPLUS = 5 # 2 # If infrastructure 'surplus' in state is less than this, AI wants to improve it
+	PRODUCTION_BUILDING_EXCESSIVE_INFRASTRUCTURE_SURPLUS = 20 # 10 # If infra 'surplus' in state is at least this, AI doesn't want to improve it
+	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD = 40
+	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_MULT = 0.75 # 0.5 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
+	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 60
+	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_MULT = 0.5 # 0.25 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
 }
 
 NCountry = {
@@ -74,7 +91,7 @@ NDiplomacy = {
 	WAR_GOAL_EXECUTION_PRIORITY_OPEN_MARKET = 5 # 4
 	WAR_GOAL_EXECUTION_PRIORITY_REGIME_CHANGE = 4 # 5
 
-	# DAYS_TO_LOSE_POWER_RANK = 91 # 365
+	DAYS_TO_LOSE_POWER_RANK = 30 # 365
 }
 
 NEconomy = {
