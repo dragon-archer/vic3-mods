@@ -26,10 +26,15 @@ da_migration.1 = {
 					this = root
 					market = root.market
 					has_variable = da_rejected_target
+					has_law = law_type:law_closed_borders
 				}
 				country_can_have_mass_migration_to = root
 				any_scope_culture = {
 					culture_can_have_mass_migration_to_country = root
+					NAND = {
+						culture_is_discriminated_in = prev
+						NOT = { prev = { has_law = law_type:law_no_migration_controls } }
+					}
 					prev = {
 						culture_percent_country = {
 							target = prev
@@ -88,6 +93,10 @@ da_migration.1 = {
 			ordered_scope_culture = {
 				limit = {
 					culture_can_have_mass_migration_to_country = ROOT
+					NAND = {
+						culture_is_discriminated_in = prev
+						NOT = { prev = { has_law = law_type:law_no_migration_controls } }
+					}
 					prev = {
 						culture_percent_country = {
 							target = prev
@@ -149,6 +158,10 @@ da_migration.1 = {
 			create_mass_migration = {
 				origin = scope:migration_country
 				culture = scope:migration_culture
+			}
+			if = {
+				limit = { NOT = { has_cultural_community = scope:migration_culture } }
+				add_cultural_community = scope:migration_culture
 			}
 			set_variable = { name = da_rejected_target days = 365 }
 		}
