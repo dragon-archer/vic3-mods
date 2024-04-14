@@ -6,11 +6,11 @@
 
  # agitators_1
  revolution_pulse1_events.18.a: "训斥[SCOPE.sCharacter('will_kill_for_peace_general').GetPrimaryRoleTitle]，否决计划。"
- revolution_pulse1_events.18.b: "我们应该使用现成的方案来解决现在的问题。"
  revolution_pulse1_events.18.c: "或许[SCOPE.sCharacter('will_kill_for_peace_general').GetPrimaryRoleTitle]可以想一个更仁慈的计划？"
  sway_to_bonapartism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_bonapartism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_bonapartist').GetName]#!#!"
  sway_to_legitimism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_legitimism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_legitimist').GetName]#!#!"
  sway_to_orleanism_compatible_ideology_tt: "[Character.GetFullNamePossessive]的当前[concept_ideology]（[Character.GetIdeology.GetName]）#b 不#!#tooltippable #tooltip:[Character.GetTooltipTag],sway_to_orleanism_compatible_ideology_tt_compatibility_list 反对[GetIdeology('ideology_orleanist').GetName]#!#!"
+ revolution_pulse1_events.7.a: "要求这个[SCOPE.sCharacter('guglielmo_pepe').GetPrimaryRoleTitle]支持政府。"
 
  # agitators_6
  agitator_legal_events.8.d: "原本对[SCOPE.sLaw('current_law_scope').GetName]议题持观望态度的[SCOPE.gsInterestGroup('dirty_dealers').GetName]，在一夜之间改变了看法。[SCOPE.gsInterestGroup('dirty_dealers').GetLeader.GetFullName]指称[SCOPE.sCharacter('supporting_agitator').GetFullName]策划了一项秘密交易。"
@@ -66,6 +66,10 @@
  JOB_SATISFACTION_PER_SOL_ABOVE_COUNTRY_STRATA_SOL: "当前生活水平（#tooltippable #tooltip:[Pop.GetTooltipTag],TOOLTIP_POP_QOL [LabelingHelper.GetLabelForStandardOfLiving(Pop.GetCurrentStandardOfLiving)|v]（[Pop.GetCurrentStandardOfLiving|v]）#!#!）和[Pop.GetCountry.GetName][Pop.GetPopType.GetStrata]平均[concept_sol]（[LabelingHelper.GetLabelForStandardOfLiving(FixedPointToInt('(CFixedPoint)$AVERAGE$'))|v]（$AVERAGE|v1$））的差距：$VALUE|0+=$"
  INCORPORATED_POPULATION: "已整合人口：[Country.GetIncorporatedPopulation|Kv]"
  UNINCORPORATED_POPULATION: "未整合人口：[Country.GetPeopleAbroad|Kv]"
+ CIVIL_WAR_MAX_PROGRESS_BREAKDOWN: "进度上限：#v [Multiply_CFixedPoint('(CFixedPoint)$TOTAL_MAX$','(CFixedPoint)100')|0]#!\n来自[Concept('concept_political_movement_radicalism', '$concept_political_movement_radicalism_short$')]：#v [Multiply_CFixedPoint('(CFixedPoint)$MAX_FROM_RADICALISM$','(CFixedPoint)100')|0]#!"
+ CIVIL_WAR_MAX_UNSUPPORTED_PROGRESS: "革命进度无法维持在[Multiply_CFixedPoint('(CFixedPoint)$PROGRESS_LIMIT$','(CFixedPoint)100')|0v]以上，因为该[concept_political_movement]缺乏[concept_interest_group]的支持。"
+ CIVIL_WAR_PROGRESS_AT_MAX_PROGRESS: "#header 每周进度\n$TOOLTIP_DELIMITER$\n[concept_revolution]处于目前的最高进度#tooltippable #tooltip:$BREAKDOWN_TAG$ [Multiply_CFixedPoint('(CFixedPoint)$MAX_PROGRESS$','(CFixedPoint)100')|0]#!#!"
+ CIVIL_WAR_PROGRESS_ABOVE_MAX_PROGRESS: "#header 每周进度\n$TOOLTIP_DELIMITER$\n[concept_revolution]超出最高进度#tooltippable #tooltip:$BREAKDOWN_TAG$ [Multiply_CFixedPoint('(CFixedPoint)$MAX_PROGRESS$','(CFixedPoint)100')|0]#!#!"
 
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
