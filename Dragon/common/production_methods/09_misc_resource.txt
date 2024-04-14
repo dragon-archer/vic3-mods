@@ -317,7 +317,6 @@ default_building_rubber_plantation = {
 		level_scaled = {
 			building_employment_laborers_add = 4000
 			building_employment_farmers_add = 800
-			building_employment_clergymen_add = 100
 		}
 	}
 }
@@ -342,10 +341,9 @@ automatic_irrigation_building_rubber_plantation = {
 		}
 
 		level_scaled = {
-			building_employment_laborers_add = 3000
-			building_employment_farmers_add = 1200
-			building_employment_machinists_add = 500
-			building_employment_clergymen_add = 100
+			building_employment_laborers_add = 2000
+			building_employment_farmers_add = 1500
+			building_employment_machinists_add = 1000
 		}
 	}
 }
