@@ -115,6 +115,7 @@ da_check_reload = {
 da_misc_monthly = {
 	effect = {
 		da_restore_historical_capital = yes
+		da_save_ai_economy = yes
 	}
 }
 

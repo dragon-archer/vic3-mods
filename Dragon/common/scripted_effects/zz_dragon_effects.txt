@@ -459,3 +459,25 @@ da_console_1_aftermath = { # For localization
 		else = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ig } }
 	}
 }
+
+da_save_ai_economy = {
+	if = {
+		limit = { is_ai = yes }
+		while = {
+			limit = {
+				scaled_gold_reserves < 0.8
+				investment_pool > 1000000
+			}
+			add_investment_pool  = -1000000
+			add_treasury = 1000000
+		}
+		while = {
+			limit = {
+				scaled_gold_reserves < 0.8
+				investment_pool > 10000
+			}
+			add_investment_pool  = -10000
+			add_treasury = 10000
+		}
+	}
+}
