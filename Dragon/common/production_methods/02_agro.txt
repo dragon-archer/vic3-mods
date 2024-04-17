@@ -542,10 +542,10 @@ pm_sheep_farms = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_grain_add = 10
+			goods_input_grain_add = 15 # 10
 			goods_output_fabric_add = 20
 			goods_output_fertilizer_add = 5
-			goods_output_meat_add = -5
+			# goods_output_meat_add = -5
 		}
 	}
 }
@@ -565,10 +565,10 @@ pm_intensive_grazing_ranch = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_grain_add = 20
+			goods_input_grain_add = 25 # 20
 			goods_output_fabric_add = 30
 			goods_output_fertilizer_add = 10
-			goods_output_meat_add = -10
+			goods_output_meat_add = -5 # -10
 		}
 	}
 }
@@ -618,7 +618,7 @@ pm_slaughterhouses = {
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 10
-			goods_output_meat_add = 30
+			goods_output_meat_add = 35 # 30
 		}
 
 		level_scaled = {
