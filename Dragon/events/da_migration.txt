@@ -159,10 +159,10 @@ da_migration.1 = {
 				origin = scope:migration_country
 				culture = scope:migration_culture
 			}
-			if = {
-				limit = { NOT = { has_cultural_community = scope:migration_culture } }
-				add_cultural_community = scope:migration_culture
-			}
+			# if = {
+			# 	limit = { NOT = { has_cultural_community = scope:migration_culture } }
+			# 	add_cultural_community = scope:migration_culture
+			# }
 			set_variable = { name = da_rejected_target days = 365 }
 		}
 	}
