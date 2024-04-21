@@ -430,33 +430,36 @@ da_unmark_character_effect = {
 }
 
 da_console_1_aftermath = { # For localization
-	custom_tooltip = da_aftermath_tt
-	da_add_normal_modifier = { _ = da_change_ideology_modifier_base }
-	scope:char = {
-		if = { # Agitator & Opposition *should* not be bribed by government
-			limit = {
-				OR = {
-					scope:interest_group = {
-						is_in_government = no
-						is_marginal = no
+	if = {
+		limit = { NOT = { has_variable = da_disable_console_1_aftermath_var } }
+		custom_tooltip = da_aftermath_tt
+		da_add_normal_modifier = { _ = da_change_ideology_modifier_base }
+		scope:char = {
+			if = { # Agitator & Opposition *should* not be bribed by government
+				limit = {
+					OR = {
+						scope:interest_group = {
+							is_in_government = no
+							is_marginal = no
+						}
+						has_role = agitator
 					}
-					has_role = agitator
 				}
+				da_add_normal_modifier_doubled = { _ = da_change_ideology_modifier_char }
 			}
-			da_add_normal_modifier_doubled = { _ = da_change_ideology_modifier_char }
+			else = { da_add_normal_modifier = { _ = da_change_ideology_modifier_char } }
+			if = {
+				limit = { is_ruler = yes }
+				root = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ruler } }
+			}
 		}
-		else = { da_add_normal_modifier = { _ = da_change_ideology_modifier_char } }
-		if = {
-			limit = { is_ruler = yes }
-			root = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ruler } }
+		scope:interest_group = {
+			if = {
+				limit = { is_powerful = yes }
+				da_add_normal_decaying_modifier_doubled = { _ = da_change_ideology_modifier_ig }
+			}
+			else = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ig } }
 		}
-	}
-	scope:interest_group = {
-		if = {
-			limit = { is_powerful = yes }
-			da_add_normal_decaying_modifier_doubled = { _ = da_change_ideology_modifier_ig }
-		}
-		else = { da_add_normal_decaying_modifier = { _ = da_change_ideology_modifier_ig } }
 	}
 }
 
