@@ -58,6 +58,30 @@ da_assimilation.1 = {
 					}
 				}
 			}
+			alternative_limit = {
+				prev = {
+					culture_percent_country = {
+						target = prev
+						value >= 0.4
+					}
+				}
+			}
+			alternative_limit = {
+				prev = {
+					culture_percent_country = {
+						target = prev
+						value >= 0.3
+					}
+				}
+			}
+			alternative_limit = {
+				prev = {
+					culture_percent_country = {
+						target = prev
+						value >= 0.2
+					}
+				}
+			}
 			alternative_limit = { always = yes }
 			save_scope_as = prim_cu
 		}
