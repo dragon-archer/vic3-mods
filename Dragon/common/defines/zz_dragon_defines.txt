@@ -15,6 +15,7 @@
 	MONEY_SPENDING_NAVY_THREAT_THRESHOLD = 0.75 # 0.50 # If a hostile country has a more than this much larger navy than AI does, it wants to increase military spending
 	MONEY_SPENDING_MILITARY_CRITICAL_THRESHOLD = 0.25 # 0.5 # If actual-to-wanted number of barracks/naval bases is below this, AI will not consider downsizing them further
 	MONEY_SPENDING_CONSTRUCTION_CRITICAL_THRESHOLD = 0.75 # 0.5 # If actual-to-wanted number of construction sector buildings is below this, AI considers it very important to get more
+	MONEY_SPENDING_SUPPLY_NETWORK_EXCESSIVE_CONVOYS = 500 # 2000 # If AI has more than this amount of free convoys, it's fine to downsize ports to save money
 
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_BASE = 2 # 0 # Base max number of goods AI wants to tax
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 3 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
@@ -158,6 +159,7 @@ NPops = {
 }
 
 NWar = {
+	DEVASTATION_FROM_BATTLES = 5 # 0.1 # For each battle
 	STATE_CONQUEST_HOMELAND_AND_CLAIM_RADICALIZATION = 0.05 # 0.1
 	STATE_CONQUEST_HOMELAND_OR_CLAIM_RADICALIZATION = 0.2 # 0.3
 	STATE_CONQUEST_DEFAULT_RADICALIZATION = 0.4 # 0.5
