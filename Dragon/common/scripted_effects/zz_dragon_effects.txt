@@ -160,7 +160,7 @@ da_ban_military = {
 		change_relations = {
 			country = root
 			value = {
-				value = -5
+				value = -1
 				every_scope_building = {
 					limit = {
 						OR = {
@@ -173,9 +173,10 @@ da_ban_military = {
 					}
 					subtract = {
 						value = level
-						multiply = 2
+						multiply = 1.5
 					}
 				}
+				round = yes
 				min = -20
 			}
 		}
@@ -228,7 +229,7 @@ da_ban_shipyard = {
 		change_relations = {
 			country = root
 			value = {
-				value = -5
+				value = -1
 				every_scope_building = {
 					limit = {
 						OR = {
@@ -239,9 +240,10 @@ da_ban_shipyard = {
 					}
 					subtract = {
 						value = level
-						multiply = 2
+						multiply = 1.5
 					}
 				}
+				round = yes
 				min = -20
 			}
 		}
