@@ -5,7 +5,9 @@
 		workforce_scaled = {
 			country_prestige_add = 100
 			country_convoys_capacity_add = 1000
-			country_tax_income_add = 50000
+			# country_tax_income_add = 50000
+			country_minting_add = 50000
+			country_minting_mult = 0.1
 		}
 	}
 
@@ -21,9 +23,9 @@
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_tools_add = 20 # 10
-			goods_input_coal_add = 30 # 15
-			goods_output_transportation_add = 100
+			goods_input_tools_add = 40 # 10
+			goods_input_coal_add = 60 # 15
+			goods_output_transportation_add = 200
 		}
 		level_scaled = {
 			building_employment_clerks_add = 2000
