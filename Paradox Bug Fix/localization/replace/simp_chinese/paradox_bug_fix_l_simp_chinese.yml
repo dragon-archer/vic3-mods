@@ -30,6 +30,9 @@
  # customized_tooltips
  DATA_RELIGION_NAME_TOOLTIP_INGAME_ADDED: "[Religion.GetCountryDiscriminationStatus(GetPlayer.Self)][AddLocalizationIf(NotEqualTo_int64(Religion.GetPopulation(GetPlayer.Self),'(int64)0'),'RELIGION_IN_COUNTRY_DESC')]"
 
+ # diplomatic_plays
+ DIPLO_PLAY_CONFIDENCE_OR_NEUTRALITY_FACTOR_TRUCE: "与主要参与者之一有$TRUCES$：#bold $VALUE|+=$#!"
+
  # effects_l_simp_chinese.yml
  EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
  SET_STATE_OWNER: "[TARGET_COUNTRY.GetName]成为[STATE.GetName]的拥有者"
