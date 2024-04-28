@@ -5,7 +5,8 @@
 		workforce_scaled = {
 			country_prestige_add = 100
 			country_convoys_capacity_add = 1000
-			# country_tax_income_add = 50000
+			country_convoys_capacity_mult = 0.1
+			country_trade_route_competitiveness_mult = 0.25
 			country_minting_add = 50000
 			country_minting_mult = 0.1
 		}
