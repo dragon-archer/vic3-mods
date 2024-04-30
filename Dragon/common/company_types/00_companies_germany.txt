@@ -65,9 +65,9 @@ company_rheinmetall = {
 	flavored_company = yes
 
 	building_types = {
-		building_maize_farm
-		building_livestock_ranch
-		building_vineyard_plantation
+		building_wheat_farm
+		building_silk_plantation
+		building_opium_plantation
 		building_food_industry
 		building_textile_mills
 		building_furniture_manufacturies
@@ -184,9 +184,9 @@ company_siemens_and_halske = {
 	flavored_company = yes
 
 	building_types = {
+		building_maize_farm
+		building_vineyard_plantation
 		building_sugar_plantation
-		building_wheat_farm
-		building_silk_plantation
 		building_lead_mine
 		building_rubber_plantation
 		building_power_plant
@@ -236,7 +236,7 @@ company_prussian_state_railways = {
 	flavored_company = yes
 
 	building_types = {
-		building_tobacco_plantation
+		building_livestock_ranch
 		building_gold_mine
 		building_iron_mine
 		building_coal_mine
