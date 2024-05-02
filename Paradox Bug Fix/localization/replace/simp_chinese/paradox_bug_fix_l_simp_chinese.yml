@@ -44,6 +44,7 @@
  ADD_TREASURY_EFFECT_FIRST_NEGATIVE: "[COUNTRY.GetNameNoFlag]失去@money!$VALUE|-=k$"
  ADD_TREASURY_EFFECT_THIRD_POSITIVE: "[COUNTRY.GetName]获得@money!$VALUE|+=k$"
  ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=k$"
+ RESOLVE_PLAY_FOR: "[Country.GetName]强制执行战争目标，并离开[DIPLOMATIC_PLAY.GetName]"
 
  # interfaces
  GOODS_PANEL_PRICE_COMPARE: "与[concept_base_price]相比#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!\n市场结余：#variable [Goods.GetMarketBuyAndSellOrdersBalance|=D+]#!"
