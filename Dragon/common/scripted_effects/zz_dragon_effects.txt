@@ -39,8 +39,11 @@ da_debug_log = {
 
 # Require: $_$, the new owner
 da_set_state_owner = {
-	set_state_owner = $_$
-	set_state_type = incorporated
+	if = {
+		limit = { NOT = { $_$ ?= owner } }
+		set_state_owner = $_$
+		set_state_type = incorporated
+	}
 }
 
 da_add_normal_modifier = {
