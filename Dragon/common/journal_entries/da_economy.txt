@@ -1,0 +1,37 @@
+﻿je_da_economy = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	group = je_group_internal_affairs
+
+	possible = {
+		is_player = yes
+	}
+
+	is_shown_when_inactive = {
+		is_player = yes
+	}
+
+	immediate = {
+		trigger_event = { on_action = da_save_initial_gdp }
+	}
+
+	on_yearly_pulse = {
+		on_actions = {
+			da_save_yearly_gdp
+		}
+	}
+
+	on_monthly_pulse = {
+		on_actions = {
+			da_update_economy_variables
+			da_update_economy_modifiers
+		}
+	}
+
+	complete = {
+		always = no
+	}
+
+	should_be_pinned_by_default = yes
+	weight = 10000
+}

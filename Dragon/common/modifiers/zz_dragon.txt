@@ -129,3 +129,29 @@ da_change_ideology_modifier_ruler = {
 	country_legitimacy_base_add = -10
 	country_legitimacy_ideological_incoherence_mult = 0.25
 }
+
+da_cpi_mod = {
+	icon = gfx/interface/icons/generic_icons/inflation.dds
+	state_expected_sol_mult = 0.5
+}
+
+da_cpi_rate_mod = {
+	icon = gfx/interface/icons/generic_icons/inflation.dds
+	state_radicals_from_sol_change_mult = 1
+	state_loyalists_from_sol_change_mult = -1
+}
+
+da_inflation_rate_mod = {
+	icon = gfx/interface/icons/generic_icons/inflation.dds
+	country_loan_interest_rate_add = 1
+	building_economy_of_scale_level_cap_add = 100
+	country_minting_mult = -5
+}
+
+da_deflation_rate_mod = { # Note: always inverted
+	icon = gfx/interface/icons/generic_icons/inflation.dds
+	country_loan_interest_rate_add = 1
+	country_trade_route_competitiveness_mult = -1
+	state_tax_waste_add = -1
+	building_throughput_add = 1
+}
