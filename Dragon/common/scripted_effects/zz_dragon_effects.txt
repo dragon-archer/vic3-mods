@@ -78,6 +78,17 @@ da_add_normal_decaying_modifier_doubled = {
 	}
 }
 
+da_update_modifier = {
+	if = {
+		limit = { has_modifier = $name$ }
+		remove_modifier = $name$
+	}
+	add_modifier = {
+		name = $name$
+		multiplier = $multiplier$
+	}
+}
+
 # Require: $_$, the country to be annexed by THIS, no check for existsence
 # Replaced by annex_with_incorporation
 da_annex = {
@@ -125,11 +136,11 @@ da_annex_if_exists_2 = {
 # Require: VAR, VALUE
 da_set_or_add_var = {
 	if = {
-		limit = { has_variable = $VAR$ }
-		change_variable = { name = $VAR$ add = $VALUE$ }
+		limit = { has_variable = $name$ }
+		change_variable = { name = $name$ add = $value$ }
 	}
 	else = {
-		set_variable = { name = $VAR$ value = $VALUE$ }
+		set_variable = { name = $name$ value = $value$ }
 	}
 }
 
@@ -361,7 +372,7 @@ da_create_communism_subject_effect = {
 da_create_debt_container = {
 	hidden_effect = {
 		set_variable = { name = da_recent_issued_debt_var months = 6 }
-		da_set_or_add_var = { VAR = da_issued_debt_var VALUE = $ISSUED_SIZE$ }
+		da_set_or_add_var = { name = da_issued_debt_var value = $ISSUED_SIZE$ }
 		create_character = {
 			age = 1 # Avoid being killed & used to sort
 			on_created = {
