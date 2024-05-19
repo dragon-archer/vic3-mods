@@ -1,0 +1,761 @@
+﻿# Scope: Market {
+## Detail goods value {
+gold_market_sell_amount = {
+	value = 100
+	multiply = mg:gold.market_goods_sell_orders
+}
+
+gold_market_buy_amount = {
+	value = 100
+	multiply = mg:gold.market_goods_buy_orders
+}
+
+groceries_market_sell_amount = {
+	value = 30
+	multiply = mg:groceries.market_goods_sell_orders
+}
+
+groceries_market_buy_amount = {
+	value = 30
+	multiply = mg:groceries.market_goods_buy_orders
+}
+
+grain_market_sell_amount = {
+	value = 20
+	multiply = mg:grain.market_goods_sell_orders
+}
+
+grain_market_buy_amount = {
+	value = 20
+	multiply = mg:grain.market_goods_buy_orders
+}
+
+sugar_market_sell_amount = {
+	value = 30
+	multiply = mg:sugar.market_goods_sell_orders
+}
+
+sugar_market_buy_amount = {
+	value = 30
+	multiply = mg:sugar.market_goods_buy_orders
+}
+
+fish_market_sell_amount = {
+	value = 20
+	multiply = mg:fish.market_goods_sell_orders
+}
+
+fish_market_buy_amount = {
+	value = 20
+	multiply = mg:fish.market_goods_buy_orders
+}
+
+iron_market_sell_amount = {
+	value = 40
+	multiply = mg:iron.market_goods_sell_orders
+}
+
+iron_market_buy_amount = {
+	value = 40
+	multiply = mg:iron.market_goods_buy_orders
+}
+
+meat_market_sell_amount = {
+	value = 30
+	multiply = mg:meat.market_goods_sell_orders
+}
+
+meat_market_buy_amount = {
+	value = 30
+	multiply = mg:meat.market_goods_buy_orders
+}
+
+oil_market_sell_amount = {
+	value = 40
+	multiply = mg:oil.market_goods_sell_orders
+}
+
+oil_market_buy_amount = {
+	value = 40
+	multiply = mg:oil.market_goods_buy_orders
+}
+
+liquor_market_sell_amount = {
+	value = 30
+	multiply = mg:liquor.market_goods_sell_orders
+}
+
+liquor_market_buy_amount = {
+	value = 30
+	multiply = mg:liquor.market_goods_buy_orders
+}
+
+glass_market_sell_amount = {
+	value = 40
+	multiply = mg:glass.market_goods_sell_orders
+}
+
+glass_market_buy_amount = {
+	value = 40
+	multiply = mg:glass.market_goods_buy_orders
+}
+
+clothes_market_sell_amount = {
+	value = 30
+	multiply = mg:clothes.market_goods_sell_orders
+}
+
+clothes_market_buy_amount = {
+	value = 30
+	multiply = mg:clothes.market_goods_buy_orders
+}
+
+fabric_market_sell_amount = {
+	value = 20
+	multiply = mg:fabric.market_goods_sell_orders
+}
+
+fabric_market_buy_amount = {
+	value = 20
+	multiply = mg:fabric.market_goods_buy_orders
+}
+
+dye_market_sell_amount = {
+	value = 40
+	multiply = mg:dye.market_goods_sell_orders
+}
+
+dye_market_buy_amount = {
+	value = 40
+	multiply = mg:dye.market_goods_buy_orders
+}
+
+tools_market_sell_amount = {
+	value = 40
+	multiply = mg:tools.market_goods_sell_orders
+}
+
+tools_market_buy_amount = {
+	value = 40
+	multiply = mg:tools.market_goods_buy_orders
+}
+
+electricity_market_sell_amount = {
+	value = 30
+	multiply = mg:electricity.market_goods_sell_orders
+}
+
+electricity_market_buy_amount = {
+	value = 30
+	multiply = mg:electricity.market_goods_buy_orders
+}
+
+luxury_clothes_market_sell_amount = {
+	value = 60
+	multiply = mg:luxury_clothes.market_goods_sell_orders
+}
+
+luxury_clothes_market_buy_amount = {
+	value = 60
+	multiply = mg:luxury_clothes.market_goods_buy_orders
+}
+
+silk_market_sell_amount = {
+	value = 40
+	multiply = mg:silk.market_goods_sell_orders
+}
+
+silk_market_buy_amount = {
+	value = 40
+	multiply = mg:silk.market_goods_buy_orders
+}
+
+rubber_market_sell_amount = {
+	value = 40
+	multiply = mg:rubber.market_goods_sell_orders
+}
+
+rubber_market_buy_amount = {
+	value = 40
+	multiply = mg:rubber.market_goods_buy_orders
+}
+
+furniture_market_sell_amount = {
+	value = 30
+	multiply = mg:furniture.market_goods_sell_orders
+}
+
+furniture_market_buy_amount = {
+	value = 30
+	multiply = mg:furniture.market_goods_buy_orders
+}
+
+wood_market_sell_amount = {
+	value = 20
+	multiply = mg:wood.market_goods_sell_orders
+}
+
+wood_market_buy_amount = {
+	value = 20
+	multiply = mg:wood.market_goods_buy_orders
+}
+
+luxury_furniture_market_sell_amount = {
+	value = 60
+	multiply = mg:luxury_furniture.market_goods_sell_orders
+}
+
+luxury_furniture_market_buy_amount = {
+	value = 60
+	multiply = mg:luxury_furniture.market_goods_buy_orders
+}
+
+hardwood_market_sell_amount = {
+	value = 40
+	multiply = mg:hardwood.market_goods_sell_orders
+}
+
+hardwood_market_buy_amount = {
+	value = 40
+	multiply = mg:hardwood.market_goods_buy_orders
+}
+
+lead_market_sell_amount = {
+	value = 40
+	multiply = mg:lead.market_goods_sell_orders
+}
+
+lead_market_buy_amount = {
+	value = 40
+	multiply = mg:lead.market_goods_buy_orders
+}
+
+porcelain_market_sell_amount = {
+	value = 70
+	multiply = mg:porcelain.market_goods_sell_orders
+}
+
+porcelain_market_buy_amount = {
+	value = 70
+	multiply = mg:porcelain.market_goods_buy_orders
+}
+
+steel_market_sell_amount = {
+	value = 50
+	multiply = mg:steel.market_goods_sell_orders
+}
+
+steel_market_buy_amount = {
+	value = 50
+	multiply = mg:steel.market_goods_buy_orders
+}
+
+paper_market_sell_amount = {
+	value = 30
+	multiply = mg:paper.market_goods_sell_orders
+}
+
+paper_market_buy_amount = {
+	value = 30
+	multiply = mg:paper.market_goods_buy_orders
+}
+
+sulfur_market_sell_amount = {
+	value = 50
+	multiply = mg:sulfur.market_goods_sell_orders
+}
+
+sulfur_market_buy_amount = {
+	value = 50
+	multiply = mg:sulfur.market_goods_buy_orders
+}
+
+fertilizer_market_sell_amount = {
+	value = 30
+	multiply = mg:fertilizer.market_goods_sell_orders
+}
+
+fertilizer_market_buy_amount = {
+	value = 30
+	multiply = mg:fertilizer.market_goods_buy_orders
+}
+
+explosives_market_sell_amount = {
+	value = 50
+	multiply = mg:explosives.market_goods_sell_orders
+}
+
+explosives_market_buy_amount = {
+	value = 50
+	multiply = mg:explosives.market_goods_buy_orders
+}
+
+coal_market_sell_amount = {
+	value = 30
+	multiply = mg:coal.market_goods_sell_orders
+}
+
+coal_market_buy_amount = {
+	value = 30
+	multiply = mg:coal.market_goods_buy_orders
+}
+
+engines_market_sell_amount = {
+	value = 60
+	multiply = mg:engines.market_goods_sell_orders
+}
+
+engines_market_buy_amount = {
+	value = 60
+	multiply = mg:engines.market_goods_buy_orders
+}
+
+automobiles_market_sell_amount = {
+	value = 100
+	multiply = mg:automobiles.market_goods_sell_orders
+}
+
+automobiles_market_buy_amount = {
+	value = 100
+	multiply = mg:automobiles.market_goods_buy_orders
+}
+
+clippers_market_sell_amount = {
+	value = 60
+	multiply = mg:clippers.market_goods_sell_orders
+}
+
+clippers_market_buy_amount = {
+	value = 60
+	multiply = mg:clippers.market_goods_buy_orders
+}
+
+steamers_market_sell_amount = {
+	value = 70
+	multiply = mg:steamers.market_goods_sell_orders
+}
+
+steamers_market_buy_amount = {
+	value = 70
+	multiply = mg:steamers.market_goods_buy_orders
+}
+
+manowars_market_sell_amount = {
+	value = 70
+	multiply = mg:manowars.market_goods_sell_orders
+}
+
+manowars_market_buy_amount = {
+	value = 70
+	multiply = mg:manowars.market_goods_buy_orders
+}
+
+ironclads_market_sell_amount = {
+	value = 80
+	multiply = mg:ironclads.market_goods_sell_orders
+}
+
+ironclads_market_buy_amount = {
+	value = 80
+	multiply = mg:ironclads.market_goods_buy_orders
+}
+
+tanks_market_sell_amount = {
+	value = 80
+	multiply = mg:tanks.market_goods_sell_orders
+}
+
+tanks_market_buy_amount = {
+	value = 80
+	multiply = mg:tanks.market_goods_buy_orders
+}
+
+aeroplanes_market_sell_amount = {
+	value = 80
+	multiply = mg:aeroplanes.market_goods_sell_orders
+}
+
+aeroplanes_market_buy_amount = {
+	value = 80
+	multiply = mg:aeroplanes.market_goods_buy_orders
+}
+
+radios_market_sell_amount = {
+	value = 80
+	multiply = mg:radios.market_goods_sell_orders
+}
+
+radios_market_buy_amount = {
+	value = 80
+	multiply = mg:radios.market_goods_buy_orders
+}
+
+telephones_market_sell_amount = {
+	value = 70
+	multiply = mg:telephones.market_goods_sell_orders
+}
+
+telephones_market_buy_amount = {
+	value = 70
+	multiply = mg:telephones.market_goods_buy_orders
+}
+
+coffee_market_sell_amount = {
+	value = 50
+	multiply = mg:coffee.market_goods_sell_orders
+}
+
+coffee_market_buy_amount = {
+	value = 50
+	multiply = mg:coffee.market_goods_buy_orders
+}
+
+tobacco_market_sell_amount = {
+	value = 40
+	multiply = mg:tobacco.market_goods_sell_orders
+}
+
+tobacco_market_buy_amount = {
+	value = 40
+	multiply = mg:tobacco.market_goods_buy_orders
+}
+
+fruit_market_sell_amount = {
+	value = 30
+	multiply = mg:fruit.market_goods_sell_orders
+}
+
+fruit_market_buy_amount = {
+	value = 30
+	multiply = mg:fruit.market_goods_buy_orders
+}
+
+wine_market_sell_amount = {
+	value = 50
+	multiply = mg:wine.market_goods_sell_orders
+}
+
+wine_market_buy_amount = {
+	value = 50
+	multiply = mg:wine.market_goods_buy_orders
+}
+
+services_market_sell_amount = {
+	value = 30
+	multiply = mg:services.market_goods_sell_orders
+}
+
+services_market_buy_amount = {
+	value = 30
+	multiply = mg:services.market_goods_buy_orders
+}
+
+fine_art_market_sell_amount = {
+	value = 200
+	multiply = mg:fine_art.market_goods_sell_orders
+}
+
+fine_art_market_buy_amount = {
+	value = 200
+	multiply = mg:fine_art.market_goods_buy_orders
+}
+
+tea_market_sell_amount = {
+	value = 50
+	multiply = mg:tea.market_goods_sell_orders
+}
+
+tea_market_buy_amount = {
+	value = 50
+	multiply = mg:tea.market_goods_buy_orders
+}
+
+opium_market_sell_amount = {
+	value = 50
+	multiply = mg:opium.market_goods_sell_orders
+}
+
+opium_market_buy_amount = {
+	value = 50
+	multiply = mg:opium.market_goods_buy_orders
+}
+
+transportation_market_sell_amount = {
+	value = 30
+	multiply = mg:transportation.market_goods_sell_orders
+}
+
+transportation_market_buy_amount = {
+	value = 30
+	multiply = mg:transportation.market_goods_buy_orders
+}
+
+ammunition_market_sell_amount = {
+	value = 50
+	multiply = mg:ammunition.market_goods_sell_orders
+}
+
+ammunition_market_buy_amount = {
+	value = 50
+	multiply = mg:ammunition.market_goods_buy_orders
+}
+
+small_arms_market_sell_amount = {
+	value = 60
+	multiply = mg:small_arms.market_goods_sell_orders
+}
+
+small_arms_market_buy_amount = {
+	value = 60
+	multiply = mg:small_arms.market_goods_buy_orders
+}
+
+artillery_market_sell_amount = {
+	value = 70
+	multiply = mg:artillery.market_goods_sell_orders
+}
+
+artillery_market_buy_amount = {
+	value = 70
+	multiply = mg:artillery.market_goods_buy_orders
+}
+## End detail goods value }
+
+## Accumulated goods value {
+military_market_sell_amount = {
+	add = ammunition_market_sell_amount
+	add = small_arms_market_sell_amount
+	add = artillery_market_sell_amount
+	add = tanks_market_sell_amount
+	add = aeroplanes_market_sell_amount
+	add = manowars_market_sell_amount
+	add = ironclads_market_sell_amount
+}
+
+military_market_buy_amount = {
+	add = ammunition_market_buy_amount
+	add = small_arms_market_buy_amount
+	add = artillery_market_buy_amount
+	add = tanks_market_buy_amount
+	add = aeroplanes_market_buy_amount
+	add = manowars_market_buy_amount
+	add = ironclads_market_buy_amount
+}
+
+staple_market_sell_amount = {
+	add = grain_market_sell_amount
+	add = fish_market_sell_amount
+	add = fabric_market_sell_amount
+	add = wood_market_sell_amount
+	add = groceries_market_sell_amount
+	add = clothes_market_sell_amount
+	add = furniture_market_sell_amount
+	add = paper_market_sell_amount
+	add = services_market_sell_amount
+	add = transportation_market_sell_amount
+	add = electricity_market_sell_amount
+}
+
+staple_market_buy_amount = {
+	add = grain_market_buy_amount
+	add = fish_market_buy_amount
+	add = fabric_market_buy_amount
+	add = wood_market_buy_amount
+	add = groceries_market_buy_amount
+	add = clothes_market_buy_amount
+	add = furniture_market_buy_amount
+	add = paper_market_buy_amount
+	add = services_market_buy_amount
+	add = transportation_market_buy_amount
+	add = electricity_market_buy_amount
+}
+
+industrial_market_sell_amount = {
+	add = clippers_market_sell_amount
+	add = steamers_market_sell_amount
+	add = silk_market_sell_amount
+	add = dye_market_sell_amount
+	add = sulfur_market_sell_amount
+	add = coal_market_sell_amount
+	add = iron_market_sell_amount
+	add = lead_market_sell_amount
+	add = hardwood_market_sell_amount
+	add = rubber_market_sell_amount
+	add = oil_market_sell_amount
+	add = engines_market_sell_amount
+	add = steel_market_sell_amount
+	add = glass_market_sell_amount
+	add = fertilizer_market_sell_amount
+	add = tools_market_sell_amount
+	add = explosives_market_sell_amount
+}
+
+industrial_market_buy_amount = {
+	add = clippers_market_buy_amount
+	add = steamers_market_buy_amount
+	add = silk_market_buy_amount
+	add = dye_market_buy_amount
+	add = sulfur_market_buy_amount
+	add = coal_market_buy_amount
+	add = iron_market_buy_amount
+	add = lead_market_buy_amount
+	add = hardwood_market_buy_amount
+	add = rubber_market_buy_amount
+	add = oil_market_buy_amount
+	add = engines_market_buy_amount
+	add = steel_market_buy_amount
+	add = glass_market_buy_amount
+	add = fertilizer_market_buy_amount
+	add = tools_market_buy_amount
+	add = explosives_market_buy_amount
+}
+
+luxury_market_sell_amount = {
+	add = porcelain_market_sell_amount
+	add = meat_market_sell_amount
+	add = fruit_market_sell_amount
+	add = liquor_market_sell_amount
+	add = wine_market_sell_amount
+	add = tea_market_sell_amount
+	add = coffee_market_sell_amount
+	add = sugar_market_sell_amount
+	add = tobacco_market_sell_amount
+	add = opium_market_sell_amount
+	add = automobiles_market_sell_amount
+	add = telephones_market_sell_amount
+	add = radios_market_sell_amount
+	add = luxury_clothes_market_sell_amount
+	add = luxury_furniture_market_sell_amount
+	add = gold_market_sell_amount
+	add = fine_art_market_sell_amount
+}
+
+luxury_market_buy_amount = {
+	add = porcelain_market_buy_amount
+	add = meat_market_buy_amount
+	add = fruit_market_buy_amount
+	add = liquor_market_buy_amount
+	add = wine_market_buy_amount
+	add = tea_market_buy_amount
+	add = coffee_market_buy_amount
+	add = sugar_market_buy_amount
+	add = tobacco_market_buy_amount
+	add = opium_market_buy_amount
+	add = automobiles_market_buy_amount
+	add = telephones_market_buy_amount
+	add = radios_market_buy_amount
+	add = luxury_clothes_market_buy_amount
+	add = luxury_furniture_market_buy_amount
+	add = gold_market_buy_amount
+	add = fine_art_market_buy_amount
+}
+
+total_market_sell_amount = {
+	add = military_market_sell_amount
+	add = staple_market_sell_amount
+	add = industrial_market_sell_amount
+	add = luxury_market_sell_amount
+}
+
+total_market_buy_amount = {
+	add = military_market_buy_amount
+	add = staple_market_buy_amount
+	add = industrial_market_buy_amount
+	add = luxury_market_buy_amount
+}
+## End accumulated goods value }
+# End market scope }
+
+# Scope: Country {
+cpi_rate = {
+	market = {
+		value = {
+			add = staple_market_buy_amount
+			add = luxury_market_buy_amount
+		}
+		divide = {
+			add = staple_market_sell_amount
+			add = luxury_market_sell_amount
+		}
+		subtract = 1
+	}
+}
+
+monthly_cpi_rate = {
+	value = cpi_rate
+	divide = 12
+}
+
+cpi_value = {
+	if = {
+		limit = { has_variable = cpi_value_var }
+		value = var:cpi_value_var
+	}
+}
+
+ppi_rate = {
+	market = {
+		value = industrial_market_buy_amount
+		divide = industrial_market_sell_amount
+		subtract = 1
+	}
+}
+
+monthly_ppi_rate = {
+	value = ppi_rate
+	divide = 12
+}
+
+ppi_value = {
+	if = {
+		limit = { has_variable = ppi_value_var }
+		value = var:ppi_value_var
+	}
+}
+
+market_inflation_rate = {
+	market = {
+		value = total_market_buy_amount
+		divide = tobacco_market_sell_amount
+		subtract = 1
+	}
+}
+
+gdp_growth_rate = {
+	if = {
+		limit = { has_variable = gdp_last_year_var }
+		value = gdp
+		subtract = var:gdp_last_year_var
+		divide = var:gdp_last_year_var
+	}
+}
+
+mintage_inflation_rate = {
+	value = modifier:country_minting_add
+	multiply = {
+		value = 1
+		add = modifier:country_minting_mult
+	}
+	multiply = 52 # Yearly minting count
+	divide = gdp
+	subtract = gdp_growth_rate
+}
+
+inflation_rate = {
+	value = market_inflation_rate
+	add = mintage_inflation_rate
+}
+
+monthly_inflation_rate = {
+	value = inflation_rate
+	divide = 12
+}
+
+inflation_value = {
+	if = {
+		limit = { has_variable = inflation_value_var }
+		value = var:inflation_value_var
+	}
+}
+
+# End country scope }
