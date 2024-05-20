@@ -257,3 +257,17 @@
  da_change_ideology_modifier_char: "向政府屈服"
  da_change_ideology_modifier_ig: "不受欢迎的游说"
  da_change_ideology_modifier_ruler: "割裂的意识形态"
+
+ # Economy
+ je_da_economy: "经济面板"
+ je_da_economy_reason: "$da_economy_inflation_tt$\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
+ da_gui_cpi_mod_tt: "[GetScriptedGui('da_gui_cpi_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ da_gui_cpi_rate_mod_tt: "[GetScriptedGui('da_gui_cpi_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ da_gui_inflation_rate_mod_tt: "[GetScriptedGui('da_gui_inflation_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ da_economy_inflation_tt: "$EFFECT_LIST_BULLET$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%+=]#!，来自：\n$TAB$$EFFECT_LIST_BULLET$市场价格因素：[Country.MakeScope.ScriptValue('cached_market_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%+=]\n$EFFECT_LIST_BULLET$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
+ da_economy_cpi_tt: "$EFFECT_LIST_BULLET$当前消费者价格指数：#tooltippable;tooltip:da_gui_cpi_rate_mod_tt [Country.MakeScope.ScriptValue('cached_cpi_rate')|%-=]#!\n$EFFECT_LIST_BULLET$累计消费者价格指数：#tooltippable;tooltip:da_gui_cpi_mod_tt [Country.MakeScope.ScriptValue('cpi_value')|%-=]#!"
+ da_economy_ppi_tt: "$EFFECT_LIST_BULLET$当前生产者物价指数：[Country.MakeScope.ScriptValue('cached_ppi_rate')|%-=]\n$EFFECT_LIST_BULLET$累计生产者物价指数：[Country.MakeScope.ScriptValue('ppi_value')|%-=]"
+ da_cpi_mod: "累计消费者价格指数"
+ da_cpi_rate_mod: "消费者价格指数"
+ da_inflation_rate_mod: "通货膨胀率"
+ da_deflation_rate_mod: "通货紧缩率"
