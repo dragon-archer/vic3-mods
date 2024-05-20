@@ -145,18 +145,13 @@ da.9999 = { # Suppress error
 	orphan = yes
 	immediate = {
 		save_temporary_scope_value_as = { name = da_extended_mode value = yes }
-		s:STATE_WALLONIA = { set_variable = da_keep_split_var }
-		if = {
-			limit = {
-				is_target_in_variable_list = {
-					name = da_merged_from_var
-					target = yes
-				}
-				var:da_our_pops_cnt_var > 0
-				var:da_total_pops_cnt_var > 0
-				var:da_debt_timer_var > 0
-			}
-		}
+		da_suppress_unused_var = { _ = da_keep_split_var }
+		da_suppress_unused_var = { _ = da_merged_from_var }
+		da_suppress_unused_var = { _ = da_our_pops_cnt_var }
+		da_suppress_unused_var = { _ = da_total_pops_cnt_var }
+		da_suppress_unused_var = { _ = da_debt_timer_var }
+		da_suppress_unused_var = { _ = da_disable_console_1_aftermath_var }
+		da_suppress_unused_var = { _ = initial_gdp_var }
 	}
 }
 
