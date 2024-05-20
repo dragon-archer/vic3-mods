@@ -681,8 +681,18 @@ cpi_rate = {
 	}
 }
 
+cached_cpi_rate = {
+	if = {
+		limit = { has_variable = cached_cpi_rate_var }
+		value = var:cached_cpi_rate_var
+	}
+	else = {
+		value = cpi_rate
+	}
+}
+
 monthly_cpi_rate = {
-	value = cpi_rate
+	value = cached_cpi_rate
 	divide = 12
 }
 
@@ -701,8 +711,18 @@ ppi_rate = {
 	}
 }
 
+cached_ppi_rate = {
+	if = {
+		limit = { has_variable = cached_ppi_rate_var }
+		value = var:cached_ppi_rate_var
+	}
+	else = {
+		value = ppi_rate
+	}
+}
+
 monthly_ppi_rate = {
-	value = ppi_rate
+	value = cached_ppi_rate
 	divide = 12
 }
 
@@ -716,8 +736,18 @@ ppi_value = {
 market_inflation_rate = {
 	market = {
 		value = total_market_buy_amount
-		divide = tobacco_market_sell_amount
+		divide = total_market_sell_amount
 		subtract = 1
+	}
+}
+
+cached_market_inflation_rate = {
+	if = {
+		limit = { has_variable = cached_market_inflation_rate_var }
+		value = var:cached_market_inflation_rate_var
+	}
+	else = {
+		value = market_inflation_rate
 	}
 }
 
@@ -730,6 +760,10 @@ gdp_growth_rate = {
 	}
 }
 
+gdp_growth_rate_inverted = {
+	subtract = gdp_growth_rate
+}
+
 mintage_inflation_rate = {
 	value = modifier:country_minting_add
 	multiply = {
@@ -738,12 +772,16 @@ mintage_inflation_rate = {
 	}
 	multiply = 52 # Yearly minting count
 	divide = gdp
-	subtract = gdp_growth_rate
 }
 
 inflation_rate = {
-	value = market_inflation_rate
+	add = cached_market_inflation_rate
 	add = mintage_inflation_rate
+	subtract = gdp_growth_rate
+}
+
+inflation_rate_inverted = {
+	subtract = inflation_rate
 }
 
 monthly_inflation_rate = {
