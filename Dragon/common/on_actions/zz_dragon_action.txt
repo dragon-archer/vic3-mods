@@ -145,6 +145,14 @@ da_save_yearly_gdp = {
 	}
 }
 
+da_update_economy_caches = {
+	effect = {
+		da_cache_value = { _ = cpi_rate }
+		da_cache_value = { _ = ppi_rate }
+		da_cache_value = { _ = market_inflation_rate }
+	}
+}
+
 da_update_economy_variables = {
 	effect = {
 		da_set_or_add_var = { name = cpi_value_var value = monthly_cpi_rate }
@@ -156,13 +164,13 @@ da_update_economy_variables = {
 da_update_economy_modifiers = {
 	effect = {
 		da_update_modifier = { name = da_cpi_mod multiplier = cpi_value }
-		da_update_modifier = { name = da_cpi_rate_mod multiplier = cpi_rate }
+		da_update_modifier = { name = da_cpi_rate_mod multiplier = cached_cpi_rate }
 		remove_modifier = da_inflation_rate_mod
 		remove_modifier = da_deflation_rate_mod
 		if = {
 			limit = { inflation_rate >= 0 }
 			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
 		}
-		else = { add_modifier = { name = da_deflation_rate_mod multiplier = inflation_rate } }
+		else = { add_modifier = { name = da_deflation_rate_mod multiplier = inflation_rate_inverted } }
 	}
 }

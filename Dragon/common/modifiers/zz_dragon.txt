@@ -148,10 +148,10 @@ da_inflation_rate_mod = {
 	country_minting_mult = -5
 }
 
-da_deflation_rate_mod = { # Note: always inverted
+da_deflation_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
-	country_loan_interest_rate_add = 1
-	country_trade_route_competitiveness_mult = -1
-	state_tax_waste_add = -1
-	building_throughput_add = 1
+	country_loan_interest_rate_add = -1
+	country_trade_route_competitiveness_mult = 1
+	state_tax_waste_add = 1
+	building_throughput_add = -1
 }

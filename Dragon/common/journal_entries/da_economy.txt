@@ -28,6 +28,12 @@
 		}
 	}
 
+	on_weekly_pulse = {
+		on_actions = {
+			da_update_economy_caches
+		}
+	}
+
 	complete = {
 		always = no
 	}
