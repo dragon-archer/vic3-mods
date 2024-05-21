@@ -16,6 +16,19 @@ da_newly_reloaded = {
 	}
 }
 
+# _1, variable name
+# _2, comparision statement
+da_compare_var = {
+	trigger_if = {
+		limit = { has_variable = $_1$ }
+		save_temporary_scope_value_as = { name = da_compare_var_temp value = var:$_1$ }
+	}
+	trigger_else = {
+		save_temporary_scope_value_as = { name = da_compare_var_temp value = 0 }
+	}
+	scope:da_compare_var_temp $_2$ # intended
+}
+
 da_is_banning_military = {
 	custom_description = {
 		text = da_is_banning_military_tt
