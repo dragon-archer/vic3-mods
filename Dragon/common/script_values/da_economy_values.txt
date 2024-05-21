@@ -797,3 +797,20 @@ inflation_value = {
 }
 
 # End country scope }
+
+# No scope
+da_tax_step = 0.005 # 0.5%
+da_tax_increase_max_steps = 5
+
+da_tax_max_multiplier = {
+	value = da_tax_step
+	multiply = da_tax_increase_max_steps
+}
+
+da_consumption_tax_multiplier = {
+	if = {
+		limit = { has_variable = da_consumption_tax_var }
+		value = var:da_consumption_tax_var
+		multiply = da_tax_step
+	}
+}
