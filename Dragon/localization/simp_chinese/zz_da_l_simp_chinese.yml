@@ -271,3 +271,4 @@
  da_cpi_rate_mod: "消费者价格指数"
  da_inflation_rate_mod: "通货膨胀率"
  da_deflation_rate_mod: "通货紧缩率"
+ da_consumption_tax_mod: "$modifier_tax_consumption_add$"
