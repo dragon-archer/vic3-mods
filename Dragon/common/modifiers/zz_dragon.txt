@@ -160,3 +160,8 @@ da_consumption_tax_mod = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	tax_consumption_add = 1
 }
+
+da_income_tax_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	tax_income_add = 1
+}
