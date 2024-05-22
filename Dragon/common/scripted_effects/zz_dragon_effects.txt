@@ -81,12 +81,28 @@ da_add_normal_decaying_modifier_doubled = {
 da_update_modifier = {
 	if = {
 		limit = { has_modifier = $name$ }
-		remove_modifier = $name$
+		hidden_effect = { remove_modifier = $name$ }
 	}
-	add_modifier = {
-		name = $name$
-		multiplier = $multiplier$
+	if = {
+		limit = { 0 != $multiplier$ }
+		add_modifier = {
+			name = $name$
+			multiplier = $multiplier$
+		}
 	}
+}
+
+da_update_modifier_with_offset = {
+	show_as_tooltip = {
+		add_modifier = {
+			name = $name$
+			multiplier = {
+				value = $multiplier$
+				add = $offset$
+			}
+		}
+	}
+	hidden_effect = { da_update_modifier = { name = $name$ multiplier = $multiplier$ } }
 }
 
 # Require: $_$, the country to be annexed by THIS, no check for existsence
