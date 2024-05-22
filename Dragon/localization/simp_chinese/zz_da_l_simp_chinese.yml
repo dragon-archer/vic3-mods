@@ -1,7 +1,19 @@
 ﻿l_simp_chinese:
- # Borrowed from Germany Enhanced
- da_german_bonus: "德意志精神"
- da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
+ # Unused
+ #  da_german_bonus: "德意志精神"
+ #  da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
+ #  da_oil_industry_boosted: "石油行业效率提升"
+ #  pm_clergy_ranch: "教士指导"
+ #  pm_atheism_ranch: "政府指导"
+ #  pm_privately_owned_building_subsistence_atheism: "无神论私人所有"
+ #  pm_homesteading_building_subsistence_atheism: "无神论宅地法"
+ #  pm_potatoes_enhanced: "更多马铃薯"
+ #  pm_vineyards_enhanced: "更多葡萄园"
+ #  pm_apple_orchards_enhanced: "更多苹果园"
+ #  pm_citrus_orchards_enhanced: "更多柑橘园"
+ #  pm_fig_orchards_enhanced: "更多无花果园"
+ #  pmg_automation_building_chemical_plants: "自动化"
+ #  pmg_religion_ranch: "指导人员"
 
  # Misc
  literacy_penalty: "高识字率"
@@ -132,7 +144,6 @@
 
  # Modifiers
  da_approval: "TODO"
- da_oil_industry_boosted: "石油行业效率提升"
 
  # Notifications
  da_decision_ng: "采用DA决议"
@@ -160,25 +171,14 @@
  pm_atheism_plantation: "政府指导"
  pm_clergy_farming: "教士指导"
  pm_atheism_farming: "政府指导"
- pm_clergy_ranch: "教士指导"
- pm_atheism_ranch: "政府指导"
- pm_privately_owned_building_subsistence_atheism: "无神论私人所有"
- pm_homesteading_building_subsistence_atheism: "无神论宅地法"
- pm_potatoes_enhanced: "更多马铃薯"
- pm_vineyards_enhanced: "更多葡萄园"
- pm_apple_orchards_enhanced: "更多苹果园"
- pm_citrus_orchards_enhanced: "更多柑橘园"
- pm_fig_orchards_enhanced: "更多无花果园"
  pm_assembly_lines_building_power_plant: "流水线"
 
  # Production Method Groups
- pmg_automation_building_chemical_plants: "自动化"
  pmg_automation_building_power_plant: "自动化"
  pmg_base_building_empire_center: "基础"
  pmg_university_focus: "学院重心"
  pmg_religion_plantation: "指导人员"
  pmg_religion_farming: "指导人员"
- pmg_religion_ranch: "指导人员"
 
  # Script Values
  OCCUPATION_COST_FROM_PUPULATION_AND_NUM_PROVINCES: "[SCOPE.GetRootScope.GetState.GetPopulationSize|Dv][Concept('concept_pop','$concept_population$')]和[SCOPE.GetRootScope.GetState.GetNumProvinces|Dv][Concept('concept_province', '$concept_provinces$')]"
@@ -272,3 +272,14 @@
  da_inflation_rate_mod: "通货膨胀率"
  da_deflation_rate_mod: "通货紧缩率"
  da_consumption_tax_mod: "$modifier_tax_consumption_add$"
+ da_income_tax_mod: "$modifier_tax_income_add$"
+ da_decrease_consumption_tax: "降低$modifier_tax_consumption_add$"
+ da_decrease_consumption_tax_desc: "降低#b [SCOPE.ScriptValue('da_tax_step')|%]#!$modifier_tax_consumption_add$"
+ da_decrease_consumption_tax_tt: "$modifier_tax_consumption_add$大于等于#b 0#!"
+ da_increase_consumption_tax: "提高$modifier_tax_consumption_add$"
+ da_increase_consumption_tax_desc: "提高#b [SCOPE.ScriptValue('da_tax_step')|%]#!$modifier_tax_consumption_add$"
+ da_increase_consumption_tax_tt: "$modifier_tax_consumption_add$小于等于当前税法所规定的基准税率#b [SCOPE.ScriptValue('da_tax_max_multiplier')|%=]#!"
+ da_decrease_income_tax: "降低$modifier_tax_income_add$"
+ da_decrease_income_tax_desc: "降低#b [SCOPE.ScriptValue('da_tax_step')|%]#!$modifier_tax_income_add$"
+ da_increase_income_tax: "提高$modifier_tax_income_add$"
+ da_increase_income_tax_desc: "提高#b [SCOPE.ScriptValue('da_tax_step')|%]#!$modifier_tax_income_add$"
