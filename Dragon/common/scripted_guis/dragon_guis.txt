@@ -2,14 +2,14 @@
 da_gui_cpi_mod = {
 	scope = country
 	effect = {
-		add_modifier = { name = da_cpi_mod multiplier = cpi_value }
+		da_update_modifier = { name = da_cpi_mod multiplier = cpi_value }
 	}
 }
 
 da_gui_cpi_rate_mod = {
 	scope = country
 	effect = {
-		add_modifier = { name = da_cpi_rate_mod multiplier = cached_cpi_rate }
+		da_update_modifier = { name = da_cpi_rate_mod multiplier = cached_cpi_rate }
 	}
 }
 
@@ -18,8 +18,8 @@ da_gui_inflation_rate_mod = {
 	effect = {
 		if = {
 			limit = { inflation_rate >= 0 }
-			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
+			da_update_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
 		}
-		else = { add_modifier = { name = da_deflation_rate_mod multiplier = inflation_rate_inverted } }
+		else = { da_update_modifier = { name = da_deflation_rate_mod multiplier = inflation_rate_inverted } }
 	}
 }
