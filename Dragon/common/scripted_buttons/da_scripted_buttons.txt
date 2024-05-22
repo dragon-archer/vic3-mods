@@ -376,3 +376,75 @@ deactive_luxury_goods_upgrade_manager = {
 		remove_global_variable = da_luxury_goods_upgrade_manager
 	}
 }
+
+da_decrease_consumption_tax = {
+	name = "da_decrease_consumption_tax"
+	desc = "da_decrease_consumption_tax_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_consumption_tax_tt
+			modifier:tax_consumption_add > da_tax_step
+			modifier:tax_consumption_add > {
+				subtract = da_consumption_tax_multiplier
+			}
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_consumption_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_consumption_tax_mod multiplier = da_consumption_tax_multiplier offset = da_tax_step_inverted }
+	}
+}
+
+da_increase_consumption_tax = {
+	name = "da_increase_consumption_tax"
+	desc = "da_increase_consumption_tax_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_consumption_tax_tt
+			da_consumption_tax_multiplier < da_tax_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_consumption_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_consumption_tax_mod multiplier = da_consumption_tax_multiplier offset = da_tax_step }
+	}
+}
+
+da_decrease_income_tax = {
+	name = "da_decrease_income_tax"
+	desc = "da_decrease_income_tax_desc"
+	visible = {
+		NOT = { has_law = law_type:law_land_based_taxation }
+	}
+	possible = {
+		modifier:tax_income_add > da_tax_step
+		modifier:tax_income_add > {
+			subtract = da_income_tax_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_income_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_income_tax_mod multiplier = da_income_tax_multiplier offset = da_tax_step_inverted }
+	}
+}
+
+da_increase_income_tax = {
+	name = "da_increase_income_tax"
+	desc = "da_increase_income_tax_desc"
+	visible = {
+		NOT = { has_law = law_type:law_land_based_taxation }
+	}
+	possible = {
+		da_income_tax_multiplier < da_tax_max_multiplier
+	}
+	effect = {
+		da_set_or_add_var = { name = da_income_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_income_tax_mod multiplier = da_income_tax_multiplier offset = da_tax_step }
+	}
+}

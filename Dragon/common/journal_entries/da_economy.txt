@@ -3,11 +3,16 @@
 
 	group = je_group_internal_affairs
 
-	possible = {
+	scripted_button = da_decrease_consumption_tax
+	scripted_button = da_increase_consumption_tax
+	scripted_button = da_decrease_income_tax
+	scripted_button = da_increase_income_tax
+
+	is_shown_when_inactive = {
 		is_player = yes
 	}
 
-	is_shown_when_inactive = {
+	possible = {
 		is_player = yes
 	}
 
