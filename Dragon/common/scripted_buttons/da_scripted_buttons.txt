@@ -420,12 +420,15 @@ da_decrease_income_tax = {
 	name = "da_decrease_income_tax"
 	desc = "da_decrease_income_tax_desc"
 	visible = {
-		NOT = { has_law = law_type:law_land_based_taxation }
+		NOT = { has_law = law_type:law_consumption_based_taxation }
 	}
 	possible = {
-		modifier:tax_income_add > da_tax_step
-		modifier:tax_income_add > {
-			subtract = da_income_tax_multiplier
+		custom_tooltip = {
+			text = da_decrease_income_tax_tt
+			modifier:tax_income_add > da_tax_step
+			modifier:tax_income_add > {
+				subtract = da_income_tax_multiplier
+			}
 		}
 	}
 	effect = {
@@ -438,13 +441,184 @@ da_increase_income_tax = {
 	name = "da_increase_income_tax"
 	desc = "da_increase_income_tax_desc"
 	visible = {
-		NOT = { has_law = law_type:law_land_based_taxation }
+		NOT = { has_law = law_type:law_consumption_based_taxation }
 	}
 	possible = {
-		da_income_tax_multiplier < da_tax_max_multiplier
+		custom_tooltip = {
+			text = da_increase_income_tax_tt
+			da_income_tax_multiplier < da_tax_max_multiplier
+		}
 	}
 	effect = {
 		da_set_or_add_var = { name = da_income_tax_var value = 1 }
 		da_update_modifier_with_offset = { name = da_income_tax_mod multiplier = da_income_tax_multiplier offset = da_tax_step }
+	}
+}
+
+da_decrease_dividends_tax = {
+	name = "da_decrease_dividends_tax"
+	desc = "da_decrease_dividends_tax_desc"
+	visible = {
+		OR = {
+			has_law = law_type:law_proportional_taxation
+			has_law = law_type:law_graduated_taxation
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_dividends_tax_tt
+			modifier:tax_dividends_add > da_tax_step
+			modifier:tax_dividends_add > {
+				subtract = da_dividends_tax_multiplier
+			}
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_dividends_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_dividends_tax_mod multiplier = da_dividends_tax_multiplier offset = da_tax_step_inverted }
+	}
+}
+
+da_increase_dividends_tax = {
+	name = "da_increase_dividends_tax"
+	desc = "da_increase_dividends_tax_desc"
+	visible = {
+		OR = {
+			has_law = law_type:law_proportional_taxation
+			has_law = law_type:law_graduated_taxation
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_dividends_tax_tt
+			da_dividends_tax_multiplier < da_tax_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_dividends_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_dividends_tax_mod multiplier = da_dividends_tax_multiplier offset = da_tax_step }
+	}
+}
+
+da_decrease_land_tax = {
+	name = "da_decrease_land_tax"
+	desc = "da_decrease_land_tax_desc"
+	visible = {
+		OR = {
+			has_law = law_type:law_land_based_taxation
+			has_law = law_type:law_per_capita_based_taxation
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_land_tax_tt
+			modifier:tax_land_add > da_fixed_tax_step
+			modifier:tax_land_add > {
+				subtract = da_land_tax_multiplier
+			}
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_land_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_land_tax_mod multiplier = da_land_tax_multiplier offset = da_fixed_tax_step_inverted }
+	}
+}
+
+da_increase_land_tax = {
+	name = "da_increase_land_tax"
+	desc = "da_increase_land_tax_desc"
+	visible = {
+		OR = {
+			has_law = law_type:law_land_based_taxation
+			has_law = law_type:law_per_capita_based_taxation
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_land_tax_tt
+			da_land_tax_multiplier < da_fixed_tax_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_land_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_land_tax_mod multiplier = da_land_tax_multiplier offset = da_fixed_tax_step }
+	}
+}
+
+da_decrease_per_capita_tax = {
+	name = "da_decrease_per_capita_tax"
+	desc = "da_decrease_per_capita_tax_desc"
+	visible = {
+		has_law = law_type:law_per_capita_based_taxation
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_per_capita_tax_tt
+			modifier:tax_per_capita_add > da_fixed_tax_step
+			modifier:tax_per_capita_add > {
+				subtract = da_per_capita_tax_multiplier
+			}
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_per_capita_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_per_capita_tax_mod multiplier = da_per_capita_tax_multiplier offset = da_fixed_tax_step_inverted }
+	}
+}
+
+da_increase_per_capita_tax = {
+	name = "da_increase_per_capita_tax"
+	desc = "da_increase_per_capita_tax_desc"
+	visible = {
+		has_law = law_type:law_per_capita_based_taxation
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_per_capita_tax_tt
+			da_per_capita_tax_multiplier < da_fixed_tax_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_per_capita_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_per_capita_tax_mod multiplier = da_per_capita_tax_multiplier offset = da_fixed_tax_step }
+	}
+}
+
+da_decrease_heathen_tax = {
+	name = "da_decrease_heathen_tax"
+	desc = "da_decrease_heathen_tax_desc"
+	visible = {
+		NOT = { has_law = law_type:law_total_separation }
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_heathen_tax_tt
+			modifier:tax_heathen_add > da_fixed_tax_step
+			modifier:tax_heathen_add > {
+				subtract = da_heathen_tax_multiplier
+			}
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_heathen_tax_var value = -1 }
+		da_update_modifier_with_offset = { name = da_heathen_tax_mod multiplier = da_heathen_tax_multiplier offset = da_fixed_tax_step_inverted }
+	}
+}
+
+da_increase_heathen_tax = {
+	name = "da_increase_heathen_tax"
+	desc = "da_increase_heathen_tax_desc"
+	visible = {
+		NOT = { has_law = law_type:law_total_separation }
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_heathen_tax_tt
+			da_heathen_tax_multiplier < da_fixed_tax_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_heathen_tax_var value = 1 }
+		da_update_modifier_with_offset = { name = da_heathen_tax_mod multiplier = da_heathen_tax_multiplier offset = da_fixed_tax_step }
 	}
 }

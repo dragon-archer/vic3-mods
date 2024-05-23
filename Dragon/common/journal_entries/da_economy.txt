@@ -7,6 +7,14 @@
 	scripted_button = da_increase_consumption_tax
 	scripted_button = da_decrease_income_tax
 	scripted_button = da_increase_income_tax
+	scripted_button = da_decrease_dividends_tax
+	scripted_button = da_increase_dividends_tax
+	scripted_button = da_decrease_land_tax
+	scripted_button = da_increase_land_tax
+	scripted_button = da_decrease_per_capita_tax
+	scripted_button = da_increase_per_capita_tax
+	scripted_button = da_decrease_heathen_tax
+	scripted_button = da_increase_heathen_tax
 
 	is_shown_when_inactive = {
 		is_player = yes

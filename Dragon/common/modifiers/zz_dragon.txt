@@ -165,3 +165,23 @@ da_income_tax_mod = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	tax_income_add = 1
 }
+
+da_dividends_tax_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	tax_dividends_add = 1
+}
+
+da_land_tax_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	tax_land_add = 1
+}
+
+da_per_capita_tax_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	tax_per_capita_add = 1
+}
+
+da_heathen_tax_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	tax_heathen_add = 1
+}
