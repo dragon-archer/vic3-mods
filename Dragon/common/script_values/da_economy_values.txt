@@ -753,15 +753,26 @@ cached_market_inflation_rate = {
 
 gdp_growth_rate = {
 	if = {
-		limit = { has_variable = gdp_last_year_var }
+		limit = { has_variable = gdp_last_month_var }
 		value = gdp
-		subtract = var:gdp_last_year_var
-		divide = var:gdp_last_year_var
+		divide = var:gdp_last_month_var
+		subtract = 1
+		multiply = 12
+	}
+}
+
+cached_gdp_growth_rate = {
+	if = {
+		limit = { has_variable = cached_gdp_growth_rate_var }
+		value = var:cached_gdp_growth_rate_var
+	}
+	else = {
+		value = gdp_growth_rate
 	}
 }
 
 gdp_growth_rate_inverted = {
-	subtract = gdp_growth_rate
+	subtract = cached_gdp_growth_rate
 }
 
 mintage_inflation_rate = {
@@ -777,7 +788,7 @@ mintage_inflation_rate = {
 inflation_rate = {
 	add = cached_market_inflation_rate
 	add = mintage_inflation_rate
-	subtract = gdp_growth_rate
+	subtract = cached_gdp_growth_rate
 }
 
 inflation_rate_inverted = {

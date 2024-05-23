@@ -20,12 +20,6 @@
 		trigger_event = { on_action = da_save_initial_gdp }
 	}
 
-	on_yearly_pulse = {
-		on_actions = {
-			da_save_yearly_gdp
-		}
-	}
-
 	on_monthly_pulse = {
 		on_actions = {
 			da_update_economy_variables
