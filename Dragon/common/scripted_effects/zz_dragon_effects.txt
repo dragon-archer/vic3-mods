@@ -527,3 +527,8 @@ da_save_ai_economy = {
 		}
 	}
 }
+
+da_clear_tax = {
+	remove_variable = da_$_$_tax_var
+	remove_modifier = da_$_$_tax_mod
+}
