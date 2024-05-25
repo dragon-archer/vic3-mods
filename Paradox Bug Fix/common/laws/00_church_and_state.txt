@@ -10,8 +10,7 @@ law_state_religion = {
 
 	progressiveness = -50
 
-	on_enact = {
-		recalculate_pop_ig_support = yes
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
@@ -24,6 +23,7 @@ law_state_religion = {
 			}
 			remove_modifier = antireligious_policies
 		}
+		recalculate_pop_ig_support = yes
 	}
 
 	religious_acceptance_rule = {
@@ -91,8 +91,7 @@ law_freedom_of_conscience = {
 		law_theocracy
 	}
 
-	on_enact = {
-		recalculate_pop_ig_support = yes
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
@@ -105,6 +104,7 @@ law_freedom_of_conscience = {
 			}
 			remove_modifier = antireligious_policies
 		}
+		recalculate_pop_ig_support = yes
 	}
 
 	religious_acceptance_rule = {
@@ -185,8 +185,7 @@ law_total_separation = {
 		law_theocracy
 	}
 
-	on_enact = {
-		recalculate_pop_ig_support = yes
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
@@ -199,6 +198,7 @@ law_total_separation = {
 			}
 			remove_modifier = antireligious_policies
 		}
+		recalculate_pop_ig_support = yes
 	}
 
 	religious_acceptance_rule = {
@@ -282,7 +282,7 @@ law_state_atheism = {
 		}
 	}
 
-	on_enact = {
+	on_activate = {
 		set_state_religion = rel:atheist
 		add_modifier = {
 			name = antireligious_policies
