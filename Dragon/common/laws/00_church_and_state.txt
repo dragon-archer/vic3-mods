@@ -10,16 +10,13 @@ law_state_religion = {
 
 	progressiveness = -50
 
-	on_enact = {
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
 			}
 			set_state_religion = root.country_definition.religion
 		}
-	}
-
-	on_activate = {
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
@@ -94,16 +91,13 @@ law_freedom_of_conscience = {
 		law_theocracy
 	}
 
-	on_enact = {
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
 			}
 			set_state_religion = root.country_definition.religion
 		}
-	}
-
-	on_activate = {
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
@@ -192,16 +186,13 @@ law_total_separation = {
 		law_theocracy
 	}
 
-	on_enact = {
+	on_activate = {
 		if = {
 			limit = {
 				has_law = law_type:law_state_atheism
 			}
 			set_state_religion = root.country_definition.religion
 		}
-	}
-
-	on_activate = {
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
