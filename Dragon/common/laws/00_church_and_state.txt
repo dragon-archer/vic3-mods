@@ -209,6 +209,7 @@ law_total_separation = {
 			remove_modifier = antireligious_policies
 		}
 		recalculate_pop_ig_support = yes
+		da_clear_tax = { _ = heathen }
 	}
 
 	religious_acceptance_rule = {

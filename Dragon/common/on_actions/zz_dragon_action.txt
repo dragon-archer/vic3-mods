@@ -47,37 +47,6 @@ da_on_law_enactment_pass = {
 			}
 			da_post_notification = { _ = da_law_pass }
 		}
-		if = {
-			limit = { currently_enacting_law.type = { is_same_law_group_as = law_type:law_consumption_based_taxation } }
-			switch = {
-				trigger = currently_enacting_law.type
-				law_type:law_consumption_based_taxation = {
-					da_clear_tax = { _ = income }
-					da_clear_tax = { _ = dividends }
-					da_clear_tax = { _ = land }
-					da_clear_tax = { _ = per_capita }
-				}
-				law_type:law_land_based_taxation = {
-					da_clear_tax = { _ = dividends }
-					da_clear_tax = { _ = per_capita }
-				}
-				law_type:law_per_capita_based_taxation = {
-					da_clear_tax = { _ = dividends }
-				}
-				law_type:law_proportional_taxation = {
-					da_clear_tax = { _ = land }
-					da_clear_tax = { _ = per_capita }
-				}
-				law_type:law_graduated_taxation = {
-					da_clear_tax = { _ = land }
-					da_clear_tax = { _ = per_capita }
-				}
-			}
-		}
-		if = {
-			limit = { currently_enacting_law.type = law_type:law_total_separation }
-			da_clear_tax = { _ = heathen }
-		}
 	}
 }
 
