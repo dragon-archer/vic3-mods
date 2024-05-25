@@ -93,14 +93,22 @@ da_update_modifier = {
 }
 
 da_update_modifier_with_offset = {
+	save_temporary_scope_value_as = {
+		name = temp
+		value = {
+			value = $multiplier$
+			add = $offset$
+		}
+	}
 	show_as_tooltip = {
-		add_modifier = {
-			name = $name$
-			multiplier = {
-				value = $multiplier$
-				add = $offset$
+		if = {
+			limit = { scope:temp != 0 }
+			add_modifier = {
+				name = $name$
+				multiplier = scope:temp
 			}
 		}
+		else = { remove_modifier = $name$ }
 	}
 	hidden_effect = { da_update_modifier = { name = $name$ multiplier = $multiplier$ } }
 }
@@ -530,5 +538,8 @@ da_save_ai_economy = {
 
 da_clear_tax = {
 	remove_variable = da_$_$_tax_var
-	remove_modifier = da_$_$_tax_mod
+	if = {
+		limit = { has_modifier = da_$_$_tax_mod }
+		remove_modifier = da_$_$_tax_mod
+	}
 }
