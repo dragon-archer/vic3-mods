@@ -879,3 +879,19 @@ da_heathen_tax_multiplier = {
 		multiply = da_fixed_tax_step
 	}
 }
+
+da_mintage_step = 0.05 # 5%
+da_mintage_min_multiplier = -1
+da_mintage_max_multiplier = 1
+
+da_mintage_step_inverted = {
+	subtract = da_mintage_step
+}
+
+da_mintage_multiplier = {
+	if = {
+		limit = { has_variable = da_mintage_var }
+		value = var:da_mintage_var
+		multiply = da_mintage_step
+	}
+}

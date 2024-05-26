@@ -185,3 +185,8 @@ da_heathen_tax_mod = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	tax_heathen_add = 1
 }
+
+da_mintage_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_mult = 1
+}
