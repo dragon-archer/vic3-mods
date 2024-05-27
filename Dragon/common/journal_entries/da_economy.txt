@@ -35,15 +35,16 @@
 	}
 
 	on_monthly_pulse = {
-		on_actions = {
-			da_update_economy_variables
-			da_update_economy_modifiers
+		effect = {
+			trigger_event = { on_action = da_update_economy_caches }
+			trigger_event = { on_action = da_update_economy_variables }
+			trigger_event = { on_action = da_update_economy_modifiers }
 		}
 	}
 
 	on_weekly_pulse = {
-		on_actions = {
-			da_update_economy_caches
+		effect = {
+			trigger_event = { on_action = da_update_economy_caches }
 		}
 	}
 
