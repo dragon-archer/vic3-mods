@@ -9,5 +9,18 @@
 
 	open_panel = states_panel|buildings
 	type = important_action
-	alert_group = da_not_enough_workers_in_state_group
+	alert_group = da_alert_group
+}
+
+da_is_in_hyperinflation = {
+	texture = "gfx/interface/icons/generic_icons/inflation.dds"
+	script_context = player_country
+
+	valid = {
+		is_in_hyperinflation_value = 1
+	}
+
+	open_panel = journal
+	type = important_action
+	alert_group = da_alert_group
 }
