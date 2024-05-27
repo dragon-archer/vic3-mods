@@ -94,8 +94,7 @@ da_merge_cultures_impl = {
 			set_variable = { name = da_merge_num_characters_var value = 0 }
 			if = { #TODO: Remove debug log if stable
 				limit = { NOT = { has_variable = da_merged_into_var } }
-				# debug_log ="\"Error: var:da_merged_into_var not exist for culture [THIS.GetCulture.GetName]\""
-				debug_log_scopes = yes
+				debug_log = "da_merge_culture: var:da_merged_into_var doesn't exist for culture [THIS.GetCulture.GetNameNoFormatting]"
 			}
 			else = {
 				var:da_merged_into_var = { save_scope_as = culture_1 }
