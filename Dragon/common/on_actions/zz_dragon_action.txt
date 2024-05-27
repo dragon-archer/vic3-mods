@@ -158,9 +158,14 @@ da_update_economy_modifiers = {
 	effect = {
 		da_update_modifier = { name = da_cpi_mod multiplier = cpi_value }
 		da_update_modifier = { name = da_cpi_rate_mod multiplier = cached_cpi_rate }
+		remove_modifier = da_hyperinflation_rate_mod
 		remove_modifier = da_inflation_rate_mod
 		remove_modifier = da_deflation_rate_mod
 		if = {
+			limit = { inflation_rate >= hyperinflation_gap }
+			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
+		}
+		else_if = {
 			limit = { inflation_rate >= 0 }
 			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
 		}

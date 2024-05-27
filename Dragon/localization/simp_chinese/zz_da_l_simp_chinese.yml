@@ -20,17 +20,24 @@
  BATTLE_VICTORY_MIN_VALUE_REACHED: "胜利分数下限"
  da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
  da_aftermath_tt: "#bold 选择任意选项后的后果：#!\n"
+ DEBUG: "调试"
+ DEBUG_DESC: "ROOT = [ROOT.GetCountry.GetName]"
 
- # Alert worker
- ag_da_not_enough_workers_in_state_group_name: "劳动力不足"
- ag_da_not_enough_workers_in_state_group_desc: "劳动力不足"
- ag_da_not_enough_workers_in_state_group_tooltip: "劳动力不足"
+ # Alerts
+ ag_da_alert_group_name: "劳动力不足"
+ ag_da_alert_group_desc: "劳动力不足"
+ ag_da_alert_group_tooltip: "劳动力不足"
 
  alert_da_not_enough_workers_in_state_name: "[SCOPE.GetRootScope.GetState.GetName]劳动力不足"
  da_not_enough_workers_in_state_setting_name: "劳动力不足"
  alert_da_not_enough_workers_in_state_desc: "[SCOPE.GetRootScope.GetState.GetName]的劳动力只有[SCOPE.ScriptValue('da_state_available_workers')]，不足[SCOPE.ScriptValue('da_not_enough_worker_thereshold')]人"
  alert_da_not_enough_workers_in_state_hint: "[SCOPE.GetRootScope.GetState.GetName]劳动力不足"
- alert_da_not_enough_workers_in_state_action: "转到州面板"
+ alert_da_not_enough_workers_in_state_action: "州面板"
+ alert_da_is_in_hyperinflation_name: "恶性通货膨胀"
+ da_is_in_hyperinflation_setting_name: "恶性通货膨胀"
+ alert_da_is_in_hyperinflation_desc: "当前通货膨胀率为[SCOPE.ScriptValue('inflation_rate')|%-=]，超过恶性通货膨胀临界值[SCOPE.ScriptValue('hyperinflation_gap')|%=]"
+ alert_da_is_in_hyperinflation_hint: "你可以通过降低铸币率来短期缓解通胀，但长期解决还需提高经济增长速率与降低物价水平"
+ alert_da_is_in_hyperinflation_action: "日志面板"
 
  # Investment pool
  da_disable_investment_pool: "禁用自主投资池"
@@ -260,17 +267,19 @@
 
  # Economy
  je_da_economy: "经济面板"
- je_da_economy_reason: "$da_economy_inflation_tt$\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
+ je_da_economy_reason: "[SelectLocalization(NotZero_CFixedPoint(Country.MakeScope.ScriptValue('is_in_hyperinflation_value')), 'da_economy_hyperinflation_tt', 'da_economy_inflation_tt')]\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
  da_gui_cpi_mod_tt: "[GetScriptedGui('da_gui_cpi_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_cpi_rate_mod_tt: "[GetScriptedGui('da_gui_cpi_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_inflation_rate_mod_tt: "[GetScriptedGui('da_gui_inflation_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_economy_inflation_tt: "$EFFECT_LIST_BULLET$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%+=]#!，来自：\n$TAB$$EFFECT_LIST_BULLET$市场价格因素：[Country.MakeScope.ScriptValue('cached_market_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%+=]\n$EFFECT_LIST_BULLET$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
+ da_economy_hyperinflation_tt: "@warning!#warning 当前正处于恶性通货膨胀状态，需将通货膨胀率降至[Country.MakeScope.ScriptValue('hyperinflation_gap')|%=]以下解除#!\n$EFFECT_LIST_BULLET$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%-=]#!，来自：\n$TAB$$EFFECT_LIST_BULLET$市场价格因素：[Country.MakeScope.ScriptValue('cached_market_inflation_rate')|%-=]\n$TAB$$EFFECT_LIST_BULLET$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%-=]\n$TAB$$EFFECT_LIST_BULLET$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%-=]\n$EFFECT_LIST_BULLET$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
  da_economy_cpi_tt: "$EFFECT_LIST_BULLET$当前消费者价格指数：#tooltippable;tooltip:da_gui_cpi_rate_mod_tt [Country.MakeScope.ScriptValue('cached_cpi_rate')|%-=]#!\n$EFFECT_LIST_BULLET$累计消费者价格指数：#tooltippable;tooltip:da_gui_cpi_mod_tt [Country.MakeScope.ScriptValue('cpi_value')|%-=]#!"
  da_economy_ppi_tt: "$EFFECT_LIST_BULLET$当前生产者物价指数：[Country.MakeScope.ScriptValue('cached_ppi_rate')|%-=]\n$EFFECT_LIST_BULLET$累计生产者物价指数：[Country.MakeScope.ScriptValue('ppi_value')|%-=]"
  da_cpi_mod: "累计消费者价格指数"
  da_cpi_rate_mod: "消费者价格指数"
- da_inflation_rate_mod: "通货膨胀率"
- da_deflation_rate_mod: "通货紧缩率"
+ da_inflation_rate_mod: "良性通货膨胀"
+ da_hyperinflation_rate_mod: "恶性通货膨胀"
+ da_deflation_rate_mod: "通货紧缩"
  da_consumption_tax_mod: "$modifier_tax_consumption_add$"
  da_income_tax_mod: "$modifier_tax_income_add$"
  da_dividends_tax_mod: "$modifier_tax_dividends_add$"
