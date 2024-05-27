@@ -3,6 +3,12 @@
 
 	group = je_group_internal_affairs
 
+	scripted_button = da_decrease_mintage
+	scripted_button = da_increase_mintage
+	scripted_button = da_decrease_government_wages
+	scripted_button = da_increase_government_wages
+	scripted_button = da_decrease_military_wages
+	scripted_button = da_increase_military_wages
 	scripted_button = da_decrease_consumption_tax
 	scripted_button = da_increase_consumption_tax
 	scripted_button = da_decrease_income_tax

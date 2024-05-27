@@ -624,7 +624,7 @@ da_decrease_mintage = {
 	}
 }
 
-da_inrease_mintage = {
+da_increase_mintage = {
 	name = "da_increase_mintage"
 	desc = "da_increase_mintage_desc"
 	visible = {
@@ -639,5 +639,77 @@ da_inrease_mintage = {
 	effect = {
 		da_set_or_add_var = { name = da_mintage_var value = 1 }
 		da_update_modifier_with_offset = { name = da_mintage_mod multiplier = da_mintage_multiplier offset = da_mintage_step }
+	}
+}
+
+da_decrease_government_wages = {
+	name = "da_decrease_government_wages"
+	desc = "da_decrease_government_wages_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_government_wages_tt
+			da_government_wages_multiplier > da_wages_min_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_government_wages_var value = -1 }
+		da_update_modifier_with_offset = { name = da_government_wages_mod multiplier = da_government_wages_multiplier offset = da_wages_step_inverted }
+	}
+}
+
+da_increase_government_wages = {
+	name = "da_increase_government_wages"
+	desc = "da_increase_government_wages_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_government_wages_tt
+			da_government_wages_multiplier < da_wages_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_government_wages_var value = 1 }
+		da_update_modifier_with_offset = { name = da_government_wages_mod multiplier = da_government_wages_multiplier offset = da_wages_step }
+	}
+}
+
+da_decrease_military_wages = {
+	name = "da_decrease_military_wages"
+	desc = "da_decrease_military_wages_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_decrease_military_wages_tt
+			da_military_wages_multiplier > da_wages_min_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_military_wages_var value = -1 }
+		da_update_modifier_with_offset = { name = da_military_wages_mod multiplier = da_military_wages_multiplier offset = da_wages_step_inverted }
+	}
+}
+
+da_increase_military_wages = {
+	name = "da_increase_military_wages"
+	desc = "da_increase_military_wages_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		custom_tooltip = {
+			text = da_increase_military_wages_tt
+			da_military_wages_multiplier < da_wages_max_multiplier
+		}
+	}
+	effect = {
+		da_set_or_add_var = { name = da_military_wages_var value = 1 }
+		da_update_modifier_with_offset = { name = da_military_wages_mod multiplier = da_military_wages_multiplier offset = da_wages_step }
 	}
 }
