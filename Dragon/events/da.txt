@@ -227,3 +227,21 @@ da_debt.1 = {
 		custom_tooltip = da_extend_debt_only_once_tt
 	}
 }
+
+namespace = da_debug
+
+da_debug.1 = {
+	type = country_event
+	title = DEBUG
+	desc = DEBUG_DESC
+	duration = 3
+	immediate = {
+		debug_log = "DA Debug is called"
+		debug_log = DEBUG_DESC
+		debug_log_scopes = yes
+	}
+	option = {
+		name = OK
+		default_option = yes
+	}
+}
