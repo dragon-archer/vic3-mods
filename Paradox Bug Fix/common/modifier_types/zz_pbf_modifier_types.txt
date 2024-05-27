@@ -1,0 +1,6 @@
+﻿# PBF:Keep in line with other IGs
+interest_group_ig_armed_forces_approval_add = {
+	good = yes
+	percent = no
+	# num_decimals = 0
+}
