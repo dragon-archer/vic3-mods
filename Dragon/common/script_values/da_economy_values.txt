@@ -891,8 +891,20 @@ da_heathen_tax_multiplier = {
 }
 
 da_mintage_step = 0.05 # 5%
-da_mintage_min_multiplier = -1
-da_mintage_max_multiplier = 1
+
+da_country_minting_mult_value = {
+	value = 1
+	add = modifier:country_minting_mult
+}
+
+da_mintage_max_multiplier = {
+	value = da_country_minting_mult_value
+	subtract = da_mintage_multiplier
+}
+
+da_mintage_min_multiplier = {
+	subtract = da_mintage_max_multiplier
+}
 
 da_mintage_step_inverted = {
 	subtract = da_mintage_step
