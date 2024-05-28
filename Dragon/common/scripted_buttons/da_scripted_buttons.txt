@@ -614,7 +614,6 @@ da_decrease_mintage = {
 	possible = {
 		custom_tooltip = {
 			text = da_decrease_mintage_tt
-			modifier:country_minting_mult > { subtract = da_mintage_multiplier }
 			da_mintage_multiplier > da_mintage_min_multiplier
 		}
 	}
