@@ -919,11 +919,20 @@ da_mintage_multiplier = {
 }
 
 da_wages_step = 0.05 # 5%
-da_wages_max_multiplier = 0.15
-da_wages_min_multiplier = -0.15
+da_wages_max_multiplier = 0.3
+da_wages_min_multiplier = -0.3
 
 da_wages_step_inverted = {
 	subtract = da_wages_step
+}
+
+da_wages_gap = {
+	value = 0.15
+	subtract = da_wages_step
+}
+
+da_wages_gap_inverted = {
+	subtract = da_wages_gap
 }
 
 da_government_wages_multiplier = {

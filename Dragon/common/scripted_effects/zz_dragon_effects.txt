@@ -543,3 +543,144 @@ da_clear_tax = {
 		remove_modifier = da_$_$_tax_mod
 	}
 }
+
+da_decrease_wage_level = {
+	if = {
+		limit = { $_$_wage_level = very_high }
+		set_$_$_wage_level = high
+	}
+	else_if = {
+		limit = { $_$_wage_level = high }
+		set_$_$_wage_level = medium
+	}
+	else_if = {
+		limit = { $_$_wage_level = medium }
+		set_$_$_wage_level = low
+	}
+	else_if = {
+		limit = { $_$_wage_level = low }
+		set_$_$_wage_level = very_low
+	}
+}
+
+da_increase_wage_level = {
+	if = {
+		limit = { $_$_wage_level = high }
+		set_$_$_wage_level = very_high
+	}
+	else_if = {
+		limit = { $_$_wage_level = medium }
+		set_$_$_wage_level = high
+	}
+	else_if = {
+		limit = { $_$_wage_level = low }
+		set_$_$_wage_level = medium
+	}
+	else_if = {
+		limit = { $_$_wage_level = very_low }
+		set_$_$_wage_level = low
+	}
+}
+
+da_decrease_wage = {
+	da_set_or_add_var = { name = da_$_$_wages_var value = -1 }
+	show_as_tooltip = {
+		if = {
+			limit = {
+				NOR = {
+					da_compare_var = { _1 = da_$_$_wages_var _2 = ">= 0" }
+					$_$_wage_level = very_low
+				}
+			}
+			da_decrease_wage_level = { _ = $_$ }
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_gap
+			}
+		}
+		else = {
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_step_inverted
+			}
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				NOR = {
+					da_compare_var = { _1 = da_$_$_wages_var _2 = ">= -1" }
+					$_$_wage_level = very_low
+				}
+			}
+			da_decrease_wage_level = { _ = $_$ }
+			change_variable = { name = da_$_$_wages_var add = 3 }
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_gap
+			}
+		}
+		else = {
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_step_inverted
+			}
+		}
+	}
+}
+
+da_increase_wage = {
+	da_set_or_add_var = { name = da_$_$_wages_var value = 1 }
+	show_as_tooltip = {
+		if = {
+			limit = {
+				NOR = {
+					da_compare_var = { _1 = da_$_$_wages_var _2 = "<= 0" }
+					$_$_wage_level = very_high
+				}
+			}
+			da_increase_wage_level = { _ = $_$ }
+			change_variable = { name = da_$_$_wages_var subtract = 3 }
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_gap_inverted
+			}
+		}
+		else = {
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_step
+			}
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				NOR = {
+					da_compare_var = { _1 = da_$_$_wages_var _2 = "<= 1" }
+					$_$_wage_level = very_high
+				}
+			}
+			da_increase_wage_level = { _ = $_$ }
+			change_variable = { name = da_$_$_wages_var subtract = 3 }
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_gap_inverted
+			}
+		}
+		else = {
+			da_update_modifier_with_offset = {
+				name = da_$_$_wages_mod
+				multiplier = da_$_$_wages_multiplier
+				offset = da_wages_step
+			}
+		}
+	}
+}

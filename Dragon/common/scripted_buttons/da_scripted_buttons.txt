@@ -654,8 +654,7 @@ da_decrease_government_wages = {
 		}
 	}
 	effect = {
-		da_set_or_add_var = { name = da_government_wages_var value = -1 }
-		da_update_modifier_with_offset = { name = da_government_wages_mod multiplier = da_government_wages_multiplier offset = da_wages_step_inverted }
+		da_decrease_wage = { _ = government }
 	}
 }
 
@@ -672,8 +671,7 @@ da_increase_government_wages = {
 		}
 	}
 	effect = {
-		da_set_or_add_var = { name = da_government_wages_var value = 1 }
-		da_update_modifier_with_offset = { name = da_government_wages_mod multiplier = da_government_wages_multiplier offset = da_wages_step }
+		da_increase_wage = { _ = government }
 	}
 }
 
@@ -690,8 +688,7 @@ da_decrease_military_wages = {
 		}
 	}
 	effect = {
-		da_set_or_add_var = { name = da_military_wages_var value = -1 }
-		da_update_modifier_with_offset = { name = da_military_wages_mod multiplier = da_military_wages_multiplier offset = da_wages_step_inverted }
+		da_decrease_wage = { _ = military }
 	}
 }
 
@@ -708,7 +705,6 @@ da_increase_military_wages = {
 		}
 	}
 	effect = {
-		da_set_or_add_var = { name = da_military_wages_var value = 1 }
-		da_update_modifier_with_offset = { name = da_military_wages_mod multiplier = da_military_wages_multiplier offset = da_wages_step }
+		da_increase_wage = { _ = military }
 	}
 }
