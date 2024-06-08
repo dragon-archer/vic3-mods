@@ -817,6 +817,16 @@ is_in_hyperinflation_value = {
 	}
 }
 
+severe_deflation_gap = -0.10 # -10%
+
+is_in_severe_deflation_value = {
+	value = 0
+	if = {
+		limit = { inflation_rate < severe_deflation_gap }
+		value = 1
+	}
+}
+
 # End country scope }
 
 # No scope
