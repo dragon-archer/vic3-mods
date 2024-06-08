@@ -1,0 +1,135 @@
+﻿# Mathmetical calculations
+da_max_2 = {
+	if = {
+		limit = { scope:_1 > scope:_2 }
+		value = scope:_1
+	}
+	else = { value = scope:_2 }
+}
+
+da_max_3 = {
+	if = {
+		limit = { scope:_1 > scope:_2 }
+		if = {
+			limit = { scope:_1 > scope:_3 }
+			value = scope:_1
+		}
+		else = {
+			value = scope:_3
+		}
+	}
+	else_if = {
+		limit = { scope:_2 > scope:_3 }
+		value = scope:_2
+	}
+	else = { value = scope:_3 }
+}
+
+da_sqrt = { # Use Newton iteration
+	if = {
+		limit = { scope:_ <= 0 }
+		value = 0
+	}
+	else = {
+		value = scope:_
+		# Below are manual expansion of Newton iteration
+		# Count: 15
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+		save_temporary_value_as = now
+		add = {
+			value = scope:_
+			divide = scope:now
+		}
+		multiply = 0.5
+	}
+}
+
+_da_math_suppress = {
+	save_temporary_value_as = _
+	save_temporary_value_as = _1
+	save_temporary_value_as = _2
+	save_temporary_value_as = _3
+}
