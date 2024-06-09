@@ -2,7 +2,7 @@
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
 	country_modifiers = {
-		workforce_scaled = {
+		unscaled = { # Avoid it to be affected by throuput
 			state_education_access_add = 0.05
 			state_conversion_mult = 0.05
 			state_assimilation_mult = 0.05
@@ -21,10 +21,9 @@
 	}
 
 	state_modifiers = {
-		workforce_scaled = {
+		unscaled = {
 			state_migration_pull_mult = 0.25
 			building_throughput_add = 0.1
-			building_group_bg_monuments_throughput_add = -0.1
 		}
 	}
 
