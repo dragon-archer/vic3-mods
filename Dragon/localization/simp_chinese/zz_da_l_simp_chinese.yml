@@ -348,3 +348,6 @@
  da_increase_military_wages: "提高$da_military_wages_mod$"
  da_increase_military_wages_desc: "提高[SCOPE.ScriptValue('da_wages_step')|%v]$da_military_wages_mod$"
  da_increase_military_wages_tt: "$da_military_wages_mod$小于等于最高基准[SCOPE.ScriptValue('da_wages_max_multiplier')|%=v]"
+ da_update_economy_modifiers_button: "刷新经济修正"
+ da_update_economy_modifiers_button_desc: "刷新经济修正"
+ da_update_economy_modifiers_button_tt: "所有经济修正将重新计算"

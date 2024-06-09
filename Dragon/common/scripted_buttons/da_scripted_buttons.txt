@@ -1,4 +1,4 @@
-﻿da_debug_decision = {
+da_debug_decision = {
 	name = "da_debug_decision"
 	desc = "da_debug_decision_desc"
 
@@ -706,5 +706,20 @@ da_increase_military_wages = {
 	}
 	effect = {
 		da_increase_wage = { _ = military }
+	}
+}
+
+da_update_economy_modifiers_button = {
+	name = "da_update_economy_modifiers_button"
+	desc = "da_update_economy_modifiers_button_desc"
+	visible = {
+		always = yes
+	}
+	possible = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = da_update_economy_modifiers_button_tt
+		trigger_event = { on_action = da_update_economy_modifiers }
 	}
 }
