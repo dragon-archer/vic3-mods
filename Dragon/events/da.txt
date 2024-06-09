@@ -234,6 +234,7 @@ da_debug.1 = {
 	type = country_event
 	title = DEBUG
 	desc = DEBUG_DESC
+	orphan = yes
 	duration = 3
 	immediate = {
 		debug_log = "DA Debug is called"
