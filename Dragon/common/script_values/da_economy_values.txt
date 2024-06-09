@@ -771,6 +771,21 @@ cached_gdp_growth_rate = {
 	}
 }
 
+sqrt_gdp_growth_rate_inverted = {
+	value = cached_gdp_growth_rate
+	if = {
+		limit = { cached_gdp_growth_rate < 0 }
+		multiply = -1
+	}
+	save_temporary_value_as = _
+	value = da_sqrt
+	divide = 5
+	if = {
+		limit = { cached_gdp_growth_rate > 0 }
+		multiply = -1
+	}
+}
+
 gdp_growth_rate_inverted = {
 	subtract = cached_gdp_growth_rate
 }
@@ -788,7 +803,7 @@ mintage_inflation_rate = {
 inflation_rate = {
 	add = cached_market_inflation_rate
 	add = mintage_inflation_rate
-	subtract = cached_gdp_growth_rate
+	add = gdp_growth_rate_inverted
 }
 
 inflation_rate_inverted = {

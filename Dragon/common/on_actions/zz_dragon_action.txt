@@ -1,4 +1,4 @@
-﻿on_monthly_pulse_country = {
+on_monthly_pulse_country = {
 	events = {
 		da.200
 	}
@@ -141,7 +141,6 @@ da_update_economy_caches = {
 		da_cache_value = { _ = cpi_rate }
 		da_cache_value = { _ = ppi_rate }
 		da_cache_value = { _ = market_inflation_rate }
-		da_cache_value = { _ = gdp_growth_rate }
 	}
 }
 
@@ -150,6 +149,7 @@ da_update_economy_variables = {
 		da_set_or_add_var = { name = cpi_value_var value = monthly_cpi_rate }
 		da_set_or_add_var = { name = ppi_value_var value = monthly_ppi_rate }
 		da_set_or_add_var = { name = inflation_value_var value = monthly_inflation_rate }
+		da_cache_value = { _ = gdp_growth_rate }
 		set_variable = { name = gdp_last_month_var value = gdp }
 	}
 }
