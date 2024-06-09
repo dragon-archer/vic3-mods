@@ -144,7 +144,8 @@ da_cpi_rate_mod = {
 da_inflation_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
 	country_loan_interest_rate_add = 1
-	building_economy_of_scale_level_cap_add = 100
+	building_economy_of_scale_level_cap_add = 50
+	building_throughput_add = 0.5
 }
 
 da_hyperinflation_rate_mod = {
@@ -159,8 +160,8 @@ da_deflation_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
 	country_loan_interest_rate_add = -1
 	country_trade_route_competitiveness_mult = 1
-	state_tax_waste_add = 1
-	building_throughput_add = -1
+	state_tax_waste_add = 0.5
+	building_throughput_add = -0.5
 }
 
 da_consumption_tax_mod = {
