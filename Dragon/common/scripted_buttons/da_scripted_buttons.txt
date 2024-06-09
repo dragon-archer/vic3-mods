@@ -1,4 +1,4 @@
-da_debug_decision = {
+﻿da_debug_decision = {
 	name = "da_debug_decision"
 	desc = "da_debug_decision_desc"
 
@@ -609,7 +609,6 @@ da_decrease_mintage = {
 	name = "da_decrease_mintage"
 	desc = "da_decrease_mintage_desc"
 	visible = {
-		has_technology_researched = central_banking
 	}
 	possible = {
 		custom_tooltip = {
@@ -620,6 +619,10 @@ da_decrease_mintage = {
 	effect = {
 		da_set_or_add_var = { name = da_mintage_var value = -1 }
 		da_update_modifier_with_offset = { name = da_mintage_mod multiplier = da_mintage_multiplier offset = da_mintage_step_inverted }
+		custom_tooltip = {
+			text = da_update_economy_modifiers_button_tt
+			trigger_event = { on_action = da_update_economy_modifiers }
+		}
 	}
 }
 
@@ -627,7 +630,6 @@ da_increase_mintage = {
 	name = "da_increase_mintage"
 	desc = "da_increase_mintage_desc"
 	visible = {
-		has_technology_researched = central_banking
 	}
 	possible = {
 		custom_tooltip = {
@@ -638,6 +640,10 @@ da_increase_mintage = {
 	effect = {
 		da_set_or_add_var = { name = da_mintage_var value = 1 }
 		da_update_modifier_with_offset = { name = da_mintage_mod multiplier = da_mintage_multiplier offset = da_mintage_step }
+		custom_tooltip = {
+			text = da_update_economy_modifiers_button_tt
+			trigger_event = { on_action = da_update_economy_modifiers }
+		}
 	}
 }
 
@@ -706,20 +712,5 @@ da_increase_military_wages = {
 	}
 	effect = {
 		da_increase_wage = { _ = military }
-	}
-}
-
-da_update_economy_modifiers_button = {
-	name = "da_update_economy_modifiers_button"
-	desc = "da_update_economy_modifiers_button_desc"
-	visible = {
-		always = yes
-	}
-	possible = {
-		always = yes
-	}
-	effect = {
-		custom_tooltip = da_update_economy_modifiers_button_tt
-		trigger_event = { on_action = da_update_economy_modifiers }
 	}
 }
