@@ -1,4 +1,4 @@
-on_monthly_pulse_country = {
+﻿on_monthly_pulse_country = {
 	events = {
 		da.200
 	}
@@ -163,7 +163,7 @@ da_update_economy_modifiers = {
 		remove_modifier = da_deflation_rate_mod
 		if = {
 			limit = { inflation_rate >= hyperinflation_gap }
-			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
+			add_modifier = { name = da_hyperinflation_rate_mod multiplier = inflation_rate }
 		}
 		else_if = {
 			limit = { inflation_rate >= 0 }
