@@ -1,4 +1,4 @@
-﻿pm_default_building_empire_center = {
+pm_default_building_empire_center = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
 	country_modifiers = {
@@ -83,6 +83,57 @@ pm_innovation_focus_building_university = {
 	state_modifiers = {
 		workforce_scaled = {
 			state_pop_qualifications_mult = -0.05
+		}
+	}
+}
+
+pm_basic_storage_warehouse = {
+	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 1000
+			# building_storage_capacity_add = 100
+		}
+	}
+}
+
+pm_small_arms_none_warehouse = {
+	texture = "gfx/interface/icons/production_method_icons/unused/disabled.dds"
+}
+
+pm_small_arms_store_warehouse = {
+	texture = "gfx/interface/icons/generic_icons/ongoing_action_second.dds"
+	unlocking_technologies = {
+		gunsmithing
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_small_arms_add = 5
+		}
+	}
+}
+
+pm_small_arms_release_warehouse = {
+	texture = "gfx/interface/icons/generic_icons/ongoing_action_first.dds"
+	unlocking_technologies = {
+		gunsmithing
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_small_arms_add = 5
+		}
+	}
+}
+
+pm_small_arms_auto_warehouse = {
+	texture = "gfx/interface/icons/generic_icons/ongoing_action_both.dds"
+	unlocking_technologies = {
+		gunsmithing
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_small_arms_add = 5
+			goods_output_small_arms_add = 5
 		}
 	}
 }

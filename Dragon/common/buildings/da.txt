@@ -51,3 +51,24 @@ building_university = {
 
 	required_construction = construction_cost_medium
 }
+
+building_warehouse = {
+	building_group = bg_warehouse
+	city_type = none
+	levels_per_mesh = 0
+
+	unlocking_technologies = {
+		logistics
+	}
+
+	production_method_groups = {
+		pmg_warehouse_storage
+		pmg_warehouse_small_arms
+	}
+
+	texture = "gfx/interface/icons/building_icons/building_warehouse.dds"
+
+	required_construction = construction_cost_low
+
+	possible = { always = no }
+}

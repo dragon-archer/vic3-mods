@@ -1,0 +1,14 @@
+﻿# BG for warehouse
+bg_warehouse = {
+	category = development
+	always_possible = yes
+	economy_of_scale = no
+	lens = infrastructure
+	urbanization = 5
+	infrastructure_usage_per_level = 2
+	subsidized = yes
+	cash_reserves_max = 5000
+	should_auto_expand = {
+		always = no
+	}
+}

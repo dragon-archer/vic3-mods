@@ -684,3 +684,12 @@ da_increase_wage = {
 		}
 	}
 }
+
+# Scope: state
+# _: goods type
+da_warehouse_monthly_effect = {
+	every_scope_building = {
+		limit = { is_building_type = building_warehouse }
+		save_scope_as = b
+	}
+}
