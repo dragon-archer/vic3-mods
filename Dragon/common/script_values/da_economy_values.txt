@@ -532,6 +532,14 @@ military_market_sell_amount = {
 	add = ironclads_market_sell_amount
 }
 
+cached_military_market_sell_amount = {
+	if = {
+		limit = { has_variable = cached_military_market_sell_amount_var }
+		value = var:cached_military_market_sell_amount_var
+	}
+	else = { value = military_market_sell_amount }
+}
+
 military_market_buy_amount = {
 	add = ammunition_market_buy_amount
 	add = small_arms_market_buy_amount
@@ -540,6 +548,14 @@ military_market_buy_amount = {
 	add = aeroplanes_market_buy_amount
 	add = manowars_market_buy_amount
 	add = ironclads_market_buy_amount
+}
+
+cached_military_market_buy_amount = {
+	if = {
+		limit = { has_variable = cached_military_market_buy_amount_var }
+		value = var:cached_military_market_buy_amount_var
+	}
+	else = { value = military_market_buy_amount }
 }
 
 staple_market_sell_amount = {
@@ -556,6 +572,14 @@ staple_market_sell_amount = {
 	add = electricity_market_sell_amount
 }
 
+cached_staple_market_sell_amount = {
+	if = {
+		limit = { has_variable = cached_staple_market_sell_amount_var }
+		value = var:cached_staple_market_sell_amount_var
+	}
+	else = { value = staple_market_sell_amount }
+}
+
 staple_market_buy_amount = {
 	add = grain_market_buy_amount
 	add = fish_market_buy_amount
@@ -568,6 +592,14 @@ staple_market_buy_amount = {
 	add = services_market_buy_amount
 	add = transportation_market_buy_amount
 	add = electricity_market_buy_amount
+}
+
+cached_staple_market_buy_amount = {
+	if = {
+		limit = { has_variable = cached_staple_market_buy_amount_var }
+		value = var:cached_staple_market_buy_amount_var
+	}
+	else = { value = staple_market_buy_amount }
 }
 
 industrial_market_sell_amount = {
@@ -590,6 +622,14 @@ industrial_market_sell_amount = {
 	add = explosives_market_sell_amount
 }
 
+cached_industrial_market_sell_amount = {
+	if = {
+		limit = { has_variable = cached_industrial_market_sell_amount_var }
+		value = var:cached_industrial_market_sell_amount_var
+	}
+	else = { value = industrial_market_sell_amount }
+}
+
 industrial_market_buy_amount = {
 	add = clippers_market_buy_amount
 	add = steamers_market_buy_amount
@@ -608,6 +648,14 @@ industrial_market_buy_amount = {
 	add = fertilizer_market_buy_amount
 	add = tools_market_buy_amount
 	add = explosives_market_buy_amount
+}
+
+cached_industrial_market_buy_amount = {
+	if = {
+		limit = { has_variable = cached_industrial_market_buy_amount_var }
+		value = var:cached_industrial_market_buy_amount_var
+	}
+	else = { value = industcached_industrial_market_buy_amount }
 }
 
 luxury_market_sell_amount = {
@@ -630,6 +678,14 @@ luxury_market_sell_amount = {
 	add = fine_art_market_sell_amount
 }
 
+cached_luxury_market_sell_amount = {
+	if = {
+		limit = { has_variable = cached_luxury_market_sell_amount_var }
+		value = var:cached_luxury_market_sell_amount_var
+	}
+	else = { value = luxury_market_sell_amount }
+}
+
 luxury_market_buy_amount = {
 	add = porcelain_market_buy_amount
 	add = meat_market_buy_amount
@@ -650,18 +706,26 @@ luxury_market_buy_amount = {
 	add = fine_art_market_buy_amount
 }
 
+cached_luxury_market_buy_amount = {
+	if = {
+		limit = { has_variable = cached_luxury_market_buy_amount_var }
+		value = var:cached_luxury_market_buy_amount_var
+	}
+	else = { value = luxury_market_buy_amount }
+}
+
 total_market_sell_amount = {
-	add = military_market_sell_amount
-	add = staple_market_sell_amount
-	add = industrial_market_sell_amount
-	add = luxury_market_sell_amount
+	add = cached_military_market_sell_amount
+	add = cached_staple_market_sell_amount
+	add = cached_industrial_market_sell_amount
+	add = cached_luxury_market_sell_amount
 }
 
 total_market_buy_amount = {
-	add = military_market_buy_amount
-	add = staple_market_buy_amount
-	add = industrial_market_buy_amount
-	add = luxury_market_buy_amount
+	add = cached_military_market_buy_amount
+	add = cached_staple_market_buy_amount
+	add = cached_industrial_market_buy_amount
+	add = cached_luxury_market_buy_amount
 }
 ## End accumulated goods value }
 # End market scope }
@@ -670,29 +734,19 @@ total_market_buy_amount = {
 cpi_rate = {
 	market = {
 		value = {
-			add = staple_market_buy_amount
-			add = luxury_market_buy_amount
+			add = cached_staple_market_buy_amount
+			add = cached_luxury_market_buy_amount
 		}
 		divide = {
-			add = staple_market_sell_amount
-			add = luxury_market_sell_amount
+			add = cached_staple_market_sell_amount
+			add = cached_luxury_market_sell_amount
 		}
 		subtract = 1
 	}
 }
 
-cached_cpi_rate = {
-	if = {
-		limit = { has_variable = cached_cpi_rate_var }
-		value = var:cached_cpi_rate_var
-	}
-	else = {
-		value = cpi_rate
-	}
-}
-
 monthly_cpi_rate = {
-	value = cached_cpi_rate
+	value = cpi_rate
 	divide = 12
 }
 
@@ -705,24 +759,14 @@ cpi_value = {
 
 ppi_rate = {
 	market = {
-		value = industrial_market_buy_amount
-		divide = industrial_market_sell_amount
+		value = cached_industrial_market_buy_amount
+		divide = cached_industrial_market_sell_amount
 		subtract = 1
 	}
 }
 
-cached_ppi_rate = {
-	if = {
-		limit = { has_variable = cached_ppi_rate_var }
-		value = var:cached_ppi_rate_var
-	}
-	else = {
-		value = ppi_rate
-	}
-}
-
 monthly_ppi_rate = {
-	value = cached_ppi_rate
+	value = ppi_rate
 	divide = 12
 }
 
@@ -738,16 +782,6 @@ market_inflation_rate = {
 		value = total_market_buy_amount
 		divide = total_market_sell_amount
 		subtract = 1
-	}
-}
-
-cached_market_inflation_rate = {
-	if = {
-		limit = { has_variable = cached_market_inflation_rate_var }
-		value = var:cached_market_inflation_rate_var
-	}
-	else = {
-		value = market_inflation_rate
 	}
 }
 
@@ -800,7 +834,7 @@ mintage_inflation_rate = {
 }
 
 inflation_rate = {
-	add = cached_market_inflation_rate
+	add = market_inflation_rate
 	add = mintage_inflation_rate
 	add = gdp_growth_rate_inverted
 }
