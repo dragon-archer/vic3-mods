@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
  # Unused
  #  da_german_bonus: "德意志精神"
  #  da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
@@ -274,7 +274,9 @@ l_simp_chinese:
 
  # Economy
  je_da_economy: "经济面板"
- je_da_economy_reason: "[SelectLocalization(NotZero_CFixedPoint(Country.MakeScope.ScriptValue('is_in_hyperinflation_value')), 'da_economy_hyperinflation_tt', 'da_economy_inflation_tt')]\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
+ je_da_economy_reason: "$da_economy_market_tt$\n$da_economy_gdp_tt$\n[SelectLocalization(NotZero_CFixedPoint(Country.MakeScope.ScriptValue('is_in_hyperinflation_value')), 'da_economy_hyperinflation_tt', 'da_economy_inflation_tt')]\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
+ da_economy_market_tt: "$INDENT$[Country.GetCapital.GetMarket.GetName]市场容量：@money![SCOPE.ScriptValue('total_market_buy_amount')|vk]，其中：\n$INDENT2$$FILTER_STAPLE$容量：@money![SCOPE.ScriptValue('cached_staple_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('staple_market_ratio')|%v]\n$INDENT2$$FILTER_INDUSTRIAL_GOODS$容量：@money![SCOPE.ScriptValue('cached_industrial_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('industrial_market_ratio')|%v]\n$INDENT2$$FILTER_LUXURY_GOODS$容量：@money![SCOPE.ScriptValue('cached_luxury_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('luxury_market_ratio')|%v]\n$INDENT2$$FILTER_MILITARY_GOODS$容量：@money![SCOPE.ScriptValue('cached_military_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('military_market_ratio')|%v]"
+ da_economy_gdp_tt: "$INDENT$年度[concept_gdp]增长率：[SCOPE.ScriptValue('gdp_growth_rate')|%+=]"
  da_gui_cpi_mod_tt: "[GetScriptedGui('da_gui_cpi_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_cpi_rate_mod_tt: "[GetScriptedGui('da_gui_cpi_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_inflation_rate_mod_tt: "[GetScriptedGui('da_gui_inflation_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"

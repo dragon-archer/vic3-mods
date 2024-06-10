@@ -1,4 +1,4 @@
-# Scope: Market {
+﻿# Scope: Market {
 ## Detail goods value {
 gold_market_sell_amount = {
 	value = 100
@@ -520,16 +520,20 @@ artillery_market_buy_amount = {
 	multiply = mg:artillery.market_goods_buy_orders
 }
 ## End detail goods value }
+# End market scope }
 
+# Scope: Country {
 ## Accumulated goods value {
 military_market_sell_amount = {
-	add = ammunition_market_sell_amount
-	add = small_arms_market_sell_amount
-	add = artillery_market_sell_amount
-	add = tanks_market_sell_amount
-	add = aeroplanes_market_sell_amount
-	add = manowars_market_sell_amount
-	add = ironclads_market_sell_amount
+	market = {
+		add = ammunition_market_sell_amount
+		add = small_arms_market_sell_amount
+		add = artillery_market_sell_amount
+		add = tanks_market_sell_amount
+		add = aeroplanes_market_sell_amount
+		add = manowars_market_sell_amount
+		add = ironclads_market_sell_amount
+	}
 }
 
 cached_military_market_sell_amount = {
@@ -541,13 +545,15 @@ cached_military_market_sell_amount = {
 }
 
 military_market_buy_amount = {
-	add = ammunition_market_buy_amount
-	add = small_arms_market_buy_amount
-	add = artillery_market_buy_amount
-	add = tanks_market_buy_amount
-	add = aeroplanes_market_buy_amount
-	add = manowars_market_buy_amount
-	add = ironclads_market_buy_amount
+	market = {
+		add = ammunition_market_buy_amount
+		add = small_arms_market_buy_amount
+		add = artillery_market_buy_amount
+		add = tanks_market_buy_amount
+		add = aeroplanes_market_buy_amount
+		add = manowars_market_buy_amount
+		add = ironclads_market_buy_amount
+	}
 }
 
 cached_military_market_buy_amount = {
@@ -559,17 +565,19 @@ cached_military_market_buy_amount = {
 }
 
 staple_market_sell_amount = {
-	add = grain_market_sell_amount
-	add = fish_market_sell_amount
-	add = fabric_market_sell_amount
-	add = wood_market_sell_amount
-	add = groceries_market_sell_amount
-	add = clothes_market_sell_amount
-	add = furniture_market_sell_amount
-	add = paper_market_sell_amount
-	add = services_market_sell_amount
-	add = transportation_market_sell_amount
-	add = electricity_market_sell_amount
+	market = {
+		add = grain_market_sell_amount
+		add = fish_market_sell_amount
+		add = fabric_market_sell_amount
+		add = wood_market_sell_amount
+		add = groceries_market_sell_amount
+		add = clothes_market_sell_amount
+		add = furniture_market_sell_amount
+		add = paper_market_sell_amount
+		add = services_market_sell_amount
+		add = transportation_market_sell_amount
+		add = electricity_market_sell_amount
+	}
 }
 
 cached_staple_market_sell_amount = {
@@ -581,17 +589,19 @@ cached_staple_market_sell_amount = {
 }
 
 staple_market_buy_amount = {
-	add = grain_market_buy_amount
-	add = fish_market_buy_amount
-	add = fabric_market_buy_amount
-	add = wood_market_buy_amount
-	add = groceries_market_buy_amount
-	add = clothes_market_buy_amount
-	add = furniture_market_buy_amount
-	add = paper_market_buy_amount
-	add = services_market_buy_amount
-	add = transportation_market_buy_amount
-	add = electricity_market_buy_amount
+	market = {
+		add = grain_market_buy_amount
+		add = fish_market_buy_amount
+		add = fabric_market_buy_amount
+		add = wood_market_buy_amount
+		add = groceries_market_buy_amount
+		add = clothes_market_buy_amount
+		add = furniture_market_buy_amount
+		add = paper_market_buy_amount
+		add = services_market_buy_amount
+		add = transportation_market_buy_amount
+		add = electricity_market_buy_amount
+	}
 }
 
 cached_staple_market_buy_amount = {
@@ -603,23 +613,25 @@ cached_staple_market_buy_amount = {
 }
 
 industrial_market_sell_amount = {
-	add = clippers_market_sell_amount
-	add = steamers_market_sell_amount
-	add = silk_market_sell_amount
-	add = dye_market_sell_amount
-	add = sulfur_market_sell_amount
-	add = coal_market_sell_amount
-	add = iron_market_sell_amount
-	add = lead_market_sell_amount
-	add = hardwood_market_sell_amount
-	add = rubber_market_sell_amount
-	add = oil_market_sell_amount
-	add = engines_market_sell_amount
-	add = steel_market_sell_amount
-	add = glass_market_sell_amount
-	add = fertilizer_market_sell_amount
-	add = tools_market_sell_amount
-	add = explosives_market_sell_amount
+	market = {
+		add = clippers_market_sell_amount
+		add = steamers_market_sell_amount
+		add = silk_market_sell_amount
+		add = dye_market_sell_amount
+		add = sulfur_market_sell_amount
+		add = coal_market_sell_amount
+		add = iron_market_sell_amount
+		add = lead_market_sell_amount
+		add = hardwood_market_sell_amount
+		add = rubber_market_sell_amount
+		add = oil_market_sell_amount
+		add = engines_market_sell_amount
+		add = steel_market_sell_amount
+		add = glass_market_sell_amount
+		add = fertilizer_market_sell_amount
+		add = tools_market_sell_amount
+		add = explosives_market_sell_amount
+	}
 }
 
 cached_industrial_market_sell_amount = {
@@ -631,23 +643,25 @@ cached_industrial_market_sell_amount = {
 }
 
 industrial_market_buy_amount = {
-	add = clippers_market_buy_amount
-	add = steamers_market_buy_amount
-	add = silk_market_buy_amount
-	add = dye_market_buy_amount
-	add = sulfur_market_buy_amount
-	add = coal_market_buy_amount
-	add = iron_market_buy_amount
-	add = lead_market_buy_amount
-	add = hardwood_market_buy_amount
-	add = rubber_market_buy_amount
-	add = oil_market_buy_amount
-	add = engines_market_buy_amount
-	add = steel_market_buy_amount
-	add = glass_market_buy_amount
-	add = fertilizer_market_buy_amount
-	add = tools_market_buy_amount
-	add = explosives_market_buy_amount
+	market = {
+		add = clippers_market_buy_amount
+		add = steamers_market_buy_amount
+		add = silk_market_buy_amount
+		add = dye_market_buy_amount
+		add = sulfur_market_buy_amount
+		add = coal_market_buy_amount
+		add = iron_market_buy_amount
+		add = lead_market_buy_amount
+		add = hardwood_market_buy_amount
+		add = rubber_market_buy_amount
+		add = oil_market_buy_amount
+		add = engines_market_buy_amount
+		add = steel_market_buy_amount
+		add = glass_market_buy_amount
+		add = fertilizer_market_buy_amount
+		add = tools_market_buy_amount
+		add = explosives_market_buy_amount
+	}
 }
 
 cached_industrial_market_buy_amount = {
@@ -659,23 +673,25 @@ cached_industrial_market_buy_amount = {
 }
 
 luxury_market_sell_amount = {
-	add = porcelain_market_sell_amount
-	add = meat_market_sell_amount
-	add = fruit_market_sell_amount
-	add = liquor_market_sell_amount
-	add = wine_market_sell_amount
-	add = tea_market_sell_amount
-	add = coffee_market_sell_amount
-	add = sugar_market_sell_amount
-	add = tobacco_market_sell_amount
-	add = opium_market_sell_amount
-	add = automobiles_market_sell_amount
-	add = telephones_market_sell_amount
-	add = radios_market_sell_amount
-	add = luxury_clothes_market_sell_amount
-	add = luxury_furniture_market_sell_amount
-	add = gold_market_sell_amount
-	add = fine_art_market_sell_amount
+	market = {
+		add = porcelain_market_sell_amount
+		add = meat_market_sell_amount
+		add = fruit_market_sell_amount
+		add = liquor_market_sell_amount
+		add = wine_market_sell_amount
+		add = tea_market_sell_amount
+		add = coffee_market_sell_amount
+		add = sugar_market_sell_amount
+		add = tobacco_market_sell_amount
+		add = opium_market_sell_amount
+		add = automobiles_market_sell_amount
+		add = telephones_market_sell_amount
+		add = radios_market_sell_amount
+		add = luxury_clothes_market_sell_amount
+		add = luxury_furniture_market_sell_amount
+		add = gold_market_sell_amount
+		add = fine_art_market_sell_amount
+	}
 }
 
 cached_luxury_market_sell_amount = {
@@ -687,23 +703,25 @@ cached_luxury_market_sell_amount = {
 }
 
 luxury_market_buy_amount = {
-	add = porcelain_market_buy_amount
-	add = meat_market_buy_amount
-	add = fruit_market_buy_amount
-	add = liquor_market_buy_amount
-	add = wine_market_buy_amount
-	add = tea_market_buy_amount
-	add = coffee_market_buy_amount
-	add = sugar_market_buy_amount
-	add = tobacco_market_buy_amount
-	add = opium_market_buy_amount
-	add = automobiles_market_buy_amount
-	add = telephones_market_buy_amount
-	add = radios_market_buy_amount
-	add = luxury_clothes_market_buy_amount
-	add = luxury_furniture_market_buy_amount
-	add = gold_market_buy_amount
-	add = fine_art_market_buy_amount
+	market = {
+		add = porcelain_market_buy_amount
+		add = meat_market_buy_amount
+		add = fruit_market_buy_amount
+		add = liquor_market_buy_amount
+		add = wine_market_buy_amount
+		add = tea_market_buy_amount
+		add = coffee_market_buy_amount
+		add = sugar_market_buy_amount
+		add = tobacco_market_buy_amount
+		add = opium_market_buy_amount
+		add = automobiles_market_buy_amount
+		add = telephones_market_buy_amount
+		add = radios_market_buy_amount
+		add = luxury_clothes_market_buy_amount
+		add = luxury_furniture_market_buy_amount
+		add = gold_market_buy_amount
+		add = fine_art_market_buy_amount
+	}
 }
 
 cached_luxury_market_buy_amount = {
@@ -727,22 +745,39 @@ total_market_buy_amount = {
 	add = cached_industrial_market_buy_amount
 	add = cached_luxury_market_buy_amount
 }
-## End accumulated goods value }
-# End market scope }
 
-# Scope: Country {
+staple_market_ratio = {
+	value = cached_staple_market_buy_amount
+	divide = total_market_buy_amount
+}
+
+industrial_market_ratio = {
+	value = cached_industrial_market_buy_amount
+	divide = total_market_buy_amount
+}
+
+luxury_market_ratio = {
+	value = cached_luxury_market_buy_amount
+	divide = total_market_buy_amount
+}
+
+military_market_ratio = {
+	value = cached_military_market_buy_amount
+	divide = total_market_buy_amount
+}
+
+## End accumulated goods value }
+
 cpi_rate = {
-	market = {
-		value = {
-			add = cached_staple_market_buy_amount
-			add = cached_luxury_market_buy_amount
-		}
-		divide = {
-			add = cached_staple_market_sell_amount
-			add = cached_luxury_market_sell_amount
-		}
-		subtract = 1
+	value = {
+		add = cached_staple_market_buy_amount
+		add = cached_luxury_market_buy_amount
 	}
+	divide = {
+		add = cached_staple_market_sell_amount
+		add = cached_luxury_market_sell_amount
+	}
+	subtract = 1
 }
 
 monthly_cpi_rate = {
@@ -758,11 +793,9 @@ cpi_value = {
 }
 
 ppi_rate = {
-	market = {
-		value = cached_industrial_market_buy_amount
-		divide = cached_industrial_market_sell_amount
-		subtract = 1
-	}
+	value = cached_industrial_market_buy_amount
+	divide = cached_industrial_market_sell_amount
+	subtract = 1
 }
 
 monthly_ppi_rate = {
@@ -778,11 +811,9 @@ ppi_value = {
 }
 
 market_inflation_rate = {
-	market = {
-		value = total_market_buy_amount
-		divide = total_market_sell_amount
-		subtract = 1
-	}
+	value = total_market_buy_amount
+	divide = total_market_sell_amount
+	subtract = 1
 }
 
 gdp_growth_rate = {
@@ -799,9 +830,7 @@ cached_gdp_growth_rate = {
 		limit = { has_variable = cached_gdp_growth_rate_var }
 		value = var:cached_gdp_growth_rate_var
 	}
-	else = {
-		value = gdp_growth_rate
-	}
+	else = { value = gdp_growth_rate }
 }
 
 sqrt_gdp_growth_rate_inverted = {
