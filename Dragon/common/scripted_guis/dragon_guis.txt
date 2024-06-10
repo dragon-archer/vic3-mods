@@ -9,7 +9,7 @@ da_gui_cpi_mod = {
 da_gui_cpi_rate_mod = {
 	scope = country
 	effect = {
-		da_update_modifier = { name = da_cpi_rate_mod multiplier = cached_cpi_rate }
+		da_update_modifier = { name = da_cpi_rate_mod multiplier = cpi_rate }
 	}
 }
 

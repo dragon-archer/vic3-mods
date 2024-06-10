@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+l_simp_chinese:
  # Unused
  #  da_german_bonus: "德意志精神"
  #  da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
@@ -22,6 +22,8 @@
  da_aftermath_tt: "#bold 选择任意选项后的后果：#!\n"
  DEBUG: "调试"
  DEBUG_DESC: "ROOT = [ROOT.GetCountry.GetName]"
+ INDENT: "$EFFECT_LIST_BULLET$"
+ INDENT2: "$TAB$$INDENT$"
 
  # Alerts
  ag_da_alert_group_name: "经济失衡"
@@ -103,8 +105,8 @@
  da_havent_enabled_global_extended_mode_tt: "@warning!#warning 没有全局开启DA扩展模式#!"
  da_enable_global_extended_mode_tt: "将会全局开启DA扩展模式，目前具有以下功能："
  da_extended_mode_effect: "$da_extended_mode_effect_country$\n$da_extended_mode_effect_culture$"
- da_extended_mode_effect_country: "$EFFECT_LIST_BULLET$合并[concept_country]的时候将更加大胆（例如，汉诺威会完全被普鲁士吞并）"
- da_extended_mode_effect_culture: "$EFFECT_LIST_BULLET$合并[concept_culture]的时候将更加大胆（例如：布列塔尼文化将被并入法兰西文化）"
+ da_extended_mode_effect_country: "$INDENT$合并[concept_country]的时候将更加大胆（例如，汉诺威会完全被普鲁士吞并）"
+ da_extended_mode_effect_culture: "$INDENT$合并[concept_culture]的时候将更加大胆（例如：布列塔尼文化将被并入法兰西文化）"
  da_already_enabled_global_extended_mode_tt: "@warning!#warning 已经全局开启了DA拓展模式#!"
 
  # Atheism
@@ -152,7 +154,7 @@
 
  # DA Manager
  je_da_manager: "DA管家"
- je_da_manager_reason: "基础信息：\n$EFFECT_LIST_BULLET$总[concept_pop]数：[Country.MakeScope.Var('da_total_pops_cnt_var').GetValue|V0]\n$EFFECT_LIST_BULLET$我国总[concept_pop]数：[Country.MakeScope.Var('da_our_pops_cnt_var').GetValue|V0]\n\n$EFFECT_LIST_BULLET$$da_debt_main_report$\n\n$EFFECT_LIST_BULLET$$da_autopm_main_report$"
+ je_da_manager_reason: "基础信息：\n$INDENT$总[concept_pop]数：[Country.MakeScope.Var('da_total_pops_cnt_var').GetValue|V0]\n$INDENT$我国总[concept_pop]数：[Country.MakeScope.Var('da_our_pops_cnt_var').GetValue|V0]\n\n$INDENT$$da_debt_main_report$\n\n$INDENT$$da_autopm_main_report$"
 
  # Modifiers
  da_approval: "TODO"
@@ -204,8 +206,8 @@
  da_debt.1.b: "展期国债"
  da_debt.1.f: "这笔[SCOPE.ScriptValue('da_debt_duration')|V0]年期的国债发行规模为[SCOPE.sCharacter('object').MakeScope.Var('da_debt_issued_size_var').GetValue|Vk+]，票面价值为[SCOPE.sCharacter('object').MakeScope.Var('da_debt_total_size_var').GetValue|Vk-]"
  da_no_debt_tt: "你当前没有欠国债"
- da_issue_debt_tt: "发行一笔新国债，详情如下：\n$EFFECT_LIST_BULLET$国债规模为[SCOPE.ScriptValue('da_single_debt_value')|Vk+]\n$EFFECT_LIST_BULLET$发行年限为[SCOPE.ScriptValue('da_debt_duration')|V0]年\n$EFFECT_LIST_BULLET$年利率为[SCOPE.ScriptValue('da_interest_rate')|V%]\n$EFFECT_LIST_BULLET$到期应付[SCOPE.ScriptValue('da_single_debt_total_value')|Vk-]"
- da_extend_debt_tt: "将对这笔国债进行展期，新国债详情如下：\n$EFFECT_LIST_BULLET$国债规模为[SCOPE.sCharacter('object').MakeScope.Var('da_debt_total_size_var').GetValue|Vk+]\n$EFFECT_LIST_BULLET$发行年限为[SCOPE.ScriptValue('da_debt_duration')|V0]年\n$EFFECT_LIST_BULLET$年利率为[SCOPE.ScriptValue('da_interest_rate')|V%]\n$EFFECT_LIST_BULLET$到期应付[SCOPE.GetRootScope.Var('da_temp_extend_debt_total_size_var').GetValue|Vk-]"
+ da_issue_debt_tt: "发行一笔新国债，详情如下：\n$INDENT$国债规模为[SCOPE.ScriptValue('da_single_debt_value')|Vk+]\n$INDENT$发行年限为[SCOPE.ScriptValue('da_debt_duration')|V0]年\n$INDENT$年利率为[SCOPE.ScriptValue('da_interest_rate')|V%]\n$INDENT$到期应付[SCOPE.ScriptValue('da_single_debt_total_value')|Vk-]"
+ da_extend_debt_tt: "将对这笔国债进行展期，新国债详情如下：\n$INDENT$国债规模为[SCOPE.sCharacter('object').MakeScope.Var('da_debt_total_size_var').GetValue|Vk+]\n$INDENT$发行年限为[SCOPE.ScriptValue('da_debt_duration')|V0]年\n$INDENT$年利率为[SCOPE.ScriptValue('da_interest_rate')|V%]\n$INDENT$到期应付[SCOPE.GetRootScope.Var('da_temp_extend_debt_total_size_var').GetValue|Vk-]"
  da_payback_debt_tt: "用国库支付[SCOPE.sCharacter('object').MakeScope.Var('da_debt_total_size_var').GetValue|Vk-]立刻还清国债"
  da_can_issue_more_debt_tt: "已发行国债数额未到达国债上限"
  da_issue_debt_cooldown: "每#bold 6个月#!仅可发行或展期一次国债"
@@ -276,10 +278,10 @@
  da_gui_cpi_mod_tt: "[GetScriptedGui('da_gui_cpi_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_cpi_rate_mod_tt: "[GetScriptedGui('da_gui_cpi_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
  da_gui_inflation_rate_mod_tt: "[GetScriptedGui('da_gui_inflation_rate_mod').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- da_economy_inflation_tt: "$EFFECT_LIST_BULLET$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%+=]#!，来自：\n$TAB$$EFFECT_LIST_BULLET$市场价格因素：[Country.MakeScope.ScriptValue('cached_market_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%+=]\n$TAB$$EFFECT_LIST_BULLET$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%+=]\n$EFFECT_LIST_BULLET$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
- da_economy_hyperinflation_tt: "@warning!#warning 当前正处于恶性通货膨胀状态，需将通货膨胀率降至[Country.MakeScope.ScriptValue('hyperinflation_gap')|%=]以下解除#!\n$EFFECT_LIST_BULLET$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%-=]#!，来自：\n$TAB$$EFFECT_LIST_BULLET$市场价格因素：[Country.MakeScope.ScriptValue('cached_market_inflation_rate')|%-=]\n$TAB$$EFFECT_LIST_BULLET$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%-=]\n$TAB$$EFFECT_LIST_BULLET$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%-=]\n$EFFECT_LIST_BULLET$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
- da_economy_cpi_tt: "$EFFECT_LIST_BULLET$当前消费者价格指数：#tooltippable;tooltip:da_gui_cpi_rate_mod_tt [Country.MakeScope.ScriptValue('cached_cpi_rate')|%-=]#!\n$EFFECT_LIST_BULLET$累计消费者价格指数：#tooltippable;tooltip:da_gui_cpi_mod_tt [Country.MakeScope.ScriptValue('cpi_value')|%-=]#!"
- da_economy_ppi_tt: "$EFFECT_LIST_BULLET$当前生产者物价指数：[Country.MakeScope.ScriptValue('cached_ppi_rate')|%-=]\n$EFFECT_LIST_BULLET$累计生产者物价指数：[Country.MakeScope.ScriptValue('ppi_value')|%-=]"
+ da_economy_inflation_tt: "$INDENT$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%+=]#!，来自：\n$INDENT2$市场价格因素：[Country.MakeScope.ScriptValue('market_inflation_rate')|%+=]\n$INDENT2$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%+=]\n$INDENT2$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%+=]\n$INDENT$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
+ da_economy_hyperinflation_tt: "@warning!#warning 当前正处于恶性通货膨胀状态，需将通货膨胀率降至[Country.MakeScope.ScriptValue('hyperinflation_gap')|%=]以下解除#!\n$INDENT$当前通货膨胀率：#tooltippable;tooltip:da_gui_inflation_rate_mod_tt [Country.MakeScope.ScriptValue('inflation_rate')|%-=]#!，来自：\n$INDENT2$市场价格因素：[Country.MakeScope.ScriptValue('market_inflation_rate')|%-=]\n$INDENT2$新发行货币量：[Country.MakeScope.ScriptValue('mintage_inflation_rate')|%-=]\n$INDENT2$GDP增长率：[Country.MakeScope.ScriptValue('gdp_growth_rate_inverted')|%-=]\n$INDENT$累计通货膨胀率：[Country.MakeScope.ScriptValue('inflation_value')|%-=]"
+ da_economy_cpi_tt: "$INDENT$当前消费者价格指数：#tooltippable;tooltip:da_gui_cpi_rate_mod_tt [Country.MakeScope.ScriptValue('cpi_rate')|%-=]#!\n$INDENT$累计消费者价格指数：#tooltippable;tooltip:da_gui_cpi_mod_tt [Country.MakeScope.ScriptValue('cpi_value')|%-=]#!"
+ da_economy_ppi_tt: "$INDENT$当前生产者物价指数：[Country.MakeScope.ScriptValue('ppi_rate')|%-=]\n$INDENT$累计生产者物价指数：[Country.MakeScope.ScriptValue('ppi_value')|%-=]"
  da_cpi_mod: "累计消费者价格指数"
  da_cpi_rate_mod: "消费者价格指数"
  da_inflation_rate_mod: "良性通货膨胀"

@@ -1,4 +1,4 @@
-﻿# Scope: Market {
+# Scope: Market {
 ## Detail goods value {
 gold_market_sell_amount = {
 	value = 100
@@ -655,7 +655,7 @@ cached_industrial_market_buy_amount = {
 		limit = { has_variable = cached_industrial_market_buy_amount_var }
 		value = var:cached_industrial_market_buy_amount_var
 	}
-	else = { value = industcached_industrial_market_buy_amount }
+	else = { value = industrial_market_buy_amount }
 }
 
 luxury_market_sell_amount = {
