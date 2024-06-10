@@ -34,6 +34,12 @@
 		trigger_event = { on_action = da_save_initial_gdp }
 	}
 
+	on_yearly_pulse = {
+		effect = {
+			trigger_event = { on_action = da_update_gdp_stuff }
+		}
+	}
+
 	on_monthly_pulse = {
 		effect = {
 			trigger_event = { on_action = da_update_economy_caches }

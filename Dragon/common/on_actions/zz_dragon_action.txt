@@ -149,8 +149,6 @@ da_update_economy_variables = {
 		da_set_or_add_var = { name = cpi_value_var value = monthly_cpi_rate }
 		da_set_or_add_var = { name = ppi_value_var value = monthly_ppi_rate }
 		da_set_or_add_var = { name = inflation_value_var value = monthly_inflation_rate }
-		da_cache_value = { _ = gdp_growth_rate }
-		set_variable = { name = gdp_last_month_var value = gdp }
 	}
 }
 
@@ -170,5 +168,12 @@ da_update_economy_modifiers = {
 			add_modifier = { name = da_inflation_rate_mod multiplier = inflation_rate }
 		}
 		else = { add_modifier = { name = da_deflation_rate_mod multiplier = inflation_rate_inverted } }
+	}
+}
+
+da_update_gdp_stuff = {
+	effect = {
+		da_cache_value = { _ = gdp_growth_rate }
+		set_variable = { name = gdp_last_year_var value = gdp }
 	}
 }

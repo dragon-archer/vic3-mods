@@ -753,11 +753,10 @@ cached_market_inflation_rate = {
 
 gdp_growth_rate = {
 	if = {
-		limit = { has_variable = gdp_last_month_var }
+		limit = { has_variable = gdp_last_year_var }
 		value = gdp
-		divide = var:gdp_last_month_var
+		divide = var:gdp_last_year_var
 		subtract = 1
-		multiply = 12
 	}
 }
 
