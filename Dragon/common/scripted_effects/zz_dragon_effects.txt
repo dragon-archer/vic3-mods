@@ -169,7 +169,7 @@ da_set_or_add_var = {
 }
 
 da_cache_value = {
-	set_variable = { name = cached_$_$_var value = $_$ days = 60 } # 2 months max
+	set_variable = { name = cached_$_$_var value = $_$ days = 730 } # 2 years max
 }
 
 da_suppress_unused_var = {
