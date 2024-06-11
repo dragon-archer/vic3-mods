@@ -32,6 +32,7 @@
 
  # diplomatic_plays
  DIPLO_PLAY_CONFIDENCE_OR_NEUTRALITY_FACTOR_TRUCE: "与主要参与者之一有$TRUCES$：#bold $VALUE|+=$#!"
+ DIPLO_PLAY_WAR_ALLIED_WITH: "[COUNTRY.GetName]正在战争中与[TARGET_COUNTRY.GetName|v]站在同一阵营"
 
  # effects_l_simp_chinese.yml
  EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
@@ -74,6 +75,8 @@
  CIVIL_WAR_MAX_UNSUPPORTED_PROGRESS: "革命进度无法维持在[Multiply_CFixedPoint('(CFixedPoint)$PROGRESS_LIMIT$','(CFixedPoint)100')|0v]以上，因为该[concept_political_movement]缺乏[concept_interest_group]的支持。"
  CIVIL_WAR_PROGRESS_AT_MAX_PROGRESS: "#header 每周进度\n$TOOLTIP_DELIMITER$\n[concept_revolution]处于目前的最高进度#tooltippable #tooltip:$BREAKDOWN_TAG$ [Multiply_CFixedPoint('(CFixedPoint)$MAX_PROGRESS$','(CFixedPoint)100')|0]#!#!"
  CIVIL_WAR_PROGRESS_ABOVE_MAX_PROGRESS: "#header 每周进度\n$TOOLTIP_DELIMITER$\n[concept_revolution]超出最高进度#tooltippable #tooltip:$BREAKDOWN_TAG$ [Multiply_CFixedPoint('(CFixedPoint)$MAX_PROGRESS$','(CFixedPoint)100')|0]#!#!"
+ ADVANCEMENT_PROGRESS_BAR_LEFT_FORMATIONS_TOOLTIP: "#header [Front.AccessLeftTheater.GetOwner.GetAdjective]一方的[concept_advancement_progress]#!\n进度：#v [Front.GetRightAdvanceProgressFormations|1+]/[Front.GetRequiredAdvanceProgressForBattle|0+]#!"
+ ADVANCEMENT_PROGRESS_BAR_RIGHT_FORMATIONS_TOOLTIP: "#header [Front.AccessRightTheater.GetOwner.GetAdjective]一方的[concept_advancement_progress]#!\n进度：#v [Front.GetLeftAdvanceProgressFormations|1+]/[Front.GetRequiredAdvanceProgressForBattle|0+]#!"
 
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
