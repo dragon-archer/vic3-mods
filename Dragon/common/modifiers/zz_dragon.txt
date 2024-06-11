@@ -144,14 +144,14 @@ da_cpi_rate_mod = {
 da_inflation_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
 	country_loan_interest_rate_add = 1
-	building_economy_of_scale_level_cap_add = 50
-	building_throughput_add = 0.5
+	building_economy_of_scale_level_cap_add = 100
+	building_throughput_add = 1
 }
 
 da_hyperinflation_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
-	country_loan_interest_rate_add = 2
-	building_throughput_add = -2
+	country_loan_interest_rate_add = 1
+	building_throughput_add = -1
 	state_radicals_from_sol_change_mult = 1
 	state_loyalists_from_sol_change_mult = -1
 }
