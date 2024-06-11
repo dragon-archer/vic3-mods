@@ -17,7 +17,10 @@ da_is_in_hyperinflation = {
 	script_context = player_country
 
 	valid = {
-		is_in_hyperinflation_value = 1
+		OR = {
+			is_in_hyperinflation_value = 1
+			has_modifier = da_hyperinflation_rate_mod
+		}
 	}
 
 	open_panel = journal
