@@ -177,9 +177,7 @@ law_per_capita_based_taxation = {
 	}
 
 	on_activate = {
-		da_clear_tax = { _ = income }
-		da_clear_tax = { _ = land }
-		da_clear_tax = { _ = per_capita }
+		da_clear_tax = { _ = dividends }
 	}
 
 	tax_modifier_very_low = {
