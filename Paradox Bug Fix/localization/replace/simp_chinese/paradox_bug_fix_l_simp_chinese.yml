@@ -27,6 +27,9 @@
  concept_mobilization_option_desc: "一支[concept_army]在和平时期可以配置任意数量的$concept_mobilization_options$。每种$concept_mobilization_option_short$都会使其在[Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')]后产生一定的[Concept('concept_good','$concept_goods$')]成本，以及一项应用于$concept_army$内所有[Concept('concept_battalion','$concept_battalions$')]的效果。"
  concept_recovery_rate_desc: "[concept_unit]承受的[concept_casualties]中存活的比率，有些会成为[concept_dependents]。可以通过#b [Concept('concept_mobilization_option','$concept_mobilization_options$')]提高#!。$concept_recovery_rate$会被敌人$concept_unit$的[concept_kill_rate]抵消。"
 
+ # countries
+ dyn_c_austria-hungary: "奥匈帝国"
+
  # customized_tooltips
  DATA_RELIGION_NAME_TOOLTIP_INGAME_ADDED: "[Religion.GetCountryDiscriminationStatus(GetPlayer.Self)][AddLocalizationIf(NotEqualTo_int64(Religion.GetPopulation(GetPlayer.Self),'(int64)0'),'RELIGION_IN_COUNTRY_DESC')]"
 
