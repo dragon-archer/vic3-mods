@@ -2,7 +2,7 @@
 	texture = "gfx/interface/icons/production_method_icons/canals.dds"
 
 	country_modifiers = {
-		workforce_scaled = {
+		unscaled = {
 			country_prestige_add = 100
 			country_convoys_capacity_add = 1000
 			country_convoys_capacity_mult = 0.1
