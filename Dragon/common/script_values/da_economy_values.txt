@@ -865,7 +865,7 @@ mintage_inflation_rate = {
 inflation_rate = {
 	add = market_inflation_rate
 	add = mintage_inflation_rate
-	add = gdp_growth_rate_inverted
+	add = sqrt_gdp_growth_rate_inverted
 }
 
 inflation_rate_inverted = {
