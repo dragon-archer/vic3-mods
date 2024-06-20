@@ -186,7 +186,7 @@ da_assimilation.1 = {
 					value = yes
 				}
 				every_scope_pop = {
-					limit = { culture = { NOT = { is_primary_culture_of = root } } }
+					limit = { NOT = { culture = scope:prim_cu } }
 					if = {
 						limit = { culture_accepted = yes }
 						change_pop_culture = {
