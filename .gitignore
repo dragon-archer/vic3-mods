@@ -1,6 +1,8 @@
 # Base
 /*
 !.git*
+!*.md
+!LICENSE
 
 # Dragon
 !/Dragon/
