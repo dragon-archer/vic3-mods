@@ -1,7 +1,8 @@
 # Base
 /*
 !.git*
-!*.md
+!README.md
+!CHANGELOG.md
 !LICENSE
 
 # Dragon
