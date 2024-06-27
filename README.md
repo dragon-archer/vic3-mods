@@ -7,7 +7,16 @@ A collection of several mods for `Victoria 3`
 
 Each of them can be enabled independently, but it's recommended to enable all of them for best performance and reliablity
 
-[TOC]
+- [Victoria 3 mods](#victoria-3-mods)
+	- [Compatible game version](#compatible-game-version)
+	- [Mods List](#mods-list)
+		- [Dragon](#dragon)
+		- [Integrated Cultures](#integrated-cultures)
+		- [Paradox Bug Fix](#paradox-bug-fix)
+	- [Usage](#usage)
+	- [Change Log](#change-log)
+	- [License](#license)
+
 
 ## Compatible game version
 
