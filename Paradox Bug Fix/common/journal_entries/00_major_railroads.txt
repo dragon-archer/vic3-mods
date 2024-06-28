@@ -1,6 +1,6 @@
 ﻿je_trans_siberian_railway = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
-	
+
 	group = je_group_historical_content
 
 	is_shown_when_inactive = {
@@ -25,49 +25,47 @@
 
 	complete = {
 		any_scope_state = {
-			state_region = s:STATE_MOSCOW
+			filter = {
+				OR = {
+					state_region = s:STATE_MOSCOW
+					state_region = s:STATE_YAROSLAVL
+					state_region = s:STATE_NIZHNY_NOVGOROD
+					state_region = s:STATE_CHUVASHIA
+					state_region = s:STATE_KAZAN
+					state_region = s:STATE_UFA
+					state_region = s:STATE_CHELYABINSK
+					state_region = s:STATE_URAL
+					state_region = s:STATE_TOBOLSK
+					state_region = s:STATE_TOMSK
+					state_region = s:STATE_KRASNOYARSK
+					state_region = s:STATE_IRKUTSK
+					state_region = s:STATE_BURYATIA
+					state_region = s:STATE_TRANS_BAIKAL
+				}
+			}
 			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_TVER
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_GALICH
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_PERM
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_URAL
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_TOBOLSK
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_TOMSK
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_IRKUTSK
-			has_building = building_railway
-		}
-		any_scope_state = {
-			state_region = s:STATE_TRANS_BAIKAL
-			has_building = building_railway
+			percent = 1
 		}
 		OR = {
-			any_scope_state = {
-				state_region = s:STATE_OKHOTSK
-				has_building = building_railway
+			AND = {
+				any_scope_state = {
+					state_region = s:STATE_YAKUTSK
+					has_building = building_railway
+				}
+				any_scope_state = {
+					state_region = s:STATE_OKHOTSK
+					has_building = building_railway
+				}
 			}
-			any_scope_state = {
-				state_region = s:STATE_OUTER_MANCHURIA
-				has_building = building_railway
+			AND = {
+				any_scope_state = {
+					state_region = s:STATE_AMUR
+					has_building = building_railway
+				}
+				any_scope_state = {
+					state_region = s:STATE_OUTER_MANCHURIA
+					has_building = building_railway
+				}
 			}
 		}
 	}
@@ -82,7 +80,7 @@
 
 je_trans_continental_railway = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
-	
+
 	group = je_group_historical_content
 
 	is_shown_when_inactive = {
@@ -133,7 +131,7 @@ je_trans_continental_railway = {
 
 je_canada_pacific_railway = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
-	
+
 	group = je_group_historical_content
 
 	is_shown_when_inactive = {
@@ -209,11 +207,11 @@ je_canada_pacific_railway = {
 			has_building = building_railway
 		}
 	}
-	
+
 	on_complete = {
 		set_global_variable = canada_pacific_done
 		trigger_event = { id = major_railways.3 }
 	}
-	
+
 	weight = 50
 }

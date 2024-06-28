@@ -256,7 +256,7 @@ acw_events.3 = {
 		NOT = { has_variable = american_civil_war }
 		NOT = { has_variable = USA_wilmot_proviso }
 		exists = c:MEX
-		any_scope_state = {
+		any_scope_state = { #PBF
 			has_claim_by = c:MEX
 		}
 		any_interest_group = {
@@ -773,7 +773,7 @@ acw_events.9 = {
 	placement = root
 
 	event_image = {
-		video = "europenorthamerica_american_civil_war"
+		video = "votp_hostile_court"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"

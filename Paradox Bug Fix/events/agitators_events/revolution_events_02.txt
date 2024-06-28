@@ -60,7 +60,7 @@ revolution_pulse_events.1 = {
 				OR = {
 					law_stance = {
 						law = law_type:law_national_supremacy
-						value > neutral
+						value >= neutral
 					}
 					leader = {
 						has_ideology = ideology:ideology_ethno_nationalist
@@ -614,11 +614,13 @@ revolution_pulse_events.5 = {
 			is_marginal = no
 			is_insurrectionary = no
 		}
+		revolution_progress_high = yes
 		any_scope_state = {
 			is_incorporated = yes
-			is_capital = no
+			NOT = {
+				is_capital = yes
+			} 
 		}
-		revolution_progress_high = yes
 	}
 
 	cancellation_trigger = {
@@ -1163,7 +1165,7 @@ revolution_pulse_events.9 = {
 			is_marginal = no
 		}
 		revolution_progress_low = yes
-		any_scope_state = {
+		any_scope_state = { #PBF
 			any_scope_building = {
 				is_building_type = building_barracks
 			}
@@ -3629,7 +3631,10 @@ revolution_pulse_events.26 = {
 	}
 	event_image = {
 		trigger = {
-			religion = rel:shinto
+			OR = {
+				religion = rel:shinto
+				religion = rel:confucian
+			}
 		}
 		video = "asia_confucianism_shinto"
 	}
@@ -3951,7 +3956,10 @@ revolution_pulse_events.29 = {
 	}
 	event_image = {
 		trigger = {
-			religion = rel:shinto
+			OR = {
+				religion = rel:shinto
+				religion = rel:confucian
+			}
 		}
 		video = "asia_confucianism_shinto"
 	}

@@ -1,3 +1,5 @@
+#PBF: Reverse left & right in battle view
+#TODO: Check whether it's still needed
 # COPY-PASTED FOR NOW
 @panel_width_minus_20 = 520			# used to be 440
 @panel_width_minus_20_half = 260	# used to be 220
@@ -1788,6 +1790,12 @@ types front_panel_types
 							using = small_battle_outcome_formatting
 							default_format = "#n"
 						}
+						textbox = {
+							visible = "[Battle.EndedInconclusively]"
+							text = "BATTLE_INCONCLUSIVE"
+							using = battle_outcome_formatting
+							default_format = "#n"
+						}
 					}
 
 					# if you are observer
@@ -1808,8 +1816,13 @@ types front_panel_types
 							default_format = "#n"
 						}
 						textbox = {
-							visible = "[Not(Or( Battle.IsOnWinnerSide(GetPlayer.Self), Battle.IsOnLoserSide(GetPlayer.Self) ))]"
+							visible = "[And(Not(Or( Battle.IsOnWinnerSide(GetPlayer.Self), Battle.IsOnLoserSide(GetPlayer.Self) )), Not(Battle.EndedInconclusively))]"
 							text = "BATTLE_NONALLY_VICTORY"
+							using = small_battle_outcome_formatting
+						}
+						textbox = {
+							visible = "[Battle.EndedInconclusively]"
+							text = "BATTLE_INCONCLUSIVE_OUTCOME"
 							using = small_battle_outcome_formatting
 						}
 					}

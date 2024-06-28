@@ -1,3 +1,5 @@
+#PBF: Translate treaty port
+#TODO: Use loc key instead of raw_text
 # COPY-PASTED FOR NOW
 @panel_width_minus_10 = 530			# used to be 450
 @panel_width = 540  				# used to be 460
@@ -394,7 +396,7 @@ types state_panel_types
 													min = 0
 													max = 0.75
 												}
-												
+
 												blockoverride "value_left" {
 													value = "[FixedPointToFloat(Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetStatePrice))]"
 												}
@@ -449,7 +451,7 @@ types state_panel_types
 													min = 0
 													max = 0.75
 												}
-												
+
 												blockoverride "value_left" {
 													value = "[FixedPointToFloat(Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice))]"
 												}
@@ -461,11 +463,11 @@ types state_panel_types
 									}
 
 									vertical_divider = {}
-									
+
 									widget = {
 										size = { 70 40 }
 										parentanchor = vcenter
-										
+
 										textbox = {
 											visible = "[Not(Goods.IsLocal)]"
 											align = right|nobaseline
@@ -480,7 +482,7 @@ types state_panel_types
 											alpha = "[TransparentIfTrue(Goods.IsLocal)]"
 											align = right|nobaseline
 											text = "NOT_AVAILABLE"
-											tooltip = "concept_local_good_desc"	
+											tooltip = "concept_local_good_desc"
 											size = { 70 40 }
 											margin_right = 10
 										}
@@ -708,7 +710,7 @@ types state_panel_types
 				item = {
 					icon = {
 						size = { 45 45 }
-						tooltip = TOOLTIP_STATE_TRAIT
+						tooltip = "TOOLTIP_STATE_TRAIT"
 						onmousehierarchyenter = "[AccessHighlightManager.HighlightStateTrait(StateTrait.Self)]"
 						onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						alwaystransparent = no
@@ -1458,8 +1460,7 @@ types state_panel_types
 				item = {
 					container = {
 						state_panel_status_item_small = {
-							tooltip = "[Decree.BuildTooltip]"
-							onrightclick = "[RightClickMenuManager.ShowForDecree(Decree.AccessSelf)]"
+							tooltip = "[Decree.GetTooltip]"
 
 							blockoverride "texture" {
 								texture = "[Decree.GetTexture]"
@@ -1476,7 +1477,7 @@ types state_panel_types
 
 							blockoverride "extra_widget" {
 								button = {
-									visible = "[ObjectsEqual(State.GetOwner, GetPlayer.Self)]"
+									visible = "[ObjectsEqual(Decree.GetCountry.Self, GetPlayer.Self)]"
 									using = default_button
 									size = { 160 40 }
 									text = "CANCEL"
@@ -1588,7 +1589,7 @@ types state_panel_types
 						}
 					}
 				}
-			}		
+			}
 
 			textbox = {
 				text = "HEADER_CULTURAL_COMMUNITIES"
@@ -2868,7 +2869,7 @@ types state_panel_types
 
 					item = {
 						state_panel_status_item_condensed = {
-							tooltip = "[Decree.BuildTooltip]"
+							tooltip = "[Decree.GetTooltip]"
 							onrightclick = "[RightClickMenuManager.ShowForDecree(Decree.AccessSelf)]"
 
 							blockoverride "texture" {
@@ -3201,7 +3202,12 @@ types building_item_types
 		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 		alwaystransparent = no
 
-		size = { 135 180 }
+		size = { 135 210 }
+
+		background = {
+			using = entry_bg_simple
+		}
+
 		button  = {
 			onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 			onrightclick = "[RightClickMenuManager.ShowForBuilding(Building.AccessSelf)]"
@@ -3213,10 +3219,6 @@ types building_item_types
 			flowcontainer = {
 				direction = vertical
 				resizeparent = yes
-
-				background = {
-					using = entry_bg_simple
-				}
 
 				button = {
 					using = default_button
@@ -3256,7 +3258,8 @@ types building_item_types
 						tooltip = "[Building.GetDownsizeTooltip]"
 						onclick = "[Execute( Building.Downsize )]"
 						enabled = "[IsValid( Building.Downsize )]"
-						visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), Not( ShouldAskConfirmation( Building.Downsize ) ) ), Not(Building.IsMilitaryBuilding))]"
+						visible = no
+						#visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), Not( ShouldAskConfirmation( Building.Downsize ) ) ), Not(Building.IsMilitaryBuilding))]"
 						using = tooltip_below
 					}
 
@@ -3268,7 +3271,8 @@ types building_item_types
 						tooltip = "[Building.GetDownsizeTooltip]"
 						onclick = "[PopupManager.AskConfirmation( Building.Downsize )]"
 						enabled = "[IsValid( Building.Downsize )]"
-						visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), ShouldAskConfirmation( Building.Downsize ) ), Not(Building.IsMilitaryBuilding))]"
+						visible = no
+						#visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), ShouldAskConfirmation( Building.Downsize ) ), Not(Building.IsMilitaryBuilding))]"
 						using = tooltip_below
 					}
 
@@ -3278,23 +3282,24 @@ types building_item_types
 						parentanchor = bottom
 						position = { 5 -5 }
 						tooltip = "[Building.GetCancelConstructionTooltip]"
-						visible = "[And(IsValid( Building.CancelConstruction ), Not(Building.IsMilitaryBuilding))]"
+						visible = no
+						#visible = "[And(IsValid( Building.CancelConstruction ), Not(Building.IsMilitaryBuilding))]"
 						onclick = "[Execute( Building.CancelConstruction )]"
 						using = tooltip_below
 					}
 
 					### EXPAND BUTTON
-					button_icon_plus_action = {
+					expand_building_button = {
+						visible = no
 						block "expand_button_placement" {
 							position = { -5 -5 }
 						}
 						parentanchor = bottom|right
 						widgetanchor = bottom|right
-						visible = "[And(Or( And( Not( Building.IsValid ), IsValid( Building.QueueConstruction ) ), Not(Building.HasReachedLevelCap) ), Not(Building.IsMilitaryBuilding))]"
-						tooltip = "[Building.GetQueueConstructionTooltip]"
-						size = { 29 29 }
-						onclick = "[Execute( Building.QueueConstruction )]"
-						enabled = "[IsValid( Building.QueueConstruction )]"
+
+						blockoverride "button_size" {
+							size = { 29 29 }
+						}
 					}
 
 					### WAGES / GOVERNMENT BUILDING
@@ -3390,6 +3395,7 @@ types building_item_types
 										enabled = "[IsValid( Building.ToggleSubsidies )]"
 										onclick = "[Execute( Building.ToggleSubsidies )]"
 										tooltip = SUBSIDIZED_YES
+										using = icon_toggle_single_off_sound
 
 										blockoverride "icon" {
 											texture = "gfx/interface/production_methods/subsidized.dds"
@@ -3405,6 +3411,7 @@ types building_item_types
 										enabled = "[IsValid( Building.ToggleSubsidies )]"
 										onclick = "[Execute( Building.ToggleSubsidies )]"
 										tooltip = SUBSIDIZED_NO
+										using = icon_toggle_single_on_sound
 
 										blockoverride "icon" {
 											texture = "gfx/interface/production_methods/subsidized_not.dds"
@@ -3418,56 +3425,6 @@ types building_item_types
 						}
 					}
 
-					container = {
-						visible = "[LessThan_CFixedPoint(Building.GetEmploymentPercentage, GetDefine('NGUI', 'BUILDING_CONSIDERED_FULLY_EMPLOYED'))]"
-						position = { 5 31 }
-						parentanchor = left
-
-						### EMPLOYMENT WARNING						
-						icon = {
-							visible = "[Building.ShouldShowAsUnableToHire]"
-							size = { 30 30 }
-							texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
-							tooltip = "NOT_HIRING"
-						}					
-						
-						icon = {
-							visible = "[Building.ShouldShowAsUnwillingToHire]"
-							size = { 30 30 }
-							texture = "gfx/interface/icons/generic_icons/employment_not_hiring.dds"
-							tooltip = "NOT_HIRING"
-						}						
-
-						icon = {
-							visible = "[Building.ShouldShowAsHiring]"
-							size = { 30 30 }
-							texture = "gfx/interface/icons/generic_icons/employment_not_full_hiring.dds"
-							tooltip = "TOOLTIP_BUILDING_HIRING"
-						}
-					}
-
-					### LEVEL
-					container = {
-						position = { 5 4 }
-						parentanchor = top|left
-
-						tooltip = "[Building.GetEmploymentTooltip]"
-						using = tooltip_above
-
-						background = {
-							using = dark_area
-						}
-
-						textbox = {
-							minimumsize = { -1 27 }
-							autoresize = yes
-							margin_right = 6
-							margin_left = 6
-							align = left|nobaseline
-							text = "[Building.GetExpansionLevelDesc]"
-						}
-					}
-
 					### CASH PROGRESSBAR
 					flowcontainer = {
 						position = { 0 -10 }
@@ -3477,7 +3434,7 @@ types building_item_types
 
 						### BUILDING PROGRESS
 						default_progressbar_horizontal = {
-							size = { 60 12 }
+							size = { 110 12 }
 							visible = "[Building.HasConstructionQueued]"
 							tooltip = "BUILDING_PROGRESS_TOOLTIP"
 							blockoverride "values" {
@@ -3490,7 +3447,7 @@ types building_item_types
 
 							textbox = {
 								raw_text = "#bold [Building.GetConstructionRemainingWeeksDesc]#!"
-								size = { 53 20 }
+								size = { 100 12 }
 								align = center|nobaseline
 								elide = right
 								fontsize_min = 12
@@ -3500,7 +3457,7 @@ types building_item_types
 						}
 
 						widget = {
-							size = { 60 12 }
+							size = { 110 12 }
 							alpha = "[TransparentIfFalse(Building.IsActive)]"
 							visible = "[And(GreaterThan_CFixedPoint(Building.GetMaxCashReserves, '(CFixedPoint)0'), Building.IsActive)]"
 							using = cash_reserves_tooltip_with_graph
@@ -3565,18 +3522,97 @@ types building_item_types
 						}
 					}
 
-					container = {
-						visible = "[Building.HasAnyInputShortage]"
-						position = { 3 -37 }
-						parentanchor = bottom
+					flowcontainer = {
+						direction = vertical
+						parentanchor = left
+						margin_left = 5
+						margin_top = 5
+
+						employment_indicator_icon = {
+							visible = "[LessThan_CFixedPoint(Building.GetEmploymentPercentage, GetDefine('NGUI', 'BUILDING_CONSIDERED_FULLY_EMPLOYED'))]"
+						}
 
 						### INPUT WARNING
 						icon = {
-							size = { 34 34 }
+							size = { 28 28 }
+							visible = "[Building.HasAnyInputShortage]"
 							texture = "gfx/interface/icons/generic_icons/goods_shortage.dds"
 							tooltip = "GOODS_OUTPUT_PENALTY_TOOLTIP"
 						}
+
+						### AUTO DOWNSIZE WARNING
+						icon = {
+							size = { 28 28 }
+							visible = "[Building.IsAutoDownsizing]"
+							texture = "gfx/interface/production_methods/auto_downsize.dds"
+							tooltip = "[Building.GetAutoDownsizeTooltip]"
+						}
 					}
+				}
+
+				container = {
+					minimumsize = { 135 35 }
+					using = building_size_tooltip_with_ownership
+
+
+					background = {
+						using = entry_bg
+						margin = { -3 -1 }
+					}
+
+					building_size_with_ownership = {
+						parentanchor = center
+					}
+
+					### DOWNSIZE
+					button_icon_minus_action = {
+						size = { 28 28 }
+						parentanchor = vcenter
+						position = { 5 0 }
+						tooltip = "[Building.GetDownsizeTooltip]"
+						onclick = "[Execute( Building.Downsize )]"
+						enabled = "[IsValid( Building.Downsize )]"
+						visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), Not( ShouldAskConfirmation( Building.Downsize ) ) ), Not(Building.IsMilitaryBuilding))]"
+						using = tooltip_below
+					}
+
+					### DOWNSIZE WITH CONFIRMATION
+					button_icon_minus_action = {
+						size = { 28 28 }
+						parentanchor = vcenter
+						position = { 5 0 }
+						tooltip = "[Building.GetDownsizeTooltip]"
+						onclick = "[PopupManager.AskConfirmation( Building.Downsize )]"
+						enabled = "[IsValid( Building.Downsize )]"
+						visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), ShouldAskConfirmation( Building.Downsize ) ), Not(Building.IsMilitaryBuilding))]"
+						using = tooltip_below
+					}
+
+					### CANCEL CONSTRUCTION
+					button_icon_minus_action = {
+						size = { 28 28 }
+						parentanchor = vcenter
+						position = { 5 0 }
+						tooltip = "[Building.GetCancelConstructionTooltip]"
+						visible = "[And(IsValid( Building.CancelConstruction ), Not(Building.IsMilitaryBuilding))]"
+						onclick = "[Execute( Building.CancelConstruction )]"
+						using = tooltip_below
+					}
+
+					### EXPAND BUTTON
+					expand_building_button = {
+						parentanchor = vcenter|right
+
+						block "expand_button_placement" {
+							position = { -5 0 }
+						}
+
+						blockoverride "button_size" {
+							size = { 28 28 }
+						}
+					}
+
+
 				}
 			}
 		}
@@ -3621,21 +3657,7 @@ types building_item_types
 					position = { -8 -8 }
 
 					### EMPLOYMENT WARNING
-					icon = {
-						visible = "[Building.ShouldShowAsUnableToHire]"
-						texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
-						tooltip = "NOT_HIRING"
-						size = { 30 30 }
-						parentanchor = vcenter
-					}					
-					
-					icon = {
-						visible = "[Building.ShouldShowAsUnwillingToHire]"
-						texture = "gfx/interface/icons/generic_icons/employment_not_hiring.dds"
-						tooltip = "NOT_HIRING"
-						size = { 30 30 }
-						parentanchor = vcenter
-					}					
+					employment_indicator_icon = {}
 
 					### INPUT WARNING
 					icon = {
@@ -3699,10 +3721,9 @@ types building_item_types
 					widget = {
 						size = { 30 30 }
 						parentanchor = vcenter
-
-						button_icon_plus_action = {
+						button_icon_plus_action = { #this should probably be a expand_building_button, but not tested since condensed view is not used
 							parentanchor = center
-							visible = "[Or( And( Not( Building.IsValid ), IsValid( Building.QueueConstruction ) ), Not(Building.HasReachedLevelCap) )]"
+							visible = "[Building.IsPotentialQueueConstruction]"
 							tooltip = "[Building.GetQueueConstructionTooltip]"
 							size = { 29 29 }
 							onclick = "[Execute( Building.QueueConstruction )]"
@@ -3721,6 +3742,35 @@ types building_item_types
 					}
 				}
 			}
+		}
+	}
+
+	type employment_indicator_icon = container {
+		icon = {
+			visible = "[Building.ShouldShowAsUnableToHire]"
+			block "indicator_icon_size" {
+				size = { 28 28 }
+			}
+			texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
+			tooltip = "NOT_HIRING"
+		}
+
+		icon = {
+			visible = "[Building.ShouldShowAsUnwillingToHire]"
+			block "indicator_icon_size" {
+				size = { 28 28 }
+			}
+			texture = "gfx/interface/icons/generic_icons/employment_not_hiring.dds"
+			tooltip = "NOT_HIRING"
+		}
+
+		icon = {
+			visible = "[Building.ShouldShowAsHiring]"
+			block "indicator_icon_size" {
+				size = { 28 28 }
+			}
+			texture = "gfx/interface/icons/generic_icons/employment_not_full_hiring.dds"
+			tooltip = "TOOLTIP_BUILDING_HIRING"
 		}
 	}
 }
