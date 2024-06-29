@@ -15,12 +15,12 @@
  da_merge_cultures.2.a: "查看细节并关闭"
 
  da_concept_assimilation_events: "文化同化事件"
- modifier_country_da_assimilation_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中的[concept_assimilation]比例"
- modifier_country_da_assimilation_mult_desc: "对$modifier_country_da_assimilation_mult$的增益或惩罚"
- modifier_country_da_assimilation_accepted_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中[concept_accepted_culture][concept_pop]的[concept_assimilation]比例"
- modifier_country_da_assimilation_accepted_mult_desc: "对$modifier_country_da_assimilation_accepted_mult$的增益或惩罚"
- modifier_country_da_assimilation_discriminated_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中受[concept_discrimination][concept_pop]的[concept_assimilation]比例"
- modifier_country_da_assimilation_discriminated_mult_desc: "对$modifier_country_da_assimilation_discriminated_mult$的增益或惩罚"
+ country_da_assimilation_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中的[concept_assimilation]比例"
+ country_da_assimilation_mult_desc: "对$country_da_assimilation_mult$的增益或惩罚"
+ country_da_assimilation_accepted_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中[concept_accepted_culture][concept_pop]的[concept_assimilation]比例"
+ country_da_assimilation_accepted_mult_desc: "对$country_da_assimilation_accepted_mult$的增益或惩罚"
+ country_da_assimilation_discriminated_mult: "[Concept('concept_assimilation', '$da_concept_assimilation_events$')]中受[concept_discrimination][concept_pop]的[concept_assimilation]比例"
+ country_da_assimilation_discriminated_mult_desc: "对$country_da_assimilation_discriminated_mult$的增益或惩罚"
 
  da_merge_culture_cant_merge_self_tt: "@warning!#warning [SCOPE.sCulture('culture_2').GetName]不能合并进自己#!"
  da_merge_culture_already_merged_tt: "@warning!#warning [SCOPE.sCulture('culture_2').GetName]已经被合并进了[SCOPE.sCulture('culture_0').GetName]#!"
