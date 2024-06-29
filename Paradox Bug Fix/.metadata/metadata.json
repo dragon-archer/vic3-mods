@@ -4,7 +4,7 @@
 	"version": "1.7.1.240629",
 	"supported_game_version": "1.7.*",
 	"short_description": "Fix latest bugs",
-	"tags": [],
+	"tags": ["Fixes"],
 	"relationships": [],
 	"game_custom_data": {
 		"multiplayer_synchronized": true
