@@ -1,8 +1,8 @@
 {
-	"name": "文化合并1.6",
-	"id": "dragon-archer.culture",
-	"version": "1.6.240408",
-	"supported_game_version": "1.6.*",
+	"name": "文化合并1.7",
+	"id": "dragon-archer.ic",
+	"version": "1.7.240629",
+	"supported_game_version": "1.7.*",
 	"short_description": "",
 	"tags": [],
 	"relationships": [],

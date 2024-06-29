@@ -1,4 +1,5 @@
-﻿canada_unite_can = {
+﻿#IC: Replace culture triggers for Australian
+canada_unite_can = {
 	is_shown = {
 		OR = {
 			country_has_primary_culture = cu:anglo_canadian
@@ -63,7 +64,7 @@
 		modifier = {
 			has_technology_researched = pan-nationalism
 			add = 100
-		}		
+		}
 	}
 }
 
@@ -111,7 +112,7 @@ canada_unite_gbr = {
 		modifier = {
 			has_technology_researched = pan-nationalism
 			add = 100
-		}		
+		}
 	}
 }
 
@@ -172,7 +173,7 @@ australia_unite_aus = {
 		modifier = {
 			has_technology_researched = pan-nationalism
 			add = 100
-		}		
+		}
 	}
 }
 
@@ -214,6 +215,6 @@ australia_unite_gbr = {
 		modifier = {
 			has_technology_researched = pan-nationalism
 			add = 100
-		}		
+		}
 	}
 }
