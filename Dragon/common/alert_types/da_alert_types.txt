@@ -17,6 +17,7 @@ da_is_in_hyperinflation = {
 	script_context = player_country
 
 	valid = {
+		has_journal_entry = je_da_economy
 		OR = {
 			is_in_hyperinflation_value = 1
 			has_modifier = da_hyperinflation_rate_mod
@@ -33,6 +34,7 @@ da_is_in_severe_deflation = {
 	script_context = player_country
 
 	valid = {
+		has_journal_entry = je_da_economy
 		is_in_severe_deflation_value = 1
 	}
 
