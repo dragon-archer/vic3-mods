@@ -5,7 +5,8 @@ da.200 = {
 	hidden = yes
 
 	trigger = {
-		has_game_rule = autonomous_investment_pool
+		# has_game_rule = autonomous_investment_pool
+		always = no #TODO
 		has_modifier = da_disable_private_construction
 	}
 

@@ -1,4 +1,5 @@
-﻿pmg_base_building_coffee_plantation = {
+﻿#DA: Add PMs for deeper automation
+pmg_base_building_coffee_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
 		default_building_coffee_plantation
@@ -12,16 +13,6 @@ pmg_train_automation_building_coffee_plantation = {
 		pm_road_carts
 		pm_steam_rail_transport
 		pm_log_carts_plantation
-	}
-}
-
-pmg_ownership_land_building_coffee_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
 	}
 }
 
@@ -42,16 +33,6 @@ pmg_train_automation_building_cotton_plantation = {
 	}
 }
 
-pmg_ownership_land_building_cotton_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
-	}
-}
-
 pmg_base_building_dye_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
@@ -66,16 +47,6 @@ pmg_train_automation_building_dye_plantation = {
 		pm_road_carts
 		pm_steam_rail_transport
 		pm_log_carts_plantation
-	}
-}
-
-pmg_ownership_land_building_dye_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
 	}
 }
 
@@ -96,16 +67,6 @@ pmg_train_automation_building_opium_plantation = {
 	}
 }
 
-pmg_ownership_land_building_opium_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
-	}
-}
-
 pmg_base_building_tea_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
@@ -120,16 +81,6 @@ pmg_train_automation_building_tea_plantation = {
 		pm_road_carts
 		pm_steam_rail_transport
 		pm_log_carts_plantation
-	}
-}
-
-pmg_ownership_land_building_tea_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
 	}
 }
 
@@ -150,16 +101,6 @@ pmg_train_automation_building_tobacco_plantation = {
 	}
 }
 
-pmg_ownership_land_building_tobacco_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
-	}
-}
-
 pmg_base_building_sugar_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
@@ -174,16 +115,6 @@ pmg_train_automation_building_sugar_plantation = {
 		pm_road_carts
 		pm_steam_rail_transport
 		pm_log_carts_plantation
-	}
-}
-
-pmg_ownership_land_building_sugar_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
 	}
 }
 
@@ -204,16 +135,6 @@ pmg_train_automation_building_banana_plantation = {
 	}
 }
 
-pmg_ownership_land_building_banana_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
-	}
-}
-
 pmg_base_building_silk_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
@@ -231,16 +152,6 @@ pmg_train_automation_building_silk_plantation = {
 	}
 }
 
-pmg_ownership_land_building_silk_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
-	}
-}
-
 pmg_base_building_vineyard_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
@@ -255,15 +166,5 @@ pmg_train_automation_building_vineyard_plantation = {
 		pm_road_carts
 		pm_steam_rail_transport
 		pm_log_carts_plantation
-	}
-}
-
-pmg_ownership_land_building_vineyard_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_privately_owned_plantation
-		pm_publicly_traded_plantation
-		pm_government_run_plantation
-		pm_worker_cooperative_plantation
 	}
 }

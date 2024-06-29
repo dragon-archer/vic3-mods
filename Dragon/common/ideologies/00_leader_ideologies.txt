@@ -3183,8 +3183,8 @@ ideology_corporatist_leader = {
 	}
 
 	lawgroup_education_system = {
-		law_religious_schools = approve
 		law_public_schools = approve
+		law_religious_schools = approve
 		law_private_schools = neutral
 		law_no_schools = disapprove
 	}

@@ -1,4 +1,6 @@
-﻿je_brazilian_nation_building_integrate_nordestino = {
+﻿#DA: Cooperate with IC
+#TODO: Move to IC
+je_brazilian_nation_building_integrate_nordestino = {
 	name = {
 		first_valid = {
 			triggered_desc = {
@@ -354,6 +356,10 @@ je_brazilian_nation_building_integrate_amazonic = {
 		set_global_variable = da_bra_ama_cultures_merged_var
 		da_merge_cultures = { _1 = cu:brazilian _2 = cu:amazonic }
 	}
+
+	ai_chance = {
+		base = 100
+	}
 }
 
 je_south_american_national_identity_integrate_a_state = {
@@ -363,6 +369,8 @@ je_south_american_national_identity_integrate_a_state = {
 	visible = { always = yes }
 
 	possible = {
+		exists = scope:old_national_culture
+		exists = scope:new_national_culture
 		any_scope_state = {
 			is_incorporated = yes
 			state_region = {

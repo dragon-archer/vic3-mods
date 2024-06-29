@@ -8,31 +8,24 @@ efficient_bureaucracy = {
 state_turmoil = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_tax_waste_add = 0.25
-	state_migration_pull_mult = -0.25
-	state_construction_mult = -0.125
+	state_migration_pull_mult = -0.15
+	state_construction_mult = -0.15
 }
 
 # Applied if state is above 'high turmoil' threshold
 state_turmoil_high = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_tax_waste_add = 0.5
-	state_migration_pull_mult = -0.5
+	state_migration_pull_mult = -0.25
 	state_construction_mult = -0.25
 }
 
 # Applied if state is above 'extreme turmoil' threshold
 state_turmoil_extreme = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_tax_waste_add = 1.0
-	state_migration_pull_mult = -0.75
+	state_tax_waste_add = 0.75
+	state_migration_pull_mult = -0.5
 	state_construction_mult = -0.5
-}
-
-# Scales with country literacy rate
-country_literacy_rate = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	country_weekly_innovation_max_add = 150 # 150
-	country_tech_spread_add = 75 # 75
 }
 
 # Scales with number of excess innovation points

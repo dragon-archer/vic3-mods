@@ -1,0 +1,32 @@
+﻿# Allow Monitor to upgrade to Destroyer & Torpedo Boad
+combat_unit_type_monitor = {
+	group = combat_unit_group_light_ship
+
+	upkeep_modifier = {
+		goods_input_ironclads_add = 1
+		goods_input_artillery_add = 1
+		goods_input_ammunition_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 20
+		unit_defense_add = 30
+		unit_morale_loss_add = 8
+		unit_convoy_defense_mult = 0.20
+	}
+
+	formation_modifier = {
+		military_formation_movement_speed_mult = 0.2
+	}
+
+	unlocking_technologies = { monitor_tech }
+
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/capital_ships_monitor.dds"
+	}
+
+	upgrades = { #DA
+		combat_unit_type_destroyer
+		combat_unit_type_torpedo_boat
+	}
+}

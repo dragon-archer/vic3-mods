@@ -1,6 +1,5 @@
-﻿da_is_firm_subject_of_root = {
+﻿da_is_firm_subject_of_root = { #TODO: directly use is_subject_of
 	is_subject_of = root
-	NOT = { is_subject_type = subject_type_customs_union }
 }
 
 da_is_in_extended_mode = {

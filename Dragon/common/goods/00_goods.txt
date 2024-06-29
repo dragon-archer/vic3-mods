@@ -1,4 +1,5 @@
-﻿# goods types, organized by category
+﻿# Make local goods untransferable but non-local
+# goods types, organized by category
 
 # prestige_factor							Base prestige for occupying the rank MIN_PRESTIGE_AWARD spot on the goods production leaderboard. x2 awarded for every rank above the minimum.
 

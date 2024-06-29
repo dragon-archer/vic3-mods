@@ -130,6 +130,7 @@ pm_simple_organization = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_bureaucracy_add = 35
+
 		}
 	}
 

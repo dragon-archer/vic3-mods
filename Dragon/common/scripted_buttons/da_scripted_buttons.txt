@@ -24,7 +24,8 @@ da_disable_investment_pool = {
 	}
 
 	possible = {
-		has_game_rule = autonomous_investment_pool
+		# has_game_rule = autonomous_investment_pool
+		always = no #TODO
 		NOT = { has_modifier = da_disable_private_construction }
 	}
 

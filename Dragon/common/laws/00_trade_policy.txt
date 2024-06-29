@@ -1,4 +1,5 @@
-﻿# group = this is the law_group a law belongs to
+﻿#DA: Increase MAPI under Free Trade
+# group = this is the law_group a law belongs to
 # icon = graphical icon shown in-game
 # modifier = {} modifier on country for having adopted this law
 
@@ -47,11 +48,7 @@ law_mercantilism = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -93,11 +90,7 @@ law_protectionism = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -133,6 +126,7 @@ law_free_trade = {
 		country_trade_route_competitiveness_mult = 0.5
 		country_trade_route_quantity_mult = 0.5
 		country_trade_route_cost_mult = -0.5
+		country_leverage_resistance_mult = -0.25
 		state_market_access_price_impact = 0.05
 	}
 
@@ -148,11 +142,7 @@ law_free_trade = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -174,9 +164,11 @@ law_isolationism = {
 		state_tax_capacity_mult = 0.25
 		country_tech_spread_mult = -0.15
 
+		country_leverage_resistance_mult = 1.0
+
 		country_max_declared_interests_mult = -0.5
 
-		market_disallow_trade_routes = yes
+		market_disallow_trade_routes_bool = yes
 	}
 
 	possible_political_movements = {
@@ -189,10 +181,13 @@ law_isolationism = {
 	}
 
 	ai_will_do = {
-		ruler = {
-			OR = {
-				has_ideology = ideology:ideology_traditionalist
-				has_ideology = ideology:ideology_vanguardist
+		OR = {
+			has_journal_entry = je_gyojo_shinwon
+			ruler = {
+				OR = {
+					has_ideology = ideology:ideology_traditionalist
+					has_ideology = ideology:ideology_vanguardist
+				}
 			}
 		}
 	}
@@ -201,11 +196,7 @@ law_isolationism = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}

@@ -1,4 +1,5 @@
-﻿pm_early_trains = {
+﻿#DA: Overhaul train PMs
+pm_early_trains = {
 	texture = "gfx/interface/icons/production_method_icons/experimental_trains.dds"
 
 	building_modifiers = {
@@ -10,7 +11,7 @@
 		level_scaled = {
 			building_employment_laborers_add = 3000
 			building_employment_machinists_add = 1000
-			building_employment_clerks_add = 1000
+			building_employment_clerks_add = 750
 		}
 	}
 
@@ -27,6 +28,7 @@
 
 pm_steam_trains = {
 	texture = "gfx/interface/icons/production_method_icons/trains_steam.dds"
+	replacement_if_valid = pm_steam_trains_principle_transport_3
 
 	unlocking_technologies = {
 		steel_railway_cars
@@ -42,7 +44,7 @@ pm_steam_trains = {
 			building_employment_laborers_add = 2000
 			building_employment_machinists_add = 1250
 			building_employment_engineers_add = 250
-			building_employment_clerks_add = 1000
+			building_employment_clerks_add = 750
 		}
 	}
 
@@ -57,8 +59,46 @@ pm_steam_trains = {
 	}
 }
 
+pm_steam_trains_principle_transport_3 = {
+	texture = "gfx/interface/icons/production_method_icons/trains_steam.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_transport_3
+	}
+
+	unlocking_technologies = {
+		steel_railway_cars
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 6 # 300
+			goods_input_coal_add = 6 # 150
+			goods_output_transportation_add = 35 # 750
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 250
+			building_employment_clerks_add = 750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 30
+			state_pollution_generation_add = 25
+		}
+		unscaled = {
+			state_market_access_price_impact = 0.05
+		}
+	}
+}
+
 pm_electric_trains = {
 	texture = "gfx/interface/icons/production_method_icons/trains_electric.dds"
+	replacement_if_valid = pm_electric_trains_principle_transport_3
 
 	unlocking_technologies = {
 		electric_railway
@@ -74,7 +114,7 @@ pm_electric_trains = {
 			building_employment_laborers_add = 1250
 			building_employment_machinists_add = 1250
 			building_employment_engineers_add = 500
-			building_employment_clerks_add = 1000
+			building_employment_clerks_add = 750
 		}
 	}
 
@@ -90,8 +130,48 @@ pm_electric_trains = {
 	# required_input_goods = electricity
 }
 
+pm_electric_trains_principle_transport_3 = {
+	texture = "gfx/interface/icons/production_method_icons/trains_electric.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_transport_3
+	}
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 6 # 300
+			goods_input_electricity_add = 12 # 300
+			goods_output_transportation_add = 50 # 1050
+		}
+		level_scaled = {
+			building_employment_laborers_add = 1250
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 500
+			building_employment_clerks_add = 750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 40
+		}
+		unscaled = {
+			state_market_access_price_impact = 0.075
+		}
+	}
+
+	# required_input_goods = electricity
+}
+
 pm_diesel_trains = {
 	texture = "gfx/interface/icons/production_method_icons/trains_diesel.dds"
+	replacement_if_valid = pm_diesel_trains_principle_transport_3
+
 	unlocking_technologies = {
 		compression_ignition
 	}
@@ -106,7 +186,7 @@ pm_diesel_trains = {
 			building_employment_laborers_add = 500
 			building_employment_machinists_add = 1250
 			building_employment_engineers_add = 750
-			building_employment_clerks_add = 1000
+			building_employment_clerks_add = 750
 		}
 	}
 
@@ -114,6 +194,42 @@ pm_diesel_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 40
 			state_pollution_generation_add = 15
+		}
+		unscaled = {
+			state_market_access_price_impact = 0.1
+		}
+	}
+}
+
+pm_diesel_trains_principle_transport_3 = {
+	texture = "gfx/interface/icons/production_method_icons/trains_diesel.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_transport_3
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 6 # 300
+			goods_input_oil_add = 10 # 400
+			goods_output_transportation_add = 65 # 1200
+		}
+		level_scaled = {
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 55
+			state_pollution_generation_add = 20
 		}
 		unscaled = {
 			state_market_access_price_impact = 0.1
@@ -159,84 +275,32 @@ pm_steel_passenger_carriages = {
 	}
 }
 
-pm_privately_owned_building_railway = {
-	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
-
-	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_capitalists_add = 100
-		}
-		unscaled = {
-			building_capitalists_shares_add = 10
-		}
-	}
-}
-
-pm_publicly_traded_building_railway = {
-	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
-
-	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
-	}
-
-	unlocking_technologies = {
-		mutual_funds
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_capitalists_add = 150
-		}
-		unscaled = {
-			building_capitalists_shares_add = 10
-		}
-	}
-}
-
-pm_government_run_building_railway = {
-	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
-
-	unlocking_laws = {
-		law_command_economy
-		law_interventionism
-		law_agrarianism
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_bureaucrats_add = 150
-		}
-		unscaled = {
-			building_government_shares_add = 1
-		}
-	}
-}
-
-pm_worker_cooperative_building_railway = {
-	texture = "gfx/interface/icons/production_method_icons/worker_cooperative.dds"
-
-	unlocking_laws = {
-		law_cooperative_ownership
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_shopkeepers_add = 250
-		}
-		unscaled = {
-			building_workforce_shares_add = 1
-		}
-	}
-}
-
 pm_trade_center = {
 	texture = "gfx/interface/icons/production_method_icons/trade_center.dds"
+	replacement_if_valid = pm_trade_center_principle_external_trade_2
+	is_hidden_when_unavailable = yes
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 250
+		}
+	}
+}
+
+pm_trade_center_principle_external_trade_2 = {
+	texture = "gfx/interface/icons/production_method_icons/trade_center.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_external_trade_2
+		principle_external_trade_3
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_influence_add = 2
+		}
+	}
 
 	state_modifiers = {
 		unscaled = {
@@ -256,9 +320,6 @@ pm_trade_center_merchant_guilds = {
 		level_scaled = {
 			building_employment_shopkeepers_add = 250
 		}
-		unscaled = {
-			building_shopkeepers_shares_add = 10
-		}
 	}
 }
 
@@ -273,16 +334,12 @@ pm_trade_center_privately_owned = {
 
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clerks_add = 200
 			building_employment_capitalists_add = 50
-		}
-		unscaled = {
-			building_capitalists_shares_add = 10
 		}
 	}
 }
 
-pm_trade_center_government_run = {
+pm_trade_center_bureaucrat_ownership = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	# unlocking_laws = {
@@ -292,11 +349,135 @@ pm_trade_center_government_run = {
 
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clerks_add = 150 # 125
-			building_employment_bureaucrats_add = 100 # 125
+			building_employment_bureaucrats_add = 100
+		}
+	}
+}
+
+pm_financial_district_privately_owned = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	replacement_if_valid = pm_financial_district_principle_divine_economics_2
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_capitalists_add = 50
+			building_employment_shopkeepers_add = 100
+			building_employment_clerks_add = 100
 		}
 		unscaled = {
-			building_government_shares_add = 1
+			building_capitalists_shares_add = 10
+			building_shopkeepers_shares_add = 1
+		}
+	}
+}
+
+pm_financial_district_publicly_traded = {
+	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
+
+	unlocking_technologies = { mutual_funds }
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_capitalists_add = 50
+			building_employment_bureaucrats_add = 50
+			building_employment_clerks_add = 150
+		}
+		unscaled = {
+			building_capitalists_shares_add = 10
+		}
+	}
+}
+
+pm_financial_district_principle_divine_economics_2 = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_divine_economics_2
+		principle_divine_economics_3
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_capitalists_add = 50
+			building_employment_clergymen_add = 50
+			building_employment_clerks_add = 150
+		}
+		unscaled = {
+			building_capitalists_shares_add = 10
+			building_clergymen_shares_add = 2
+		}
+	}
+}
+
+pm_manor_house_privately_owned = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_aristocrats.dds"
+	replacement_if_valid = pm_manor_house_principle_divine_economics_2
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_aristocrats_add = 50
+			building_employment_laborers_add = 100
+		}
+		unscaled = {
+			building_aristocrats_shares_add = 10
+		}
+	}
+}
+
+pm_manor_house_principle_divine_economics_2 = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_divine_economics_2
+		principle_divine_economics_3
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_aristocrats_add = 50
+			building_employment_clergymen_add = 50
+			building_employment_laborers_add = 100
+		}
+
+		unscaled = {
+			building_aristocrats_shares_add = 10
+			building_clergymen_shares_add = 1
+		}
+	}
+}
+
+pm_manor_house_bureaucrat_ownership = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_bureacrats.dds"
+
+	unlocking_laws = {
+		law_state_atheism
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 100
+		}
+		unscaled = {
+			building_bureaucrats_shares_add = 1
+		}
+	}
+}
+
+pm_manor_house_clergy_ownership = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+
+	disallowing_laws = {
+		law_state_atheism
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clergymen_add = 100
+		}
+		unscaled = {
+			building_clergymen_shares_add = 1
 		}
 	}
 }

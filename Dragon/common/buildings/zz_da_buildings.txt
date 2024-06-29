@@ -1,0 +1,118 @@
+﻿# New
+building_empire_center = {
+	building_group = bg_monuments
+	texture = "gfx/interface/icons/building_icons/white_house.dds"
+	expandable = no
+	downsizeable = no
+	unique = yes
+	locator = "white_house_locator"
+
+	entity_not_constructed = { }
+	entity_under_construction = { "building_construction_3x3_entity" }
+	entity_constructed = { "wonder_white_house_01_entity"}
+
+	city_gfx_interactions = {
+		clear_size_area = yes
+		size = 4
+	}
+
+	production_method_groups = {
+		pmg_base_building_empire_center
+	}
+
+	possible = {
+		is_capital = yes
+		owner = { is_player = yes }
+	}
+
+	required_construction = 10
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+# 03_mines
+## Increase the AI weight of Gold Mine
+building_gold_mine = {
+	building_group = bg_gold_mining
+	texture = "gfx/interface/icons/building_icons/gold_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+
+	unlocking_technologies = {
+		prospecting
+	}
+
+	ai_value = 10000 # 3000 # Gold mines are very nice for minting revenue
+	ai_nationalization_desire = 1.0 # AI should be keen on nationalizing these
+
+	production_method_groups = {
+		pmg_mining_equipment_building_gold_mine
+		pmg_explosives_building_gold_mine
+		pmg_steam_automation_building_gold_mine
+		pmg_train_automation_building_gold_mine
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+# 06_urban_center
+## Add automation PMG
+building_power_plant = {
+	building_group = bg_power
+	texture = "gfx/interface/icons/building_icons/power_plant.dds"
+	levels_per_mesh = 5
+
+	city_type = city
+
+	unlocking_technologies = {
+		electrical_generation
+	}
+
+	production_method_groups = {
+		pmg_base_building_power_plant
+		pmg_automation_building_power_plant
+	}
+
+	required_construction = construction_cost_very_high
+
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+# 07_government
+## Add University Focus PMG
+building_university = {
+
+	building_group = bg_technology
+
+	city_type = city
+
+	levels_per_mesh = 5
+
+	unlocking_technologies = {
+		academia
+	}
+
+	production_method_groups = {
+		pmg_base_building_university
+		pmg_university_academia
+		pmg_principle_freedom_of_movement_3
+		pmg_university_focus
+	}
+
+	texture = "gfx/interface/icons/building_icons/building_university.dds"
+
+	required_construction = construction_cost_medium
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}

@@ -1,36 +1,37 @@
-﻿NAI = {
-	CONSTRUCTION_RESERVES_NEW_CONSTRUCTIONS = 0.01 # 0.2 # If gold reserves are less than this after adding the cost of a new construction, don't queue it
-	CONSTRUCTION_DEBT_RESUME = 0.25 # 0.2 # If constructions are paused, resume once debt is this low relative to ceiling
-	CONSTRUCTION_DEBT_PAUSE = 0.5 # 0.4 # If in this much relative debt to debt ceiling, pause all non-critical constructions 	
-	CONSTRUCTION_DEBT_RESUME_CRITICAL_CONSTRUCTION = 0.75 # If critical constructions are paused, resume once debt is this low relative to ceiling
-	CONSTRUCTION_DEBT_PAUSE_CRITICAL_CONSTRUCTION = 0.90 # If in this much relative debt to debt ceiling, pause all critical constructions 	
+﻿#TODO
+NAI = {
+	# CONSTRUCTION_RESERVES_NEW_CONSTRUCTIONS = 0.01 # 0.2 # If gold reserves are less than this after adding the cost of a new construction, don't queue it
+	# CONSTRUCTION_DEBT_RESUME = 0.25 # 0.2 # If constructions are paused, resume once debt is this low relative to ceiling
+	# CONSTRUCTION_DEBT_PAUSE = 0.5 # 0.4 # If in this much relative debt to debt ceiling, pause all non-critical constructions 	
+	# CONSTRUCTION_DEBT_RESUME_CRITICAL_CONSTRUCTION = 0.75 # If critical constructions are paused, resume once debt is this low relative to ceiling
+	# CONSTRUCTION_DEBT_PAUSE_CRITICAL_CONSTRUCTION = 0.90 # If in this much relative debt to debt ceiling, pause all critical constructions 	
 
-	MONEY_SPENDING_MIN_RATIO_TO_CONSIDER_GOLD_RESERVES = 0.5 # 0.8 # How low of a income-to-expenses ratio does the AI need to have to try to cut spending regardless of how plentiful its gold reserves are (when at peace)
-	MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_SHOULD_HAVE = 10 # 20 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'should-have'
-	MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_WANTS_TO_HAVE = 20 # 40 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'wants-to-have'
-	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_SHOULD_HAVE = 0.01 # 0.1 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'should-have'
-	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_WANTS_TO_HAVE = 0.1 # 0.2 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'wants-to-have'
-	MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_NICE_TO_HAVE = 0.2 # 0.3 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'nice-to-have'
-	MONEY_SPENDING_LAND_THREAT_THRESHOLD = 0.50 # 0.25 # If a hostile country has a more than this much larger army than AI does, it wants to increase military spending
-	MONEY_SPENDING_NAVY_THREAT_THRESHOLD = 0.75 # 0.50 # If a hostile country has a more than this much larger navy than AI does, it wants to increase military spending
-	MONEY_SPENDING_MILITARY_CRITICAL_THRESHOLD = 0.25 # 0.5 # If actual-to-wanted number of barracks/naval bases is below this, AI will not consider downsizing them further
-	MONEY_SPENDING_CONSTRUCTION_CRITICAL_THRESHOLD = 0.75 # 0.5 # If actual-to-wanted number of construction sector buildings is below this, AI considers it very important to get more
-	MONEY_SPENDING_SUPPLY_NETWORK_EXCESSIVE_CONVOYS = 500 # 2000 # If AI has more than this amount of free convoys, it's fine to downsize ports to save money
+	# MONEY_SPENDING_MIN_RATIO_TO_CONSIDER_GOLD_RESERVES = 0.5 # 0.8 # How low of a income-to-expenses ratio does the AI need to have to try to cut spending regardless of how plentiful its gold reserves are (when at peace)
+	# MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_SHOULD_HAVE = 10 # 20 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'should-have'
+	# MONEY_SPENDING_MIN_WEEKS_OF_GOLD_RESERVES_TO_NOT_REMOVE_WANTS_TO_HAVE = 20 # 40 # If we have enough gold reserves to maintain our current spending for this long, don't decrease spending on a 'wants-to-have'
+	# MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_SHOULD_HAVE = 0.01 # 0.1 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'should-have'
+	# MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_WANTS_TO_HAVE = 0.1 # 0.2 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'wants-to-have'
+	# MONEY_SPENDING_MIN_GOLD_RESERVE_FRACTION_TO_ADD_NICE_TO_HAVE = 0.2 # 0.3 # If we don't have at least this fraction of gold reserves, don't increase spending on a 'nice-to-have'
+	# MONEY_SPENDING_LAND_THREAT_THRESHOLD = 0.50 # 0.25 # If a hostile country has a more than this much larger army than AI does, it wants to increase military spending
+	# MONEY_SPENDING_NAVY_THREAT_THRESHOLD = 0.75 # 0.50 # If a hostile country has a more than this much larger navy than AI does, it wants to increase military spending
+	# MONEY_SPENDING_MILITARY_CRITICAL_THRESHOLD = 0.25 # 0.5 # If actual-to-wanted number of barracks/naval bases is below this, AI will not consider downsizing them further
+	# MONEY_SPENDING_CONSTRUCTION_CRITICAL_THRESHOLD = 0.75 # 0.5 # If actual-to-wanted number of construction sector buildings is below this, AI considers it very important to get more
+	# MONEY_SPENDING_SUPPLY_NETWORK_EXCESSIVE_CONVOYS = 500 # 2000 # If AI has more than this amount of free convoys, it's fine to downsize ports to save money
 
-	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_BASE = 2 # 0 # Base max number of goods AI wants to tax
-	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 3 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
+	# CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_BASE = 2 # 0 # Base max number of goods AI wants to tax
+	# CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 3 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
 
-	PRODUCTION_BUILDING_OUTPUT_WANTED_INDUSTRIAL_GOODS_FACTOR = 0.5 # 0.25 # Add this value to a building for each unit of money worth of industrial goods that aren't overproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_WANTED_MILITARY_GOODS_FACTOR = 0.1 # 0.25 # Add this value to a building for each unit of money worth of military goods that aren't overproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_NEEDED_INDUSTRIAL_GOODS_FACTOR = 0.75 # 0.5 # Add this value to a building for each unit of money worth of industrial goods that are underproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_NEEDED_MILITARY_GOODS_FACTOR = 0.25 # 0.5 # Add this value to a building for each unit of money worth of military goods that are underproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_CAN_USE_INVESTMENT_POOL_MULT = 1.5 # 1.25 #  Total weight is multiplied by this if the building can be funded by the country's investment pool
-	PRODUCTION_BUILDING_DESIRED_INFRASTRUCTURE_SURPLUS = 5 # 2 # If infrastructure 'surplus' in state is less than this, AI wants to improve it
-	PRODUCTION_BUILDING_EXCESSIVE_INFRASTRUCTURE_SURPLUS = 20 # 10 # If infra 'surplus' in state is at least this, AI doesn't want to improve it
-	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD = 40
-	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_MULT = 0.75 # 0.5 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
-	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 60
-	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_MULT = 0.5 # 0.25 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
+	# PRODUCTION_BUILDING_OUTPUT_WANTED_INDUSTRIAL_GOODS_FACTOR = 0.5 # 0.25 # Add this value to a building for each unit of money worth of industrial goods that aren't overproduced in the country and are used by buildings
+	# PRODUCTION_BUILDING_OUTPUT_WANTED_MILITARY_GOODS_FACTOR = 0.1 # 0.25 # Add this value to a building for each unit of money worth of military goods that aren't overproduced in the country and are used by buildings
+	# PRODUCTION_BUILDING_OUTPUT_NEEDED_INDUSTRIAL_GOODS_FACTOR = 0.75 # 0.5 # Add this value to a building for each unit of money worth of industrial goods that are underproduced in the country and are used by buildings
+	# PRODUCTION_BUILDING_OUTPUT_NEEDED_MILITARY_GOODS_FACTOR = 0.25 # 0.5 # Add this value to a building for each unit of money worth of military goods that are underproduced in the country and are used by buildings
+	# PRODUCTION_BUILDING_CAN_USE_INVESTMENT_POOL_MULT = 1.5 # 1.25 #  Total weight is multiplied by this if the building can be funded by the country's investment pool
+	# PRODUCTION_BUILDING_DESIRED_INFRASTRUCTURE_SURPLUS = 5 # 2 # If infrastructure 'surplus' in state is less than this, AI wants to improve it
+	# PRODUCTION_BUILDING_EXCESSIVE_INFRASTRUCTURE_SURPLUS = 20 # 10 # If infra 'surplus' in state is at least this, AI doesn't want to improve it
+	# PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD = 40
+	# PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_MULT = 0.75 # 0.5 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
+	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 60
+	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_MULT = 0.5 # 0.25 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
 }
 
 NCountry = {
@@ -89,9 +90,6 @@ NDiplomacy = {
 	WAR_GOAL_INFAMY_ANNEX_COUNTRY = 3.5 # 5.0
 	WAR_GOAL_INFAMY_REGIME_CHANGE = 0.25 # 0.5
 
-	WAR_GOAL_EXECUTION_PRIORITY_OPEN_MARKET = 5 # 4
-	WAR_GOAL_EXECUTION_PRIORITY_REGIME_CHANGE = 4 # 5
-
 	# DAYS_TO_LOSE_POWER_RANK = 30 # 365
 }
 
@@ -101,26 +99,22 @@ NEconomy = {
 	# ECONOMY_OF_SCALE_START_LEVEL = 1 # 2
 
 	# DOWNSIZE_BUILDING_POP_TYPE_RADICALIZATION_SHARED_FACTOR = 0.001 # 0.05
-	BUILDING_CASH_RESERVES_FILL_TIME_HIGH_ROI = 52 # 26	# Base number of weeks to fill a building's cash reserves when ROI is high. Final number of weeks is directly interpolated if ROI is between medium and high. Must be > 0.
-	BUILDING_CASH_RESERVES_FILL_TIME_MED_ROI = 104 # 52	# Base number of weeks to fill a building's cash reserves when ROI is medium. Must be > 0.
-	BUILDING_CASH_RESERVES_FILL_TIME_LOW_ROI = 156 # 78	# Base number of weeks to fill a building's cash reserves when ROI is low. Final number of weeks is directly interpolated if ROI is between low and medium. Must be > 0.
-
-	REINVESTMENT_EFFICIENCY_MIN = 0.8 # 0.3				# Minimum conversion of reinvestment to investment pool
-
-	GOVERNMENT_DIVIDENDS_EFFICIENCY_MIN = 0.8 # 0.2	# Minimum dividend fraction from buildings with government shares that will reach the treasury - the rest will be wasted
+	# BUILDING_CASH_RESERVES_FILL_TIME_HIGH_ROI = 52 # 26	# Base number of weeks to fill a building's cash reserves when ROI is high. Final number of weeks is directly interpolated if ROI is between medium and high. Must be > 0.
+	# BUILDING_CASH_RESERVES_FILL_TIME_MED_ROI = 104 # 52	# Base number of weeks to fill a building's cash reserves when ROI is medium. Must be > 0.
+	# BUILDING_CASH_RESERVES_FILL_TIME_LOW_ROI = 156 # 78	# Base number of weeks to fill a building's cash reserves when ROI is low. Final number of weeks is directly interpolated if ROI is between low and medium. Must be > 0.
 
 	COMPANY_PRODUCTIVITY_RATIO_HIGH_THRESHOLD = 1 # 1.25	# Companies whose productivity exceeds this factor of the global average will be considered high-productivity companies
 	COMPANY_PRODUCTIVITY_RATIO_LOW_THRESHOLD = 0.5 # 0.75		# Companies whose productivity is below this factor of the global average will be considered low-productivity companies
 	COMPANY_PRODUCTIVITY_ABSOLUTE_HIGH_THRESHOLD = 20 # 25	# Companies whose productivity exceeds this amount will ALWAYS be considered high-productivity companies
 	COMPANY_PRODUCTIVITY_ABSOLUTE_LOW_THRESHOLD = 3 # 5		# Companies whose productivity is below this amount will ALWAYS be considered low-productivity companies
-	COMPANY_PROSPERITY_WEEKLY_INCREASE = 10 # 5				# High-productivity companies have their prosperity increase by this amount per week
-	COMPANY_PROSPERITY_WEEKLY_DECREASE = 2 # 5				# Low-productivity companies have their prosperity increase by this amount per week
+	# COMPANY_PROSPERITY_WEEKLY_INCREASE = 10 # 5				# High-productivity companies have their prosperity increase by this amount per week
+	# COMPANY_PROSPERITY_WEEKLY_DECREASE = 2 # 5				# Low-productivity companies have their prosperity increase by this amount per week
 }
 
 NPolitics = {
-	REVOLUTION_MAX_PROGRESS_AT_CHECKPOINT = 0.5 # 0.25
-	IG_SUPPRESSION_COST = 100						# The amount of AUT it costs to Suppress an IG
-	IG_BOLSTER_COST = 100							# The amount of AUT it costs to Bolster an IG
+	# REVOLUTION_MAX_PROGRESS_AT_CHECKPOINT = 0.5 # 0.25
+	# IG_SUPPRESSION_COST = 100						# The amount of AUT it costs to Suppress an IG
+	# IG_BOLSTER_COST = 100							# The amount of AUT it costs to Bolster an IG
 	# MAX_IG_APPROVAL_FROM_LAWS = 10 # 5
 	# IG_APPROVAL_FROM_EXTREME_LAW_CHANGE = 15
 	# APPROVAL_THRESHOLD_ANGRY = -15 # -10		# At this or below approval, IG is considered angry

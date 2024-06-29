@@ -1,8 +1,8 @@
 {
-	"name": "Dragonland 1.6",
-	"id": "dragon-archer.dragon",
-	"version": "1.6.2.20240408",
-	"supported_game_version": "1.6.*",
+	"name": "Dragonland 1.7",
+	"id": "dragon-archer.da",
+	"version": "1.7.240629",
+	"supported_game_version": "1.7.*",
 	"short_description": "",
 	"tags": [],
 	"relationships": [],

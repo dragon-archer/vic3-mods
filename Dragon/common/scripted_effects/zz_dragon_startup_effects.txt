@@ -1,4 +1,5 @@
-﻿da_reload_effect = {
+﻿#TODO: Move culture merges into IC
+da_reload_effect = {
 	cu:north_german = { set_variable = da_test_reload_var }
 	da_post_notification = { _ = da_reloaded_notification }
 	da_merge_cultures_clear = yes
@@ -82,6 +83,10 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:swedish _2 = cu:norwegian }
 	da_merge_cultures = { _1 = cu:swedish _2 = cu:icelandic }
 	da_merge_cultures = { _1 = cu:sami _2 = cu:ugrian }
+	da_merge_cultures = { _1 = cu:sami _2 = cu:karelian }
+	da_merge_cultures = { _1 = cu:sami _2 = cu:mordvin }
+	da_merge_cultures = { _1 = cu:sami _2 = cu:mari }
+	da_merge_cultures = { _1 = cu:sami _2 = cu:udmurt }
 	da_merge_cultures = { _1 = cu:british _2 = cu:scottish }
 	da_merge_cultures_if_extended = { _1 = cu:british _2 = cu:welsh }
 	da_merge_cultures = { _1 = cu:south_italian _2 = cu:maltese }
@@ -103,8 +108,11 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:russian _2 = cu:ukrainian }
 	da_merge_cultures = { _1 = cu:georgian _2 = cu:armenian }
 	da_merge_cultures = { _1 = cu:georgian _2 = cu:circassian }
+	da_merge_cultures = { _1 = cu:georgian _2 = cu:chechen }
 	da_merge_cultures_if_extended = { _1 = cu:azerbaijani _2 = cu:north_caucasian }
 	da_merge_cultures_if_extended = { _1 = cu:sephardic _2 = cu:ashkenazi }
+	da_merge_cultures = { _1 = cu:bashkir _2 = cu:chuvash }
+	da_merge_cultures = { _1 = cu:bashkir _2 = cu:manul }
 
 	# Asia
 	da_merge_cultures_if_extended = { _1 = cu:misri _2 = cu:maghrebi }
@@ -121,6 +129,8 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:hazara }
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:turkmen }
 	da_merge_cultures = { _1 = cu:persian _2 = cu:kurdish }
+	da_merge_cultures = { _1 = cu:persian _2 = cu:mazanderani }
+	da_merge_cultures = { _1 = cu:persian _2 = cu:luri }
 	da_merge_cultures = { _1 = cu:siberian _2 = cu:yakut }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:bihari }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:oriya }
@@ -133,6 +143,7 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:marathi }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:sindi }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:rajput }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:kho }
 	da_merge_cultures = { _1 = cu:assamese _2 = cu:manipuri }
 	da_merge_cultures = { _1 = cu:kannada _2 = cu:malayalam }
 	da_merge_cultures = { _1 = cu:kannada _2 = cu:tamil }
@@ -156,6 +167,7 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:hakka _2 = cu:min }
 	da_merge_cultures = { _1 = cu:hakka _2 = cu:yue }
 	da_merge_cultures_if_extended = { _1 = cu:tibetan _2 = cu:yi }
+	da_merge_cultures = { _1 = cu:mongol _2 = cu:buryat }
 
 	# Oceania
 	da_merge_cultures = { _1 = cu:polynesian _2 = cu:hawaiian }

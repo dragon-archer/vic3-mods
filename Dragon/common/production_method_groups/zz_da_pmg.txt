@@ -32,19 +32,3 @@ pmg_automation_building_power_plant = {
 		pm_assembly_lines_building_power_plant
 	}
 }
-
-pmg_religion_farming = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_clergy_farming
-		pm_atheism_farming
-	}
-}
-
-pmg_religion_plantation = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
-	production_methods = {
-		pm_clergy_plantation
-		pm_atheism_plantation
-	}
-}

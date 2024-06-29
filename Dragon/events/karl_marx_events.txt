@@ -58,6 +58,7 @@ marx_events.1 = {
 			female = no
 			dna = dna_karl_marx
 			ideology = ideology_communist
+			culture = cu:ashkenazi
 			religion = rel:atheist
 			traits = {
 				ambitious imperious meticulous innovative charismatic wrathful
@@ -84,6 +85,7 @@ marx_events.1 = {
 			female = no
 			dna = dna_karl_marx
 			ideology = ideology_communist
+			culture = cu:ashkenazi
 			religion = rel:atheist
 			traits = {
 				ambitious imperious meticulous innovative charismatic wrathful

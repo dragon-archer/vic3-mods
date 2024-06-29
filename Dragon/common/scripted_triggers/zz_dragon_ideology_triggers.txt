@@ -309,7 +309,7 @@ da_ideology_communist_trigger = {
 }
 
 da_ideology_vanguardist_trigger = {
-	owner = { has_technology_researched = socialism }
+	owner = { has_technology_researched = political_agitation }
 	NAND = {
 		has_role = agitator
 		owner = {
@@ -669,13 +669,6 @@ da_ideology_corporatist_leader_trigger = {
 		}
 	}
 	scope:interest_group = {
-		OR = {
-			is_interest_group_type = ig_landowners
-			is_interest_group_type = ig_devout
-			is_interest_group_type = ig_petty_bourgeoisie
-			is_interest_group_type = ig_rural_folk
-			is_interest_group_type = ig_trade_unions
-		}
 		NOR = {
 			has_variable = communist_ig_var
 			has_variable = chose_vanguardism

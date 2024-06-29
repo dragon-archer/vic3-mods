@@ -1,0 +1,42 @@
+﻿# Increase tech research speed for innovative
+innovative = {
+	type = personality
+	texture = "gfx/interface/icons/character_trait_icons/innovative.dds"
+
+	character_modifier = {
+	}
+
+	command_modifier = {
+		unit_morale_loss_mult = -0.15
+		character_battle_condition_surprise_maneuver_mult = 1
+	}
+
+	country_modifier = {
+		country_tech_spread_mult = 0.1
+		country_tech_research_speed_mult = 0.1 #DA
+	}
+
+	agitator_modifier = {
+	}
+
+	interest_group_modifier = {
+	}
+
+	possible = {
+		OR = {
+			is_heir = yes
+			is_ruler = yes
+			has_role = general
+			has_role = admiral
+		}
+		NOT = { age < define:NCharacters|ADULT_AGE }
+	}
+
+	weight = 1
+
+	replace = {
+		trait_child
+	}
+
+	value = 3
+}

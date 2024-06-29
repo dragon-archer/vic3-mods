@@ -1,4 +1,5 @@
-﻿# group = this is the law_group a law belongs to
+﻿#DA: Clean up tax modifiers on taxation law change
+# group = this is the law_group a law belongs to
 # icon = graphical icon shown in-game
 # modifier = {} modifier on country for having adopted this law
 
@@ -71,11 +72,7 @@ law_consumption_based_taxation = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -151,11 +148,7 @@ law_land_based_taxation = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -240,11 +233,7 @@ law_per_capita_based_taxation = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -325,11 +314,7 @@ law_proportional_taxation = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -409,11 +394,7 @@ law_graduated_taxation = {
 		value = 0
 
 		if = {
-			limit = {
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-				scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}

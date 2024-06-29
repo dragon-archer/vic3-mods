@@ -1,4 +1,8 @@
-﻿bankroll = {
+﻿#DA: Increase the chance of obligation from 0.2% to 0.5%
+bankroll = {
+	groups= {
+		general
+	}
 	requires_approval = no
 	should_notify_third_parties = no
 
@@ -6,12 +10,15 @@
 		central_banking
 	}
 
-	potential = {
+	selectable = {
 		NOT = { is_country_type = decentralized }
-		scope:target_country ?= {
+		is_revolutionary = no
+	}
+
+	potential = {
+		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 		}
-		is_revolutionary = no
 	}
 
 	possible = {}
@@ -28,8 +35,12 @@
 		relations_improvement_max = 80
 
 		income_transfer = 0.20
-		recipient_gets_income_transfer = yes
-		income_transfer_based_on_recipient = yes
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+
+		second_modifier = {
+			country_pact_leverage_generation_add = 200
+		}
 
 		weekly_effect = {
 			if = {
@@ -122,6 +133,18 @@
 
 	ai = {
 		max_influence_spending_fraction = 0.20
+
+		evaluation_chance = {
+			value = 0.0
+
+			if = {
+				limit = { country_rank >= rank_value:major_power }
+				add = {
+					value = country_rank
+					multiply = 0.05
+				}
+			}
+		}
 
 		# This is only used for determining the value of a bankroll in sways, so it follows different logic from normal action acceptance
 		# The format here is as if scope:actor was asking if root wants a bankroll
@@ -243,6 +266,20 @@
 
 		propose_score = {
 			value = 10
+
+			if = {
+				limit = {
+					exists = c:CIR
+					has_journal_entry = je_great_game_control
+					country_has_primary_culture = cu:british
+					scope:target_country = {
+						c:CIR ?= this
+					}
+				}
+				add = {
+					value = 50
+				}
+			}
 		}
 
 		will_propose = {
@@ -330,6 +367,12 @@
 		}
 
 		will_break = {
+			NOT = {
+				AND = {
+					has_variable = forced_bankroll_time
+					var:forced_bankroll_time ?= scope:target_country
+				}
+			}
 			OR = {
 				scaled_debt > 0.25
 				AND = {
@@ -422,3 +465,4 @@
 		}
 	}
 }
+

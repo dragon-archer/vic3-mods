@@ -1,4 +1,5 @@
-﻿namespace = raj
+﻿#DA: Annex all indian states after BIC become puppet of GBR
+namespace = raj
 
 # The Jewel in the Crown
 raj.1 = {
@@ -12,7 +13,7 @@ raj.1 = {
 	duration = 3
 
 	event_image = {
-		video = "asia_hinduism_sikhism"
+		video = "ep1_transfer_of_authority"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -157,13 +158,16 @@ raj.2 = {
 		name = raj.2.a
 		default_option = yes
 		scope:doctrine_of_lapse_target_state_1 = {
+			owner = {
+				save_scope_as = target_country
+			}
 			set_state_owner = ROOT
 			add_radicals_in_state = {
 				value = very_large_radicals
 			}
 		}
 		create_incident = {
-			country = scope:doctrine_of_lapse_target_state_1.owner
+			country = scope:target_country
 			value = 20
 		}
 	}
@@ -174,30 +178,36 @@ raj.2 = {
 			exists = scope:doctrine_of_lapse_target_state_2
 		}
 		scope:doctrine_of_lapse_target_state_2 = {
+			owner = {
+				save_scope_as = target_country
+			}
 			set_state_owner = ROOT
 			add_radicals_in_state = {
 				value = very_large_radicals
 			}
 		}
 		create_incident = {
-			country = scope:doctrine_of_lapse_target_state_2.owner
+			country = scope:target_country
 			value = 20
 		}
 	}
-	
+
 	option = {
 		name = raj.2.c
 		trigger = {
 			exists = scope:doctrine_of_lapse_target_state_3
 		}
 		scope:doctrine_of_lapse_target_state_3 = {
+			owner = {
+				save_scope_as = target_country
+			}
 			set_state_owner = ROOT
 			add_radicals_in_state = {
 				value = very_large_radicals
 			}
 		}
 		create_incident = {
-			country = scope:doctrine_of_lapse_target_state_3.owner
+			country = scope:target_country
 			value = 20
 		}
 	}
@@ -554,7 +564,7 @@ raj.6 = {
 				}
 				if = {
 					limit = {
-						exists = s:STATE_CENTRAL_INDIA.region_state:BIC 
+						exists = s:STATE_CENTRAL_INDIA.region_state:BIC
 					}
 					add_war_goal = {
 						holder = c:MUG
@@ -606,18 +616,18 @@ raj.6 = {
 			activate_law = law_type:law_monarchy
 			activate_law = law_type:law_oligarchy
 			create_character = {
-				first_name = "Bakht"			
+				first_name = "Bakht"
 				last_name = "Khan"
 				historical = yes
-				birth_date = 1797.3.6 # excact date unknown. 
+				birth_date = 1797.3.6 # excact date unknown.
 				culture = cu:avadhi
 				is_general = yes
 				religion = sunni
 				interest_group = ig_armed_forces
 				ideology = ideology_jingoist_leader
-				traits = { 
-					stalwart_defender 
-					experienced_artillery_commander 
+				traits = {
+					stalwart_defender
+					experienced_artillery_commander
 				}
 			}
 		}
@@ -633,15 +643,15 @@ raj.6 = {
 					first_name = "Mirza_Mughal"
 					last_name = "Gurkani"
 					historical = yes
-					birth_date = 1817.1.5 # excact date unknown. 
+					birth_date = 1817.1.5 # excact date unknown.
 					culture = cu:avadhi
 					is_general = yes
 					religion = sunni
 					interest_group = ig_landowners
 					ideology = ideology_royalist
-					traits = { 
-						resupply_commander 
-						basic_political_operator 
+					traits = {
+						resupply_commander
+						basic_political_operator
 					}
 				}
 				create_character = {
@@ -655,17 +665,17 @@ raj.6 = {
 					noble = yes
 					interest_group = ig_landowners
 					ideology = ideology_royalist
-					traits = { 
-						reserved 
-						romantic 
+					traits = {
+						reserved
+						romantic
 						expensive_tastes
 					}
 				}
 				create_character = { # Mirza Fakhru historically died in 1856, potentially from poisoning.
-					first_name = "Mirza_Fakhru"			
+					first_name = "Mirza_Fakhru"
 					last_name = "Gurkani"
 					historical = yes
-					birth_date = 1818.4.1 # excact date unknown. 
+					birth_date = 1818.4.1 # excact date unknown.
 					culture = cu:avadhi
 					heir = yes
 					religion = sunni
@@ -692,19 +702,19 @@ raj.6 = {
 					first_name = "Mirza_Mughal"
 					last_name = "Gurkani"
 					historical = yes
-					birth_date = 1817.1.5 # excact date unknown. 
+					birth_date = 1817.1.5 # excact date unknown.
 					culture = cu:avadhi
 					is_general = yes
 					religion = sunni
 					interest_group = ig_landowners
 					ideology = ideology_royalist
-					traits = { 
-						resupply_commander 
-						basic_political_operator 
+					traits = {
+						resupply_commander
+						basic_political_operator
 					}
 				}
 				create_character = {
-					first_name = "Bahadur_Shah"					
+					first_name = "Bahadur_Shah"
 					last_name = "Gurkani"
 					historical = yes
 					birth_date = 1775.10.24
@@ -714,24 +724,24 @@ raj.6 = {
 					noble = yes
 					interest_group = ig_landowners
 					ideology = ideology_royalist
-					traits = { 
-						reserved 
-						romantic 
+					traits = {
+						reserved
+						romantic
 						expensive_tastes
 					}
 				}
 				create_character = { # Mirza Fakhru historically died in 1856, potentially from poisoning.
-					first_name = "Mirza_Fakhru"			
+					first_name = "Mirza_Fakhru"
 					last_name = "Gurkani"
 					historical = yes
-					birth_date = 1818.4.1 # excact date unknown. 
+					birth_date = 1818.4.1 # excact date unknown.
 					culture = cu:avadhi
 					heir = yes
 					religion = sunni
 					noble = yes
 					interest_group = ig_landowners
 					ideology = ideology_royalist
-					traits = { 
+					traits = {
 					}
 				}
 			}
@@ -751,7 +761,7 @@ raj.7 = {
 	duration = 3
 
 	event_image = {
-		video = "asia_hinduism_sikhism"
+		video = "ep1_transfer_of_authority"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
