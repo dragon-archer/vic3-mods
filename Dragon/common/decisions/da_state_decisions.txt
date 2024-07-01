@@ -112,6 +112,7 @@
 
 da_merge_split_state = {
 	is_shown = {
+		is_player = yes # Temprorarily disable for AI
 		any_firm_subject = {
 			any_scope_state = {
 				is_capital = no
