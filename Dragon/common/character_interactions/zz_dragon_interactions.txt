@@ -1,17 +1,4 @@
-﻿#icon					Path to icon for both right click menu and character panel buttons
-#clicksound				Clicksound for both right click menu and character panel buttons
-
-#						All scopes are character scopes with the interacting country stored as the actor
-#potential				Trigger to check if the interaction should be shown
-#possible 				Trigger to check if the interaction is available
-#effect					The effects of the interaction
-#cooldown				Scriptable duration that this interaction will be unavailable for the interacting country
-
-#show_requirements		Whether to always show requirements, similar to highlighted options in events
-#show_confirmation_box	Whether to require confirmation
-
-#ai_chance				Scriptable value for the chance (0-100) that the AI will use this interaction when available, default 0
-
+﻿# New
 da_mark_character = {
 	icon = "gfx/interface/character_panel/grant_command.dds"
 
@@ -74,5 +61,104 @@ da_change_ideology = {
 
 	ai_chance = {
 		value = 0
+	}
+}
+
+# Override
+
+grant_leadership_to_agitator = {
+	icon = "gfx/interface/character_panel/grant_command_not.dds"
+	clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
+
+	potential = {
+		has_dlc_feature = agitators
+		has_role = agitator
+		owner = scope:actor
+	}
+
+	possible = {
+		trigger_if = {
+			limit = { owner = { has_law = law_type:law_state_atheism } }
+			NOT = { culture = { culture_is_discriminated_in = root.owner } }
+			NOR = {
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_integralist
+				has_ideology = ideology:ideology_traditionalist
+			}
+		}
+		trigger_else = {
+			character_is_discriminated = no
+		}
+		OR = {
+			is_female = no
+			scope:actor ?= { has_law = law_type:law_womens_suffrage }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { interest_group = { is_in_government = no } }
+			scope:actor = {
+				add_radicals = {
+					interest_group = root.interest_group
+					value = small_radicals
+				}
+			}
+		}
+		interest_group.leader = {
+			if = {
+				limit = {
+					OR = {
+						has_role = general
+						has_role = admiral
+					}
+				}
+				remove_character_role = politician
+			}
+		}
+		remove_character_role = agitator
+		add_character_role = politician
+		custom_tooltip = {
+			text = make_agitator_ig_leader_tt
+			set_as_interest_group_leader = yes
+		}
+	}
+
+	cooldown = { months = normal_modifier_time }
+
+	ai_chance = {
+		value = -50
+		if = {
+			limit = {
+				popularity > interest_group.leader.popularity
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				interest_group.leader.popularity <= -50
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				interest_group.leader.popularity >= 50
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				interest_group = {
+					ig_approval <= 0
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				this.ideology = owner.ruler.ideology
+			}
+			add = 50
+		}
 	}
 }
