@@ -32,8 +32,5 @@
 			building_employment_clerks_add = 2000
 			building_employment_machinists_add = 3000
 		}
-		unscaled = {
-			building_government_shares_add = 1
-		}
 	}
 }

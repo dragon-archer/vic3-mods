@@ -72,7 +72,7 @@ da_approval = {
 da_disable_private_construction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	country_private_construction_allocation_mult = -1
-	country_disable_investment_pool = yes
+	country_disable_investment_pool_bool = yes
 	tax_dividends_add = 0.20
 }
 
