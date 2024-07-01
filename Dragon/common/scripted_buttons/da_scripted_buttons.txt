@@ -455,6 +455,7 @@ da_decrease_dividends_tax = {
 	desc = "da_decrease_dividends_tax_desc"
 	visible = {
 		OR = {
+			has_law = law_type:law_per_capita_based_taxation
 			has_law = law_type:law_proportional_taxation
 			has_law = law_type:law_graduated_taxation
 		}
@@ -476,6 +477,7 @@ da_increase_dividends_tax = {
 	desc = "da_increase_dividends_tax_desc"
 	visible = {
 		OR = {
+			has_law = law_type:law_per_capita_based_taxation
 			has_law = law_type:law_proportional_taxation
 			has_law = law_type:law_graduated_taxation
 		}
