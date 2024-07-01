@@ -97,6 +97,7 @@ NEconomy = {
 	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 500000 # 200000		# The country_gdp modifier multiplier cannot be higher than this
 	MIN_CONSTRUCTION_EFFICIENCY = 0.25 # 0.05
 	# ECONOMY_OF_SCALE_START_LEVEL = 1 # 2
+	ECONOMY_OF_SCALE_NATIONALIZED_FRACTION_MULT = 0 # 0.5	# Non-government building economy of scale modifier if multiplied by (1 - the fraction of nationalized levels * this)
 
 	# DOWNSIZE_BUILDING_POP_TYPE_RADICALIZATION_SHARED_FACTOR = 0.001 # 0.05
 	# BUILDING_CASH_RESERVES_FILL_TIME_HIGH_ROI = 52 # 26	# Base number of weeks to fill a building's cash reserves when ROI is high. Final number of weeks is directly interpolated if ROI is between medium and high. Must be > 0.
