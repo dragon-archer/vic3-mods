@@ -6,3 +6,12 @@ interest_group_ig_armed_forces_approval_add = {
 		ai_value = 0
 	}
 }
+
+# 05_power_bloc_modifier_types
+power_bloc_income_transfer_to_leader_factor = {
+	color = neutral
+	percent = yes #PBF
+	game_data = {
+		ai_value = 0
+	}
+}
