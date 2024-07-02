@@ -1,5 +1,6 @@
 ﻿da_return_treaty_port = {
 	is_shown = {
+		always = no #TODO
 		OR = {
 			any_scope_state = {
 				is_treaty_port = yes
