@@ -298,10 +298,10 @@ da_merge_minor_countries = {
 					NOT = { c:HAN ?= this }
 					OR = {
 						any_primary_culture = { this = cu:north_german }
-						c:BAD ?= this
-						c:BAV ?= this
-						c:WUR ?= this
-						c:HOH ?= this
+						# c:BAD ?= this
+						# c:BAV ?= this
+						# c:WUR ?= this
+						# c:HOH ?= this
 					}
 				}
 				prev ?= { da_annex_if_exists = { _ = prev } }
@@ -311,25 +311,25 @@ da_merge_minor_countries = {
 			# 	s:STATE_ALSACE_LORRAINE.region_state:FRA ?= { da_set_state_owner = { _ = prev } }
 			# }
 		}
-		c:SAR ?= {
-			every_country = {
-				limit = {
-					NOT = { this = prev }
-					OR = {
-						any_primary_culture = { this = cu:north_italian }
-						any_primary_culture = { this = cu:south_italian }
-					}
-				}
-				prev ?= { da_annex_if_exists = { _ = prev } }
-			}
-			s:STATE_PROVENCE.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
-			if = {
-				limit = { da_is_in_extended_mode = yes }
-				s:STATE_SAVOY.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
-				s:STATE_CORSICA.region_state:FRA ?= { da_set_state_owner = { _ = c:SAR } }
-				s:STATE_MALTA.region_state:GBR ?= { da_set_state_owner = { _ = c:SAR } }
-			}
-		}
+		# c:SAR ?= {
+		# 	every_country = {
+		# 		limit = {
+		# 			NOT = { this = prev }
+		# 			OR = {
+		# 				any_primary_culture = { this = cu:north_italian }
+		# 				any_primary_culture = { this = cu:south_italian }
+		# 			}
+		# 		}
+		# 		prev ?= { da_annex_if_exists = { _ = prev } }
+		# 	}
+		# 	s:STATE_PROVENCE.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
+		# 	if = {
+		# 		limit = { da_is_in_extended_mode = yes }
+		# 		s:STATE_SAVOY.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
+		# 		s:STATE_CORSICA.region_state:FRA ?= { da_set_state_owner = { _ = c:SAR } }
+		# 		s:STATE_MALTA.region_state:GBR ?= { da_set_state_owner = { _ = c:SAR } }
+		# 	}
+		# }
 		c:SHW ?= {
 			if = {
 				limit = { NOT = { exists = c:ETH } }
