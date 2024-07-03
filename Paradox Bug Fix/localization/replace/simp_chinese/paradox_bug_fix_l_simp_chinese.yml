@@ -84,8 +84,9 @@
 #  CONVOYS_FROM_MARKET_MEMBERS: "[Country.GetMarket.GetName]的[Concept('concept_country','$concept_countries$')]：#tooltippable #tooltip:$BREAKDOWN_TAG$,CONVOYS_FROM_MARKET_MEMBER_BREAKDOWN #v $VALUE|+=$#!#!#!" #TODO
 
  # liberty_desire_levels
- LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_INCREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_add')][SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_increase_mult')]#!"
- LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_DECREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_add')][SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_decrease_mult')]#!"
+ LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_INCREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_increase_mult')]#!"
+ LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_DECREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_decrease_mult')]#!"
+ LIBERTY_DESIRE_LEVEL_CURRENT_LIBERTY_DESIRE_DESC: "当前[concept_liberty_desire]：[Country.GetLibertyDesireRaw|v2]"
 
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
