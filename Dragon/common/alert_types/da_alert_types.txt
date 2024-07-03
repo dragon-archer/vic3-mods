@@ -9,7 +9,6 @@
 
 	open_panel = states_panel|buildings
 	type = important_action
-	alert_group = da_alert_group
 }
 
 da_is_in_hyperinflation = {
@@ -41,4 +40,18 @@ da_is_in_severe_deflation = {
 	open_panel = journal
 	type = important_action
 	alert_group = da_alert_group
+}
+
+da_can_use_cohesion = {
+	texture = "gfx/interface/main_hud/powerblocs.dds"
+	script_context = player_country
+
+	valid = {
+		is_power_bloc_leader = yes
+		power_bloc ?= { current_cohesion_percentage > 0.95 }
+	}
+
+	open_panel = power_bloc_panel
+	type = alert
+	color = green
 }

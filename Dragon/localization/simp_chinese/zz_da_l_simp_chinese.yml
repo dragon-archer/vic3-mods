@@ -45,6 +45,11 @@
  alert_da_is_in_severe_deflation_desc: "当前通货膨胀率为[SCOPE.ScriptValue('inflation_rate')|%+=]，超过恶性通货紧缩临界值[SCOPE.ScriptValue('severe_deflation_gap')|%+=]"
  alert_da_is_in_severe_deflation_hint: "你可以通过提高铸币率来短期缓解通缩，但长期解决还需增加出口与[concept_pop]购买力"
  alert_da_is_in_severe_deflation_action: "日志面板"
+ alert_da_can_use_cohesion_name: "可以使用[concept_power_bloc_cohesion]进行[concept_bloc_leader_action]"
+ alert_da_can_use_cohesion_desc: ""
+ alert_da_can_use_cohesion_hint: "快去用吧，别浪费了"
+ alert_da_can_use_cohesion_action: "$concept_power_bloc$面板"
+ da_can_use_cohesion_setting_name: "可以使用[concept_power_bloc_cohesion]进行[concept_bloc_leader_action]"
 
  # Investment pool
  da_disable_investment_pool: "禁用自主投资池"
