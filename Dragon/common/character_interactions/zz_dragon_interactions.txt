@@ -124,7 +124,7 @@ grant_leadership_to_agitator = {
 		}
 	}
 
-	cooldown = { months = normal_modifier_time }
+	cooldown = { months = 12 }
 
 	ai_chance = {
 		value = -50
