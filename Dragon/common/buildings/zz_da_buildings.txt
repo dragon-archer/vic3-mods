@@ -30,34 +30,6 @@ building_empire_center = {
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
 }
 
-# 03_mines
-## Increase the AI weight of Gold Mine
-building_gold_mine = {
-	building_group = bg_gold_mining
-	texture = "gfx/interface/icons/building_icons/gold_mine.dds"
-	city_type = mine
-	levels_per_mesh = 5
-	required_construction = construction_cost_medium
-	terrain_manipulator = mining
-
-	unlocking_technologies = {
-		prospecting
-	}
-
-	ai_value = 10000 # 3000 # Gold mines are very nice for minting revenue
-	ai_nationalization_desire = 1.0 # AI should be keen on nationalizing these
-
-	production_method_groups = {
-		pmg_mining_equipment_building_gold_mine
-		pmg_explosives_building_gold_mine
-		pmg_steam_automation_building_gold_mine
-		pmg_train_automation_building_gold_mine
-	}
-	ownership_type = self
-
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
-}
-
 # 06_urban_center
 ## Add automation PMG
 building_power_plant = {

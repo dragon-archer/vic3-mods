@@ -112,7 +112,6 @@ da_merge_minor_cultures = {
 	da_merge_cultures_if_extended = { _1 = cu:azerbaijani _2 = cu:north_caucasian }
 	da_merge_cultures_if_extended = { _1 = cu:sephardic _2 = cu:ashkenazi }
 	da_merge_cultures = { _1 = cu:bashkir _2 = cu:chuvash }
-	da_merge_cultures = { _1 = cu:bashkir _2 = cu:manul }
 
 	# Asia
 	da_merge_cultures_if_extended = { _1 = cu:misri _2 = cu:maghrebi }

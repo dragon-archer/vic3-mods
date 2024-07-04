@@ -37,7 +37,6 @@
 	}
 
 	possible = {
-		NOT = { has_law = law_type:law_isolationism }
 	}
 
 	icon = "gfx/interface/icons/central_identity_pillars_icons/trade_league.dds"
