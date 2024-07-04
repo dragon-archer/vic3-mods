@@ -5,25 +5,19 @@ pm_default_building_empire_center = {
 	country_modifiers = {
 		unscaled = { # Avoid it to be affected by throuput
 			state_education_access_add = 0.05
-			state_conversion_mult = 0.05
-			state_assimilation_mult = 0.05
-			state_migration_pull_mult = 0.05
-			country_bureaucracy_mult = 0.05
-			country_authority_mult = 0.05
-			country_influence_mult = 0.05
-			country_prestige_mult = 0.05
-			country_legitimacy_base_add = 5
 			country_max_weekly_construction_progress_add = 10 # 5
 			country_max_companies_add = 1
 			unit_experience_gain_mult = 0.5
-			state_pop_qualifications_mult = 1
-			country_da_assimilation_mult = 0.5
+			power_bloc_mandate_progress_mult = 0.5
+			country_government_dividends_efficiency_add = 0.25
+			country_leverage_generation_mult = 0.25
 		}
 	}
 
 	state_modifiers = {
 		unscaled = {
 			state_migration_pull_mult = 0.25
+			state_decree_cost_mult = -1
 			building_throughput_add = 0.1
 		}
 	}
