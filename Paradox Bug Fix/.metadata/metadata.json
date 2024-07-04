@@ -1,7 +1,7 @@
 {
 	"name": "Paradox Bug Fix for 1.7",
 	"id": "dragon-archer.pbf",
-	"version": "1.7.1.240702",
+	"version": "1.7.2.240704",
 	"supported_game_version": "1.7.*",
 	"short_description": "Fix latest bugs",
 	"tags": ["Fixes"],
