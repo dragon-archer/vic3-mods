@@ -91,6 +91,8 @@ NDiplomacy = {
 	WAR_GOAL_INFAMY_REGIME_CHANGE = 0.25 # 0.5
 
 	# DAYS_TO_LOSE_POWER_RANK = 30 # 365
+
+	ALLY_WARGOAL_MAX_MANEUVERS_COST = 40 # 25				# When an ally adds a 'free' wargoal in a play, it cannot have a maneuvers cost higher than this
 }
 
 NEconomy = {
