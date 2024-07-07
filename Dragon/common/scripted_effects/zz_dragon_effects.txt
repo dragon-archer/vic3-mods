@@ -323,32 +323,30 @@ da_unban_shipyard = {
 da_rhc_helper = {
 	if = {
 		limit = {
-			country_definition = cd:$_1$
-			owns_entire_state_region = $_2$
-			NOT = { s:$_2$ = { contains_capital_of = $_1$ } }
+			exists = $_1$
+			$_1$ = {
+				is_player = no
+				is_at_war = no
+				owns_entire_state_region = $_2$
+			}
+			s:$_2$ = NOT = { { contains_capital_of = $_1$ } }
 		}
-		set_capital = $_2$
+		$_1$ = { set_capital = $_2$ }
 	}
 }
 
 da_restore_historical_capital = {
-	if = {
-		limit = {
-			is_player = no
-			is_at_war = no
-		}
-		da_rhc_helper = { _1 = GER _2 = STATE_BRANDENBURG }
-		da_rhc_helper = { _1 = ITA _2 = STATE_LAZIO }
-		da_rhc_helper = { _1 = SCA _2 = STATE_SVEALAND }
-		da_rhc_helper = { _1 = PRU _2 = STATE_BRANDENBURG }
-		da_rhc_helper = { _1 = GBR _2 = STATE_HOME_COUNTIES }
-		da_rhc_helper = { _1 = FRA _2 = STATE_ILE_DE_FRANCE }
-		da_rhc_helper = { _1 = USA _2 = STATE_DISTRICT_OF_COLUMBIA }
-		da_rhc_helper = { _1 = RUS _2 = STATE_INGRIA }
-		da_rhc_helper = { _1 = AUS _2 = STATE_AUSTRIA }
-		da_rhc_helper = { _1 = CHI _2 = STATE_BEIJING }
-		da_rhc_helper = { _1 = TUR _2 = STATE_EASTERN_THRACE }
-	}
+	da_rhc_helper = { _1 = GER _2 = STATE_BRANDENBURG }
+	da_rhc_helper = { _1 = ITA _2 = STATE_LAZIO }
+	da_rhc_helper = { _1 = SCA _2 = STATE_SVEALAND }
+	da_rhc_helper = { _1 = PRU _2 = STATE_BRANDENBURG }
+	da_rhc_helper = { _1 = GBR _2 = STATE_HOME_COUNTIES }
+	da_rhc_helper = { _1 = FRA _2 = STATE_ILE_DE_FRANCE }
+	da_rhc_helper = { _1 = USA _2 = STATE_DISTRICT_OF_COLUMBIA }
+	da_rhc_helper = { _1 = RUS _2 = STATE_INGRIA }
+	da_rhc_helper = { _1 = AUS _2 = STATE_AUSTRIA }
+	da_rhc_helper = { _1 = CHI _2 = STATE_BEIJING }
+	da_rhc_helper = { _1 = TUR _2 = STATE_EASTERN_THRACE }
 }
 
 da_create_communism_subject_effect = {
