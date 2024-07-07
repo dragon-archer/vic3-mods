@@ -140,7 +140,7 @@ da_merge_cultures_impl = {
 
 da_reload_effect = {
 	cu:north_german = { set_variable = da_test_reload_var }
-	da_post_notification = { _ = da_reloaded_notification }
+	every_player = { post_notification = da_reloaded_notification }
 	da_merge_cultures_clear = yes
 	if = {
 		limit = { has_global_variable = da_minor_cultures_merged_var }

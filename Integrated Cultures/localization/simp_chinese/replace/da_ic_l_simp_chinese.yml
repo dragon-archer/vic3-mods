@@ -109,3 +109,6 @@
  # Decisions
  da_merge_minor_cultures.tt.extended: "#b 更多小文化将被合并#!"
  da_merge_minor_cultures.tt.normal: "#b 小文化将被合并#!"
+ notification_da_reloaded_notification_name: "游戏重新加载"
+ notification_da_reloaded_notification_desc: "游戏重新加载"
+ notification_da_reloaded_notification_tooltip: "#header $notification_da_reloaded_notification_name$#!\n$notification_da_reloaded_notification_desc$"

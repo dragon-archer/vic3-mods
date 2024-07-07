@@ -1,0 +1,5 @@
+﻿da_reloaded_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/authority.dds"
+	notification_type = feed
+}
