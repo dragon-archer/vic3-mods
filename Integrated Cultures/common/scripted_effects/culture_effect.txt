@@ -138,6 +138,15 @@ da_merge_cultures_impl = {
 	}
 }
 
+# INTERNAL
+# Forward $_1$ and $_2$ to da_merge_cultures if scope:da_extended_mode is on
+da_merge_cultures_if_extended = {
+	if = {
+		limit = { da_is_in_extended_mode = yes }
+		da_merge_cultures = { _1 = $_1$ _2 = $_2$ }
+	}
+}
+
 da_reload_effect = {
 	cu:north_german = { set_variable = da_test_reload_var }
 	every_player = { post_notification = da_reloaded_notification }

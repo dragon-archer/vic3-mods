@@ -179,15 +179,6 @@ da_suppress_unused_var = {
 	}
 }
 
-# INTERNAL
-# Forward $_1$ and $_2$ to da_merge_cultures if scope:da_extended_mode is on
-da_merge_cultures_if_extended = {
-	if = {
-		limit = { da_is_in_extended_mode = yes }
-		da_merge_cultures = { _1 = $_1$ _2 = $_2$ }
-	}
-}
-
 da_ban_military = {
 	custom_tooltip = {
 		text = da_ban_military_tt
