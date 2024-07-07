@@ -18,7 +18,6 @@
  # Misc
  literacy_penalty: "高识字率"
  BATTLE_VICTORY_MIN_VALUE_REACHED: "胜利分数下限"
- da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
  da_aftermath_tt: "#bold 选择任意选项后的后果：#!\n"
  DEBUG: "调试"
  DEBUG_DESC: "ROOT = [ROOT.GetCountry.GetName]"

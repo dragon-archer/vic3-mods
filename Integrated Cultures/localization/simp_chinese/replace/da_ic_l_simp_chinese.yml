@@ -112,3 +112,4 @@
  notification_da_reloaded_notification_name: "游戏重新加载"
  notification_da_reloaded_notification_desc: "游戏重新加载"
  notification_da_reloaded_notification_tooltip: "#header $notification_da_reloaded_notification_name$#!\n$notification_da_reloaded_notification_desc$"
+ da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
