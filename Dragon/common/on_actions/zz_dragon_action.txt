@@ -1,9 +1,5 @@
-﻿on_monthly_pulse_country = {
-	events = {
-		da.200
-	}
+﻿on_monthly_pulse = {
 	on_actions = {
-		da_check_reload
 		da_misc_monthly
 	}
 }
@@ -100,22 +96,9 @@ da_on_country_formed = {
 	}
 }
 
-da_check_reload = {
-	effect = {
-		if = {
-			limit = {
-				is_player = yes
-				da_newly_reloaded = yes
-			}
-			da_reload_effect = yes
-		}
-	}
-}
-
 da_misc_monthly = {
 	effect = {
 		da_restore_historical_capital = yes
-		da_save_ai_economy = yes
 	}
 }
 
