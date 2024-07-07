@@ -2,13 +2,6 @@
 	is_subject_of = root
 }
 
-da_is_in_extended_mode = {
-	OR = {
-		exists = scope:da_extended_mode
-		has_global_variable = da_globally_enabled_extended_mode_var
-	}
-}
-
 # _1, variable name
 # _2, comparision statement
 da_compare_var = {
