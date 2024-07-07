@@ -9,12 +9,6 @@ da_is_in_extended_mode = {
 	}
 }
 
-da_newly_reloaded = {
-	cu:north_german = {
-		NOT = { has_variable = da_test_reload_var }
-	}
-}
-
 # _1, variable name
 # _2, comparision statement
 da_compare_var = {
