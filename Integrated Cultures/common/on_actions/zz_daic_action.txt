@@ -1,4 +1,4 @@
-# Root = Country
+﻿# Root = Country
 on_yearly_pulse_country = {
 	events = {
 		da_assimilation.1 # Intro event for assimilation
@@ -17,11 +17,19 @@ on_da_merge_cultures = {
 on_monthly_pulse = {
 	on_actions = {
 		register_da_ic
+		da_on_reload
 	}
 }
 
 register_da_ic = {
 	effect = {
 		set_global_variable = da_ic_is_enabled_var
+	}
+}
+
+da_on_reload = {
+	trigger = { da_newly_reloaded = yes }
+	effect = {
+		da_reload_effect = yes
 	}
 }

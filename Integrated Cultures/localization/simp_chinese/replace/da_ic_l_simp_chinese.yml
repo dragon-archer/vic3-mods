@@ -105,3 +105,7 @@
  da_cu_east_african_bantu: "东非班图"
  lomwe: "[GetPlayer.GetCustom('da_culture_lomwe')]"
  da_cu_lomwe: "隆韦"
+
+ # Decisions
+ da_merge_minor_cultures.tt.extended: "#b 更多小文化将被合并#!"
+ da_merge_minor_cultures.tt.normal: "#b 小文化将被合并#!"
