@@ -35,12 +35,6 @@ on_law_enactment_ended = {
 	}
 }
 
-on_country_formed = {
-	on_actions = {
-		da_on_country_formed
-	}
-}
-
 da_on_law_enactment_pass = {
 	effect = {
 		if = {
@@ -73,32 +67,6 @@ da_on_law_enactment_ended = {
 				overlord = { is_player = yes }
 			}
 			da_post_notification = { _ = da_law_ended }
-		}
-	}
-}
-
-da_on_country_formed = {
-	effect = {
-		if = {
-			limit = {
-				exists = c:HRE
-				c:HRE ?= ROOT
-			}
-			da_merge_hre_cultures = yes
-		}
-		else_if = {
-			limit = {
-				exists = c:GER
-				c:GER ?= ROOT
-			}
-			da_merge_german_cultures = yes
-		}
-		else_if = {
-			limit = {
-				exists = c:ITA
-				c:ITA ?= ROOT
-			}
-			da_merge_italian_cultures = yes
 		}
 	}
 }
