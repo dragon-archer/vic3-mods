@@ -1,5 +1,0 @@
-﻿# Firm subject
-firm_subject = {
-	base = subject_or_below
-	conditions = { da_is_firm_subject_of_root = yes }
-}
