@@ -13,3 +13,61 @@ on_da_merge_cultures = {
 		da_merge_cultures.1
 	}
 }
+
+on_monthly_pulse = {
+	on_actions = {
+		register_da_ic
+		da_on_reload
+	}
+}
+
+register_da_ic = {
+	effect = {
+		set_global_variable = da_ic_is_enabled_var
+	}
+}
+
+da_on_reload = {
+	trigger = { da_newly_reloaded = yes }
+	effect = {
+		da_reload_effect = yes
+	}
+}
+
+da_merge_minor_cultures_action = {
+	effect = {
+		da_merge_minor_cultures_impl = yes
+	}
+}
+
+on_country_formed = {
+	on_actions = {
+		da_on_country_formed
+	}
+}
+
+da_on_country_formed = {
+	effect = {
+		if = {
+			limit = {
+				exists = c:HRE
+				c:HRE ?= ROOT
+			}
+			da_merge_hre_cultures = yes
+		}
+		else_if = {
+			limit = {
+				exists = c:GER
+				c:GER ?= ROOT
+			}
+			da_merge_german_cultures = yes
+		}
+		else_if = {
+			limit = {
+				exists = c:ITA
+				c:ITA ?= ROOT
+			}
+			da_merge_italian_cultures = yes
+		}
+	}
+}

@@ -1,10 +1,13 @@
-﻿on_monthly_pulse_country = {
-	events = {
-		da.200
-	}
+﻿on_monthly_pulse = {
 	on_actions = {
-		da_check_reload
 		da_misc_monthly
+		register_da
+	}
+}
+
+register_da = {
+	effect = {
+		set_global_variable = da_is_enabled_var
 	}
 }
 
@@ -29,12 +32,6 @@ on_law_enactment_fail = {
 on_law_enactment_ended = {
 	on_actions = {
 		da_on_law_enactment_ended
-	}
-}
-
-on_country_formed = {
-	on_actions = {
-		da_on_country_formed
 	}
 }
 
@@ -74,48 +71,9 @@ da_on_law_enactment_ended = {
 	}
 }
 
-da_on_country_formed = {
-	effect = {
-		if = {
-			limit = {
-				exists = c:HRE
-				c:HRE ?= ROOT
-			}
-			da_merge_hre_cultures = yes
-		}
-		else_if = {
-			limit = {
-				exists = c:GER
-				c:GER ?= ROOT
-			}
-			da_merge_german_cultures = yes
-		}
-		else_if = {
-			limit = {
-				exists = c:ITA
-				c:ITA ?= ROOT
-			}
-			da_merge_italian_cultures = yes
-		}
-	}
-}
-
-da_check_reload = {
-	effect = {
-		if = {
-			limit = {
-				is_player = yes
-				da_newly_reloaded = yes
-			}
-			da_reload_effect = yes
-		}
-	}
-}
-
 da_misc_monthly = {
 	effect = {
 		da_restore_historical_capital = yes
-		da_save_ai_economy = yes
 	}
 }
 

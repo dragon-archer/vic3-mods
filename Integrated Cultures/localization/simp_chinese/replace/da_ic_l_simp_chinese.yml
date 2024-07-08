@@ -105,3 +105,15 @@
  da_cu_east_african_bantu: "东非班图"
  lomwe: "[GetPlayer.GetCustom('da_culture_lomwe')]"
  da_cu_lomwe: "隆韦"
+
+ # Decisions
+ da_merge_minor_cultures.tt.extended: "#b 更多小文化将被合并#!"
+ da_merge_minor_cultures.tt.normal: "#b 小文化将被合并#!"
+ notification_da_reloaded_notification_name: "游戏重新加载"
+ notification_da_reloaded_notification_desc: "游戏重新加载"
+ notification_da_reloaded_notification_tooltip: "#header $notification_da_reloaded_notification_name$#!\n$notification_da_reloaded_notification_desc$"
+ da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
+ da_ic_merge_cultures: "合并小文化"
+ da_ic_merge_cultures_desc: "合并小文化"
+ da_ic_merge_more_cultures: "合并更多小文化"
+ da_ic_merge_more_cultures_desc: "合并更多小文化"

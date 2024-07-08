@@ -1,5 +1,4 @@
-﻿#DA: Merge USA cultures after ACW
-#TODO: Move to IC
+﻿#IC: Merge USA cultures after ACW
 namespace = acw_je_events
 
 # ACW startup

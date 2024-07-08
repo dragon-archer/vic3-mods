@@ -1,0 +1,38 @@
+﻿da_ic_merge_cultures = {
+	is_shown = {
+		is_player = yes
+		da_is_enabled = no
+	}
+
+	possible = {
+		NOT = { has_global_variable = da_minor_cultures_merged_var }
+	}
+
+	when_taken = {
+		da_merge_minor_cultures = yes
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}
+
+da_ic_merge_more_cultures = {
+	is_shown = {
+		is_player = yes
+		da_is_enabled = no
+	}
+
+	possible = {
+		NOT = { has_global_variable = da_minor_cultures_merged_var }
+	}
+
+	when_taken = {
+		save_temporary_scope_value_as = { name = da_extended_mode value = yes }
+		da_merge_minor_cultures = yes
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}

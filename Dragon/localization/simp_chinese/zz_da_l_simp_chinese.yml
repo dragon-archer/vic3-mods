@@ -18,7 +18,6 @@
  # Misc
  literacy_penalty: "高识字率"
  BATTLE_VICTORY_MIN_VALUE_REACHED: "胜利分数下限"
- da_is_primary_culture_of_overlord_tt: "是[concept_overlord]的[concept_primary_cultures]"
  da_aftermath_tt: "#bold 选择任意选项后的后果：#!\n"
  DEBUG: "调试"
  DEBUG_DESC: "ROOT = [ROOT.GetCountry.GetName]"
@@ -166,9 +165,6 @@
 
  # Notifications
  da_decision_ng: "采用DA决议"
- notification_da_reloaded_notification_name: "游戏重新加载"
- notification_da_reloaded_notification_desc: "游戏重新加载"
- notification_da_reloaded_notification_tooltip: "#header $notification_da_reloaded_notification_name$#!\n$notification_da_reloaded_notification_desc$"
  notification_da_law_pass_name: "[SCOPE.sC('taker').GetName]通过了[concept_law]"
  notification_da_law_pass_desc: "[SCOPE.sC('taker').GetName]通过了[SCOPE.sC('taker').GetLawBeingEnacted.GetName]"
  notification_da_law_pass_tooltip: "#header $notification_da_law_pass_name$#!\n$notification_da_law_pass_desc$"

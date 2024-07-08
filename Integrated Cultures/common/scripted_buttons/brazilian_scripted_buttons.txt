@@ -1,5 +1,4 @@
-﻿#DA: Cooperate with IC
-#TODO: Move to IC
+﻿#IC: Merge brazilian cultures
 je_brazilian_nation_building_integrate_nordestino = {
 	name = {
 		first_valid = {

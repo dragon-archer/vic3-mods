@@ -1,0 +1,5 @@
+﻿# Quick link for players
+player = {
+	base = country
+	conditions = { is_player = yes }
+}

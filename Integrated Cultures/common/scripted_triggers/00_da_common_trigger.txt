@@ -1,0 +1,18 @@
+﻿# Common file for all DA components
+# Should be same in all DA mods
+
+#TODO: Use custom_tooltip
+da_is_enabled = {
+	has_global_variable = da_is_enabled_var
+}
+
+da_ic_is_enabled = {
+	has_global_variable = da_ic_is_enabled_var
+}
+
+da_is_in_extended_mode = {
+	OR = {
+		exists = scope:da_extended_mode
+		has_global_variable = da_globally_enabled_extended_mode_var
+	}
+}

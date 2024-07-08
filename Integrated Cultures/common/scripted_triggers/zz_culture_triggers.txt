@@ -28,3 +28,9 @@ da_aus_trigger = {
 		}
 	}
 }
+
+da_newly_reloaded = {
+	cu:north_german = {
+		NOT = { has_variable = da_test_reload_var }
+	}
+}
