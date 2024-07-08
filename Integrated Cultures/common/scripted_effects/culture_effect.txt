@@ -222,7 +222,7 @@ da_merge_usa_cultures = {
 
 # Option: scope:da_extended_mode, toggle whether to merge cultures with different but nearly meaningless traits, e.g: french and breton
 # Note: religion is ignored
-da_merge_minor_cultures = {
+da_merge_minor_cultures_impl = {
 	set_global_variable = da_minor_cultures_merged_var
 	if = {
 		limit = { da_is_in_extended_mode = yes }

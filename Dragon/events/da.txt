@@ -129,6 +129,7 @@ da.1000 = { # Table
 
 	option = {
 		name = da.1000.merge_minor_cultures
+		trigger = { da_ic_is_enabled = yes }
 		show_as_unavailable = { always = yes }
 		da_merge_minor_cultures = yes
 		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }

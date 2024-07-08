@@ -33,3 +33,9 @@ da_on_reload = {
 		da_reload_effect = yes
 	}
 }
+
+da_merge_minor_cultures_action = {
+	effect = {
+		da_merge_minor_cultures_impl = yes
+	}
+}
