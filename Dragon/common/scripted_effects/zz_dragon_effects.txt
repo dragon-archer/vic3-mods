@@ -314,15 +314,15 @@ da_unban_shipyard = {
 da_rhc_helper = {
 	if = {
 		limit = {
-			exists = $_1$
-			$_1$ = {
+			exists = c:$_1$
+			c:$_1$ = {
 				is_player = no
 				is_at_war = no
 				owns_entire_state_region = $_2$
 			}
-			s:$_2$ = NOT = { { contains_capital_of = $_1$ } }
+			s:$_2$ = { NOT = { contains_capital_of = $_1$ } }
 		}
-		$_1$ = { set_capital = $_2$ }
+		c:$_1$ = { set_capital = $_2$ }
 	}
 }
 
