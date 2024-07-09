@@ -120,7 +120,6 @@ save_industrialized_pm_building_and_state = {
 }
 
 # Avoid giving claims on decentralized states
-#TODO: Move to IC
 unification_claims_effect = {
 	if = {
 		limit = {
