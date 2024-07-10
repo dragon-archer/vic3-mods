@@ -75,12 +75,6 @@
  COMPETITIVENESS_DOMESTIC_TRADE_BONUS: "国内[concept_trade_route]：#v #p +$VAL|%0$#!#!"
  COMPETITIVENESS_TRADE_AGREEMENT_BONUS: "生效的[concept_trade_agreement]：#v #p +$VAL|%0$#!#!"
  COMPETITIVENESS_TRADE_ROUTE_DURATION: "[concept_trade_route]年份：#v #p +$VAL|%0$#!#!"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_MAJOR_POWER_MEMBERS: "#tooltippable #tooltip:[PowerBloc.GetTooltipTag],POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_MAJOR_POWER_MEMBERS_TOOLTIP 来自[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')]成员#!#!"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_MAJOR_POWER_MEMBERS_TOOLTIP: "[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')]成员数量：[PowerBloc.MakeScope.ScriptValue('power_bloc_unrecognized_major_power_non_leader_members')]\n加数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_major_power_member_add')]\n乘数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_major_power_member_mult')]"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_REGIONAL_POWER_MEMBERS: "#tooltippable #tooltip:[PowerBloc.GetTooltipTag],POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_REGIONAL_POWER_MEMBERS_TOOLTIP 来自[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')]成员#!#!"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_REGIONAL_POWER_MEMBERS_TOOLTIP: "[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')]成员数量：[PowerBloc.MakeScope.ScriptValue('power_bloc_unrecognized_regional_power_non_leader_members')]\n加数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_regional_power_member_add')]\n乘数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_regional_power_member_mult')]"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_POWER_MEMBERS: "#tooltippable #tooltip:[PowerBloc.GetTooltipTag],POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_POWER_MEMBERS_TOOLTIP 来自[concept_unrecognized_power]成员#!#!"
- POWER_BLOC_MANDATE_PROGRESS_FROM_UNRECOGNIZED_POWER_MEMBERS_TOOLTIP: "[concept_unrecognized_power]成员数量：[PowerBloc.MakeScope.ScriptValue('power_bloc_unrecognized_power_non_leader_members')]\n加数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_power_member_add')]\n乘数：[PowerBloc.GetModifier.GetValueWithBreakdownFor('power_bloc_mandate_progress_per_unrecognized_power_member_mult')]"
 #  CONVOYS_FROM_MARKET_MEMBERS: "[Country.GetMarket.GetName]的[Concept('concept_country','$concept_countries$')]：#tooltippable #tooltip:$BREAKDOWN_TAG$,CONVOYS_FROM_MARKET_MEMBER_BREAKDOWN #v $VALUE|+=$#!#!#!" #TODO
 
  # liberty_desire_levels
@@ -91,16 +85,6 @@
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
  modifier_building_group_bg_monuments_throughput_add_desc: "对$bg_monuments$投入和产出的增益或惩罚"
- power_bloc_mandate_progress_per_unrecognized_major_power_member_add: "[concept_power_bloc_mandate_progress]/[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')]"
- power_bloc_mandate_progress_per_unrecognized_major_power_member_add_desc: "决定一个[concept_power_bloc]每有一个[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')][concept_rank]的成员获得多少[concept_power_bloc_mandate_progress]"
- power_bloc_mandate_progress_per_unrecognized_major_power_member_mult: "[concept_power_bloc_mandate_progress]/[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')]"
- power_bloc_mandate_progress_per_unrecognized_major_power_member_mult_desc: "决定一个[concept_power_bloc]每有一个[Concept('concept_unrecognized_power','$concept_unrecognized_major_power$')][concept_rank]的成员获得多少[concept_power_bloc_mandate_progress]"
- power_bloc_mandate_progress_per_unrecognized_regional_power_member_add: "[concept_power_bloc_mandate_progress]/[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')]"
- power_bloc_mandate_progress_per_unrecognized_regional_power_member_add_desc: "决定一个[concept_power_bloc]每有一个[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')][concept_rank]的成员获得多少[concept_power_bloc_mandate_progress]"
- power_bloc_mandate_progress_per_unrecognized_regional_power_member_mult: "[concept_power_bloc_mandate_progress]/[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')]"
- power_bloc_mandate_progress_per_unrecognized_regional_power_member_mult_desc: "决定一个[concept_power_bloc]每有一个[Concept('concept_unrecognized_power','$concept_unrecognized_regional_power$')][concept_rank]的成员获得多少[concept_power_bloc_mandate_progress]"
- power_bloc_invite_acceptance_add: "[concept_power_bloc]邀请接受概率"
- power_bloc_invite_acceptance_desc: "对[concept_power_bloc]邀请的接受概率的增益或惩罚"
 
  # states
  STATE_SOUTHERN_MANCHURIA: "吉林"
@@ -108,6 +92,7 @@
  STATE_OUTER_MANCHURIA: "海参崴"
  STATE_AMUR: "外东北"
  STATE_SHENGJING: "辽宁"
+ STATE_SEMIRECHE: "七河"
 
  # jomini/pops/pops_gui_l_simp_chinese.yml
  CREATE_SOCIAL_PROFILE_ERROR: "错误：[CreateSocialProfile.GetErrorMessage]"
