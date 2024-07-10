@@ -45,9 +45,9 @@
 		recipient_pays_maintenance = no
 		forced_duration = 12
 
-		# first_modifier = {
-		# 	country_tech_spread_mult = -0.10
-		# }
+		first_modifier = {
+			country_tech_spread_mult = -0.05
+		}
 
 		second_modifier = {
 			country_tech_spread_mult = 0.25
@@ -112,7 +112,7 @@
 		}
 
 		will_propose = {
-			modifier:country_tech_spread_mult > -0.5 # don't compromise tech spread more than -50%
+			modifier:country_tech_spread_mult > -0.25 # don't compromise tech spread more than -25%
 			has_attitude = {
 				who = scope:target_country
 				attitude = protective
@@ -140,7 +140,7 @@
 					attitude = domineering
 				}
 				is_country_type = unrecognized
-				modifier:country_tech_spread_mult < -0.5
+				modifier:country_tech_spread_mult <= -0.5
 			}
 		}
 
@@ -155,7 +155,8 @@
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_TECH_SPREAD_VALUE"
 				value = modifier:country_tech_spread_mult
-				multiply = 100
+				add = 0.25
+				multiply = 200
 			}
 
 			if = {
@@ -165,7 +166,8 @@
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION"
 					value = "scope:actor.ai_ideological_opinion(root)"
-					max = 50
+					multiply = 0.5
+					max = 25
 				}
 			}
 			else_if = {
@@ -175,7 +177,8 @@
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION_NEGATIVE"
 					value = "scope:actor.ai_ideological_opinion(root)"
-					min = -50
+					multiply = 0.5
+					min = -25
 				}
 			}
 
@@ -201,13 +204,6 @@
 				}
 			}
 
-			add = {
-				desc = "DIPLOMATIC_ACCEPTANCE_ACTOR_ECONOMIC_DEPENDENCE"
-				value = 1
-				subtract = "scope:actor.economic_dependence(root)"
-				multiply = 50
-			}
-
 			if = {
 				limit = {
 					scope:actor = { is_subject_of = root }
@@ -225,7 +221,7 @@
 					limit = {
 						"relations(scope:actor)" >= relations_threshold:friendly
 					}
-					value = 75
+					value = 100
 				}
 				else_if = {
 					limit = {
