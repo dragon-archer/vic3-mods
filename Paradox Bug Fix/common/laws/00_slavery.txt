@@ -209,34 +209,16 @@ law_debt_slavery = {
 		interest_group_ig_landowners_pol_str_mult = 0.5
 	}
 
-	pop_support = {
+	pop_support = { #PBF: Slave SHOULD NOT support Debt Slavery
 		value = 0
 
 		add = {
-			desc = "POP_SLAVES"
+			desc = "POP_ARISTOCRATS"
 			if = {
 				limit = {
-					is_pop_type = slaves
-				}
-				value = 1
-			}
-		}
-		add = {
-			desc = "POP_ACADEMICS"
-			if = {
-				limit = {
-					is_pop_type = academics
+					is_pop_type = aristocrats
 				}
 				value = 0.1
-			}
-		}
-		add = {
-			desc = "POP_CLERGYMEN"
-			if = {
-				limit = {
-					is_pop_type = clergymen
-				}
-				value = 0.05
 			}
 		}
 	}
@@ -333,6 +315,10 @@ law_slave_trade = {
 	possible_political_movements = {
 		law_slavery_banned
 		law_legacy_slavery
+	}
+
+	modifier = {
+		interest_group_ig_landowners_pol_str_mult = 0.5
 	}
 
 	pop_support = {
