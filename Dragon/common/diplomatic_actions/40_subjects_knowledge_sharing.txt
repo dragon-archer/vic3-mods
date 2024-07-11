@@ -50,7 +50,7 @@
 		}
 
 		second_modifier = {
-			country_tech_spread_mult = 0.25
+			country_tech_spread_mult = 0.50
 		}
 
 		actor_can_break = {
