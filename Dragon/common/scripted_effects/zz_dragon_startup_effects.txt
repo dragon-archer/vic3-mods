@@ -25,6 +25,7 @@ da_merge_minor_countries = {
 				}
 				prev ?= { da_annex_if_exists = { _ = prev } }
 			}
+			s:STATE_RHINELAND.region_state:BAV = { set_state_owner = prev }
 			# if = {
 			# 	limit = { da_is_in_extended_mode = yes }
 			# 	s:STATE_ALSACE_LORRAINE.region_state:FRA ?= { da_set_state_owner = { _ = prev } }
