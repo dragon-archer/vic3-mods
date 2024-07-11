@@ -173,40 +173,40 @@ law_per_capita_based_taxation = {
 		tax_consumption_add = 0.20
 		tax_per_capita_add = 0.40
 		tax_land_add = 0.20
-		tax_income_add = 0.05
-		tax_dividends_add = 0.025
+		tax_income_add = 0.10
+		tax_dividends_add = 0.01
 	}
 
 	tax_modifier_low = {
 		tax_consumption_add = 0.275
 		tax_per_capita_add = 0.55
 		tax_land_add = 0.275
-		tax_income_add = 0.075
-		tax_dividends_add = 0.05
+		tax_income_add = 0.125
+		tax_dividends_add = 0.02
 	}
 
 	tax_modifier_medium = {
 		tax_consumption_add = 0.35
 		tax_per_capita_add = 0.70
 		tax_land_add = 0.35
-		tax_income_add = 0.10
-		tax_dividends_add = 0.075
+		tax_income_add = 0.15
+		tax_dividends_add = 0.03
 	}
 
 	tax_modifier_high = {
 		tax_consumption_add = 0.425
 		tax_per_capita_add = 0.85
 		tax_land_add = 0.425
-		tax_income_add = 0.125
-		tax_dividends_add = 0.10
+		tax_income_add = 0.175
+		tax_dividends_add = 0.04
 	}
 
 	tax_modifier_very_high = {
 		tax_consumption_add = 0.50
 		tax_per_capita_add = 1.0
 		tax_land_add = 0.50
-		tax_income_add = 0.15
-		tax_dividends_add = 0.125
+		tax_income_add = 0.20
+		tax_dividends_add = 0.05
 	}
 
 	possible_political_movements = {
