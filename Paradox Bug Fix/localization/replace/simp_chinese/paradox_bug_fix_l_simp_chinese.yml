@@ -68,8 +68,6 @@
  JOB_SATISFACTION_PER_SOL_ABOVE_COUNTRY_STRATA_SOL: "当前生活水平（#tooltippable #tooltip:[Pop.GetTooltipTag],TOOLTIP_POP_QOL [LabelingHelper.GetLabelForStandardOfLiving(Pop.GetCurrentStandardOfLiving)|v]（[Pop.GetCurrentStandardOfLiving|v]）#!#!）和[Pop.GetCountry.GetName][Pop.GetPopType.GetStrata]平均[concept_sol]（[LabelingHelper.GetLabelForStandardOfLiving(FixedPointToInt('(CFixedPoint)$AVERAGE$'))|v]（$AVERAGE|v1$））的差距：$VALUE|0+=$"
  INCORPORATED_POPULATION: "已整合人口：[Country.GetIncorporatedPopulation|Kv]"
  UNINCORPORATED_POPULATION: "未整合人口：[Country.GetPeopleAbroad|Kv]"
- ADVANCEMENT_PROGRESS_BAR_LEFT_FORMATIONS_TOOLTIP: "#header [Front.AccessLeftTheater.GetOwner.GetAdjective]一方的[concept_advancement_progress]#!\n进度：#v [Front.GetRightAdvanceProgressFormations|1+]/[Front.GetRequiredAdvanceProgressForBattle|0+]#!"
- ADVANCEMENT_PROGRESS_BAR_RIGHT_FORMATIONS_TOOLTIP: "#header [Front.AccessRightTheater.GetOwner.GetAdjective]一方的[concept_advancement_progress]#!\n进度：#v [Front.GetLeftAdvanceProgressFormations|1+]/[Front.GetRequiredAdvanceProgressForBattle|0+]#!"
  CONSTRUCTION_SPEED_BASE_TOOLTIP: "#tooltip_header @construction![concept_construction]#![AddLocalizationIf(Country.IsConstructionPaused, 'CONSTRUCTION_IS_PAUSED')]\n总计：#v [Country.CalcBaseConstructionSpeed|0]#!\n正在使用：#v [Country.CalcUsedConstruction|0]/[Country.CalcBaseConstructionSpeed|0]#!\n$TOOLTIP_DELIMITER$\n[Country.GetBaseConstructionSpeedDesc]"
  CONSTRUCTION_QUEUE_DESC: "[Country.GetName]的#header [concept_construction]#![AddLocalizationIf(Country.IsConstructionPaused, 'CONSTRUCTION_IS_PAUSED')]\n$TOOLTIP_DELIMITER$\n[Country.GetName]每周共产出@construction!#v #tooltippable #tooltip:[Country.GetTooltipTag],CONSTRUCTION_SPEED_BASE_TOOLTIP [Country.CalcBaseConstructionSpeed|1]#!#!#!$concept_construction$。\n$CONSTRUCTION_PRIVATE_ALLOCATION_DESC$\n$CONSTRUCTION_GOVERNMENT_PROJECTS_DESC$[ConcatIfNeitherEmpty('\n', Country.GetPrivateConstructionQueueDesc)]"
  COMPETITIVENESS_DOMESTIC_TRADE_BONUS: "国内[concept_trade_route]：#v #p +$VAL|%0$#!#!"
@@ -93,6 +91,10 @@
  STATE_AMUR: "外东北"
  STATE_SHENGJING: "辽宁"
  STATE_SEMIRECHE: "七河"
+
+ # triggers
+ TRIGGER_IS_MARKET_REACHABLE_FOR_TRADE: "目标[concept_market]可以通过陆上连接或[concept_shipping_lane][Concept('concept_trade_route','$concept_trade$')]"
+ TRIGGER_IS_MARKET_REACHABLE_FOR_TRADE_NOT: "目标[concept_market]#b 不#!可以通过陆上连接或[concept_shipping_lane][Concept('concept_trade_route','$concept_trade$')]"
 
  # jomini/pops/pops_gui_l_simp_chinese.yml
  CREATE_SOCIAL_PROFILE_ERROR: "错误：[CreateSocialProfile.GetErrorMessage]"
