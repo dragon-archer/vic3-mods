@@ -1,12 +1,11 @@
-﻿#DA: Overhaul train PMs
-pm_early_trains = {
+﻿pm_early_trains = {
 	texture = "gfx/interface/icons/production_method_icons/experimental_trains.dds"
 
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_engines_add = 5 # 300
-			goods_input_coal_add = 3 # 2 # 60
-			goods_output_transportation_add = 25 # 20 # 600
+			goods_input_coal_add = 2 # 60
+			goods_output_transportation_add = 20 # 600
 		}
 		level_scaled = {
 			building_employment_laborers_add = 3000
@@ -19,9 +18,6 @@ pm_early_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 20
 			state_pollution_generation_add = 25
-		}
-		unscaled = {
-			state_market_access_price_impact = 0.025
 		}
 	}
 }
@@ -38,12 +34,11 @@ pm_steam_trains = {
 		workforce_scaled = {
 			goods_input_engines_add = 5 # 300
 			goods_input_coal_add = 5 # 150
-			goods_output_transportation_add = 30 # 25 # 750
+			goods_output_transportation_add = 25 # 750
 		}
 		level_scaled = {
-			building_employment_laborers_add = 2000
-			building_employment_machinists_add = 1250
-			building_employment_engineers_add = 250
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1500
 			building_employment_clerks_add = 750
 		}
 	}
@@ -52,9 +47,6 @@ pm_steam_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 25
 			state_pollution_generation_add = 20
-		}
-		unscaled = {
-			state_market_access_price_impact = 0.05
 		}
 	}
 }
@@ -75,12 +67,11 @@ pm_steam_trains_principle_transport_3 = {
 		workforce_scaled = {
 			goods_input_engines_add = 6 # 300
 			goods_input_coal_add = 6 # 150
-			goods_output_transportation_add = 35 # 750
+			goods_output_transportation_add = 30 # 750
 		}
 		level_scaled = {
-			building_employment_laborers_add = 2000
-			building_employment_machinists_add = 1250
-			building_employment_engineers_add = 250
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1500
 			building_employment_clerks_add = 750
 		}
 	}
@@ -89,9 +80,6 @@ pm_steam_trains_principle_transport_3 = {
 		workforce_scaled = {
 			state_infrastructure_add = 30
 			state_pollution_generation_add = 25
-		}
-		unscaled = {
-			state_market_access_price_impact = 0.05
 		}
 	}
 }
@@ -108,12 +96,11 @@ pm_electric_trains = {
 		workforce_scaled = {
 			goods_input_engines_add = 5 # 300
 			goods_input_electricity_add = 10 # 300
-			goods_output_transportation_add = 40 # 35 # 1050
+			goods_output_transportation_add = 35 # 1050
 		}
 		level_scaled = {
-			building_employment_laborers_add = 1250
-			building_employment_machinists_add = 1250
-			building_employment_engineers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
 			building_employment_clerks_add = 750
 		}
 	}
@@ -122,12 +109,9 @@ pm_electric_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 30
 		}
-		unscaled = {
-			state_market_access_price_impact = 0.075
-		}
 	}
 
-	# required_input_goods = electricity
+	required_input_goods = electricity
 }
 
 pm_electric_trains_principle_transport_3 = {
@@ -146,12 +130,11 @@ pm_electric_trains_principle_transport_3 = {
 		workforce_scaled = {
 			goods_input_engines_add = 6 # 300
 			goods_input_electricity_add = 12 # 300
-			goods_output_transportation_add = 50 # 1050
+			goods_output_transportation_add = 45 # 1050
 		}
 		level_scaled = {
-			building_employment_laborers_add = 1250
-			building_employment_machinists_add = 1250
-			building_employment_engineers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
 			building_employment_clerks_add = 750
 		}
 	}
@@ -160,12 +143,9 @@ pm_electric_trains_principle_transport_3 = {
 		workforce_scaled = {
 			state_infrastructure_add = 40
 		}
-		unscaled = {
-			state_market_access_price_impact = 0.075
-		}
 	}
 
-	# required_input_goods = electricity
+	required_input_goods = electricity
 }
 
 pm_diesel_trains = {
@@ -180,12 +160,11 @@ pm_diesel_trains = {
 		workforce_scaled = {
 			goods_input_engines_add = 5 # 300
 			goods_input_oil_add = 8 # 400
-			goods_output_transportation_add = 50 # 40 # 1200
+			goods_output_transportation_add = 40 # 1200
 		}
 		level_scaled = {
-			building_employment_laborers_add = 500
-			building_employment_machinists_add = 1250
-			building_employment_engineers_add = 750
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 2500
 			building_employment_clerks_add = 750
 		}
 	}
@@ -194,9 +173,6 @@ pm_diesel_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 40
 			state_pollution_generation_add = 15
-		}
-		unscaled = {
-			state_market_access_price_impact = 0.1
 		}
 	}
 }
@@ -217,7 +193,7 @@ pm_diesel_trains_principle_transport_3 = {
 		workforce_scaled = {
 			goods_input_engines_add = 6 # 300
 			goods_input_oil_add = 10 # 400
-			goods_output_transportation_add = 65 # 1200
+			goods_output_transportation_add = 55 # 1200
 		}
 		level_scaled = {
 			building_employment_laborers_add = 1500
@@ -230,9 +206,6 @@ pm_diesel_trains_principle_transport_3 = {
 		workforce_scaled = {
 			state_infrastructure_add = 55
 			state_pollution_generation_add = 20
-		}
-		unscaled = {
-			state_market_access_price_impact = 0.1
 		}
 	}
 }
@@ -250,7 +223,6 @@ pm_wooden_passenger_carriages = {
 			goods_output_transportation_add = 10
 		}
 		level_scaled = {
-			building_employment_laborers_add = -250
 			building_employment_clerks_add = 250
 		}
 	}
@@ -269,7 +241,6 @@ pm_steel_passenger_carriages = {
 			goods_output_transportation_add = 15
 		}
 		level_scaled = {
-			building_employment_laborers_add = -500
 			building_employment_clerks_add = 500
 		}
 	}
@@ -296,7 +267,7 @@ pm_trade_center_principle_external_trade_2 = {
 		principle_external_trade_3
 	}
 
-	building_modifiers = {
+	building_modifiers = { #PBF
 		level_scaled = {
 			building_employment_clerks_add = 250
 		}
