@@ -31,12 +31,8 @@
 		recipient_pays_maintenance = no
 		forced_duration = 12
 
-		first_modifier = {
-			country_legitimacy_base_add = -2
-		}
-
 		second_modifier = {
-			country_legitimacy_base_add = 20
+			country_legitimacy_base_add = 10
 			political_movement_radicalism_mult = -0.1
 			country_liberty_desire_add = -0.1
 		}
