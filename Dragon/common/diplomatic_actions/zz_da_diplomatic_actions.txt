@@ -17,10 +17,6 @@ redeem_obligation = {
 	}
 
 	possible = {
-		is_revolutionary = no
-		scope:target_country = {
-			is_revolutionary = no
-		}
 	}
 
 	accept_effect = {
