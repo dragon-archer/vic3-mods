@@ -65,6 +65,7 @@ pm_steam_trains_principle_transport_3 = {
 
 	unlocking_principles = {
 		principle_transport_3
+		principle_internal_trade_3
 	}
 
 	unlocking_technologies = {
@@ -136,6 +137,7 @@ pm_electric_trains_principle_transport_3 = {
 
 	unlocking_principles = {
 		principle_transport_3
+		principle_internal_trade_3
 	}
 
 	unlocking_technologies = {
@@ -207,6 +209,7 @@ pm_diesel_trains_principle_transport_3 = {
 
 	unlocking_principles = {
 		principle_transport_3
+		principle_internal_trade_3
 	}
 
 	unlocking_technologies = {
