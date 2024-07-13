@@ -10,6 +10,8 @@ bg_trade = {
 
 	subsidized = yes
 
+	always_self_owning = yes
+
 	created_by_trade_routes = yes
 
 	auto_place_buildings = yes
