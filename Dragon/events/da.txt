@@ -78,6 +78,17 @@ da.300 = {
 	}
 	option = {
 		name = da.300.d
+		trigger = { is_power_bloc_leader = yes }
+		power_bloc = {
+			add_leverage = {
+				target = scope:target_country
+				value = 200
+			}
+		}
+		scope:target_country = { set_owes_obligation_to = { country = root setting = no } }
+	}
+	option = {
+		name = da.300.e
 	}
 }
 
