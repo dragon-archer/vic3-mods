@@ -355,3 +355,12 @@
  da_increase_military_wages_desc: "提高[SCOPE.ScriptValue('da_wages_step')|%v]$da_military_wages_mod$"
  da_increase_military_wages_tt: "$da_military_wages_mod$小于等于最高基准[SCOPE.ScriptValue('da_wages_max_multiplier')|%=v]"
  da_update_economy_modifiers_button_tt: "所有经济修正将重新计算"
+
+ # Diplomatic Actions
+ da_annex_subject_action_name: "吞并附属国"
+ da_annex_subject: "吞并附属国"
+ da_annex_subject_desc: "完全吞并一个[concept_subject]"
+ da_annex_subject_action_notification_name: "[INITIATOR_COUNTRY.GetName]吞并了[TARGET_COUNTRY.GetName]"
+ da_annex_subject_action_notification_desc: "[INITIATOR_COUNTRY.GetName]吞并了[TARGET_COUNTRY.GetName]"
+ DA_ANNEX_SUBJECT_TT: "其他所有直属[concept_subject]的[concept_liberty_desire]立刻增加[SCOPE.sC('target_country').GetLibertyDesireRaw|v0]，并在#v 60#!个月内每月[concept_liberty_desire]增长#v 0.1#!（逐步递减）"
+ DA_ANNEX_SUBJECT_TT_2: "其他所有直属[concept_subject]的[concept_liberty_desire]增加#v 10#!"

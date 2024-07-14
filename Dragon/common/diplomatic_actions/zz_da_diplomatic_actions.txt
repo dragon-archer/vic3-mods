@@ -28,12 +28,126 @@ redeem_obligation = {
 			value = 0.25
 		}
 
-			propose_score = {
+		propose_score = {
 			value = 10
 		}
 
 		will_propose = {
 			always = no
+		}
+	}
+}
+
+da_annex_subject = {
+	groups = {
+		overlord
+	}
+	requires_approval = no
+	show_effect_in_tooltip = yes
+	is_hostile = yes
+
+	texture = "gfx/interface/icons/war_goals/annex_country.dds"
+	confirmation_sound = "event:/SFX/UI/SubjectInteractions/subject_button_small_autonomy_decreased"
+
+	potential = {
+		scope:target_country = {
+			is_direct_subject_of = root
+			OR = {
+				has_diplomatic_pact = { who = root type = puppet }
+				has_diplomatic_pact = { who = root type = vassal }
+			}
+		}
+	}
+
+	possible = {
+		scope:target_country = {
+			liberty_desire <= 15
+			NOT = { is_diplomatic_play_enemy_of = root }
+		}
+		custom_tooltip = {
+			text = "CHANGE_AUTONOMY_ON_COOLDOWN_OVERLORD"
+			NOT = {
+				scope:target_country = {
+					any_diplomatic_catalyst = {
+						is_diplomatic_catalyst_type = catalyst_autonomy_change_imposed
+						target = root
+					}
+				}
+			}
+		}
+	}
+
+	accept_effect = {
+		show_as_tooltip = { annex = scope:target_country } # For the tooltip to show before custom
+		if = {
+			limit = { scope:target_country.liberty_desire > 10 }
+			custom_tooltip = {
+				text = "DA_ANNEX_SUBJECT_TT"
+				every_subject_or_below = {
+					limit = {
+						is_direct_subject_of = root
+						NOT = { this = scope:target_country }
+					}
+					add_liberty_desire = scope:target_country.liberty_desire
+					add_modifier = {
+						name = modifier_has_annexed_another_subject
+						multiplier = 0.5
+						months = 60
+						is_decaying = yes
+					}
+				}
+				annex = scope:target_country
+			}
+		}
+		else = {
+			custom_tooltip = {
+				text = "DA_ANNEX_SUBJECT_TT_2"
+				every_subject_or_below = {
+					limit = {
+						is_direct_subject_of = root
+						NOT = { this = scope:target_country }
+					}
+					add_liberty_desire = 10
+				}
+				annex = scope:target_country
+			}
+		}
+	}
+
+
+	ai = {
+		evaluation_chance = {
+			value = 0.25
+		}
+
+		propose_score = {
+			value = 100
+		}
+
+		will_propose = {
+			OR = {
+				has_attitude = {
+					who = scope:target_country
+					attitude = domineering
+				}
+				AND = {
+					NOT = { has_strategy = ai_strategy_anti_imperialism	}
+					scope:target_country = { liberty_desire < 10 }
+				}
+			}
+			NAND = { # GBR AI should not annex Canadian & Australian colonies
+				c:GBR ?= this
+				scope:target_country = {
+					OR = {
+						country_has_primary_culture = cu:anglo_canadian
+						country_has_primary_culture = cu:franco_canadian
+						country_has_primary_culture = cu:australian
+						country_has_primary_culture = cu:maori
+						country_has_primary_culture = cu:aborigine
+						country_has_primary_culture = cu:polynesian # For IC
+					}
+				}
+			}
 		}
 	}
 }
