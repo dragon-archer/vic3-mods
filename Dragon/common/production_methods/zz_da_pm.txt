@@ -1,4 +1,4 @@
-﻿# New
+# New
 pm_default_building_empire_center = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
@@ -7,9 +7,12 @@ pm_default_building_empire_center = {
 			state_education_access_add = 0.05
 			country_max_weekly_construction_progress_add = 10 # 5
 			country_max_companies_add = 1
-			unit_experience_gain_mult = 0.5
-			power_bloc_mandate_progress_mult = 0.5
+			unit_experience_gain_mult = 0.25
+			country_private_construction_allocation_mult = -0.25
+			building_nationalization_investment_return_add = 0.25
+			country_government_dividends_reinvestment_add = -0.25
 			country_government_dividends_efficiency_add = 0.25
+			building_nationalization_cost_mult = -0.25
 			country_leverage_generation_mult = 0.25
 		}
 	}
