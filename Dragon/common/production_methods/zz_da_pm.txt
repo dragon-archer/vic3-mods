@@ -1,4 +1,4 @@
-# New
+﻿# New
 pm_default_building_empire_center = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
@@ -704,6 +704,25 @@ pm_film_art = {
 	}
 
 	# required_input_goods = electricity
+}
+
+# 06_urban_center
+
+pm_principle_freedom_of_movement_3 = {
+	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
+
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_freedom_of_movement_3
+		principle_external_trade_3
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_migration_pull_mult = 0.2
+		}
+	}
 }
 
 ## 09_misc_resources
