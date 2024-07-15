@@ -89,6 +89,14 @@ da.300 = {
 	}
 	option = {
 		name = da.300.e
+		trigger = { scope:target_country = { is_direct_subject_of = root } }
+		scope:target_country = {
+			add_liberty_desire = -50
+			set_owes_obligation_to = { country = root setting = no }
+		}
+	}
+	option = {
+		name = da.300.f
 	}
 }
 

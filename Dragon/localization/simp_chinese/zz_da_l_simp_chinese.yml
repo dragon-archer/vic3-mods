@@ -93,7 +93,8 @@
  da.300.b: "不妨让[SCOPE.sC('target_country').GetName]象征性支付一点金钱"
  da.300.c: "还有这种好事？！我要狠狠敲诈[SCOPE.sC('target_country').GetName]一笔"
  da.300.d: "我们可以借此获取对[SCOPE.sC('target_country').GetName]的影响"
- da.300.e: "我还是希望保留外交上牵制[SCOPE.sC('target_country').GetName]的能力"
+ da.300.e: "只要让[SCOPE.sC('target_country').GetName]更加听话就可以了"
+ da.300.f: "我还是希望保留外交上牵制[SCOPE.sC('target_country').GetName]的能力"
  da_obligation_gain: "用义务换取金钱"
  da_obligation_loss: "为义务支付金钱"
 
