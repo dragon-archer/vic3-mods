@@ -9,6 +9,9 @@
 /Dragon/*.md
 /Dragon/*.conf
 
+# GDP Ownership Display
+!/GDP Ownership Display/
+
 # Integrated Cultures
 !/Integrated Cultures/
 
