@@ -1,0 +1,293 @@
+#DA: Change the autonomy button for annex subject
+types diplomatic
+{
+	type liberty_desire_bar_and_buttons = container {
+
+		block "subject_type_datacontext" {
+			datacontext = "[AccessPlayer.GetSubjectType]"
+		}
+
+		block "liberty_desire_overlord_datacontext" {}
+
+		# PROGRESSBAR AND FRAME
+		widget = {
+			block "progressbar_and_frame_parentanchor" {
+				parentanchor = bottom
+			}
+
+			block "liberty_desire_bar_and_frame_size" {
+				size = { 307 52 }
+			}
+
+			widget = {
+				parentanchor = center
+				allow_outside = yes
+
+				block "bar_position" {
+					position = { 0 4 }
+				}
+
+				block "bar_size" {
+					size = { 220 10 }
+				}
+
+				levels_progressbar = {
+					allow_outside = yes
+					block "liberty_desire_datacontext" {}
+
+					datamodel = "[GetLibertyDesireLevels]"
+
+					blockoverride "item_properties" {
+						layoutstretchfactor_horizontal = "[FixedPointToInt(LibertyDesireLevel.GetWidth)]"
+						layoutpolicy_vertical = expanding
+						tooltip = "[SelectLocalization( LibertyDesireLevel.IsActive( Country.GetLibertyDesireRaw ), 'LIBERTY_DESIRE_LEVEL_ACTIVE_TOOLTIP', 'LIBERTY_DESIRE_LEVEL_INACTIVE_TOOLTIP' )]"
+					}
+
+					blockoverride "level_active" {
+						visible = "[LibertyDesireLevel.IsActive( Country.GetLibertyDesireRaw )]"
+					}
+
+					blockoverride "last_level" {
+						visible = "[Not(EqualTo_CFixedPoint( LibertyDesireLevel.GetUpperBound, '(CFixedPoint)100' ))]"
+					}
+				}
+			}
+
+			block "liberty_desire_frame" {
+				icon = {
+					size = { 100% 100% }
+
+					block "liberty_desire_frame_texture" {
+						texture = "gfx/interface/backgrounds/subject_liberty_desire_bar.dds"
+					}
+				}
+			}
+		}
+
+		### INCREASE/DECREASE AUTONOMY ICONS - COUNTRY IS NOT RELATED TO THE PLAYER
+		widget = {
+			parentanchor = center
+
+			# Unfortunately we cannot simply use GetPlayer.IsSubject here because that's less specific than IsSubjectOf.
+			# We need to use IsSubjectOf cause we want to make sure we're dealing with a direct subject.
+			visible = "[Not(Or(GetPlayer.IsSubjectOf(Country.Self), Country.IsSubjectOf(GetPlayer.Self)))]"
+
+			block "buttons_widget_position_and_size" {
+				position = { 0 1 }
+				size { 294 40 }
+			}
+
+			### DECREASE AUTONOMY ICON
+			widget = {
+				parentanchor = vcenter
+
+				block "autonomy_button_size" {
+					size = { 40	40 }
+				}
+
+				icon = {
+					visible = "[SubjectType.GetLowerAutonomySubjectType(Country.Self).IsValid]"
+					parentanchor = center
+					size = { 75% 75% }
+					tooltip = "SUBJECT_CAN_NOT_DECREASE_OWN_AUTONOMY_TOOLTIP"
+					using = tooltip_se
+					texture = "[SubjectType.GetLowerAutonomySubjectType(Country.Self).GetTexture]"
+				}
+
+				icon = {
+					visible = "[Not(SubjectType.GetLowerAutonomySubjectType(Country.Self).IsValid)]"
+					parentanchor = center
+					size = { 75% 75% }
+					tooltip = "SUBJECT_CAN_NOT_DECREASE_OWN_AUTONOMY_ANNEX_TOOLTIP"
+					using = tooltip_se
+					texture = "gfx/interface/icons/war_goals/annex_country.dds"
+				}
+			}
+
+			### INCREASE AUTONOMY ICON
+			widget = {
+				parentanchor = right|vcenter
+
+				block "autonomy_button_size" {
+					size = { 40	40 }
+				}
+
+				icon = {
+					visible = "[SubjectType.GetHigherAutonomySubjectType(Country.Self).IsValid]"
+					parentanchor = center
+					size = { 75% 75% }
+					tooltip = "OTHER_COUNTRY_CAN_NOT_INCREASE_SUBJECT_AUTONOMY_TOOLTIP"
+					using = tooltip_se
+					texture = "[SubjectType.GetHigherAutonomySubjectType(Country.Self).GetTexture]"
+				}
+
+				icon = {
+					visible = "[Not(SubjectType.GetHigherAutonomySubjectType(Country.Self).IsValid)]"
+					parentanchor = center
+					size = { 75% 75% }
+					tooltip = "OTHER_COUNTRY_CAN_NOT_INCREASE_AUTONOMY_SUBJECT_TO_INDEPENDENCE_TOOLTIP"
+					using = tooltip_se
+					texture = "gfx/interface/icons/war_goals/independence.dds"
+				}
+			}
+		}
+
+		### INCREASE/DECREASE AUTONOMY ICONS AND BUTTONS - COUNTRY IS RELATED TO THE PLAYER (SUBJECT OR OVERLORD)
+		widget = {
+			parentanchor = center
+			visible = "[Or(GetPlayer.IsSubjectOf(Country.Self), Country.IsSubjectOf(GetPlayer.Self))]"
+
+			block "buttons_widget_position_and_size" {
+				position = { 0 1 }
+				size { 294 40 }
+			}
+
+			### DECREASE AUTONOMY ICON - PLAYER IS SUBJECT
+			widget = {
+				parentanchor = vcenter
+				visible = "[GetPlayer.IsSubjectOf(Country.Self)]"
+
+				block "autonomy_button_size" {
+					size = { 40	40 }
+				}
+
+				icon = {
+					visible = "[SubjectType.GetLowerAutonomySubjectType(GetPlayer.Self).IsValid]"
+					parentanchor = center
+					size = { 75% 75% }
+					alpha = "[TransparentIfTrue('(bool)yes')]"
+					tooltip = "PLAYER_CAN_NOT_DECREASE_OWN_AUTONOMY_TOOLTIP"
+					using = tooltip_se
+					texture = "[SubjectType.GetLowerAutonomySubjectType(GetPlayer.Self).GetTexture]"
+				}
+
+				icon = {
+					visible = "[Not(SubjectType.GetLowerAutonomySubjectType(GetPlayer.Self).IsValid)]"
+					parentanchor = center
+					size = { 75% 75% }
+					alpha = "[TransparentIfTrue('(bool)yes')]"
+					tooltip = "SUBJECT_CAN_NOT_DECREASE_OWN_AUTONOMY_ANNEX_TOOLTIP"
+					using = tooltip_se
+					texture = "gfx/interface/icons/war_goals/annex_country.dds"
+				}
+			}
+
+			### DECREASE AUTONOMY - ANNEX - PLAYER IS OVERLORD
+			autonomy_button = { #DA
+				parentanchor = vcenter
+				visible = "[And(Country.IsSubjectOf(GetPlayer.Self), Not(SubjectType.GetLowerAutonomySubjectType(Country.Self).IsValid))]"
+
+				blockoverride "datacontext" {
+					datacontext = "[GetCountryDiplomaticAction('da_annex_subject', GetPlayer.Self, Country.Self)]"
+				}
+
+				blockoverride "clicksound" {
+					using = generic_diplomatic_action_sound
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "gfx/interface/icons/war_goals/annex_country.dds"
+				}
+			}
+
+			### DECREASE AUTONOMY - SUBJECT TYPE - PLAYER IS OVERLORD
+			autonomy_button = {
+				parentanchor = vcenter
+				visible = "[And(Country.IsSubjectOf(GetPlayer.Self), SubjectType.GetLowerAutonomySubjectType(Country.Self).IsValid)]"
+
+				blockoverride "datacontext" {
+					datacontext = "[GetCountryDiplomaticAction('da_decrease_autonomy', GetPlayer.Self, Country.Self)]"
+				}
+
+				blockoverride "clicksound" {
+					using = generic_diplomatic_action_sound
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "[SubjectType.GetLowerAutonomySubjectType(Country.Self).GetTexture]"
+				}
+			}
+
+			### INCREASE AUTONOMY - INDEPENDENCE - PLAYER IS OVERLORD (release subject instantly)
+			autonomy_button = {
+				parentanchor = right|vcenter
+				visible = "[And(Country.IsSubjectOf(GetPlayer.Self), Not(SubjectType.GetHigherAutonomySubjectType(Country.Self).IsValid))]"
+
+				blockoverride "datacontext" {
+					datacontext = "[Country.GetSubjectPact.GetDiplomaticAction]"
+				}
+
+				blockoverride "clicksound" {
+					using = generic_diplomatic_action_sound
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "gfx/interface/icons/war_goals/independence.dds"
+				}
+			}
+
+			### INCREASE AUTONOMY - SUBJECT TYPE - PLAYER IS OVERLORD
+			autonomy_button = {
+				parentanchor = right|vcenter
+				visible = "[And(Country.IsSubjectOf(GetPlayer.Self), SubjectType.GetHigherAutonomySubjectType(Country.Self).IsValid)]"
+
+				blockoverride "datacontext" {
+					datacontext = "[GetCountryDiplomaticAction('da_increase_autonomy_of_subject', GetPlayer.Self, Country.Self)]"
+				}
+
+				blockoverride "clicksound" {
+					using = generic_diplomatic_action_sound
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "[SubjectType.GetHigherAutonomySubjectType(Country.Self).GetTexture]"
+				}
+			}
+
+			### INCREASE AUTONOMY - INDEPENDENCE - PLAYER IS SUBJECT
+			autonomy_button = {
+				parentanchor = right|vcenter
+				visible = "[And(GetPlayer.IsSubjectOf(Country.Self), Not(SubjectType.GetHigherAutonomySubjectType(GetPlayer.Self).IsValid))]"
+
+				blockoverride "datacontext" {
+					datacontext = "[GetDiplomaticPlayType('dp_independence')]"
+				}
+
+				blockoverride "button_properties" {
+					enabled = "[IsValid(DiplomaticPlayType.GetStartCommandCountry(GetPlayer.Self, Country.Self))]"
+					onclick = "[DiplomaticPlayType.ShowConfirmationCountry(Country.Self)]"
+				}
+
+				blockoverride "clicksound" {
+					using = diplomatic_play_confirmation_sound
+				}
+
+				blockoverride "tooltip" {
+					tooltip = "[DiplomaticPlayType.GetStartTooltipCountry(GetPlayer.Self, Country.Self)]"
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "gfx/interface/icons/war_goals/independence.dds"
+				}
+			}
+
+			### INCREASE AUTONOMY - SUBJECT TYPE - PLAYER IS SUBJECT
+			autonomy_button = {
+				parentanchor = right|vcenter
+				visible = "[And(GetPlayer.IsSubjectOf(Country.Self), SubjectType.GetHigherAutonomySubjectType(GetPlayer.Self).IsValid)]"
+
+				blockoverride "datacontext" {
+					datacontext = "[GetCountryDiplomaticAction('da_increase_autonomy_of_self', GetPlayer.Self, Country.Self)]"
+				}
+
+				blockoverride "clicksound" {
+					using = generic_diplomatic_action_sound
+				}
+
+				blockoverride "autonomy_icon_texture" {
+					texture = "[SubjectType.GetHigherAutonomySubjectType(GetPlayer.Self).GetTexture]"
+				}
+			}
+		}
+	}
+}
