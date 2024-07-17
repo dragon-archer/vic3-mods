@@ -61,9 +61,108 @@ remove_expedition_events_effect = {
 		set_character_busy_and_immortal = no
 	}
 
-	# set_variable = {
+	# set_variable = { #PBF
 	# 	name = help_from_locals
 	# 	value = no
 	# }
 	remove_variable = help_from_locals
+}
+
+congo_river_expedition_location = {
+	if = {
+		limit = {
+			var:expedition_progress <= 1 #PBF
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_BAS_CONGO
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 2
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CONGO
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 3
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_EQUATEUR
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 4
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_EQUATEUR
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 5
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CONGO_ORIENTALE
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 6
+		}
+
+		random_state = {
+			limit = {
+				state_region = s:STATE_CONGO_ORIENTALE
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 7
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KATANGA
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
+
+	if = {
+		limit = {
+			var:expedition_progress = 8
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KATANGA
+			}
+			save_scope_as = current_expedition_location
+		}
+	}
 }
