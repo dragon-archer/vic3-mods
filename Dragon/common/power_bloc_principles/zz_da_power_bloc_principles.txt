@@ -8,8 +8,6 @@ principle_internal_trade_1 = {
 	member_modifier = {
 		# Members get a bonus to Company throughput
 		country_company_throughput_bonus_add = 0.1
-		# More convoy going to the market owner, effect scaling upwards with principle levels
-		country_convoy_contribution_to_market_owner_add = 0.2
 	}
 
 	ai_weight = {
@@ -41,7 +39,7 @@ principle_internal_trade_2 = {
 	member_modifier = {
 		# Modifiers from previous level(s)
 		country_company_throughput_bonus_add = 0.1
-		country_convoy_contribution_to_market_owner_add = 0.3
+		country_convoy_contribution_to_market_owner_add = 0.1
 
 		# Members get increased tariffs from countries outside the Power Bloc and infrastructure
 		state_infrastructure_mult = 0.1
@@ -61,7 +59,7 @@ principle_internal_trade_3 = {
 	member_modifier = {
 		# Modifiers from previous level(s)
 		country_company_throughput_bonus_add = 0.1
-		country_convoy_contribution_to_market_owner_add = 0.4
+		country_convoy_contribution_to_market_owner_add = 0.2
 		state_infrastructure_mult = 0.1
 		state_market_access_price_impact = 0.05
 		market_land_trade_capacity_add = 50
