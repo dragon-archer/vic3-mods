@@ -71,6 +71,7 @@ All languages are supported, with special improvements to Simplified Chinese
     - coffee_with_milk: Check for scope existence & fix typo in `coffee_with_milk.6`
     - pedro_brazil_events: Correctly save `isabel_scope` in `pedro.12`
   - election_events/: communist_facist_election_events: Fix scope error in `communist_elections.1` and `communist_elections.3`
+  - expedition_events/: niger_river_expedition_events: Avoid improve relation with your own country in `expedition_events.130`
   - law_events/: slavery_laws: Fix a trigger in `slavery_law_events.7` (`NOT` to `NOR`)
   - oil_rush_events: Avoid permanent funding oil pipelines in `oil_rush.4`
   - red_scare_events: Fix scope error in `red_scare.14`
