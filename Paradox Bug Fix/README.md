@@ -33,6 +33,9 @@ All languages are supported, with special improvements to Simplified Chinese
     - Fix the icon of `Feminist IG`
     - Remove duplicate law stances from `Socialist` ideology since it can only be applied to TU who already have `Proletarian` ideology
     - Fix a trigger for `Radical` ideology (`NOT` -> `NOR`)
+    - Add missing law stances for `Proletarian`, `Modernizer`, `Bonapartist`, `Orléanist` and `Market Liberal`
+    - Correct agitator check for `Enlightened Royalist`
+    - Correct agitator weight for `Enlightened Royalist` and `Humanitarian`
   - journal_entries/
     - Enable AI countries to activate & complete techonology JEs
     - Fix Opium JE as Opium Plantation is **NOT** a potential resource
@@ -51,8 +54,14 @@ All languages are supported, with special improvements to Simplified Chinese
     - Make `interest_group_ig_armed_forces_approval_add` have 1 decimal to keep in line with similar modifier types
     - Make `power_bloc_income_transfer_to_leader_factor` a percentage
   - objective_subgoals/: Remove non-exists scope `slavery_objective_target`
+  - on_actions/: Fix church ideology
+  - parties/
+    - Correct `from_powerful_communists` for `Social Democratic Party`
+    - Fix several `from_serfdom` triggers
   - pop_types/: Reorder the calculation of `political_engagement_mult` & `qualifications` to boost perfomance (Thanks the idea of PBO mod)
-  - production_methods/: `pm_trade_center_principle_external_trade_2` should also have basic clerk employments
+  - production_methods/
+    - 02_agro: `pm_fertilization_building_rice_farm` should consume only 20 fertilizer
+    - 11_private_infrastructure: `pm_trade_center_principle_external_trade_2` should also have basic clerk employments
   - script_values/:
     - Fix liberty desire display
     - Increase the reduction of `East Indies` from 0.2 to 0.4

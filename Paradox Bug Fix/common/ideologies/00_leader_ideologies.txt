@@ -2544,6 +2544,7 @@ ideology_market_liberal = {
 	}
 
 	lawgroup_labor_rights = {
+		law_no_workers_rights = neutral #PBF #TODO: find out whether it's proper
 		law_regulatory_bodies = disapprove
 		law_worker_protections = strongly_disapprove
 	}
@@ -3311,7 +3312,7 @@ ideology_humanitarian = {
 				owner = {
 					OR = {
 						has_law = law_type:law_restricted_child_labor
-						has_law = law_type:law_compulsory_primary_school
+						has_law = law_type:law_child_labor_allowed #PBF
 					}
 				}
 			}
@@ -4191,7 +4192,7 @@ ideology_humanitarian_royalist = {
 			owner = {
 				has_law = law_type:law_monarchy
 				has_law = law_type:law_multicultural
-				has_law = law_type:law_guaranteed_liberties
+				has_law = law_type:law_protected_speech #PBF
 				has_law = law_type:law_womens_suffrage
 				has_law = law_type:law_compulsory_primary_school
 			}
@@ -4319,7 +4320,7 @@ ideology_humanitarian_royalist = {
 				owner = {
 					OR = {
 						has_law = law_type:law_restricted_child_labor
-						has_law = law_type:law_compulsory_primary_school
+						has_law = law_type:law_child_labor_allowed #PBF
 					}
 				}
 			}

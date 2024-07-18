@@ -510,6 +510,7 @@ ideology_proletarian = {
 		law_agrarianism = neutral
 		law_traditionalism = disapprove
 		law_laissez_faire = disapprove
+		law_industry_banned = neutral #PBF #TODO: find out whether it's proper
 	}
 
 	lawgroup_welfare = {
