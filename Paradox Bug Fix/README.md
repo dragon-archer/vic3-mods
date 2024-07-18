@@ -91,4 +91,4 @@ Plus, it's intended to overwrite the whole vanilla file instead of creating a ne
 - GDP Ownership Display - Display GDP ownership ratio at home and abroad on country panel
   - Get it on [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216) or [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/GDP%20Ownership%20Display)
 - Paradox Highlight - A VS Code extension that provides syntax highlight for Paradox Games
-  - Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight)
+  - Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight), or visit [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) for more information

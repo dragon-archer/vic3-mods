@@ -92,4 +92,4 @@
 - GDP所有权显示 - 在国家面板显示选定国家的国内外GDP所有权比例
   - 可从 [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216) 或 [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/GDP%20Ownership%20Display) 获取
 - Paradox Highlight - 一个为P社脚本提供语法高亮的VSCode插件
-  - 可从 [GitHub](https://github.com/dragon-archer/paradox-highlight) 或 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight) 获取
+  - 可从 [GitHub](https://github.com/dragon-archer/paradox-highlight) 或 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight) 获取，也可访问 [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) 获取更多信息
