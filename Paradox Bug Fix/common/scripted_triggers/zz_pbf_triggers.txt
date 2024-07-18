@@ -32,3 +32,42 @@ ai_has_enact_weight_modifier_journal_entries = {
 		}
 	}
 }
+
+chinese_manchu_queue_hairstyle_character_trigger = { # hairsyle for Manchu characters not living living under discriminatory Han rule, and Han characters living under discriminatory Manchu rule
+	exists = scope:character
+	scope:character = {
+		exists = home_country
+		OR = {
+			AND = {
+				home_country = {
+					ruler ?= { #PBF
+						has_culture = cu:manchu
+					}
+					NOT = {
+						has_law = law_type:law_multicultural
+					}
+				}
+				culture = {
+					has_discrimination_trait = han_chinese
+				}
+			}
+			AND = {
+				NOT = {
+					home_country = {
+						ruler ?= {
+							culture = {
+								has_discrimination_trait = han_chinese
+							}
+						}
+						cu:manchu = {
+							NOT = {
+								culture_is_discriminated_in = scope:character.home_country
+							}
+						}
+					}
+				}
+				culture = cu:manchu
+			}
+		}
+	}
+}

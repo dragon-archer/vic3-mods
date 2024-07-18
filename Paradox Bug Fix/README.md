@@ -62,6 +62,7 @@ All languages are supported, with special improvements to Simplified Chinese
   - scripted_triggers/:
     - Fix typo in `is_brazil_northeast_state` (correct STATE_PAUAI to STATE_PIAUI)
     - Check for the existence of scopes in `ai_has_enact_weight_modifier_journal_entries`
+    - Check for the existence of `ruler` in `chinese_manchu_queue_hairstyle_character_trigger`
 - events/
   - agitators_events/
     - revolution_events_02: Fix scope error in `revolution_pulse_events.9`
@@ -76,7 +77,9 @@ All languages are supported, with special improvements to Simplified Chinese
   - oil_rush_events: Avoid permanent funding oil pipelines in `oil_rush.4`
   - red_scare_events: Fix scope error in `red_scare.14`
   - victoria_events: Check for the existence of `c:HAN`
-- gfx/portraits/portrait_animations/animations: Check for the existence of character owner in `smoker_character_idle`
+- gfx/portraits/
+  - portrait_animations/animations: Check for the existence of character owner in `smoker_character_idle`
+  - portrait_modifiers/01_headgear: Check for the existence of character owner in `korean_empire_military_headgear`
 - gui/states_panel: Translate for `Inactive Treaty Port`
 
 ## Note for modders
