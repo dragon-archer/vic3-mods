@@ -19,7 +19,7 @@
 }
 
 ideology_feminist_ig = {
-	icon = "gfx/interface/icons/ideology_icons/unused/womens_liberation.dds"
+	icon = "gfx/interface/icons/ideology_icons/unused/womens_liberation.dds" #PBF
 
 	priority = 100 # Overrides other non-leader ideologies with a lower prio
 

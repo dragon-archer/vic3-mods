@@ -601,7 +601,7 @@ revolution_pulse2_events.4 = {
 		}
 		random_list = {
 			20 = {
-				scope:ongoing_revolution_movement = {
+				scope:ongoing_revolution_movement = { #PBF
 					add_modifier = {
 						name = transnational_bloody_suppression
 						months = normal_modifier_time

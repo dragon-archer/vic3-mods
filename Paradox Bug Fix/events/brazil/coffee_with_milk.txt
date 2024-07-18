@@ -490,7 +490,7 @@ coffee_with_milk.6 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
-		exists = scope:milk_state
+		exists = scope:milk_state #PBF
 		exists = scope:coffee_state
 		NOR = {
 			scope:milk_state = {

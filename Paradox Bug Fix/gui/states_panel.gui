@@ -1,5 +1,4 @@
 #PBF: Translate treaty port
-#TODO: Use loc key instead of raw_text
 # COPY-PASTED FOR NOW
 @panel_width_minus_10 = 530			# used to be 450
 @panel_width = 540  				# used to be 460
@@ -1394,7 +1393,7 @@ types state_panel_types
 					}
 
 					blockoverride "name" {
-						raw_text = "无效的[concept_treaty_port]"
+						text = "TREATY_PORT_INACTIVE"
 					}
 				}
 
@@ -2443,7 +2442,7 @@ types state_panel_types
 						}
 
 						blockoverride "name" {
-							raw_text = "无效的[concept_treaty_port]"
+							text = "TREATY_PORT_INACTIVE"
 						}
 					}
 				}

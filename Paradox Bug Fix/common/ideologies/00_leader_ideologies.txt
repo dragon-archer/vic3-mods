@@ -432,7 +432,7 @@ ideology_radical = {
 			}
 		}
 		# Monarchs cannot be republicans
-		NAND = {
+		NAND = { #PBF
 			owner = {
 				has_law = law_type:law_monarchy
 			}
@@ -1031,7 +1031,9 @@ ideology_pacifist = {
 			}
 		}
 		scope:interest_group = {
-			NOT = { is_interest_group_type = ig_armed_forces }
+			NOT = {
+				is_interest_group_type = ig_armed_forces
+			}
 		}
 		scope:interest_group = {
 			NOR = {

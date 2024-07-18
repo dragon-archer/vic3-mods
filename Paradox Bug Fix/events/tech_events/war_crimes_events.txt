@@ -130,7 +130,7 @@ war_crimes.2 = {
 				cash_reserves_ratio > 0.25
 				weekly_profit > 0
 				occupancy >= 0.5
-				level >= 1
+				level >= 2 #PBF
 			}
 			save_scope_as = munitions_building
 			state = {

@@ -556,7 +556,7 @@ slavery_law_events.7 = {
 			has_ideology = ideology:ideology_pro_slavery
 		}
 		OR = {
-			NOR = {
+			NOR = { #PBF
 				this = c:USA
 				has_variable = slavery_recently_abolished
 			}

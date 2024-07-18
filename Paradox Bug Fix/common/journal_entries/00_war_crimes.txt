@@ -64,7 +64,7 @@ je_munitions_factories = {
 			cash_reserves_ratio > 0.25
 			weekly_profit > 0
 			occupancy >= 0.5
-			level >= 1
+			level >= 2 #PBF
 		}
 		can_research = rifling
 	}

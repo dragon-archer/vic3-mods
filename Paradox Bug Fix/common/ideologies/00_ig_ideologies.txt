@@ -586,7 +586,7 @@ ideology_populist = {
 	}
 }
 
-ideology_socialist = {
+ideology_socialist = { #PBF
 	icon = "gfx/interface/icons/ideology_icons/socialist.dds"
 
 	lawgroup_governance_principles = {
