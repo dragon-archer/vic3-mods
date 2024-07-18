@@ -22,4 +22,4 @@
 - Paradox Bug Fix - A simple mod to solve tons of Paradox mistakes
   - Get it on [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729) or [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/Paradox%20Bug%20Fix)
 - Paradox Highlight - A VS Code extension that provides syntax highlight for Paradox Games
-  - Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight)
+  - Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight), or visit [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) for more information

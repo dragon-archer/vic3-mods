@@ -20,4 +20,4 @@
 - P社Bug修复 - 一个修复了大量P社bug和中文翻译错误的模组
   - 可从 [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729) 或 [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/Paradox%20Bug%20Fix) 获取
 - Paradox Highlight - 一个为P社脚本提供语法高亮的VSCode插件
-  - 可从 [GitHub](https://github.com/dragon-archer/paradox-highlight) 或 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight) 获取
+  - 可从 [GitHub](https://github.com/dragon-archer/paradox-highlight) 或 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight) 获取，也可访问 [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) 获取更多信息
