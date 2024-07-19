@@ -1,5 +1,22 @@
 # Victoria 3 mods Changelog
 
+## Version 1.2.0, 2024-07-19
+
+### Compatible game version
+
+- Victoria 3 1.7.5 (Kahwah)
+
+### New Feature
+
+- New mod: GDP Ownership Display
+
+### Enhancements
+
+- All mods support 1.7.5 now
+- Reworked documention
+- [DA] Improved several diplomatic actions
+- [PBF] Greatly extend fix counts
+
 ## Version 1.1.0, 2024-07-08
 
 ### Compatible game version
