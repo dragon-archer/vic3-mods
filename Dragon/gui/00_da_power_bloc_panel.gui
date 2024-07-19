@@ -1,0 +1,762 @@
+#DA: Change principle slots from 4 to 8
+# COPY-PASTED FOR NOW
+@panel_width_minus_20 = 520
+@panel_width_minus_10 = 530			# used to be 450
+@panel_width = 540  				# used to be 460
+@panel_width_half = 270				# used to be 230
+@panel_width_plus_10 = 550  		# used to be 470
+@panel_width_plus_14 = 554			# used to be 474
+@panel_width_plus_14_half = 277		# used to be 237
+@panel_width_plus_20 = 560			# used to be 480
+@panel_width_plus_30 = 570			# used to be 490
+@panel_width_plus_70 = 610			# used to be 530
+
+@grid_spacing = 15
+
+types power_bloc_panel_types
+{
+	type power_bloc_panel_overview_tab = flowcontainer  {
+		direction = vertical
+		using = default_list_position
+
+		### BACKGROUND WITH LEADERS SECTION
+		widget = {
+			size = { 560 274 }
+
+			widget = {
+				size = { 556 274 }
+				parentanchor = hcenter
+
+				### OVERVIEW BACKGROUND
+				background = {
+					texture = "[PowerBloc.GetIdentity.GetBackground]"
+					using = fade_top_illus
+				}
+
+				background = {
+					using = simple_frame
+				}
+
+				### CHARACTERS
+				# BLOC MEMBER 4
+				# MEMBER AVAILABLE
+				container = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)3' )]"
+					parentanchor = hcenter
+					position = { -210 15 }
+					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+					character_portrait_base = {
+						parentanchor = hcenter
+						datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)3')]"
+						datacontext = "[Country.GetRuler]"
+
+						size = { 250 270 }
+
+						blockoverride "portrait_size" {
+							block "character_portrait_size" {
+								size = { 265 265 }
+							}
+						}
+
+						blockoverride "portrait_texture" {
+							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+						}
+
+						blockoverride "portrait_icons" {}
+						blockoverride "tooltip" {}
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+
+						blockoverride "portrait_button" {
+							button = {
+								parentanchor = hcenter
+								size = { 100% 100% }
+
+								block "portrait_button_onclick" {
+									onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+								}
+
+								block "portrait_button_onrightclick" {
+									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+								}
+
+								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( PowerBloc.GetMemberWithUniqueHeadOfState('(int32)3').GetRuler )]"
+								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							}
+						}
+					}
+				}
+
+				# NO FOURTH MEMBER AVAILABLE
+				widget = {
+					visible = "[Not( GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)3' ))]"
+
+					parentanchor = hcenter
+					size = { 280 280 }
+					position = { -210 15 }
+
+					icon = {
+						size = { 260 260 }
+						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+						alpha = 1
+					}
+				}
+
+				### BLOC MEMBER 2
+				# MEMBER AVAILABLE
+				container = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)1' )]"
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)1')]"
+					parentanchor = hcenter
+					position = { -110 15 }
+					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+					character_portrait_base = {
+						parentanchor = hcenter
+						datacontext = "[Country.GetRuler]"
+
+						size = { 250 265 }
+
+						blockoverride "portrait_size" {
+							block "character_portrait_size" {
+								size = { 280 280 }
+							}
+						}
+
+						blockoverride "portrait_texture" {
+							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+						}
+
+						blockoverride "portrait_mask" {
+							mask = "gfx/interface/portraits/portrait_mask_small_fade_bottom.dds"
+						}
+
+						blockoverride "portrait_icons" {}
+						blockoverride "tooltip" {}
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+
+						blockoverride "portrait_button" {
+							button = {
+								parentanchor = hcenter
+								size = { 100% 100% }
+
+								block "portrait_button_onclick" {
+									onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+								}
+
+								block "portrait_button_onrightclick" {
+									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+								}
+
+								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( PowerBloc.GetMemberWithUniqueHeadOfState('(int32)1').GetRuler )]"
+								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							}
+						}
+					}
+
+					textbox = {
+						visible = "[Country.IsPowerStruggling]"
+						parentanchor = hcenter
+						autoresize = yes
+						align = hcenter|nobaseline
+						max_width = 150
+						fontsize_min = 12
+						elide = right
+						text = "COUNTRY_POWER_BLOC_POWER_STRUGGLE_STATUS_CENTERED"
+
+						background = {
+							using = blurry_dark_background
+							margin = { 5 5 }
+						}
+					}
+				}
+
+				# NO SECOND MEMBER AVAILABLE
+				widget = {
+					visible = "[Not( GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)1' ))]"
+					parentanchor = hcenter
+					size = { 280 280 }
+					position = { -110 5 }
+
+					icon = {
+						size = { 280 280 }
+						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+						alpha = 1
+					}
+				}
+
+				### BLOC MEMBER 5
+				# MEMBER AVAILABLE
+				container = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)4' )]"
+					parentanchor = hcenter
+					position = { 210 15 }
+					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+					character_portrait_base = {
+						parentanchor = hcenter
+						datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)4')]"
+						datacontext = "[Country.GetRuler]"
+
+						size = { 250 270 }
+
+						blockoverride "portrait_size" {
+							block "character_portrait_size" {
+								size = { 265 265 }
+							}
+						}
+
+						blockoverride "portrait_texture" {
+							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+						}
+
+						blockoverride "portrait_icons" {}
+						blockoverride "tooltip" {}
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+
+						blockoverride "portrait_button" {
+							button = {
+								parentanchor = hcenter
+								size = { 100% 100% }
+
+								block "portrait_button_onclick" {
+									onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+								}
+
+								block "portrait_button_onrightclick" {
+									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+								}
+
+								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( PowerBloc.GetMemberWithUniqueHeadOfState('(int32)4').GetRuler )]"
+								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							}
+						}
+					}
+				}
+
+				# NO FIFTH MEMBER AVAILABLE
+				widget = {
+					visible = "[Not( GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)4' ))]"
+					parentanchor = hcenter
+					size = { 280 280 }
+					position = { 210 15 }
+
+					icon = {
+						size = { 260 260 }
+						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+						mirror = horizontal
+						alpha = 1
+					}
+				}
+
+				### BLOC MEMBER 3
+				# MEMBER AVAILABLE
+				container = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)2' )]"
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)2')]"
+					parentanchor = hcenter
+					position = { 110 15 }
+					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+					character_portrait_base = {
+						parentanchor = hcenter
+						datacontext = "[Country.GetRuler]"
+
+						size = { 250 265 }
+
+						blockoverride "portrait_size" {
+							block "character_portrait_size" {
+								size = { 280 280 }
+							}
+						}
+
+						blockoverride "portrait_texture" {
+							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+						}
+
+						blockoverride "portrait_icons" {}
+						blockoverride "tooltip" {}
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+
+						blockoverride "portrait_button" {
+							button = {
+								parentanchor = hcenter
+								size = { 100% 100% }
+
+								block "portrait_button_onclick" {
+									onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+								}
+
+								block "portrait_button_onrightclick" {
+									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+								}
+
+								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( PowerBloc.GetMemberWithUniqueHeadOfState('(int32)2').GetRuler )]"
+								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							}
+						}
+					}
+
+					textbox = {
+						visible = "[Country.IsPowerStruggling]"
+						parentanchor = hcenter
+						autoresize = yes
+						align = hcenter|nobaseline
+						max_width = 150
+						fontsize_min = 12
+						elide = right
+						text = "COUNTRY_POWER_BLOC_POWER_STRUGGLE_STATUS_CENTERED"
+
+						background = {
+							using = blurry_dark_background
+							margin = { 5 5 }
+						}
+					}
+				}
+
+				# NO THIRD MEMBER AVAILABLE
+				widget = {
+					visible = "[Not( GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)2' ))]"
+					parentanchor = hcenter
+					size = { 280 280 }
+					position = { 110 5 }
+
+					icon = {
+						size = { 280 280 }
+						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+						mirror = horizontal
+						alpha = 1
+					}
+				}
+
+				### BLOC MEMBER 1 (LEADER)
+				container = {
+					parentanchor = hcenter
+					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+					datacontext = "[PowerBloc.GetLeader.GetRuler]"
+
+					character_portrait_base = {
+						parentanchor = hcenter
+						size = { 250 265 }
+
+						blockoverride "portrait_size" {
+							block "character_portrait_size" {
+								size = { 300 300 }
+							}
+						}
+
+						blockoverride "portrait_position" {
+							position = { 0 15 }
+						}
+
+						blockoverride "portrait_texture" {
+							portrait_texture = "[Character.GetAnimatedPortrait('pop_environment', 'camera_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+						}
+
+						blockoverride "portrait_icons" {}
+						blockoverride "tooltip" {}
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+
+						blockoverride "portrait_button" {
+							button = {
+								parentanchor = hcenter
+								size = { 100% 100% }
+
+								block "portrait_button_onclick" {
+									onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+								}
+
+								block "portrait_button_onrightclick" {
+									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+								}
+
+								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( PowerBloc.GetLeader.GetRuler )]"
+								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							}
+						}
+					}
+
+				}
+
+				power_bloc_rank_badge = {
+					size = { 57 57 }
+					position = { 5 5 }
+					using = clickthrough_blocker
+				}
+
+				### POWER BLOC RANK VFX
+				### RANK 1
+				vfx = {
+					visible = "[PowerBloc.IsRanked('(int32)1')]"
+					position = { 0 -2 }
+
+					blockoverride "entity_instance" {
+						entity_instance = vfx_entity_ui_powerbloc_rank_01_rulers
+					}
+				}
+
+				### RANK 2
+				vfx = {
+					visible = "[PowerBloc.IsRanked('(int32)2')]"
+					position = { 0 -2 }
+
+					blockoverride "entity_instance" {
+						entity_instance = vfx_entity_ui_powerbloc_rank_02_rulers
+					}
+				}
+
+				### RANK 3
+				vfx = {
+					visible = "[PowerBloc.IsRanked('(int32)3')]"
+					position = { 0 -2 }
+
+					blockoverride "entity_instance" {
+						entity_instance = vfx_entity_ui_powerbloc_rank_03_rulers
+					}
+				}
+
+				### FLAGS
+				#BLOC MEMBER 1 FLAG
+				small_flag = {
+					datacontext = "[PowerBloc.GetLeader]"
+					position = { 0 -20 }
+					parentanchor = hcenter|bottom
+				}
+
+				#BLOC MEMBER 2 FLAG
+				tiny_flag = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)1' )]"
+					position = { -110 -20 }
+					parentanchor = hcenter|bottom
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)1')]"
+				}
+
+				#BLOC MEMBER 3 FLAG
+				tiny_flag = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)2' )]"
+					position = { 110 -20 }
+					parentanchor = hcenter|bottom
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)2')]"
+				}
+
+				#BLOC MEMBER 4 FLAG
+				tiny_flag = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)3' )]"
+					position = { -210 -20 }
+					parentanchor = hcenter|bottom
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)3')]"
+				}
+
+				#BLOC MEMBER 5 FLAG
+				tiny_flag = {
+					visible = "[GreaterThan_int32( GetDataModelSize(PowerBloc.GetMembersWithUniqueHeadsOfState), '(int32)4' )]"
+					position = { 210 -20 }
+					parentanchor = hcenter|bottom
+					datacontext = "[PowerBloc.GetMemberWithUniqueHeadOfState('(int32)4')]"
+				}
+
+				### MAP MODES
+				container = {
+					parentanchor = hcenter
+					minimumsize = { @panel_width -1 }
+					maximumsize = { @panel_width -1 }
+
+					map_modes_minimized = {
+						parentanchor = right
+						position = { 4 10 }
+
+						blockoverride "first_button_click" {
+							onclick = "[PowerBlocPanel.ShowLeverage]"
+						}
+
+						blockoverride "first_button_selected" {
+							visible = "[PowerBlocPanel.IsShowingLeverage]"
+						}
+
+						blockoverride "first_button_not_selected" {
+							visible = "[Not(PowerBlocPanel.IsShowingLeverage)]"
+						}
+
+						blockoverride "first_button_icon" {
+							texture = "gfx/interface/icons/map_mode_icons/selected_powerbloc.dds"
+						}
+
+						blockoverride "first_button_text" {
+							text = "SHOW_SPECIFIC_POWER_BLOCS_MAP_MODE"
+						}
+
+						blockoverride "second_button_click" {
+							onclick = "[PowerBlocPanel.ShowPowerBlocs]"
+						}
+
+						blockoverride "second_button_selected" {
+							visible = "[PowerBlocPanel.IsShowingPowerBlocs]"
+						}
+
+						blockoverride "second_button_not_selected" {
+							visible = "[Not(PowerBlocPanel.IsShowingPowerBlocs)]"
+						}
+
+						blockoverride "second_button_icon" {
+							texture = "gfx/interface/icons/map_mode_icons/all_powerblocs.dds"
+						}
+
+						blockoverride "second_button_text" {
+							text = "SHOW_ALL_POWER_BLOCS_MAP_MODE"
+						}
+
+						blockoverride "third_button" {}
+						blockoverride "fourth_button" {}
+					}
+				}
+			}
+		}
+
+		flowcontainer = {
+			parentanchor = hcenter
+			direction = vertical
+			spacing = 5
+
+			flowcontainer = {
+				direction = vertical
+				parentanchor = hcenter
+
+				background = {
+					using = fade_right_simple
+					texture = "[PowerBloc.GetMapTexture]"
+					color = "[PowerBloc.GetPrimaryColor]"
+					alpha = 0.2
+				}
+
+				### COHESION BAR AND EMBLEM
+				widget = {
+					size = { @panel_width_plus_14 95 }
+					parentanchor = hcenter
+
+					widget = {
+						size = { 500 76 }
+						parentanchor = vcenter|right
+
+						power_blocs_cohesion_item = {}
+
+						icon = {
+							position = { 45 16 }
+							size = { 73% 70% }
+							texture = "gfx/interface/progressbar/cohesion_bar.dds"
+						}
+					}
+
+					icon = {
+						parentanchor = vcenter|left
+						size = { 85 85 }
+						position = { 10 0 }
+						texture = "[PowerBloc.GetFlag.GetMediumPowerBlocCoaTexture]"
+						frame = "[PowerBloc.GetFlag.GetMediumPowerBlocCoaFrame]"
+						framesize = "[GetMediumPowerBlocCoaFrameSize]"
+
+						tooltipwidget = {
+							FancyTooltip_PowerBloc = {}
+						}
+					}
+				}
+
+				### IDENTITY HEADER - This is in this flowcontainer with the cohesion bar + bg so that we can remove the small pixel gap that otherwise would show up above this header, between the header and the cohesion bg.
+				default_header = {
+					using = default_list_position
+					blockoverride "text" {
+						text = "POWER_BLOC_IDENTITY_HEADER"
+					}
+				}
+			}
+
+
+			### CENTRAL IDENTITY - SELECTED
+			container = {
+				parentanchor = hcenter
+				minimumsize = { @panel_width_minus_10 130 }
+				datacontext = "[PowerBloc.GetIdentity]"
+
+				tooltipwidget = {
+					FancyTooltip_PowerBlocIdentity = {}
+				}
+
+				using = entry_bg_fancy
+
+				flowcontainer = {
+					parentanchor = vcenter
+					position = { 135 0 }
+					direction = vertical
+					margin = { 0 10 }
+					spacing = 5
+
+					textbox = {
+						text = "[PowerBlocIdentity.GetNameNoFormatting]"
+						default_format = "#header"
+						align = nobaseline
+						using = fontsize_xl
+						autoresize = yes
+						max_width = 350
+						elide = right
+						fontsize_min = 14
+					}
+
+					textbox = {
+						text = "[PowerBlocIdentity.GetDesc]"
+						align = nobaseline
+						autoresize = yes
+						multiline = yes
+						max_width = 350
+						elide = right
+						fontsize_min = 14
+					}
+				}
+
+				power_bloc_identity_icon = {
+					position = { 10 5 }
+				}
+			}
+
+			default_header = {
+				using = default_list_position
+				blockoverride "text" {
+					text = "POWER_BLOC_PRINCIPLES_HEADER"
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				parentanchor = hcenter
+
+				flowcontainer = {
+					spacing = 10
+					parentanchor = hcenter
+
+					# PRINCIPLE SLOTS 1 3 5 7
+					#DA
+					flowcontainer = {
+						direction = vertical
+						spacing = 10
+						parentanchor = vcenter
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)0' )]"
+
+							blockoverride "tooltip_alignment" {
+								using = tooltip_ne
+							}
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)2' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+
+							blockoverride "tooltip_alignment" {
+								using = tooltip_se
+							}
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)4' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+
+							blockoverride "tooltip_alignment" {
+								using = tooltip_se
+							}
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)6' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+
+							blockoverride "tooltip_alignment" {
+								using = tooltip_se
+							}
+						}
+					}
+
+					# PRINCIPLES PROGRESSBAR
+					widget = {
+						size = { 120 120 }
+						parentanchor = vcenter
+						tooltip = "POWER_BLOC_MANDATE_PROGRESS_TOOLTIP"
+
+						icon = {
+							size = { 100% 100% }
+							texture = "gfx/interface/power_blocs/powerbloc_progressbar_frame.dds"
+						}
+
+						round_progress_default = {
+							size = { 80% 80% }
+							parentanchor = center
+							value = "[PowerBloc.GetCurrentMandateProgressPercentage]"
+
+							textbox = {
+								align = hcenter|nobaseline
+								parentanchor = vcenter|hcenter
+								autoresize = yes
+								elide = right
+								fontsize_min = 14
+								using = fontsize_xl
+								text = "POWER_BLOC_MANDATE_PROGRESS_TIMER"
+							}
+						}
+					}
+
+					# PRINCIPLE SLOTS 2 4 6 8
+					flowcontainer = {
+						direction = vertical
+						spacing = 10
+						parentanchor = vcenter
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)1' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)3' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)5' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+						}
+
+						principle_slot = {
+							datacontext = "[PowerBlocPanel.GetPrincipleSlot( '(int32)7' )]"
+							visible = "[Or(PowerBlocPrincipleSlot.IsActive, HasDlcFeature('power_bloc_features'))]"
+						}
+					}
+				}
+
+				# AVAILABLE MANDATES
+				flowcontainer = {
+					visible = "[PowerBloc.IsLeader(GetPlayer.Self)]"
+					parentanchor = hcenter
+					spacing = 5
+
+					icon = {
+						size = { 35 35 }
+						parentanchor = vcenter
+						texture = "gfx/interface/icons/generic_icons/mandate.dds"
+					}
+
+					textbox = {
+						align = nobaseline
+						parentanchor = vcenter
+						autoresize = yes
+						elide = right
+						fontsize_min = 14
+						text = "AVAILABLE_MANDATES"
+					}
+				}
+			}
+		}
+	}
+}

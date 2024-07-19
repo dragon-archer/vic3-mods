@@ -155,6 +155,11 @@ NPops = {
 	POP_MERGE_MAX_TARGET_POPS = 30000 # 100000
 }
 
+NPowerBlocs = {
+	MAX_PRINCIPLES = 8
+	MAX_MANDATES = 9					# This is the maximum number of mandates that can be accumulated at once
+}
+
 NWar = {
 	DEVASTATION_FROM_BATTLES = 3 # 0.1 # For each battle
 	STATE_CONQUEST_HOMELAND_AND_CLAIM_RADICALIZATION = 0.05 # 0.1
