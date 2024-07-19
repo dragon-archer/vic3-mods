@@ -49,7 +49,7 @@
   - diplomatic_actions/
     - 02_relations_actions: Auto break `Increase Relations` towards Power Bloc Leaders with 50+ relation if you're also an Power Bloc Leader
     - 42_subjects_request_market_control: Hide `Request Market Control` for market owner
-  - flag_definitions/00_flag_definitions: Fix Brunei flag
+  - flag_definitions/00_flag_definitions: Fix Brunei & Scandinavian flags
   - ideologies/
     - Fix the icon of `Feminist IG`
     - Remove duplicate law stances from `Socialist` ideology since it can only be applied to TU who already have `Proletarian` ideology

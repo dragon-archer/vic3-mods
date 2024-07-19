@@ -7742,7 +7742,7 @@ SCA = { # Scandinavia
 	flag_definition = {
 		coa = SCA
 		allow_overlord_canton = yes
-		overlord_canton_scale = { @canton_scale_sweden_x @canton_scale_sweden_y }
+		overlord_canton_scale = { @canton_scale_denmark_x @canton_scale_denmark_y } #PBF
 		subject_canton = SCA_canton
 		priority = 1
 	}
@@ -7751,6 +7751,7 @@ SCA = { # Scandinavia
 		coa = SCA_kalmar_union
 		subject_canton = SCA_kalmar_union
 		allow_overlord_canton = yes
+		overlord_canton_scale = { @canton_scale_sweden_x @canton_scale_sweden_y } #PBF #TODO
 		priority = 20
 		trigger = {
 			coa_def_kalmar_flag_trigger = yes
