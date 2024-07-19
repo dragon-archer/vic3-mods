@@ -81,17 +81,17 @@ anarchist_party = {
 			has_ideology = ideology:ideology_anarchist
 		}
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = anarchist_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			owner.var:only_valid_party = {
+				is_party_type = anarchist_party
+			}
+		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -342,13 +342,13 @@ anarchist_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = anarchist_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = anarchist_party
+					}
+				}
 			}
 			multiply = {
 				value = 0
@@ -357,12 +357,12 @@ anarchist_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
+					has_variable = only_valid_party
+				}
 				owner.var:only_valid_party = {
 					is_party_type = anarchist_party
 				}
-	         	owner.ruler = {
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
@@ -374,11 +374,11 @@ anarchist_party = {
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = anarchist_party
-		        }
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
+					is_party_type = anarchist_party
+				}
 			}
 			add = {
 				value = 3

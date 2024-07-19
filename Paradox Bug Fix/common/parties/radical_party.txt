@@ -245,23 +245,29 @@ radical_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			any_interest_group = {
-				is_marginal = no
-				leader = {
-					has_ideology = ideology:ideology_radical
+			OR = { #PBF
+				any_interest_group = {
+					is_marginal = no
+					leader = {
+						has_ideology = ideology:ideology_radical
+					}
+				}
+				AND = {
+					has_variable = only_valid_party
+					var:only_valid_party = { is_party_type = radical_party }
 				}
 			}
 		}
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = radical_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			owner.var:only_valid_party = {
+				is_party_type = radical_party
+			}
+		}
 		NOR = {
 			is_interest_group_type = ig_landowners
 			is_interest_group_type = ig_devout
@@ -281,7 +287,7 @@ radical_party = {
 			}
 		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -548,7 +554,7 @@ radical_party = {
 					has_ideology = ideology:ideology_liberal
 					has_ideology = ideology:ideology_liberal_modern
 					leader = {
-						OR = {	
+						OR = {
 							has_ideology = ideology:ideology_humanitarian
 							has_ideology = ideology:ideology_radical
 						}
@@ -652,13 +658,13 @@ radical_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = radical_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = radical_party
+					}
+				}
 			}
 			multiply = {
 				value = 0
@@ -667,12 +673,12 @@ radical_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-				 owner.var:only_valid_party = {
-					 is_party_type = radical_party
-				 }
-	         	owner.ruler = {
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
+					is_party_type = radical_party
+				}
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
@@ -684,11 +690,11 @@ radical_party = {
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = radical_party
-		        }
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
+					is_party_type = radical_party
+				}
 			}
 			add = {
 				value = 3

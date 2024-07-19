@@ -225,6 +225,10 @@ social_democrat_party = {
 				ig:ig_trade_unions = {
 					is_marginal = no
 				}
+				AND = { #PBF
+					has_variable = only_valid_party
+					var:only_valid_party = { is_party_type = social_democrat_party }
+				}
 			}
 		}
 		NOT = { # these ig's are inherently anti-worker

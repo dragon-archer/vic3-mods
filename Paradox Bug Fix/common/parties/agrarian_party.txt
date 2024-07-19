@@ -146,22 +146,28 @@ agrarian_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			ig:ig_rural_folk = {
-				is_marginal = no
+			OR = { #PBF
+				ig:ig_rural_folk = {
+					is_marginal = no
+				}
+				AND = {
+					has_variable = only_valid_party
+					var:only_valid_party = { is_party_type = agrarian_party }
+				}
 			}
 		}
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = agrarian_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			owner.var:only_valid_party = {
+				is_party_type = agrarian_party
+			}
+		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -280,7 +286,7 @@ agrarian_party = {
 					has_ideology = ideology:ideology_particularist
 				}
 				owner = {
-					OR = {	
+					OR = {
 						has_law = law_type:law_local_police
 						has_law = law_type:law_militarized_police
 					}
@@ -508,13 +514,13 @@ agrarian_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = agrarian_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = agrarian_party
+					}
+				}
 			}
 			multiply = {
 				value = 0
@@ -523,12 +529,12 @@ agrarian_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-				 owner.var:only_valid_party = {
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
 					is_party_type = agrarian_party
 				}
-	         	owner.ruler = {
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
@@ -540,11 +546,11 @@ agrarian_party = {
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = agrarian_party
-		        }
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
+					is_party_type = agrarian_party
+				}
 			}
 			add = {
 				value = 3

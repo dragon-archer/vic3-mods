@@ -298,13 +298,19 @@
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			any_interest_group = {
-				leader = {
-					OR = {
-						has_ideology = ideology:ideology_communist
-						has_ideology = ideology:ideology_vanguardist
-						has_ideology = ideology:ideology_anarchist
+			OR = { #PBF
+				any_interest_group = {
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_anarchist
+						}
 					}
+				}
+				AND = {
+					has_variable = only_valid_party
+					var:only_valid_party = { is_party_type = communist_party }
 				}
 			}
 		}
@@ -328,17 +334,17 @@
 			}
 		}
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = communist_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			owner.var:only_valid_party = {
+				is_party_type = communist_party
+			}
+		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -642,13 +648,13 @@
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = communist_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = communist_party
+					}
+				}
 			}
 			multiply = {
 				value = 0
@@ -668,12 +674,12 @@
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
+					has_variable = only_valid_party
+				}
 				owner.var:only_valid_party = {
 					is_party_type = communist_party
 				}
-	         	owner.ruler = {
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
@@ -685,11 +691,11 @@
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = communist_party
-		        }
+					has_variable = only_valid_party
+				}
+				owner.var:only_valid_party = {
+					is_party_type = communist_party
+				}
 			}
 			add = {
 				value = 3
