@@ -30,7 +30,7 @@
 		law_traditionalism = disapprove
 		law_cooperative_ownership = strongly_disapprove
 		law_command_economy = strongly_disapprove
-		law_industry_banned = neutral #PBF #TODO: find out whether it's proper
+		law_industry_banned = disapprove #PBF
 	}
 
 	lawgroup_trade_policy = {
@@ -341,7 +341,7 @@ ideology_bonapartist = {
 		law_traditionalism = disapprove
 		law_cooperative_ownership = strongly_disapprove
 		law_command_economy = strongly_disapprove
-		law_industry_banned = neutral #PBF #TODO: find out whether it's proper
+		law_industry_banned = disapprove #PBF
 	}
 
 

@@ -56,7 +56,7 @@ ideology_modernizer = {
 		law_agrarianism = disapprove
 		law_traditionalism = strongly_disapprove
 		law_laissez_faire = neutral
-		law_industry_banned = neutral #PBF #TODO: find out whether it's proper
+		law_industry_banned = strongly_disapprove #PBF
 	}
 }
 

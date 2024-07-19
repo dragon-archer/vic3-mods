@@ -2544,7 +2544,7 @@ ideology_market_liberal = {
 	}
 
 	lawgroup_labor_rights = {
-		law_no_workers_rights = neutral #PBF #TODO: find out whether it's proper
+		law_no_workers_rights = neutral #PBF
 		law_regulatory_bodies = disapprove
 		law_worker_protections = strongly_disapprove
 	}
