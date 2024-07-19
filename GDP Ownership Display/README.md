@@ -1,6 +1,21 @@
-# GDP Ownership Display
+<h1 align="center">GDP Ownership Display</h1>
 
-中文版简介请见[此处](README.zh.md)
+<p align="center">
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/views/3290552216" alt="Steam Views">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/downloads/3290552216" alt="Steam Downloads">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/subscriptions/3290552216" alt="Steam Subscriptions">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/favorites/3290552216" alt="Steam Favorites">
+	</a>
+</p>
+
+<p align="center">English | <a href="README.zh.md">中文</a></p>
 
 ![Thumbnail](thumbnail.png)
 ![Thumbnail 2](thumbnail2.png)
@@ -20,6 +35,6 @@
 ## My other mods & tools
 
 - Paradox Bug Fix - A simple mod to solve tons of Paradox mistakes
-  - Get it on [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729) or [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/Paradox%20Bug%20Fix)
+	- Get it on [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729) or [GitHub](https://github.com/dragon-archer/vic3-mods/tree/main/Paradox%20Bug%20Fix)
 - Paradox Highlight - A VS Code extension that provides syntax highlight for Paradox Games
-  - Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight), or visit [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) for more information
+	- Get it on [GitHub](https://github.com/dragon-archer/paradox-highlight) or [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dragon-archer.paradox-highlight), or visit [Paradox Forum](https://forum.paradoxplaza.com/forum/threads/modding-tool-paradox-highlight-a-vscode-extension-for-highlighting-paradox-scripts.1686066/) for more information

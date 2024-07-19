@@ -1,4 +1,21 @@
-# GDP所有权显示
+<h1 align="center">GDP所有权显示</h1>
+
+<p align="center">
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/views/3290552216" alt="Steam Views">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/downloads/3290552216" alt="Steam Downloads">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/subscriptions/3290552216" alt="Steam Subscriptions">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3290552216">
+		<img src="https://img.shields.io/steam/favorites/3290552216" alt="Steam Favorites">
+	</a>
+</p>
+
+<p align="center"><a href="README.md">English</a> | 中文</p>
 
 ![Thumbnail](thumbnail.png)
 ![Thumbnail 2](thumbnail2.png)
