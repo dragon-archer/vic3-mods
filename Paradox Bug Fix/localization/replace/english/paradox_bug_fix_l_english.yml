@@ -1,0 +1,3 @@
+﻿l_english:
+ # cohesion_levels
+ POWER_BLOC_COHESION_WORST_INFAMY: "#indent_newline:3 [concept_power_bloc_member] member with highest [concept_infamy] and [concept_rank] ($identity_military_treaty_organization$)\n[SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetName] ([SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetRank]) with #v [SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetInfamy|-0]#!#!"
