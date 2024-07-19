@@ -1,4 +1,21 @@
-# P社Bug修复
+<h1 align="center">P社Bug修复</h1>
+
+<p align="center">
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/views/3277665729" alt="Steam Views">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/downloads/3277665729" alt="Steam Downloads">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/subscriptions/3277665729" alt="Steam Subscriptions">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/favorites/3277665729" alt="Steam Favorites">
+	</a>
+</p>
+
+<p align="center"><a href="README.md">English</a> | 中文</p>
 
 ![Thumbnail](thumbnail.png)
 
@@ -22,8 +39,6 @@
 部分文本修正也支持英语
 
 ## 修复 bug 列表
-
-（之前写英文文档累死了，懒得重新写一遍中文的了
 
 - common/
   - achievements/standard_achievments: Fix scope error

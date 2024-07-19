@@ -1,6 +1,21 @@
-# Paradox Bug Fix
+<h1 align="center">Paradox Bug Fix</h1>
 
-中文版简介请见[此处](README.zh.md)
+<p align="center">
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/views/3277665729" alt="Steam Views">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/downloads/3277665729" alt="Steam Downloads">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/subscriptions/3277665729" alt="Steam Subscriptions">
+	</a>
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3277665729">
+		<img src="https://img.shields.io/steam/favorites/3277665729" alt="Steam Favorites">
+	</a>
+</p>
+
+<p align="center">English | <a href="README.zh.md">中文</a></p>
 
 ![Thumbnail](thumbnail.png)
 
