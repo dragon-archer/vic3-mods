@@ -166,3 +166,144 @@ congo_river_expedition_location = {
 		}
 	}
 }
+
+calculate_caudillo_progress = {
+	set_variable = { name = caudillo_next value = 0 }
+	if = {
+		limit = {
+			ig:ig_armed_forces = {
+				is_powerful = yes
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			ig:ig_armed_forces = {
+				is_in_government = yes
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_law = law_type:law_autocracy
+				has_law = law_type:law_technocracy
+				has_law = law_type:law_oligarchy
+				has_law = law_type:law_single_party_state
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			ig:ig_armed_forces = {
+				is_marginal = yes
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = -1
+		}
+	}
+	if = {
+		limit = {
+			ig:ig_armed_forces = {
+				is_in_government = no
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = -1
+		}
+	}
+	if = {
+		limit = {
+			any_scope_character = {
+				OR = {
+					has_role = general
+					has_role = admiral
+				}
+				popularity >= 50 # Loved
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			any_scope_character = {
+				has_role = politician
+				NOT = { has_role = general }
+				popularity >= 50 # Loved
+				interest_group = {
+					is_powerful = yes
+					AND = {
+						law_stance = {
+							law = law_type:law_autocracy
+							value <= neutral
+						}
+						law_stance = {
+							law = law_type:law_technocracy
+							value <= neutral #PBF
+						}
+						law_stance = {
+							law = law_type:law_oligarchy
+							value <= neutral #PBF
+						}
+						law_stance = {
+							law = law_type:law_single_party_state
+							value <= neutral #PBF
+						}
+					}
+				}
+			}
+			NOT = {
+				any_scope_character = {
+					has_role = general
+					popularity >= 50 # Loved
+				}
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = -1
+		}
+	}
+	if = {
+		limit = {
+			any_scope_character = {
+				is_ruler = yes
+				has_ideology = ideology:ideology_authoritarian
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_law = law_type:law_census_voting
+				has_law = law_type:law_universal_suffrage
+			}
+		}
+		change_variable = {
+			name = caudillo_next
+			add = -1
+		}
+	}
+}
