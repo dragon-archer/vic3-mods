@@ -9,10 +9,10 @@ pm_default_building_empire_center = {
 			country_max_companies_add = 1
 			unit_experience_gain_mult = 0.25
 			country_private_construction_allocation_mult = -0.25
-			building_nationalization_investment_return_add = 0.25
-			country_government_dividends_reinvestment_add = -0.25
-			country_government_dividends_efficiency_add = 0.25
-			building_nationalization_cost_mult = -0.25
+			building_nationalization_investment_return_add = 0.4
+			country_government_dividends_reinvestment_add = -0.4
+			country_government_dividends_efficiency_add = 0.3
+			building_nationalization_cost_mult = -0.5
 			country_leverage_generation_mult = 0.25
 		}
 	}
