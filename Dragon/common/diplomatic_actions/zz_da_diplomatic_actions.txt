@@ -109,7 +109,21 @@ da_annex_subject = {
 					}
 					add_liberty_desire = 10
 				}
+				scope:target_country = {
+					every_scope_state = {
+						set_variable = da_temp_var
+					}
+				}
 				annex = scope:target_country
+				every_scope_state = {
+					limit = { has_variable = da_temp_var }
+					add_modifier = {
+						name = recently_liberated_state
+						months = 120
+						is_decaying = yes
+					}
+					remove_variable = da_temp_var
+				}
 			}
 		}
 	}
