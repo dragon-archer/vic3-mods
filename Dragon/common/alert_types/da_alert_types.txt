@@ -9,6 +9,7 @@
 
 	open_panel = states_panel|buildings
 	type = important_action
+	alert_group = da_alert_group
 }
 
 da_is_in_hyperinflation = {
