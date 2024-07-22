@@ -41,6 +41,9 @@
  # effects_l_simp_chinese.yml
  EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
  SET_STATE_OWNER: "[TARGET_COUNTRY.GetName]成为[STATE.GetName]的拥有者"
+ ADD_DIPLOMATIC_PLAY_WAR_SUPPORT: "[Country.GetAdjectiveNoFormatting]在[DIPLOMATIC_PLAY.GetName]中的[concept_war_support]增加$VALUE|+$"
+ ADD_DIPLOMATIC_PLAY_WAR_SUPPORT_NEG: "[Country.GetAdjectiveNoFormatting]在[DIPLOMATIC_PLAY.GetName]中的[concept_war_support]降低$VALUE|+$"
+ RESOLVE_PLAY_FOR: "[Country.GetName]强制执行战争目标，并离开[DIPLOMATIC_PLAY.GetName]"
  ## new
  ADD_TREASURY_EFFECT_POSITIVE: "国家获得@money!$VALUE|+=k$"
  ADD_TREASURY_EFFECT_NEGATIVE: "国家失去@money!$VALUE|-=k$"
@@ -48,7 +51,6 @@
  ADD_TREASURY_EFFECT_FIRST_NEGATIVE: "[COUNTRY.GetNameNoFlag]失去@money!$VALUE|-=k$"
  ADD_TREASURY_EFFECT_THIRD_POSITIVE: "[COUNTRY.GetName]获得@money!$VALUE|+=k$"
  ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=k$"
- RESOLVE_PLAY_FOR: "[Country.GetName]强制执行战争目标，并离开[DIPLOMATIC_PLAY.GetName]"
 
  # hub_names
  HUB_NAME_STATE_OUTER_MANCHURIA_port: "海参崴"
