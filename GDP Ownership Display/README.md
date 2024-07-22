@@ -31,6 +31,12 @@
 
 - Simplified Chinese
 - English
+- Other languages can also use this mod, but relevant information will be shown in English
+- You're welcome to contribute native translation for this mod!
+
+## Support me
+
+If you like this mod, you can easily support me by rating it on Steam or give a star to the [GitHub repository](https://github.com/dragon-archer/vic3-mods.git) of this mod (requires a GitHub account)
 
 ## My other mods & tools
 
