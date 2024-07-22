@@ -81,6 +81,8 @@
 #  CONVOYS_FROM_MARKET_MEMBERS: "[Country.GetMarket.GetName]的[Concept('concept_country','$concept_countries$')]：#tooltippable #tooltip:$BREAKDOWN_TAG$,CONVOYS_FROM_MARKET_MEMBER_BREAKDOWN #v $VALUE|+=$#!#!#!" #TODO
  LENS_ACTION_NUMBER: "#default_text [LensOption.GetText|v]\n[GetDescriptiveText(LensOption.GetMapInteraction)]\n该行动有#v [LensOption.GetNumberOfSelections|+]#!个有效目标#!"
  RESET_PRODUCTION_METHODS_BUILDING_TYPE: "#header 重置生产方式#!\n[ConcatIfNeitherEmpty(AddLocalizationIf(Not(IsValid(BuildingType.ResetProductionMethodsToStandard)), 'RESET_PM_NOT_VALID'), '\n\n')][Country.GetName]所有$NAME$的所有[Concept('concept_production_method','$concept_production_methods$')]都会重置，以匹配你最普遍的国家标准。将进行以下调整：\n\n$LIST$"
+ ## new
+ GO_TO_BUTTON_BUILDING_2: "转到[BuildingOwnership.GetOwnerBuilding.GetState.GetName]的[BuildingOwnership.GetOwnerBuilding.GetName]"
 
  # liberty_desire_levels
  LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_INCREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_increase_mult')]#!"
