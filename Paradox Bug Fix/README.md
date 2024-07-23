@@ -118,6 +118,10 @@ Some localization fixes are also available in English
 - gui/states_panel: Translate for `Inactive Treaty Port`
 - localization/: Fix the rank in `POWER_BLOC_COHESION_WORST_INFAMY` (English and Simplified Chinese)
 
+## Known issues
+
+- `Force Nationalization` war goal will only nationalize the building levels **directly** owned by the government of the target country, while those building levels owned by the ownership buildings of the target country will **not** be affected.
+
 ## Note for modders
 
 You're welcome to integrate part or all of this mod in your own mod

@@ -119,6 +119,10 @@
 - gui/states_panel: Translate for `Inactive Treaty Port`
 - localization/: Fix the rank in `POWER_BLOC_COHESION_WORST_INFAMY` (English and Simplified Chinese)
 
+## 已知问题
+
+- `强制国有化`战争目标仅会国有化**直接**由目标国家政府所控制的建筑等级，而那些由目标国家境内的所有权建筑控制的建筑等级**不会**被国有化
+
 ## 给其它 mod 作者的注意事项
 
 欢迎大家将本 mod 的部分或者全部内容整合到你自己的 mod 中
