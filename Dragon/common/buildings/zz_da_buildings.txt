@@ -48,6 +48,10 @@ building_power_plant = {
 		pmg_automation_building_power_plant
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_power_plant bg = bg_power }
+	}
+
 	required_construction = construction_cost_very_high
 
 	possible = {

@@ -21,6 +21,10 @@ building_food_industry = {
 		pmg_automation_building_food_industry
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_food_industry bg = bg_light_industry }
+	}
+
 	required_construction = construction_cost_high
 	ownership_type = self
 
@@ -43,6 +47,10 @@ building_textile_mills = {
 		pmg_base_building_textile_mills
 		pmg_luxury_building_textile_mills
 		pmg_automation_building_textile_mills
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_textile_mills bg = bg_light_industry }
 	}
 
 	required_construction = construction_cost_high
@@ -69,6 +77,10 @@ building_furniture_manufacturies = {
 		pmg_automation_building_furniture_manufacturies
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_furniture_manufacturies bg = bg_light_industry }
+	}
+
 	required_construction = construction_cost_high
 	ownership_type = self
 
@@ -89,6 +101,10 @@ building_glassworks = {
 		pmg_base_building_glassworks
 		pmg_luxury_building_glassworks
 		pmg_glassblowing
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_glassworks bg = bg_light_industry }
 	}
 
 	required_construction = construction_cost_high
@@ -113,6 +129,10 @@ building_tooling_workshops = {
 	production_method_groups = {
 		pmg_base_building_tooling_workshops
 		pmg_automation_building_tooling_workshops
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_tooling_workshops bg = bg_light_industry }
 	}
 
 	required_construction = construction_cost_high
@@ -141,6 +161,10 @@ building_paper_mills = {
 		pmg_automation_building_furniture_manufacturies
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_paper_mills bg = bg_light_industry }
+	}
+
 	required_construction = construction_cost_high
 	ownership_type = self
 
@@ -161,6 +185,10 @@ building_chemical_plants = {
 	production_method_groups = {
 		pmg_fertilizer_production
 		pmg_automation_building_motor_industry
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_chemical_plants bg = bg_heavy_industry }
 	}
 
 	required_construction = construction_cost_very_high
@@ -192,6 +220,10 @@ building_explosives_factory = {
 		pmg_automation_building_motor_industry
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_explosives_factory bg = bg_heavy_industry }
+	}
+
 	required_construction = construction_cost_very_high
 
 	possible = {
@@ -218,6 +250,10 @@ building_synthetics_plants = {
 		pmg_synthetic_dyes
 		pmg_synthetic_silk
 		pmg_automation_building_motor_industry
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_synthetics_plants bg = bg_heavy_industry }
 	}
 
 	required_construction = construction_cost_very_high
@@ -249,6 +285,10 @@ building_steel_mills = {
 		pmg_automation_building_steel_mills
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_steel_mills bg = bg_heavy_industry }
+	}
+
 	required_construction = construction_cost_very_high
 
 	possible = {
@@ -275,6 +315,10 @@ building_motor_industry = {
 		pmg_base_building_motor_industry
 		pmg_automobile_production
 		pmg_automation_building_motor_industry
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_motor_industry bg = bg_heavy_industry }
 	}
 
 	required_construction = construction_cost_very_high
@@ -305,6 +349,10 @@ building_shipyards = {
 		pmg_automation_building_motor_industry
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_shipyards bg = bg_heavy_industry }
+	}
+
 	required_construction = construction_cost_high
 
 	possible = {
@@ -330,6 +378,10 @@ building_military_shipyards = {
 	production_method_groups = {
 		pmg_military_base
 		pmg_automation_building_steel_mills
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_military_shipyards bg = bg_military_industry }
 	}
 
 	required_construction = construction_cost_very_high
@@ -361,6 +413,10 @@ building_war_machine_industry = {
 		pmg_automation_building_motor_industry
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_war_machine_industry bg = bg_military_industry }
+	}
+
 	required_construction = construction_cost_very_high
 
 	possible = {
@@ -388,6 +444,10 @@ building_electrics_industry = {
 		pmg_telephones_category
 		pmg_radios_category
 		pmg_automation_building_motor_industry
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_electrics_industry bg = bg_heavy_industry }
 	}
 
 	required_construction = construction_cost_very_high
@@ -419,6 +479,10 @@ building_arms_industry = {
 		pmg_automation_building_munition_plants
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_arms_industry bg = bg_military_industry }
+	}
+
 	required_construction = construction_cost_high
 
 	possible = {
@@ -447,6 +511,10 @@ building_artillery_foundries = {
 		pmg_automation_building_arms_industry
 	}
 
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_artillery_foundries bg = bg_military_industry }
+	}
+
 	required_construction = construction_cost_high
 
 	possible = {
@@ -473,6 +541,10 @@ building_munition_plants = {
 	production_method_groups = {
 		pmg_base_building_munition_plants
 		pmg_automation_building_munition_plants
+	}
+
+	can_build_private = {
+		da_cpc_can_build_private = { bt = building_munition_plants bg = bg_military_industry }
 	}
 
 	required_construction = construction_cost_very_high

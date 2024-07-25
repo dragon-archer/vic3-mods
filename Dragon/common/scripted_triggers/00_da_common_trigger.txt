@@ -1,5 +1,7 @@
 ﻿# Common file for all DA components
 # Should be same in all DA mods
+# Version: 20240725
+# Last updated for: Customizable Private Construction
 
 #TODO: Use custom_tooltip
 da_is_enabled = {
@@ -16,3 +18,5 @@ da_is_in_extended_mode = {
 		has_global_variable = da_globally_enabled_extended_mode_var
 	}
 }
+
+da_cpc_can_build_private = { always = yes } # Stub
