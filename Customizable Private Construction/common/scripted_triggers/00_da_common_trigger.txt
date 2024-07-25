@@ -19,4 +19,6 @@ da_is_in_extended_mode = {
 	}
 }
 
-da_cpc_can_build_private = { always = yes } # Stub
+da_cpc_can_build_private = { # Stub
+	trigger_if = { limit = { flag:$bt$ = flag:$bg$ } } # Force declaring arguments
+}
