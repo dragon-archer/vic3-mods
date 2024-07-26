@@ -1,0 +1,10 @@
+﻿# Main CPC trigger
+# State scope
+# bt = building type, bg = group (not necessarily a building group)
+da_cpc_can_build_private = {
+	da_dummy_trigger_arg = { _ = $bg$ }
+	trigger_if = {
+		limit = { owner = { has_variable = da_cpc_disable_new_var } }
+		has_building = $bt$
+	}
+}

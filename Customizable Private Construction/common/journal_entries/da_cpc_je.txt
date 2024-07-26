@@ -1,0 +1,15 @@
+﻿je_da_cpc = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_internal_affairs
+
+	scripted_button = da_cpc_disable_new_btn
+	scripted_button = da_cpc_enable_new_btn
+
+	complete = {
+		always = no
+	}
+
+	should_be_pinned_by_default = yes
+	weight = 10000
+}

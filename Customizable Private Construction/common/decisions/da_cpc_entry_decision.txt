@@ -1,0 +1,18 @@
+﻿da_cpc_enable_je = {
+	is_shown = {
+		is_player = yes
+		NOT = { has_journal_entry = je_da_cpc }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	when_taken = {
+		add_journal_entry = { type = je_da_cpc }
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}
