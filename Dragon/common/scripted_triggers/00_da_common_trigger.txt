@@ -1,6 +1,6 @@
 ﻿# Common file for all DA components
 # Should be same in all DA mods
-# Version: 20240725
+# Version: 20240726
 # Last updated for: Customizable Private Construction
 
 #TODO: Use custom_tooltip
@@ -19,6 +19,11 @@ da_is_in_extended_mode = {
 	}
 }
 
+da_dummy_trigger_arg = {
+	save_temporary_scope_as = $_$
+}
+
 da_cpc_can_build_private = { # Stub
-	trigger_if = { limit = { flag:$bt$ = flag:$bg$ } } # Force declaring arguments
+	da_dummy_trigger_arg = { _ = $bt$ }
+	da_dummy_trigger_arg = { _ = $bg$ }
 }
