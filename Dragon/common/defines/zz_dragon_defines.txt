@@ -44,6 +44,8 @@ NCharacters = {
 	MAX_TRAITS_PERSONALITY = 4 # 2						# The max amount of Personality Traits a character can develop normally (note: not adhered to by add_trait effect)
 	MAX_TRAITS_SKILL = 4 # 2							# The max amount of Skill Traits a character can develop normally (note: not adhered to by add_trait effect)
 	MAX_TRAITS_CONDITION = 4 # 2						# The max amount of Condition Traits a character can develop normally (note: not adhered to by add_trait effect)
+	RECRUIT_COMMANDER_NUM_OPTIONS = 5 # 3
+	RECRUIT_COMMANDER_POOL_SIZE = 6 # 5
 }
 
 NDiplomacy = {
