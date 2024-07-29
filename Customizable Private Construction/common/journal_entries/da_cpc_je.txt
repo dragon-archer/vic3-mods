@@ -5,6 +5,8 @@
 
 	scripted_button = da_cpc_disable_new_btn
 	scripted_button = da_cpc_enable_new_btn
+	scripted_button = da_cpc_disable_new_subject_btn
+	scripted_button = da_cpc_enable_new_subject_btn
 
 	complete = {
 		always = no

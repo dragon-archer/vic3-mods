@@ -37,3 +37,43 @@ da_cpc_enable_new_btn = {
 		}
 	}
 }
+
+da_cpc_disable_new_subject_btn = {
+	name = "da_cpc_disable_new_subject_btn"
+	desc = "da_cpc_disable_new_subject_btn_desc"
+
+	visible = {
+		NOT = { has_variable = da_cpc_disable_new_subject_var }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = da_cpc_disable_new_subject_btn_tt
+			set_variable = da_cpc_disable_new_subject_var
+		}
+	}
+}
+
+da_cpc_enable_new_subject_btn = {
+	name = "da_cpc_enable_new_subject_btn"
+	desc = "da_cpc_enable_new_subject_btn_desc"
+
+	visible = {
+		has_variable = da_cpc_disable_new_subject_var
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = da_cpc_enable_new_subject_btn_tt
+			remove_variable = da_cpc_disable_new_subject_var
+		}
+	}
+}
