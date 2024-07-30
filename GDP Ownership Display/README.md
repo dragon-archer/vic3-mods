@@ -31,6 +31,7 @@
 
 - Simplified Chinese
 - English
+- Japanese (Thanks [@総帥閣下](https://steamcommunity.com/id/uwazumi))
 - Other languages can also use this mod, but relevant information will be shown in English
 - You're welcome to contribute native translation for this mod!
 
