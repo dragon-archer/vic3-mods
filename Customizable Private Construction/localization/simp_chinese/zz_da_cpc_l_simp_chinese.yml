@@ -2,13 +2,19 @@
  da_cpc_enable_je: "启用#v 可控私人建造#!控制面板"
  da_cpc_enable_je_desc: "可在其中自定义约束条件"
  je_da_cpc: "#v 可控私人建造#!控制面板"
- je_da_cpc_reason: "在此自定义控制条件"
+ je_da_cpc_reason: "#v 当前约束条件：#!$da_cpc_none_tt$$da_cpc_disable_new_tt$$da_cpc_disable_new_subject_tt$"
+
+ da_cpc_none_tt: "[AddTextIf(NotZero_CFixedPoint(SCOPE.ScriptValue('da_cpc_none_value')), '\n#b 无#!')]"
+
  da_cpc_disable_new_btn: "禁止[concept_private_construction]新建[concept_building]"
  da_cpc_disable_new_btn_desc: "仅允许[concept_private_construction]扩建已有[concept_building]"
  da_cpc_disable_new_btn_tt: "将仅允许[concept_private_construction]扩建已有[concept_building]"
  da_cpc_enable_new_btn: "允许[concept_private_construction]新建[concept_building]"
  da_cpc_enable_new_btn_desc: "允许[concept_private_construction]新建[concept_building]"
  da_cpc_enable_new_btn_tt: "将允许[concept_private_construction]新建[concept_building]"
+ da_cpc_disable_new_tt: "[AddLocalizationIf(NotZero_CFixedPoint(SCOPE.ScriptValue('da_cpc_disable_new_value')), 'da_cpc_disable_new_tt2')]"
+ da_cpc_disable_new_tt2: "\n$EFFECT_LIST_BULLET$仅允许[concept_private_construction]扩建已有[concept_building]"
+
  da_cpc_subject_possessive: "[Concept('concept_subject','$concept_subject_possessive$')]的"
  da_cpc_disable_new_subject_btn: "禁止$da_cpc_subject_possessive$[concept_private_construction]新建[concept_building]"
  da_cpc_disable_new_subject_btn_desc: "仅允许$da_cpc_subject_possessive$[concept_private_construction]扩建已有[concept_building]"
@@ -16,3 +22,5 @@
  da_cpc_enable_new_subject_btn: "允许$da_cpc_subject_possessive$[concept_private_construction]新建[concept_building]"
  da_cpc_enable_new_subject_btn_desc: "允许$da_cpc_subject_possessive$[concept_private_construction]新建[concept_building]"
  da_cpc_enable_new_subject_btn_tt: "将允许$da_cpc_subject_possessive$[concept_private_construction]新建[concept_building]"
+ da_cpc_disable_new_subject_tt: "[AddLocalizationIf(NotZero_CFixedPoint(SCOPE.ScriptValue('da_cpc_disable_new_subject_value')), 'da_cpc_disable_new_subject_tt2')]"
+ da_cpc_disable_new_subject_tt2: "\n$EFFECT_LIST_BULLET$仅允许$da_cpc_subject_possessive$[concept_private_construction]扩建已有[concept_building]"

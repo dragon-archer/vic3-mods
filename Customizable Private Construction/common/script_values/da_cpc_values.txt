@@ -1,0 +1,26 @@
+﻿# CPC values
+da_cpc_none_value = {
+	if = {
+		limit = {
+			NOR = {
+				has_variable = da_cpc_disable_new_var
+				has_variable = da_cpc_disable_new_subject_var
+			}
+		}
+		value = 1
+	}
+}
+
+da_cpc_disable_new_value = {
+	if = {
+		limit = { has_variable = da_cpc_disable_new_var }
+		value = 1
+	}
+}
+
+da_cpc_disable_new_subject_value = {
+	if = {
+		limit = { has_variable = da_cpc_disable_new_subject_var }
+		value = 1
+	}
+}
