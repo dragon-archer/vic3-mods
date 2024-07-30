@@ -141,6 +141,7 @@ NPops = {
 	MIN_CONVERSION = 10 # 1
 
 	# WORKING_ADULT_RATIO_SKEW_MAXIMUM = 3.0 # 2.0		# When the ratio of working adults to dependents is skewed, it tends to correct itself, this value clamps the maximum effect of this
+	MARKET_MIGRATION_MIN_POP_FRACTION_TO_MOVE = 0.01 # 0.05							# If the people wanting to migrate constitues less than this fraction of a pop, no new pop will be created and they won't migrate.
 
 	POP_MERGE_MAX_WORKFORCE_MINOR_CONSOLIDATION = 30 # 10
 	POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_MINOR_CONSOLIDATION = 4 # 5
