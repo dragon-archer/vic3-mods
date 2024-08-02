@@ -27,6 +27,11 @@
  DATA_LEVERAGE_ADVANTAGE_NO_COUNTRY_ADVANTAGE: "[SelectLocalization(GreaterThan_CFixedPoint(Country.GetPowerBloc.GetLeverageAdvantage(Country.Self), '(CFixedPoint)0'), 'DATA_LEVERAGE_SELF_ADVANTAGE', 'DATA_LEVERAGE_ADVANTAGE_OTHER_POWER_BLOC_ADVANTAGE')]"
  DATA_LEVERAGE_SELF_ADVANTAGE: "[Country.GetPowerBloc.GetName]目前处于领先"
 
+ # diplomacy
+ enforce_military_access_action_notification_third_party_name: "[INITIATOR_COUNTRY.GetName]在[TARGET_COUNTRY.GetName]强制通行"
+ foreign_investment_rights_proposal_third_party_break_declined_name: "[TARGET_COUNTRY.GetName]拒绝撤销[concept_foreign_investment_rights]"
+ foreign_investment_rights_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName]拒绝撤销[INITIATOR_COUNTRY.GetName]的[concept_foreign_investment_rights]"
+
  # diplomatic_plays
  DIPLO_PLAY_CONFIDENCE_OR_NEUTRALITY_FACTOR_TRUCE: "与主要参与者之一有$TRUCES$：#bold $VALUE|+=$#!"
  grant_state_action_notification_third_party_name: "[TARGET_COUNTRY.GetName]被授予$concept_state$"
@@ -35,8 +40,6 @@
  da_evangelize_action_notification_third_party_name: "[INITIATOR_COUNTRY.GetName]开始在[TARGET_COUNTRY.GetName]传教"
  DIPLO_PACT_RELATIONS_CHANGE_POS: "•$DAYS|v$天后改善#g +1#![concept_relations]"
  DIPLO_PACT_RELATIONS_CHANGE_NEG: "•$DAYS|v$天后破坏#r -1#![concept_relations]"
- foreign_investment_rights_proposal_third_party_break_declined_name: "拒绝撤销[concept_foreign_investment_rights]"
- foreign_investment_rights_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName]拒绝撤销[concept_foreign_investment_rights][INITIATOR_COUNTRY.GetName]。"
 
  # effects_l_simp_chinese.yml
  EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
