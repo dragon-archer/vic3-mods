@@ -83,6 +83,7 @@
   - pop_types/: Reorder the calculation of `political_engagement_mult` & `qualifications` to boost perfomance (Thanks the idea of PBO mod)
   - production_methods/
     - 02_agro: `pm_fertilization_building_rice_farm` should consume only 20 fertilizer
+    - 03_mines: `pm_dynamite_building_gold_mine` should produce 10 gold
     - 11_private_infrastructure: `pm_trade_center_principle_external_trade_2` should also have basic clerk employments
   - script_values/
     - Fix liberty desire display
