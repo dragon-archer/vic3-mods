@@ -73,30 +73,3 @@ principle_internal_trade_3 = {
 		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones
 	}
 }
-
-# External Trade
-principle_external_trade_3 = {
-	icon = "gfx/interface/icons/principles_icons/external_trade.dds"
-	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
-
-	power_bloc_modifier = {
-		# Modifiers from previous level(s)
-		power_bloc_trade_route_cost_mult = -0.75
-
-		# Also unlocks a PM that grants Trade Centers Influence, checked with trigger on PM (from level 2)
-	}
-
-	member_modifier = {
-		# Modifiers from previous level(s)
-		country_trade_route_cost_mult = -0.25
-		country_trade_route_competitiveness_mult = 0.25
-
-		# Allows members to set up trade routes without diplomatic interests there
-		country_allow_trade_routes_without_interest_bool = yes
-		country_nationalization_cost_non_members_mult = -0.5
-	}
-
-	ai_weight = {
-		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones
-	}
-}
