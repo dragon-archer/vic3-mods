@@ -45,27 +45,27 @@
 
 	on_monthly_pulse = {
 		effect = {
-			every_subject_or_below = {
-				if = {
-					limit = { is_immune_to_revolutions = no }
-					set_immune_to_revolutions = yes
-				}
-				if = {
-					limit = { scaled_debt < 0.1 }
-					set_military_wage_level = very_high
-					set_government_wage_level = very_high
-				}
-				else_if = {
-					limit = { scaled_debt < 0.25 }
-					set_military_wage_level = high
-					set_government_wage_level = high
-				}
-				else_if = {
-					limit = { scaled_debt > 0.75 }
-					set_military_wage_level = very_low
-					set_government_wage_level = very_low
-				}
-			}
+			# every_subject_or_below = {
+				# if = {
+				# 	limit = { is_immune_to_revolutions = no }
+				# 	set_immune_to_revolutions = yes
+				# }
+				# if = {
+				# 	limit = { scaled_debt < 0.1 }
+				# 	set_military_wage_level = very_high
+				# 	set_government_wage_level = very_high
+				# }
+				# else_if = {
+				# 	limit = { scaled_debt < 0.25 }
+				# 	set_military_wage_level = high
+				# 	set_government_wage_level = high
+				# }
+				# else_if = {
+				# 	limit = { scaled_debt > 0.75 }
+				# 	set_military_wage_level = very_low
+				# 	set_government_wage_level = very_low
+				# }
+			# }
 		}
 	}
 
