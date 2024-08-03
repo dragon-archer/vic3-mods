@@ -49,7 +49,7 @@ Each of them can be enabled independently, but it's recommended to enable all of
 - Dynamically change culture names after merging
 	- i.e. `North German` will become `German` if `South German` is merged into it (which happens after Germany is formed)
 - Dynamic culture homeland depending on local pop culture fraction
-	- Faster incoporation speed for colonies
+	- Faster incorporation speed for colonies
 - Compatiable with most other mods
 	- Those with additional cultures are still compatiable, but additional cultures won't be merged (the dynamical homeland change will work fine)
 
