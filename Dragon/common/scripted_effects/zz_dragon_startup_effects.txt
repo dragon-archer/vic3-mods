@@ -3,53 +3,24 @@ da_merge_minor_countries = {
 	if = {
 		limit = { NOT = { has_global_variable = da_merged_minor_countries_var } }
 		set_global_variable = da_merged_minor_countries_var
-		if = {
+		if = { # Force making Hannover independent
 			limit = { da_is_in_extended_mode = yes }
-			s:STATE_BRUNSWICK.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
-			s:STATE_ELBE.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
-			s:STATE_HANNOVER.region_state:HAN ?= { da_set_state_owner = { _ = c:PRU } }
-			da_annex_if_exists_2 = { _1 = c:HAN _2 = c:HAM }
+			if = {
+				limit = { c:GBR ?= { ruler = { has_variable = is_billy } } }
+				c:GBR.ruler = { kill_character = yes }
+			}
 		}
 		c:PRU ?= {
 			every_country = {
 				limit = {
 					NOT = { this = prev }
-					NOT = { c:HAN ?= this }
-					OR = {
-						any_primary_culture = { this = cu:north_german }
-						# c:BAD ?= this
-						# c:BAV ?= this
-						# c:WUR ?= this
-						# c:HOH ?= this
-					}
+					any_primary_culture = { this = cu:north_german }
 				}
 				prev ?= { da_annex_if_exists = { _ = prev } }
 			}
-			s:STATE_RHINELAND.region_state:BAV = { set_state_owner = prev }
-			# if = {
-			# 	limit = { da_is_in_extended_mode = yes }
-			# 	s:STATE_ALSACE_LORRAINE.region_state:FRA ?= { da_set_state_owner = { _ = prev } }
-			# }
+			s:STATE_RHINELAND.region_state:BAV ?= { set_state_owner = prev }
+			s:STATE_FRANCONIA.region_state:BAV ?= { set_state_owner = prev }
 		}
-		# c:SAR ?= {
-		# 	every_country = {
-		# 		limit = {
-		# 			NOT = { this = prev }
-		# 			OR = {
-		# 				any_primary_culture = { this = cu:north_italian }
-		# 				any_primary_culture = { this = cu:south_italian }
-		# 			}
-		# 		}
-		# 		prev ?= { da_annex_if_exists = { _ = prev } }
-		# 	}
-		# 	s:STATE_PROVENCE.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
-		# 	if = {
-		# 		limit = { da_is_in_extended_mode = yes }
-		# 		s:STATE_SAVOY.region_state:SAR ?= { da_set_state_owner = { _ = c:FRA } }
-		# 		s:STATE_CORSICA.region_state:FRA ?= { da_set_state_owner = { _ = c:SAR } }
-		# 		s:STATE_MALTA.region_state:GBR ?= { da_set_state_owner = { _ = c:SAR } }
-		# 	}
-		# }
 		c:SHW ?= {
 			if = {
 				limit = { NOT = { exists = c:ETH } }
@@ -129,8 +100,8 @@ da_merge_minor_countries = {
 				da_annex_if_exists = { _ = c:BTN }
 			}
 		}
-		da_annex_if_exists_2 = { _1 = c:KAL _2 = c:MAK }
-		da_annex_if_exists_2 = { _1 = c:CHI _2 = c:TIB }
+		# da_annex_if_exists_2 = { _1 = c:KAL _2 = c:MAK }
+		# da_annex_if_exists_2 = { _1 = c:CHI _2 = c:TIB }
 		da_annex_if_exists_2 = { _1 = c:NEP _2 = c:SIK }
 		da_annex_if_exists_2 = { _1 = c:NEP _2 = c:BHU }
 		da_annex_if_exists_2 = { _1 = c:SIA _2 = c:CMI }
