@@ -9,7 +9,7 @@ da_culture_north_german = {
 	text = {
 		localization_key = da_cu_german
 		trigger = {
-			exists = c:GER
+			da_is_culture_merged = { _ = cu:south_german }
 			NOT = { exists = c:HRE }
 		}
 	}
@@ -24,7 +24,7 @@ da_culture_north_italian = {
 
 	text = {
 		localization_key = da_cu_italian
-		trigger = { exists = c:ITA }
+		trigger = { da_is_culture_merged = { _ = cu:south_italian } }
 	}
 	text = {
 		localization_key = da_cu_north_italian
