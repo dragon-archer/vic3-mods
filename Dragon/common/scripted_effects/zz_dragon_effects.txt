@@ -114,23 +114,19 @@ da_update_modifier_with_offset = {
 }
 
 # Require: $_$, the country to be annexed by THIS, no check for existsence
-# Replaced by annex_with_incorporation
-da_annex = {
-	show_as_tooltip = { annex = $_$ } # Avoid complicated loc
+da_annex_liberate = {
+	show_as_tooltip = { annex_with_incorporation = $_$ } # Avoid complicated loc
 	hidden_effect = {
-		$_$ = {
-			every_scope_state = {
-				limit = { is_incorporated = yes }
-				state_region = { set_variable = da_should_be_incorporated_var }
-			}
-		}
-		annex = $_$
+		$_$ = { every_scope_state = { state_region = { set_variable = da_temp_var } } }
+		annex_with_incorporation = $_$
 		every_scope_state = {
-			limit = { state_region = { has_variable = da_should_be_incorporated_var } }
-			state_region = { remove_variable = da_should_be_incorporated_var }
-			if = {
-				limit = { is_incorporated = no }
-				set_state_type = incorporated
+			limit = { state_region = { has_variable = da_temp_var } }
+			state_region = { remove_variable = da_temp_var }
+			remove_modifier = recently_liberated_state
+			add_modifier = {
+				name = recently_liberated_state
+				months = 120
+				is_decaying = yes
 			}
 		}
 	}
