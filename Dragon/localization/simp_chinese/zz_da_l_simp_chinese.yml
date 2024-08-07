@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+l_simp_chinese:
  # Unused
  #  da_german_bonus: "德意志精神"
  #  da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
@@ -365,3 +365,9 @@
  da_annex_subject_action_notification_desc: "[INITIATOR_COUNTRY.GetName]吞并了[TARGET_COUNTRY.GetName]"
  DA_ANNEX_SUBJECT_TT: "其他所有直属[concept_subject]的[concept_liberty_desire]立刻增加[SCOPE.sC('target_country').GetLibertyDesireRaw|v0]，并在#v 60#!个月内每月[concept_liberty_desire]增长#v 0.1#!（逐步递减）"
  DA_ANNEX_SUBJECT_TT_2: "其他所有直属[concept_subject]的[concept_liberty_desire]增加#v 10#!"
+ da_poverty_alleviation_action_name: "扶贫运动"
+ da_poverty_alleviation: "扶贫运动"
+ da_poverty_alleviation_desc: "对[concept_subject]进行扶贫"
+ da_poverty_alleviation_action_propose_name: "开始扶贫"
+ da_poverty_alleviation_action_break_name: "停止扶贫"
+ da_poverty_alleviation_pact_desc: "扶贫运动"
