@@ -6,14 +6,10 @@
 				is_treaty_port = yes
 				state_region = {
 					NOT = { has_variable = da_keep_split_var }
-					any_scope_state = {
-						owner = {
-							da_is_firm_subject_of_root = yes
-						}
-					}
+					any_scope_state = { owner = { is_subject_of = root } }
 				}
 			}
-			any_firm_subject = {
+			any_subject_or_below = {
 				save_temporary_scope_as = o
 				any_scope_state = {
 					is_treaty_port = yes
@@ -23,7 +19,7 @@
 							OR = {
 								owner = root
 								owner = {
-									da_is_firm_subject_of_root = yes
+									is_subject_of = root
 									NOT = { this = scope:o }
 								}
 							}
@@ -39,7 +35,7 @@
 	}
 
 	when_taken = {
-		every_firm_subject = {
+		every_subject_or_below = {
 			save_temporary_scope_as = o
 			every_scope_state = {
 				limit = {
@@ -50,7 +46,7 @@
 							OR = {
 								owner = root
 								owner = {
-									da_is_firm_subject_of_root = yes
+									is_subject_of = root
 									NOT = { this = scope:o }
 								}
 							}
@@ -63,7 +59,7 @@
 							OR = {
 								owner = root
 								owner = {
-									da_is_firm_subject_of_root = yes
+									is_subject_of = root
 									NOT = { this = scope:o }
 								}
 							}
@@ -89,19 +85,17 @@
 						}
 						count = all
 					}
-					any_scope_state = {
-						owner = { da_is_firm_subject_of_root = yes }
-					}
+					any_scope_state = { owner = { is_subject_of = root } }
 				}
 			}
 			state_region = {
 				random_scope_state = {
-					limit = { owner = { da_is_firm_subject_of_root = yes } }
+					limit = { owner = { is_subject_of = root } }
 					owner = { save_temporary_scope_as = t }
 				}
 			}
 			set_state_owner = scope:t
-			save_scope_as = last_state
+			save_scope_as = last_state #TODO: Update notification
 		}
 		da_post_notification = { _ = da_decision_return_treaty_port }
 	}
@@ -114,7 +108,7 @@
 da_merge_split_state = {
 	is_shown = {
 		is_player = yes # Temprorarily disable for AI
-		any_firm_subject = {
+		any_subject_or_below = {
 			any_scope_state = {
 				is_capital = no
 				save_temporary_scope_as = _
@@ -124,7 +118,7 @@ da_merge_split_state = {
 						OR = {
 							owner = root
 							AND = {
-								owner = { da_is_firm_subject_of_root = yes }
+								owner = { is_subject_of = root }
 								is_largest_state_in_region = yes
 								NOT = { this = scope:_ }
 							}
@@ -140,15 +134,13 @@ da_merge_split_state = {
 	}
 
 	when_taken = {
-		every_firm_subject = {
+		every_subject_or_below = {
 			every_scope_state = {
 				limit = {
 					is_capital = no
 					state_region = {
 						NOT = { has_variable = da_keep_split_var }
-						any_scope_state = {
-							owner = root
-						}
+						any_scope_state = { owner = root }
 					}
 				}
 				set_state_owner = root
@@ -160,16 +152,14 @@ da_merge_split_state = {
 					is_largest_state_in_region = no
 					state_region = {
 						NOT = { has_variable = da_keep_split_var }
-						any_scope_state = {
-							owner = { da_is_firm_subject_of_root = yes }
-						}
+						any_scope_state = { owner = { is_subject_of = root } }
 					}
 				}
 				state_region = {
 					every_scope_state = {
 						limit = {
 							is_largest_state_in_region = yes
-							owner = { da_is_firm_subject_of_root = yes }
+							owner = { is_subject_of = root }
 						}
 						owner = { save_temporary_scope_as = _ }
 					}
