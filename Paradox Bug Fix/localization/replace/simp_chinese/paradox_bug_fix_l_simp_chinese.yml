@@ -31,6 +31,7 @@
  enforce_military_access_action_notification_third_party_name: "[INITIATOR_COUNTRY.GetName]在[TARGET_COUNTRY.GetName]强制通行"
  foreign_investment_rights_proposal_third_party_break_declined_name: "[TARGET_COUNTRY.GetName]拒绝撤销[concept_foreign_investment_rights]"
  foreign_investment_rights_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName]拒绝撤销[INITIATOR_COUNTRY.GetName]的[concept_foreign_investment_rights]"
+ foreign_investment_agreement_action_notification_third_party_break_desc: "[TARGET_COUNTRY.GetName]和[INITIATOR_COUNTRY.GetName]结束了他们的双向[concept_foreign_investment_rights]协议。"
 
  # diplomatic_plays
  DIPLO_PLAY_CONFIDENCE_OR_NEUTRALITY_FACTOR_TRUCE: "与主要参与者之一有$TRUCES$：#bold $VALUE|+=$#!"
