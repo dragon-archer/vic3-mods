@@ -1,0 +1,9 @@
+﻿construction_service = {
+	texture = "gfx/interface/icons/goods_icons/construction_service.dds"
+	cost = 50
+	category = industrial
+
+	prestige_factor = 5
+
+	convoy_cost_multiplier = 1.5
+}

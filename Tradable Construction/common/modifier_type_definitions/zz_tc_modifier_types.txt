@@ -1,0 +1,15 @@
+﻿goods_input_construction_service_add = {
+	decimals = 1
+	color = bad
+	game_data = {
+		ai_value = 0
+	}
+}
+
+goods_output_construction_service_add = {
+	decimals = 1
+	color = good
+	game_data = {
+		ai_value = 0
+	}
+}
