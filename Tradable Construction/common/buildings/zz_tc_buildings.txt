@@ -1,0 +1,44 @@
+﻿building_construction_sector = {
+	building_group = bg_construction
+	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
+	city_type = city
+	levels_per_mesh = 2 #TC
+
+	has_max_level = yes
+
+	required_construction = 50 #TC
+	unlocking_technologies = {
+		urbanization
+	}
+	production_method_groups = {
+		pmg_base_building_construction_sector
+	}
+
+	ai_value = 1000 # Construction sector should generally be preferred over other equal-priority spending items
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}
+
+building_construction_site = {
+	building_group = bg_private_construction
+	texture = "gfx/interface/icons/building_icons/construction_camp.dds" #TODO
+	city_type = city
+	levels_per_mesh = 3
+	ai_nationalization_desire = 0.5 # AI is reluctant to privatize construction site since they are likely to need subsidies anyway
+
+	has_max_level = yes
+
+	required_construction = 50
+	unlocking_technologies = {
+		urbanization
+	}
+	production_method_groups = {
+		pmg_base_building_construction_site
+	}
+
+	ai_value = 1000 # Construction site should generally be preferred over other equal-priority spending items
+
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}
