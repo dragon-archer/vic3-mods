@@ -1,0 +1,21 @@
+﻿#TC: Create Construction Site based on existing Construction Sector
+GLOBAL = {
+	every_state = {
+		limit = {
+			has_building = building_construction_sector
+			NOT = { has_building = building_construction_site }
+		}
+		tc_create_building = {
+			building = "building_construction_site"
+			level = b:building_construction_sector.level
+			reserves = 1
+		}
+		if = {
+			limit = { b:building_construction_sector = { has_active_production_method = pm_iron_frame_buildings } }
+			activate_production_method = {
+				building_type = building_construction_site
+				production_method = pm_iron_frame_buildings_imp
+			}
+		}
+	}
+}

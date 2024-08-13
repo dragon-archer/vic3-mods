@@ -1,0 +1,85 @@
+﻿# Wrap for create_building
+# Accept script value level
+# Max level = 10
+tc_create_building = {
+	if = {
+		limit = { $level$ = 1 }
+		create_building = {
+			level = 1
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 2 }
+		create_building = {
+			level = 2
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 3 }
+		create_building = {
+			level = 3
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 4 }
+		create_building = {
+			level = 4
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 5 }
+		create_building = {
+			level = 5
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 6 }
+		create_building = {
+			level = 6
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 7 }
+		create_building = {
+			level = 7
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 8 }
+		create_building = {
+			level = 8
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ = 9 }
+		create_building = {
+			level = 9
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+	else_if = {
+		limit = { $level$ >= 10 }
+		create_building = {
+			level = 10
+			building = $building$
+			reserves = $reserves$
+		}
+	}
+}
