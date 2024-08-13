@@ -2,7 +2,7 @@
 	building_group = bg_construction
 	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
 	city_type = city
-	levels_per_mesh = 2 #TC
+	levels_per_mesh = 5
 
 	has_max_level = yes
 
@@ -23,7 +23,7 @@ building_construction_site = {
 	building_group = bg_private_construction
 	texture = "gfx/interface/icons/building_icons/construction_camp.dds" #TODO
 	city_type = city
-	levels_per_mesh = 3
+	levels_per_mesh = 0
 	ai_nationalization_desire = 0.5 # AI is reluctant to privatize construction site since they are likely to need subsidies anyway
 
 	has_max_level = yes
