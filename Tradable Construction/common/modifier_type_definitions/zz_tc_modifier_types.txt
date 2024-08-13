@@ -13,3 +13,11 @@ goods_output_construction_service_add = {
 		ai_value = 0
 	}
 }
+
+state_building_construction_site_max_level_add = {
+	decimals = 0
+	color = good
+	game_data = {
+		ai_value = 0
+	}
+}
