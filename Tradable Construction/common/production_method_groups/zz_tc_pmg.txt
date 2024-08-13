@@ -3,10 +3,10 @@
 	ai_selection = most_productive
 
 	production_methods = {
-		pm_wooden_buildings_administration
-		pm_iron_frame_buildings_administration
-		pm_steel_frame_buildings_administration
-		pm_arc_welded_buildings_administration
+		pm_wooden_buildings
+		pm_iron_frame_buildings
+		pm_steel_frame_buildings
+		pm_arc_welded_buildings
 	}
 }
 
@@ -15,9 +15,9 @@ pmg_base_building_construction_site = {
 	ai_selection = most_productive
 
 	production_methods = {
-		pm_wooden_buildings
-		pm_iron_frame_buildings
-		pm_steel_frame_buildings
-		pm_arc_welded_buildings
+		pm_wooden_buildings_imp
+		pm_iron_frame_buildings_imp
+		pm_steel_frame_buildings_imp
+		pm_arc_welded_buildings_imp
 	}
 }

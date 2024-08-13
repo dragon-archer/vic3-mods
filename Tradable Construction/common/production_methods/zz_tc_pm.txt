@@ -1,4 +1,4 @@
-﻿pm_wooden_buildings = {
+﻿pm_wooden_buildings_imp = {
 	texture = "gfx/interface/icons/production_method_icons/wooden_buildings.dds"
 
 	is_default = yes
@@ -24,7 +24,7 @@
 	}
 }
 
-pm_iron_frame_buildings = {
+pm_iron_frame_buildings_imp = {
 	texture = "gfx/interface/icons/production_method_icons/iron_frame_buildings.dds"
 
 	unlocking_technologies = {
@@ -55,7 +55,7 @@ pm_iron_frame_buildings = {
 	}
 }
 
-pm_steel_frame_buildings = {
+pm_steel_frame_buildings_imp = {
 	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
 
 	unlocking_technologies = {
@@ -86,7 +86,7 @@ pm_steel_frame_buildings = {
 	}
 }
 
-pm_arc_welded_buildings = {
+pm_arc_welded_buildings_imp = {
 	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
 
 	unlocking_technologies = {
@@ -119,7 +119,7 @@ pm_arc_welded_buildings = {
 	}
 }
 
-pm_wooden_buildings_administration = {
+pm_wooden_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/wooden_buildings.dds"
 
 	is_default = yes
@@ -141,7 +141,7 @@ pm_wooden_buildings_administration = {
 	}
 }
 
-pm_iron_frame_buildings_administration = {
+pm_iron_frame_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/iron_frame_buildings.dds"
 
 	unlocking_technologies = {
@@ -164,7 +164,7 @@ pm_iron_frame_buildings_administration = {
 	}
 }
 
-pm_steel_frame_buildings_administration = {
+pm_steel_frame_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
 
 	unlocking_technologies = {
@@ -188,7 +188,7 @@ pm_steel_frame_buildings_administration = {
 	}
 }
 
-pm_arc_welded_buildings_administration = {
+pm_arc_welded_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
 
 	unlocking_technologies = {
