@@ -1,0 +1,4 @@
+﻿#DA: Register DA mod
+GLOBAL = {
+	set_global_variable = da_is_enabled_var
+}

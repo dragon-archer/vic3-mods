@@ -1,13 +1,6 @@
 ﻿on_monthly_pulse = {
 	on_actions = {
 		da_misc_monthly
-		register_da
-	}
-}
-
-register_da = {
-	effect = {
-		set_global_variable = da_is_enabled_var
 	}
 }
 
