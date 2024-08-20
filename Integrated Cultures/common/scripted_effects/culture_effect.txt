@@ -22,8 +22,9 @@ da_merge_cultures = {
 				name = da_merged_cultures_var
 				target = scope:culture_2
 			}
+			scope:culture_2 = { has_variable = da_merged_into_var }
 		}
-		scope:culture_2.var:da_merged_into_var ?= { save_scope_as = culture_0 }
+		scope:culture_2.var:da_merged_into_var = { save_scope_as = culture_0 }
 		custom_tooltip = da_merge_culture_already_merged_tt
 	}
 	else = {
@@ -33,8 +34,9 @@ da_merge_cultures = {
 					name = da_merged_cultures_var
 					target = scope:culture_1
 				}
+				scope:culture_1 = { has_variable = da_merged_into_var }
 			}
-			scope:culture_1.var:da_merged_into_var ?= { save_scope_as = culture_0 }
+			scope:culture_1.var:da_merged_into_var = { save_scope_as = culture_0 }
 			custom_tooltip = da_merge_culture_chain_reduce_tt
 			scope:culture_0 = { save_scope_as = culture_1 }
 		}
@@ -73,7 +75,7 @@ da_merge_cultures = {
 				}
 			}
 		}
-		trigger_event = { on_action = on_da_merge_cultures days = 1 }
+		trigger_event = { on_action = da_on_merge_cultures days = 1 }
 	}
 }
 
@@ -222,7 +224,7 @@ da_merge_usa_cultures = {
 
 # Option: scope:da_extended_mode, toggle whether to merge cultures with different but nearly meaningless traits, e.g: french and breton
 # Note: religion is ignored
-da_merge_minor_cultures_impl = {
+da_merge_minor_cultures = {
 	set_global_variable = da_minor_cultures_merged_var
 	if = {
 		limit = { da_is_in_extended_mode = yes }

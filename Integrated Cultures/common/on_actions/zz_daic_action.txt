@@ -1,48 +1,34 @@
-﻿# Root = Country
+﻿on_monthly_pulse = {
+	on_actions = {
+		da_on_reload
+		da_on_merge_cultures
+	}
+}
+
 on_yearly_pulse_country = {
 	events = {
 		da_assimilation.1 # Intro event for assimilation
-	}
-	on_actions = {
-		on_da_merge_cultures
-	}
-}
-
-on_da_merge_cultures = {
-	events = {
-		da_merge_cultures.1
-	}
-}
-
-on_monthly_pulse = {
-	on_actions = {
-		register_da_ic
-		da_on_reload
-	}
-}
-
-register_da_ic = {
-	effect = {
-		set_global_variable = da_ic_is_enabled_var
-	}
-}
-
-da_on_reload = {
-	trigger = { da_newly_reloaded = yes }
-	effect = {
-		da_reload_effect = yes
-	}
-}
-
-da_merge_minor_cultures_action = {
-	effect = {
-		da_merge_minor_cultures_impl = yes
 	}
 }
 
 on_country_formed = {
 	on_actions = {
 		da_on_country_formed
+	}
+}
+
+# No root
+da_on_reload = {
+	trigger = { da_newly_reloaded = yes }
+	effect = {
+		random_country = { da_reload_effect = yes }
+	}
+}
+
+# No root
+da_on_merge_cultures = {
+	effect = {
+		random_country = { trigger_event = da_merge_cultures.1 }
 	}
 }
 
