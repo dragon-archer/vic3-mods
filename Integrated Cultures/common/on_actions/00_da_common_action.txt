@@ -1,4 +1,0 @@
-﻿# Common file for all DA components
-# Should be same in all DA mods
-
-da_merge_minor_cultures_action = { } # Empty on purpose
