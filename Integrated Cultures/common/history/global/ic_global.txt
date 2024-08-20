@@ -1,0 +1,4 @@
+﻿#IC Register IC mod
+GLOBAL = {
+	set_global_variable = da_ic_is_enabled_var
+}
