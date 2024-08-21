@@ -986,6 +986,7 @@ da_country_minting_mult_value = {
 
 da_mintage_max_multiplier = {
 	value = da_country_minting_mult_value
+	multiply = 0.5
 	subtract = da_mintage_multiplier
 }
 
