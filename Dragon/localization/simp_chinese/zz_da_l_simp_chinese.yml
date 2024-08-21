@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
  # Unused
  #  da_german_bonus: "德意志精神"
  #  da_german_bonus_desc: "勤劳的工人，先进的技术与开明的统治"
@@ -14,6 +14,47 @@ l_simp_chinese:
  #  pm_fig_orchards_enhanced: "更多无花果园"
  #  pmg_automation_building_chemical_plants: "自动化"
  #  pmg_religion_ranch: "指导人员"
+ #  da_disable_investment_pool: "禁用自主投资池"
+ #  da_disable_investment_pool_desc: "实在过于愚蠢了"
+ #  da_disable_private_construction: "禁用自主投资池"
+ # Auto PM
+ #  increase_1: "加1个"
+ #  increase_1_desc: "每周多切换1个"
+ #  decrease_1: "减1个"
+ #  decrease_1_desc: "每周少切换1个"
+ #  da_autopm_main_report: "目前每周最多切换[GetGlobalVariable('da_upgrade_amount').GetValue|V0]个建筑的生产方式"
+ #  active_construction_upgrade_manager: "寻找单价最低建造力"
+ #  deactive_construction_upgrade_manager: "不再寻找单价最低建造力"
+ #  active_construction_upgrade_manager_desc: "单价建造力 = 所有建材当地消耗价格 / 建造力"
+ #  deactive_construction_upgrade_manager_desc: "单价建造力 = 所有建材当地消耗价格 / 建造力"
+ #  notification_da_autopm_changed_name: "[SCOPE.sS('taker').GetName]的[SCOPE.sB('building_scope').GetName]自动更改了生产方式"
+ #  notification_da_autopm_changed_desc: "[SCOPE.sS('taker').GetName]的[SCOPE.sB('building_scope').GetName]自动更改了生产方式"
+ #  notification_da_autopm_changed_tooltip: "#header $notification_da_autopm_changed_name$#!\n$notification_da_autopm_changed_desc$"
+
+ #  active_resource_upgrade_manager: "自动升级资源建筑"
+ #  deactive_resource_upgrade_manager: "不再升级资源建筑"
+ #  active_resource_upgrade_manager_desc: "所有矿场、木材、石油、鱼、鲸、农场、畜牧场、橡胶、棉花、鸦片"
+ #  deactive_resource_upgrade_manager_desc: "关闭资源升级没有意义，除非您正遇到BUG或者性能问题。"
+
+ #  active_country_goods_upgrade_manager: "自动平衡国家物资建筑"
+ #  deactive_country_goods_upgrade_manager: "不再自动平衡国家物资建筑"
+ #  active_country_goods_upgrade_manager_desc: "玻璃，工具，纸，炸药，钢，引擎，汽车，船，战舰，坦克，无线电，电力"
+ #  deactive_country_goods_upgrade_manager_desc: "玻璃，工具，纸，炸药，钢，引擎，汽车，船，战舰，坦克，无线电，电力"
+
+ #  active_industry_goods_upgrade_manager: "自动平衡工业物资建筑"
+ #  deactive_industry_goods_upgrade_manager: "不再自动平衡工业物资建筑"
+ #  active_industry_goods_upgrade_manager_desc: "染料，糖，硬木，肥料，运力"
+ #  deactive_industry_goods_upgrade_manager_desc: "染料，糖，硬木，肥料，运力"
+
+ #  active_live_goods_upgrade_manager: "自动平衡生活物资建筑"
+ #  deactive_live_goods_upgrade_manager: "不再自动平衡生活物资建筑"
+ #  active_live_goods_upgrade_manager_desc: "加工食品，衣物，家具，酒"
+ #  deactive_live_goods_upgrade_manager_desc: "加工食品，衣物，家具，酒"
+
+ #  active_luxury_goods_upgrade_manager: "自动平衡奢侈物资建筑"
+ #  deactive_luxury_goods_upgrade_manager: "不再自动平衡奢侈物资建筑"
+ #  active_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
+ #  deactive_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
 
  # Misc
  literacy_penalty: "高识字率"
@@ -49,11 +90,6 @@ l_simp_chinese:
  alert_da_can_use_cohesion_hint: "快去用吧，别浪费了"
  alert_da_can_use_cohesion_action: "$concept_power_bloc$面板"
  da_can_use_cohesion_setting_name: "可以使用[concept_power_bloc_cohesion]进行[concept_bloc_leader_action]"
-
- # Investment pool
- da_disable_investment_pool: "禁用自主投资池"
- da_disable_investment_pool_desc: "实在过于愚蠢了"
- da_disable_private_construction: "禁用自主投资池"
 
  # Empire center
  building_empire_center: "帝国行政中心"
@@ -106,6 +142,8 @@ l_simp_chinese:
  da.1000.turn_off_extended_mode: "关闭全局DA扩展模式"
  da.1000.merge_minor_countries: "合并小国家"
  da.1000.merge_minor_cultures: "合并小文化"
+ da.1000.change_ig_trait: "更新利益集团特质"
+ da.1000.update_ruler_trait: "更新统治者特质"
  da.1000.quit: "关闭报表"
  da_disable_global_extended_mode_tt: "将会禁用全局DA扩展模式（可以局部手动开启）"
  da_havent_enabled_global_extended_mode_tt: "@warning!#warning 没有全局开启DA扩展模式#!"
@@ -160,7 +198,9 @@ l_simp_chinese:
 
  # DA Manager
  je_da_manager: "DA管家"
- je_da_manager_reason: "基础信息：\n$INDENT$总[concept_pop]数：[Scope.Var('da_total_pops_cnt_var').GetValue|V0]\n$INDENT$我国总[concept_pop]数：[Scope.Var('da_our_pops_cnt_var').GetValue|V0]\n\n$INDENT$$da_debt_main_report$\n\n$INDENT$$da_autopm_main_report$"
+ je_da_manager_reason: "基础信息：\n$INDENT$总[concept_pop]数：[Scope.Var('da_total_pops_cnt_var').GetValue|V0]\n$INDENT$我国总[concept_pop]数：[Scope.Var('da_our_pops_cnt_var').GetValue|V0]\n\n$INDENT$$da_debt_main_report$"
+ da_enable_je_manager: "启用#v $je_da_manager$#!"
+ da_enable_je_manager_desc: "$da_enable_je_manager$"
 
  # Modifiers
  da_approval: "TODO"
@@ -219,45 +259,6 @@ l_simp_chinese:
  TRIGGER_DA_DEBT_IS_EXTENDED_TT: "这笔国债#bold 已经#!展期过了"
  TRIGGER_DA_DEBT_IS_EXTENDED_TT_NOT: "这笔国债#bold 没有#!展期过"
  da_extend_debt_only_once_tt: "@warning!每笔国债仅可展期一次"
-
- # Auto PM
- increase_1: "加1个"
- increase_1_desc: "每周多切换1个"
- decrease_1: "减1个"
- decrease_1_desc: "每周少切换1个"
- da_autopm_main_report: "目前每周最多切换[GetGlobalVariable('da_upgrade_amount').GetValue|V0]个建筑的生产方式"
- active_construction_upgrade_manager: "寻找单价最低建造力"
- deactive_construction_upgrade_manager: "不再寻找单价最低建造力"
- active_construction_upgrade_manager_desc: "单价建造力 = 所有建材当地消耗价格 / 建造力"
- deactive_construction_upgrade_manager_desc: "单价建造力 = 所有建材当地消耗价格 / 建造力"
- notification_da_autopm_changed_name: "[SCOPE.sS('taker').GetName]的[SCOPE.sB('building_scope').GetName]自动更改了生产方式"
- notification_da_autopm_changed_desc: "[SCOPE.sS('taker').GetName]的[SCOPE.sB('building_scope').GetName]自动更改了生产方式"
- notification_da_autopm_changed_tooltip: "#header $notification_da_autopm_changed_name$#!\n$notification_da_autopm_changed_desc$"
-
- active_resource_upgrade_manager: "自动升级资源建筑"
- deactive_resource_upgrade_manager: "不再升级资源建筑"
- active_resource_upgrade_manager_desc: "所有矿场、木材、石油、鱼、鲸、农场、畜牧场、橡胶、棉花、鸦片"
- deactive_resource_upgrade_manager_desc: "关闭资源升级没有意义，除非您正遇到BUG或者性能问题。"
-
- active_country_goods_upgrade_manager: "自动平衡国家物资建筑"
- deactive_country_goods_upgrade_manager: "不再自动平衡国家物资建筑"
- active_country_goods_upgrade_manager_desc: "玻璃，工具，纸，炸药，钢，引擎，汽车，船，战舰，坦克，无线电，电力"
- deactive_country_goods_upgrade_manager_desc: "玻璃，工具，纸，炸药，钢，引擎，汽车，船，战舰，坦克，无线电，电力"
-
- active_industry_goods_upgrade_manager: "自动平衡工业物资建筑"
- deactive_industry_goods_upgrade_manager: "不再自动平衡工业物资建筑"
- active_industry_goods_upgrade_manager_desc: "染料，糖，硬木，肥料，运力"
- deactive_industry_goods_upgrade_manager_desc: "染料，糖，硬木，肥料，运力"
-
- active_live_goods_upgrade_manager: "自动平衡生活物资建筑"
- deactive_live_goods_upgrade_manager: "不再自动平衡生活物资建筑"
- active_live_goods_upgrade_manager_desc: "加工食品，衣物，家具，酒"
- deactive_live_goods_upgrade_manager_desc: "加工食品，衣物，家具，酒"
-
- active_luxury_goods_upgrade_manager: "自动平衡奢侈物资建筑"
- deactive_luxury_goods_upgrade_manager: "不再自动平衡奢侈物资建筑"
- active_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
- deactive_luxury_goods_upgrade_manager_desc: "咖啡，茶，烟，水果，丝绸，红酒，高档衣服，高档家具，瓷器，服务，艺术"
 
  # Mark character
  da_mark_character_tt: "[Character.GetFullName]将被标记，可用于后续修改"
