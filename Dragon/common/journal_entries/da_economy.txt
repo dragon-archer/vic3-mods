@@ -22,14 +22,6 @@
 	# scripted_button = da_decrease_heathen_tax
 	# scripted_button = da_increase_heathen_tax
 
-	is_shown_when_inactive = {
-		is_player = yes
-	}
-
-	possible = {
-		is_player = yes
-	}
-
 	immediate = {
 		trigger_event = { on_action = da_save_initial_gdp }
 	}

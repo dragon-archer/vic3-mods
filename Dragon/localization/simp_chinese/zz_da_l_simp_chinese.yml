@@ -276,6 +276,8 @@ l_simp_chinese:
  da_change_ideology_modifier_ruler: "割裂的意识形态"
 
  # Economy
+ da_enable_je: "启用#v $je_da_economy$#!"
+ da_enable_je_desc: "$da_enable_je$"
  je_da_economy: "经济面板"
  je_da_economy_reason: "$da_economy_market_tt$\n$da_economy_gdp_tt$\n[SelectLocalization(NotZero_CFixedPoint(SCOPE.ScriptValue('is_in_hyperinflation_value')), 'da_economy_hyperinflation_tt', 'da_economy_inflation_tt')]\n$da_economy_cpi_tt$\n$da_economy_ppi_tt$"
  da_economy_market_tt: "$INDENT$[Country.GetCapital.GetMarket.GetName]市场容量：@money![SCOPE.ScriptValue('total_market_buy_amount')|vk]，其中：\n$INDENT2$$FILTER_STAPLE$容量：@money![SCOPE.ScriptValue('cached_staple_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('staple_market_ratio')|%v]\n$INDENT2$$FILTER_INDUSTRIAL_GOODS$容量：@money![SCOPE.ScriptValue('cached_industrial_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('industrial_market_ratio')|%v]\n$INDENT2$$FILTER_LUXURY_GOODS$容量：@money![SCOPE.ScriptValue('cached_luxury_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('luxury_market_ratio')|%v]\n$INDENT2$$FILTER_MILITARY_GOODS$容量：@money![SCOPE.ScriptValue('cached_military_market_buy_amount')|vk]，占比[SCOPE.ScriptValue('military_market_ratio')|%v]"
