@@ -345,7 +345,7 @@
  da_decrease_mintage_tt: "综合$da_mintage_mod$[SCOPE.ScriptValue('da_country_minting_mult_value')|%=v]大于#v +0.00%#!"
  da_increase_mintage: "提高$da_mintage_mod$"
  da_increase_mintage_desc: "提高[SCOPE.ScriptValue('da_mintage_step')|%v]$da_mintage_mod$"
- da_increase_mintage_tt: "综合$da_mintage_mod$[SCOPE.ScriptValue('da_country_minting_mult_value')|%=v]小于基准$da_mintage_mod$[SCOPE.ScriptValue('da_mintage_max_multiplier')|%=v]的#v 150%#!"
+ da_increase_mintage_tt: "综合$da_mintage_mod$[SCOPE.ScriptValue('da_country_minting_mult_value')|%=v]小于基准$da_mintage_mod$[SCOPE.ScriptValue('da_mintage_max_multiplier')|%=v]两倍"
  da_decrease_government_wages: "降低$da_government_wages_mod$"
  da_decrease_government_wages_desc: "降低[SCOPE.ScriptValue('da_wages_step')|%v]$da_government_wages_mod$"
  da_decrease_government_wages_tt: "$da_government_wages_mod$大于等于最低基准[SCOPE.ScriptValue('da_wages_min_multiplier')|%=v]"
