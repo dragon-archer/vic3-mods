@@ -15,25 +15,25 @@
 	}
 }
 
-da_disable_investment_pool = {
-	name = "da_disable_investment_pool"
-	desc = "da_disable_investment_pool_desc"
+# da_disable_investment_pool = {
+# 	name = "da_disable_investment_pool"
+# 	desc = "da_disable_investment_pool_desc"
 
-	visible = {
-		always = yes
-	}
+# 	visible = {
+# 		always = yes
+# 	}
 
-	possible = {
-		# has_game_rule = autonomous_investment_pool
-		always = no #TODO
-		NOT = { has_modifier = da_disable_private_construction }
-	}
+# 	possible = {
+# 		# has_game_rule = autonomous_investment_pool
+# 		always = no #TODO
+# 		NOT = { has_modifier = da_disable_private_construction }
+# 	}
 
-	effect = {
-		seize_investment_pool = yes
-		add_modifier = { name = da_disable_private_construction }
-	}
-}
+# 	effect = {
+# 		seize_investment_pool = yes
+# 		add_modifier = { name = da_disable_private_construction }
+# 	}
+# }
 
 da_start_mass_migration = {
 	name = "da_start_mass_migration"
@@ -157,226 +157,226 @@ da_issue_debt_button = {
 	}
 }
 
-increase_1 = {
-	name = "increase_1"
-	desc = "increase_1_desc"
-	visible = { has_global_variable = da_upgrade_amount }
-	possible = { always = yes }
-	effect = {
-		change_global_variable = {
-			name = da_upgrade_amount
-			add = 1
-		}
-	}
-}
+# increase_1 = {
+# 	name = "increase_1"
+# 	desc = "increase_1_desc"
+# 	visible = { has_global_variable = da_upgrade_amount }
+# 	possible = { always = yes }
+# 	effect = {
+# 		change_global_variable = {
+# 			name = da_upgrade_amount
+# 			add = 1
+# 		}
+# 	}
+# }
 
-decrease_1 = {
-	name = "decrease_1"
-	desc = "decrease_1_desc"
-	visible = { has_global_variable = da_upgrade_amount }
-	possible = { always = yes }
-	effect = {
-		change_global_variable = {
-			name = da_upgrade_amount
-			subtract = 1
-		}
-	}
-}
+# decrease_1 = {
+# 	name = "decrease_1"
+# 	desc = "decrease_1_desc"
+# 	visible = { has_global_variable = da_upgrade_amount }
+# 	possible = { always = yes }
+# 	effect = {
+# 		change_global_variable = {
+# 			name = da_upgrade_amount
+# 			subtract = 1
+# 		}
+# 	}
+# }
 
-active_construction_upgrade_manager = {
-	name = "active_construction_upgrade_manager"
-	desc = "active_construction_upgrade_manager_desc"
+# active_construction_upgrade_manager = {
+# 	name = "active_construction_upgrade_manager"
+# 	desc = "active_construction_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_construction_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_construction_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_construction_upgrade_manager
-	}
-}
-deactive_construction_upgrade_manager = {
-	name = "deactive_construction_upgrade_manager"
-	desc = "deactive_construction_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_construction_upgrade_manager
+# 	}
+# }
+# deactive_construction_upgrade_manager = {
+# 	name = "deactive_construction_upgrade_manager"
+# 	desc = "deactive_construction_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_construction_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_construction_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_construction_upgrade_manager
-	}
-}
+# 	effect = {
+# 		remove_global_variable = da_construction_upgrade_manager
+# 	}
+# }
 
-active_resource_upgrade_manager = {
-	name = "active_resource_upgrade_manager"
-	desc = "active_resource_upgrade_manager_desc"
+# active_resource_upgrade_manager = {
+# 	name = "active_resource_upgrade_manager"
+# 	desc = "active_resource_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_resource_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_resource_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_resource_upgrade_manager
-	}
-}
-deactive_resource_upgrade_manager = {
-	name = "deactive_resource_upgrade_manager"
-	desc = "deactive_resource_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_resource_upgrade_manager
+# 	}
+# }
+# deactive_resource_upgrade_manager = {
+# 	name = "deactive_resource_upgrade_manager"
+# 	desc = "deactive_resource_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_resource_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_resource_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_resource_upgrade_manager
-	}
-}
+# 	effect = {
+# 		remove_global_variable = da_resource_upgrade_manager
+# 	}
+# }
 
-active_country_goods_upgrade_manager = {
-	name = "active_country_goods_upgrade_manager"
-	desc = "active_country_goods_upgrade_manager_desc"
+# active_country_goods_upgrade_manager = {
+# 	name = "active_country_goods_upgrade_manager"
+# 	desc = "active_country_goods_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_country_goods_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_country_goods_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_country_goods_upgrade_manager
-	}
-}
-deactive_country_goods_upgrade_manager = {
-	name = "deactive_country_goods_upgrade_manager"
-	desc = "deactive_country_goods_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_country_goods_upgrade_manager
+# 	}
+# }
+# deactive_country_goods_upgrade_manager = {
+# 	name = "deactive_country_goods_upgrade_manager"
+# 	desc = "deactive_country_goods_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_country_goods_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_country_goods_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_country_goods_upgrade_manager
-	}
-}
-active_industry_goods_upgrade_manager = {
-	name = "active_industry_goods_upgrade_manager"
-	desc = "active_industry_goods_upgrade_manager_desc"
+# 	effect = {
+# 		remove_global_variable = da_country_goods_upgrade_manager
+# 	}
+# }
+# active_industry_goods_upgrade_manager = {
+# 	name = "active_industry_goods_upgrade_manager"
+# 	desc = "active_industry_goods_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_industry_goods_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_industry_goods_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_industry_goods_upgrade_manager
-	}
-}
-deactive_industry_goods_upgrade_manager = {
-	name = "deactive_industry_goods_upgrade_manager"
-	desc = "deactive_industry_goods_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_industry_goods_upgrade_manager
+# 	}
+# }
+# deactive_industry_goods_upgrade_manager = {
+# 	name = "deactive_industry_goods_upgrade_manager"
+# 	desc = "deactive_industry_goods_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_industry_goods_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_industry_goods_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_industry_goods_upgrade_manager
-	}
-}
-active_live_goods_upgrade_manager = {
-	name = "active_live_goods_upgrade_manager"
-	desc = "active_live_goods_upgrade_manager_desc"
+# 	effect = {
+# 		remove_global_variable = da_industry_goods_upgrade_manager
+# 	}
+# }
+# active_live_goods_upgrade_manager = {
+# 	name = "active_live_goods_upgrade_manager"
+# 	desc = "active_live_goods_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_live_goods_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_live_goods_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_live_goods_upgrade_manager
-	}
-}
-deactive_live_goods_upgrade_manager = {
-	name = "deactive_live_goods_upgrade_manager"
-	desc = "deactive_live_goods_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_live_goods_upgrade_manager
+# 	}
+# }
+# deactive_live_goods_upgrade_manager = {
+# 	name = "deactive_live_goods_upgrade_manager"
+# 	desc = "deactive_live_goods_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_live_goods_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_live_goods_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_live_goods_upgrade_manager
-	}
-}
-active_luxury_goods_upgrade_manager = {
-	name = "active_luxury_goods_upgrade_manager"
-	desc = "active_luxury_goods_upgrade_manager_desc"
+# 	effect = {
+# 		remove_global_variable = da_live_goods_upgrade_manager
+# 	}
+# }
+# active_luxury_goods_upgrade_manager = {
+# 	name = "active_luxury_goods_upgrade_manager"
+# 	desc = "active_luxury_goods_upgrade_manager_desc"
 
-	visible = {
-		NOT = { has_global_variable = da_luxury_goods_upgrade_manager }
-	}
+# 	visible = {
+# 		NOT = { has_global_variable = da_luxury_goods_upgrade_manager }
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		set_global_variable = da_luxury_goods_upgrade_manager
-	}
-}
-deactive_luxury_goods_upgrade_manager = {
-	name = "deactive_luxury_goods_upgrade_manager"
-	desc = "deactive_luxury_goods_upgrade_manager_desc"
+# 	effect = {
+# 		set_global_variable = da_luxury_goods_upgrade_manager
+# 	}
+# }
+# deactive_luxury_goods_upgrade_manager = {
+# 	name = "deactive_luxury_goods_upgrade_manager"
+# 	desc = "deactive_luxury_goods_upgrade_manager_desc"
 
-	visible = {
-		has_global_variable = da_luxury_goods_upgrade_manager
-	}
+# 	visible = {
+# 		has_global_variable = da_luxury_goods_upgrade_manager
+# 	}
 
-	possible = {
-		always = yes
-	}
+# 	possible = {
+# 		always = yes
+# 	}
 
-	effect = {
-		remove_global_variable = da_luxury_goods_upgrade_manager
-	}
-}
+# 	effect = {
+# 		remove_global_variable = da_luxury_goods_upgrade_manager
+# 	}
+# }
 
 da_decrease_consumption_tax = {
 	name = "da_decrease_consumption_tax"
