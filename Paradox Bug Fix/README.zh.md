@@ -111,6 +111,7 @@
   - expedition_events/niger_river_expedition_events: Avoid improve relation with your own country in `expedition_events.130`
   - law_events/slavery_laws: Fix a trigger in `slavery_law_events.7` (`NOT` to `NOR`)
   - german_unification: Allow forming `NGF` and `SGF` as principality or below
+  - movement_events: Fix scope error in `movement_events.15`
   - oil_rush_events: Avoid permanent funding oil pipelines in `oil_rush.4`
   - red_scare_events: Fix scope error in `red_scare.14`
   - victoria_events: Check for the existence of `c:HAN`
