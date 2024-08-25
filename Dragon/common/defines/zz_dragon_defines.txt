@@ -108,6 +108,7 @@ NEconomy = {
 	# BUILDING_CASH_RESERVES_FILL_TIME_MED_ROI = 104 # 52	# Base number of weeks to fill a building's cash reserves when ROI is medium. Must be > 0.
 	# BUILDING_CASH_RESERVES_FILL_TIME_LOW_ROI = 156 # 78	# Base number of weeks to fill a building's cash reserves when ROI is low. Final number of weeks is directly interpolated if ROI is between low and medium. Must be > 0.
 
+	NATIONALIZATION_PER_LEVEL_COST = 300 # 500				# How much it costs to nationalize one level of a building per construction point
 	COMPANY_PRODUCTIVITY_RATIO_HIGH_THRESHOLD = 1 # 1.25	# Companies whose productivity exceeds this factor of the global average will be considered high-productivity companies
 	COMPANY_PRODUCTIVITY_RATIO_LOW_THRESHOLD = 0.5 # 0.75		# Companies whose productivity is below this factor of the global average will be considered low-productivity companies
 	COMPANY_PRODUCTIVITY_ABSOLUTE_HIGH_THRESHOLD = 20 # 25	# Companies whose productivity exceeds this amount will ALWAYS be considered high-productivity companies
