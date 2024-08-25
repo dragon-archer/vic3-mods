@@ -4,7 +4,15 @@
  revolution_pulse1_events.18.c: "或许[SCOPE.sCharacter('will_kill_for_peace_general').GetPrimaryRoleTitle]可以想一个更仁慈的计划？"
 
  # agitators_6
- agitator_legal_events.8.d: "原本对[SCOPE.sLaw('current_law_scope').GetName]议题持观望态度的[SCOPE.gsInterestGroup('dirty_dealers').GetName]，在一夜之间改变了看法。[SCOPE.gsInterestGroup('dirty_dealers').GetLeader.GetFullName]指称[SCOPE.sCharacter('supporting_agitator').GetFullName]策划了一项秘密交易。"
+ agitator_legal_events.3.a: "祝[SCOPE.sCharacter('supporting_agitator').GetFullName]早日康复。"
+ agitator_legal_events.4.b: "看看[SCOPE.sCharacter('supporting_agitator').GetFullName]是否会说到做到。"
+ agitator_legal_events.8.d: "原本对[SCOPE.sLaw('current_law_scope').GetName]议题持观望态度的[SCOPE.gsInterestGroup('dirty_dealers').GetName]，在一夜之间改变了看法。[SCOPE.gsInterestGroup('dirty_dealers').GetLeader.GetFullName]指称[SCOPE.sCharacter('supporting_agitator').GetFullName]策划了一项秘密交易。  "
+ agitator_legal_events.9.d: "[SCOPE.sCharacter('supporting_agitator').GetFullName]的一些尖锐评论让[SCOPE.sCharacter('da_boss').GetFullName]争先恐后地抢夺一个简单的代价：一条面包。关于[SCOPE.sLaw('current_law_scope').GetName]的辩论自此陷入停滞。"
+ agitator_legal_events.10.b: "在[SCOPE.sCharacter('supporting_agitator').GetInterestGroup.GetName]的壁橱里找到几具骷髅。"
+ agitator_legal_events.14.b: "看[SCOPE.sCharacter('supporting_agitator').GetInterestGroup.GetName]会不会妥协。"
+ agitator_legal_events.21.d: "尽管此前反对[SCOPE.sLaw('current_law_scope').GetName]，但[SCOPE.sCharacter('supporting_agitator').GetFullName]考虑了[SCOPE.sCharacter('supporting_agitator').GetInterestGroup.GetName]的政治立场，转而提供支持。"
+ agitator_legal_events.30.d: "在每家咖啡馆，人们都在谈论[SCOPE.sLaw('current_law_scope').GetName]。过后，[SCOPE.sCharacter('supporting_agitator').GetFullName]准备越过[SCOPE.sCharacter('supporting_agitator').GetInterestGroup.GetName]推动该部法律通过。"
+ agitator_legal_events.30.b: "保护[SCOPE.sCharacter('supporting_agitator').GetFullName]免受[SCOPE.sCharacter('supporting_agitator').GetInterestGroup.GetName]的不良影响。"
 
  # cohesion_levels
  POWER_BLOC_COHESION_WORST_INFAMY: "#indent_newline:3 [concept_infamy]最高的[concept_power_bloc_member]及其[concept_rank]（$identity_military_treaty_organization$）\n[SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetName]（[SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetRank]）#v [SCOPE.GetRootScope.GetCountry.GetPowerBloc.GetParticipantWithHighestInfamy.GetInfamy|-0]#!#!"
