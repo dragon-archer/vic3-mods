@@ -19,7 +19,7 @@ base_values = {
 	country_law_enactment_max_setbacks_add = 3
 
 	country_minting_add = 500
-	country_government_dividends_efficiency_add = 0.4 # 0.25
+	country_government_dividends_efficiency_add = 0.5 # 0.25
 
 	state_tax_capacity_add = 100
 	state_infrastructure_add = 3
@@ -60,6 +60,9 @@ base_values = {
 	state_urbanization_per_level_add = 100
 
 	unit_experience_gain_add = 1.0
+
+	#DA
+	building_nationalization_investment_return_add = 0.25
 }
 
 efficient_bureaucracy = {
