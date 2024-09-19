@@ -32,6 +32,7 @@
 - 简体中文
 - 英语
 - 日语（感谢[@総帥閣下](https://steamcommunity.com/id/uwazumi)）
+- 波兰语（感谢[@WarpWhistle79](https://steamcommunity.com/profiles/76561198409313440)）
 - 其它语言也可使用此模组，但相关页面将仍然用英语显示
 - 欢迎为本模组贡献其它语言的翻译！
 

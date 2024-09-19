@@ -32,6 +32,7 @@
 - Simplified Chinese
 - English
 - Japanese (Thanks [@総帥閣下](https://steamcommunity.com/id/uwazumi))
+- Polish (Thanks [@WarpWhistle79](https://steamcommunity.com/profiles/76561198409313440))
 - Other languages can also use this mod, but relevant information will be shown in English
 - You're welcome to contribute native translation for this mod!
 
