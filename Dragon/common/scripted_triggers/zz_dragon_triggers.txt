@@ -1,8 +1,4 @@
-﻿da_is_firm_subject_of_root = { #TODO: directly use is_subject_of
-	is_subject_of = root
-}
-
-# _1, variable name
+﻿# _1, variable name
 # _2, comparision statement
 da_compare_var = {
 	trigger_if = {
