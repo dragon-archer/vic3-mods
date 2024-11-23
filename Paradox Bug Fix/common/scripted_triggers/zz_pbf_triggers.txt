@@ -19,7 +19,10 @@ ai_has_enact_weight_modifier_journal_entries = {
 			scope:law = var:desired_law_var
 		}
 		AND = {
-			has_journal_entry = je_law_imposition
+			OR = {
+				has_journal_entry = je_law_imposition
+				has_journal_entry = je_british_dictate_law
+			}
 			scope:law = imposed_law
 		}
 		AND = {
@@ -54,7 +57,7 @@ chinese_manchu_queue_hairstyle_character_trigger = { # hairsyle for Manchu chara
 			AND = {
 				NOT = {
 					home_country = {
-						ruler ?= {
+						ruler ?= { #PBF
 							culture = {
 								has_discrimination_trait = han_chinese
 							}

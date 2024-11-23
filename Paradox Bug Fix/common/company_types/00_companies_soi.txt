@@ -245,7 +245,7 @@ company_opium_export_monopoly = {
 	}
 
 	prosperity_modifier = {
-		state_radicals_from_sol_change_mult = -0.1
+		state_radicals_from_political_movements_mult = -0.1
 		unit_morale_recovery_mult = 0.1
 	}
 
@@ -288,7 +288,7 @@ company_sherkate_eslamiya = {
 	}
 
 	prosperity_modifier = {
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.3
+		country_state_religion_wages_mult = 0.2
 	}
 
 	ai_weight = {
@@ -331,7 +331,9 @@ company_nicolas_portalis = {
 
 	prosperity_modifier = {
 		country_prestige_mult = 0.1
-		state_radicals_from_discrimination_mult = -0.05
+		state_radicalism_increases_violent_hostility_mult = -0.05
+		state_radicalism_increases_cultural_erasure_mult = -0.05
+		state_radicalism_increases_open_prejudice_mult = -0.05
 	}
 
 	ai_weight = {
@@ -636,8 +638,10 @@ company_guinness = {
 	}
 
 	prosperity_modifier = {
-		state_radicals_from_sol_change_mult = -0.1
-		state_radicals_from_discrimination_mult = -0.1
+		state_radicals_from_political_movements_mult = -0.1
+		state_radicalism_increases_violent_hostility_mult = -0.05
+		state_radicalism_increases_cultural_erasure_mult = -0.05
+		state_radicalism_increases_open_prejudice_mult = -0.05
 	}
 
 	ai_weight = {

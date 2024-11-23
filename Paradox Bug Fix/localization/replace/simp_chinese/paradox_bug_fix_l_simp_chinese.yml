@@ -30,7 +30,6 @@
  dyn_c_austria-hungary: "奥匈帝国"
 
  # customized_tooltips
- DATA_RELIGION_NAME_TOOLTIP_INGAME_ADDED: "[Religion.GetCountryDiscriminationStatus(GetPlayer.Self)][AddLocalizationIf(NotEqualTo_int64(Religion.GetPopulation(GetPlayer.Self),'(int64)0'),'RELIGION_IN_COUNTRY_DESC')]"
  POWER_BLOC_TARGET_LEVERAGE_BAR_TOOLTIP: "#header [PowerBloc.GetName]#!\n预计对[Country.GetName]的[concept_power_bloc_leverage]为@leverage!#v [Country.GetLeverageTarget(PowerBloc.Self)|0]#!\n当前对[Country.GetName]的$concept_power_bloc_leverage$为@leverage!#v [PowerBloc.GetIndividualLeverage(Country.Self)|0]#![ConcatIfNeitherEmpty('\n', AddLocalizationIf(IsValid(PowerBloc.Invite(Country.Self)), 'POWER_BLOC_LEADER_CAN_INVITE_COUNTRY'))]\n$concept_power_bloc_leverage$每周@leverage!#v [Country.GetWeeklyLeverageGain(PowerBloc.Self)|=+1]#!\n$TOOLTIP_DELIMITER$\n会产生#v [Country.GetLeverageAdvantageTarget(PowerBloc.Self)|0=+]#!$POWER_BLOC_TARGET_LEVERAGE_ADVANTAGE$\n[concept_power_bloc_leverage_share]预计占#v [Country.GetTargetLeverageShare(PowerBloc.Self)|%1]#!\n\n#title #v [Country.GetTargetLeverageShare(PowerBloc.Self)|%1]#!是基于#g [Country.GetLeverageGain(PowerBloc.Self)|0]#!/#tooltippable #tooltip:[Country.GetTooltipTag],TOTAL_LEVERAGE_FACTOR_DESC [Country.GetTotalLeverageFactors|0]#!#!的#tooltippable #tooltip:[Country.GetTooltipTag],LEVERAGE_FACTOR_TOOLTIP $concept_power_bloc_leverage$系数#!#!（+#b [Country.GetUnclaimedLeverageTarget|0]#![Concept('concept_power_bloc_unclaimed_leverage','$concept_power_bloc_unclaimed_leverage_short$')]）：#!#indent_newline:3 \n[Country.GetLeverageGainBreakdown(PowerBloc.Self)]#!"
  DATA_LEVERAGE_ADVANTAGE_NO_COUNTRY_ADVANTAGE: "[SelectLocalization(GreaterThan_CFixedPoint(Country.GetPowerBloc.GetLeverageAdvantage(Country.Self), '(CFixedPoint)0'), 'DATA_LEVERAGE_SELF_ADVANTAGE', 'DATA_LEVERAGE_ADVANTAGE_OTHER_POWER_BLOC_ADVANTAGE')]"
  DATA_LEVERAGE_SELF_ADVANTAGE: "[Country.GetPowerBloc.GetName]目前处于领先"
@@ -50,6 +49,21 @@
  DIPLO_PACT_RELATIONS_CHANGE_POS: "•$DAYS|v$天后改善#g +1#![concept_relations]"
  DIPLO_PACT_RELATIONS_CHANGE_NEG: "•$DAYS|v$天后破坏#r -1#![concept_relations]"
 
+ # dynamic_state_and_hub_names
+ STATE_WEST_GALICIA_german: "西加里西亚"
+ STATE_EAST_GALICIA_german: "东加里西亚"
+ STATE_SILESIA_german: "西里西亚"
+ STATE_WALLONIA_german: "瓦隆尼亚"
+ STATE_ALSACE_LORRAINE_german: "阿尔萨斯-洛林"
+ HUB_NAME_STATE_ALSACE_LORRAINE_city_german: "斯特拉斯堡"
+ STATE_WESTERN_THRACE_turkish: "西色雷斯"
+ STATE_IONIAN_ISLANDS_turkish: "伊奥尼亚群岛"
+ STATE_VENETIA_german: "威尼西亚"
+ STATE_ISTRIA_german: "伊斯特里亚"
+ STATE_EASTERN_THRACE_turkish: "东色雷斯"
+ STATE_CYPRUS_turkish: "塞浦路斯"
+ STATE_SAKHALIN_japanese: "库页岛"
+
  # effects_l_simp_chinese.yml
  EFFECT_ADD_MORALE_THIRD: "[CombatUnit.GetName][SelectLocalization(GreaterThan_CFixedPoint('(CFixedPoint)$VALUE$','(CFixedPoint)0'),'ADD_MORALE_GAINS','ADD_MORALE_LOSES')]$VALUE|+=$[concept_morale]"
  SET_STATE_OWNER: "[TARGET_COUNTRY.GetName]成为[STATE.GetName]的拥有者"
@@ -64,16 +78,12 @@
  ADD_TREASURY_EFFECT_THIRD_POSITIVE: "[COUNTRY.GetName]获得@money!$VALUE|+=k$"
  ADD_TREASURY_EFFECT_THIRD_NEGATIVE: "[COUNTRY.GetName]失去@money!$VALUE|-=k$"
 
- # hub_names
- HUB_NAME_STATE_OUTER_MANCHURIA_port: "海参崴"
-
  # interfaces
  GOODS_PANEL_PRICE_COMPARE: "与[concept_base_price]相比#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!\n市场结余：#variable [Goods.GetMarketBuyAndSellOrdersBalance|=D+]#!"
  UNIFICATION_SUPPORT_FOR_CANDIDATES_ENTRY: "[Country.GetName]：#tooltippable #tooltip:$BREAKDOWN_TAG$ #v $VALUE$#!#!#!"
  GOODS_PRICE_DESC_FIXED: "[GOODS.GetTextIcon][GOODS.GetName]价格固定为[GOODS.GetMarketPriceWithTooltip|1]，永远不会改变。"
  COMBAT_UNIT_BATTALION_NAME_ONE: "第$NUM$$ORIGIN$"
  FORMATIONS_NAME: "$COUNTRY_ADJECTIVE$第$NUM$$TYPE$"
- LAW_ENACTMENT_PROGRESS_PHASES: "在#tooltippable #tooltip:[Law.GetTooltipTag],LAW_NEXT_CHECKPOINT_TIME_FACTORS_TOOLTIP [Law.GetCheckpointEndDate.GetString]#!#!有#tooltippable #tooltip:[Law.GetTooltipTag],CHECKPOINT_SUCCESS_CHANCE_BREAKDOWN [Law.GetCheckpointSuccessChance|v%0]#!#!概率推进至[Law.GetCountry.GetCustom(Law.GetNextEnactmentPhaseKey)|v]"
  MAP_INTERACTION_MOVE_MARKET_CAPITAL_STATE_SELECT: "#header 将[concept_market_capital]迁移至[STATE.GetName]#!\n$TOOLTIP_DELIMITER$\n让[STATE.GetName]成为我们的[concept_market_capital]将给予其以下额外增益：\n[STATE.GetMarketCapitalEffectsDesc]\n\n迁移[concept_market_capital]会导致全国性的惩罚，在#V [GetDefine('NCountry', 'MOVE_MARKET_CAPITAL_COOLDOWN_YEARS')]#!年内逐渐衰退：\n[STATE.GetOwner.GetMoveMarketCapitalEffectsDesc]\n\n只要这些惩罚还在生效，我们就不能再迁移[concept_market_capital]。"
  COUNTRY_NAME: "[ConcatIfNeitherEmpty('$PREFIX$','属')]$NAME$"
  REVOLUTION_COUNTRY_NAME: "革命[ConcatIfNeitherEmpty('$PREFIX$','属')]$NAME$"
@@ -84,19 +94,13 @@
  TRANSFER_RESULT_FORMATION: "[SelectLocalization(StagedFormation.HasValidFormation, 'TRANSFER_RESULT_HAS_FORMATION', 'TRANSFER_RESULT_NO_FORMATION')]"
  TOOLTIP_STATE_SLAVE_IMPORT_STATES: "[STATE.GetName]上周总共从$STATES_LIST$进口了#variable $AMOUNT|+$#!奴隶"
  TOOLTIP_STATE_SLAVE_EXPORT_STATES: "[STATE.GetName]上周总共向$STATES_LIST$出口了#variable $AMOUNT|+$#!奴隶"
- JOB_SATISFACTION_PER_SOL_ABOVE_COUNTRY_STRATA_SOL: "当前生活水平（#tooltippable #tooltip:[Pop.GetTooltipTag],TOOLTIP_POP_QOL [LabelingHelper.GetLabelForStandardOfLiving(Pop.GetCurrentStandardOfLiving)|v]（[Pop.GetCurrentStandardOfLiving|v]）#!#!）和[Pop.GetCountry.GetName][Pop.GetPopType.GetStrata]平均[concept_sol]（[LabelingHelper.GetLabelForStandardOfLiving(FixedPointToInt('(CFixedPoint)$AVERAGE$'))|v]（$AVERAGE|v1$））的差距：$VALUE|0+=$"
  INCORPORATED_POPULATION: "已整合人口：[Country.GetIncorporatedPopulation|Kv]"
  UNINCORPORATED_POPULATION: "未整合人口：[Country.GetPeopleAbroad|Kv]"
- CONSTRUCTION_SPEED_BASE_TOOLTIP: "#tooltip_header @construction![concept_construction]#![AddLocalizationIf(Country.IsConstructionPaused, 'CONSTRUCTION_IS_PAUSED')]\n总计：#v [Country.CalcBaseConstructionSpeed|0]#!\n正在使用：#v [Country.CalcUsedConstruction|0]/[Country.CalcBaseConstructionSpeed|0]#!\n$TOOLTIP_DELIMITER$\n[Country.GetBaseConstructionSpeedDesc]"
- CONSTRUCTION_QUEUE_DESC: "[Country.GetName]的#header [concept_construction]#![AddLocalizationIf(Country.IsConstructionPaused, 'CONSTRUCTION_IS_PAUSED')]\n$TOOLTIP_DELIMITER$\n[Country.GetName]每周共产出@construction!#v #tooltippable #tooltip:[Country.GetTooltipTag],CONSTRUCTION_SPEED_BASE_TOOLTIP [Country.CalcBaseConstructionSpeed|1]#!#!#!$concept_construction$。\n$CONSTRUCTION_PRIVATE_ALLOCATION_DESC$\n$CONSTRUCTION_GOVERNMENT_PROJECTS_DESC$[ConcatIfNeitherEmpty('\n', Country.GetPrivateConstructionQueueDesc)]"
  COMPETITIVENESS_DOMESTIC_TRADE_BONUS: "国内[concept_trade_route]：#v #p +$VAL|%0$#!#!"
  COMPETITIVENESS_TRADE_AGREEMENT_BONUS: "生效的[concept_trade_agreement]：#v #p +$VAL|%0$#!#!"
  COMPETITIVENESS_TRADE_ROUTE_DURATION: "[concept_trade_route]年份：#v #p +$VAL|%0$#!#!"
-#  CONVOYS_FROM_MARKET_MEMBERS: "[Country.GetMarket.GetName]的[Concept('concept_country','$concept_countries$')]：#tooltippable #tooltip:$BREAKDOWN_TAG$,CONVOYS_FROM_MARKET_MEMBER_BREAKDOWN #v $VALUE|+=$#!#!#!" #TODO
  LENS_ACTION_NUMBER: "#default_text [LensOption.GetText|v]\n[GetDescriptiveText(LensOption.GetMapInteraction)]\n该行动有#v [LensOption.GetNumberOfSelections|+]#!个有效目标#!"
  RESET_PRODUCTION_METHODS_BUILDING_TYPE: "#header 重置生产方式#!\n[ConcatIfNeitherEmpty(AddLocalizationIf(Not(IsValid(BuildingType.ResetProductionMethodsToStandard)), 'RESET_PM_NOT_VALID'), '\n\n')][Country.GetName]所有$NAME$的所有[Concept('concept_production_method','$concept_production_methods$')]都会重置，以匹配你最普遍的国家标准。将进行以下调整：\n\n$LIST$"
- ## new
- GO_TO_BUTTON_BUILDING_2: "转到[BuildingOwnership.GetOwnerBuilding.GetState.GetName]的[BuildingOwnership.GetOwnerBuilding.GetName]"
 
  # liberty_desire_levels
  LIBERTY_DESIRE_WEEKLY_CHANGE_DESC_ADDITIONAL_MULTS_INCREASE: "#indent_newline:3 附加协议：\n[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetModifier.GetDescFor('country_liberty_desire_increase_mult')]#!"
@@ -110,8 +114,6 @@
  # states
  STATE_SOUTHERN_MANCHURIA: "吉林"
  STATE_NORTHERN_MANCHURIA: "黑龙江"
- STATE_OUTER_MANCHURIA: "海参崴"
- STATE_AMUR: "外东北"
  STATE_SHENGJING: "辽宁"
  STATE_SEMIRECHE: "七河"
  STATE_PERSIAN_KURDISTAN: "库尔德斯坦"
@@ -119,6 +121,3 @@
  # triggers
  TRIGGER_IS_MARKET_REACHABLE_FOR_TRADE: "目标[concept_market]可以通过陆上连接或[concept_shipping_lane][Concept('concept_trade_route','$concept_trade$')]"
  TRIGGER_IS_MARKET_REACHABLE_FOR_TRADE_NOT: "目标[concept_market]#b 不#!可以通过陆上连接或[concept_shipping_lane][Concept('concept_trade_route','$concept_trade$')]"
-
- # jomini/pops/pops_gui_l_simp_chinese.yml
- CREATE_SOCIAL_PROFILE_ERROR: "错误：[CreateSocialProfile.GetErrorMessage]"

@@ -6,14 +6,14 @@ coffee_with_milk.1 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.1.t
 	desc = coffee_with_milk.1.d
 	flavor = coffee_with_milk.1.f
 
 	event_image = {
-		video = "rp1_amazon_exploitation"
+		video = "rp1_amazon_exploitation" 
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -26,13 +26,13 @@ coffee_with_milk.1 = {
 	trigger = {
 		# Triggered by JE
 	}
-
+	
 	immediate = {
 		set_strategy = ai_strategy_plantation_economy
 	}
-
+	
 	option = {
-		name = coffee_with_milk.1.a
+		name = coffee_with_milk.1.a 
 		default_option = yes
 		add_modifier = {
 			name = modifier_agricultural_development_trade
@@ -57,7 +57,7 @@ coffee_with_milk.2 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.2.t
 	desc = coffee_with_milk.2.d
@@ -92,7 +92,7 @@ coffee_with_milk.2 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		ordered_scope_state = {
 			limit = {
@@ -115,9 +115,9 @@ coffee_with_milk.2 = {
 			save_scope_as = reinvestment_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.2.a
+		name = coffee_with_milk.2.a 
 		default_option = yes
 		scope:reinvestment_state = {
 			add_modifier = {
@@ -136,7 +136,7 @@ coffee_with_milk.2 = {
 		scope:reinvestment_state = {
 			add_radicals_in_state = {
 				value = medium_radicals
-				strata = rich
+				strata = upper
 			}
 		}
 	}
@@ -148,7 +148,7 @@ coffee_with_milk.3 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.3.t
 	desc = coffee_with_milk.3.d
@@ -186,7 +186,7 @@ coffee_with_milk.3 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		ordered_scope_state = {
 			limit = {
@@ -222,9 +222,9 @@ coffee_with_milk.3 = {
 			}
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.3.a
+		name = coffee_with_milk.3.a 
 		default_option = yes
 		scope:population_state = {
 			add_modifier = {
@@ -282,7 +282,7 @@ coffee_with_milk.4 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.4.t
 	desc = coffee_with_milk.4.d
@@ -303,7 +303,7 @@ coffee_with_milk.4 = {
 		#Fired by JE
 		NOT = { has_variable = had_coffe_with_milk_var }
 	}
-
+	
 	immediate = {
 		set_variable = had_coffe_with_milk_var
 		ordered_scope_state = {
@@ -329,9 +329,9 @@ coffee_with_milk.4 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.4.a
+		name = coffee_with_milk.4.a 
 		default_option = yes
 		show_as_tooltip = {
 			add_journal_entry = {
@@ -349,7 +349,7 @@ coffee_with_milk.5 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.5.t
 	desc = coffee_with_milk.5.d
@@ -369,13 +369,13 @@ coffee_with_milk.5 = {
 	trigger = {
 		# Triggered by JE
 	}
-
+	
 	immediate = {
 
 	}
-
+	
 	option = {
-		name = coffee_with_milk.5.a
+		name = coffee_with_milk.5.a 
 		default_option = yes
 		if = {
 			limit = {
@@ -472,7 +472,7 @@ coffee_with_milk.6 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.6.t
 	desc = coffee_with_milk.6.d
@@ -491,7 +491,7 @@ coffee_with_milk.6 = {
 
 	trigger = {
 		exists = scope:milk_state #PBF
-		exists = scope:coffee_state
+		exists = scope:coffee_state #PBF
 		NOR = {
 			scope:milk_state = {
 				is_brazil_northeast_state = yes
@@ -510,7 +510,7 @@ coffee_with_milk.6 = {
 					state_region = s:STATE_PARAIBA
 					state_region = s:STATE_RIO_GRANDE_DO_NORTE
 					state_region = s:STATE_CEARA
-					state_region = s:STATE_PIAUI
+					state_region = s:STATE_PIAUI #PBF
 					state_region = s:STATE_MARANHAO
 					state_region = s:STATE_BAHIA
 				}
@@ -540,14 +540,14 @@ coffee_with_milk.6 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.6.a
+		name = coffee_with_milk.6.a 
 		default_option = yes
 		scope:northeast_state = {
 			add_radicals_in_state = {
 				value = large_radicals
-				strata = rich
+				strata = upper
 			}
 		}
 		add_modifier = {
@@ -561,13 +561,13 @@ coffee_with_milk.6 = {
 		scope:coffee_state = {
 			add_radicals_in_state = {
 				value = medium_radicals
-				strata = rich
+				strata = upper
 			}
 		}
 		scope:milk_state = {
 			add_radicals_in_state = {
 				value = medium_radicals
-				strata = rich
+				strata = upper
 			}
 		}
 		add_modifier = {
@@ -584,7 +584,7 @@ coffee_with_milk.7 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.7.t
 	desc = coffee_with_milk.7.d
@@ -627,7 +627,7 @@ coffee_with_milk.7 = {
 			has_party = yes
 		}
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_scope
@@ -658,9 +658,9 @@ coffee_with_milk.7 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.7.a
+		name = coffee_with_milk.7.a 
 		default_option = yes
 		scope:republicans_scope = {
 			add_momentum = momentum_very_large
@@ -687,14 +687,14 @@ coffee_with_milk.8 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.8.t
 	desc = coffee_with_milk.8.d
 	flavor = coffee_with_milk.8.f
 
 	event_image = {
-		video = "unspecific_politicians_arguing"
+		video = "unspecific_politicians_arguing" 
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -713,7 +713,7 @@ coffee_with_milk.8 = {
 			has_variable = governors_policy_decision
 		}
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -741,9 +741,9 @@ coffee_with_milk.8 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.8.a
+		name = coffee_with_milk.8.a 
 		default_option = yes
 		add_modifier = {
 			name = modifier_governors_policy
@@ -776,7 +776,7 @@ coffee_with_milk.9 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.9.t
 	desc = coffee_with_milk.9.d
@@ -801,7 +801,7 @@ coffee_with_milk.9 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		random_scope_state = {
 			limit = {
@@ -836,9 +836,9 @@ coffee_with_milk.9 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.9.a
+		name = coffee_with_milk.9.a 
 		default_option = yes
 		set_variable = cangaco_var
 		scope:bandits_state = {
@@ -907,7 +907,7 @@ coffee_with_milk.10 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.10.t
 	desc = coffee_with_milk.10.d
@@ -938,7 +938,7 @@ coffee_with_milk.10 = {
 		}
 		has_technology_researched = camera
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_scope
@@ -998,7 +998,7 @@ coffee_with_milk.10 = {
 				interest_group = ig_rural_folk
 				ideology = ideology_land_reformer
 				traits = {
-					bandit
+					social_bandit
 					firebrand
 					ambitious
 				}
@@ -1036,9 +1036,9 @@ coffee_with_milk.10 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.10.a
+		name = coffee_with_milk.10.a 
 		default_option = yes
 		scope:bandits_state = {
 			add_radicals_in_state = {
@@ -1087,7 +1087,7 @@ coffee_with_milk.10 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = coffee_with_milk.10.c
 		trigger = {
@@ -1141,7 +1141,7 @@ coffee_with_milk.11 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.11.t
 	desc = coffee_with_milk.11.d
@@ -1170,7 +1170,7 @@ coffee_with_milk.11 = {
 		}
 		var:coffee_with_milk_progress >= 180
 	}
-
+	
 	immediate = {
 		capital = {
 			save_scope_as = capital_scope
@@ -1201,9 +1201,9 @@ coffee_with_milk.11 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.11.a
+		name = coffee_with_milk.11.a 
 		default_option = yes
 		scope:armed_forces_scope = {
 			add_modifier = {
@@ -1239,7 +1239,7 @@ coffee_with_milk.12 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.12.t
 	desc = coffee_with_milk.12.d
@@ -1258,7 +1258,7 @@ coffee_with_milk.12 = {
 	trigger = {
 		# Triggered by JE
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -1286,9 +1286,9 @@ coffee_with_milk.12 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.12.a
+		name = coffee_with_milk.12.a 
 		default_option = yes
 		add_modifier = {
 			name = modifier_election_bonuses_landowners_brazil
@@ -1320,7 +1320,7 @@ coffee_with_milk.13 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.13.t
 	desc = coffee_with_milk.13.d
@@ -1339,7 +1339,7 @@ coffee_with_milk.13 = {
 	trigger = {
 		# Triggered by JE
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -1400,9 +1400,9 @@ coffee_with_milk.13 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.13.a
+		name = coffee_with_milk.13.a 
 		default_option = yes
 		add_modifier = {
 			name = modifier_election_bonuses_brazil
@@ -1442,7 +1442,7 @@ coffee_with_milk.14 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.14.t
 	desc = coffee_with_milk.14.d
@@ -1461,7 +1461,7 @@ coffee_with_milk.14 = {
 	trigger = {
 		# Triggered by JE
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -1489,9 +1489,9 @@ coffee_with_milk.14 = {
 			save_scope_as = coffee_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.14.a
+		name = coffee_with_milk.14.a 
 		default_option = yes
 		add_loyalists = {
 			value = medium_radicals
@@ -1514,7 +1514,7 @@ coffee_with_milk.15 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.15.t
 	desc = coffee_with_milk.15.d
@@ -1536,7 +1536,7 @@ coffee_with_milk.15 = {
 			has_modifier = modifier_the_cangaco
 		}
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -1548,9 +1548,9 @@ coffee_with_milk.15 = {
 			save_scope_as = bandits_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.15.a
+		name = coffee_with_milk.15.a 
 		default_option = yes
 		scope:bandits_state = {
 			add_modifier = {
@@ -1574,7 +1574,7 @@ coffee_with_milk.15 = {
 			}
 			add_radicals_in_state = {
 				value = medium_radicals
-				strata = poor
+				strata = lower
 			}
 		}
 		add_modifier = {
@@ -1590,7 +1590,7 @@ coffee_with_milk.16 = {
 
 	duration = 3
 
-	#dlc = dlc008
+	dlc = dlc008
 
 	title = coffee_with_milk.16.t
 	desc = coffee_with_milk.16.d
@@ -1611,7 +1611,7 @@ coffee_with_milk.16 = {
 			has_modifier = modifier_the_cangaco
 		}
 	}
-
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
@@ -1626,9 +1626,9 @@ coffee_with_milk.16 = {
 			save_scope_as = bandits_state
 		}
 	}
-
+	
 	option = {
-		name = coffee_with_milk.16.a
+		name = coffee_with_milk.16.a 
 		default_option = yes
 		scope:bandits_state = {
 			add_radicals_in_state = {

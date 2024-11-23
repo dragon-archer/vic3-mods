@@ -23,6 +23,7 @@ idle = {
 							has_trait = expensive_tastes
 							has_trait = hedonist
 						}
+						is_historical = no
 						exists = owner
 						owner ?= { #PBF
 							NOT = {
@@ -128,6 +129,25 @@ idle = {
 			}
 			portrait_modifier = { animations_props = shovel_attachment	}
 
+		}
+
+		clergy_india_idle = {
+			animation = { head = "idle_head_pop_holyscripture" torso = "idle_body_emotions_boastful" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 5000
+
+					OR = {
+						hindu_clothes_pop_trigger = yes
+						buddhist_clothes_pop_trigger = yes
+					}
+					clergy_clothes_pop_trigger = yes
+					struggling_pop_trigger = no
+				}
+			}
 		}
 
 		holyscripture_pop_idle = {
@@ -435,6 +455,25 @@ idle = {
 				}
 			}
 			portrait_modifier = { animations_props = shovel_attachment }
+		}
+
+		clergy_india_idle_struggle = {
+			animation = { head = "idle_head_struggle_pop_pitchfork" torso = "idle_body_struggle_hatmonocle" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 5000
+
+					OR = {
+						hindu_clothes_pop_trigger = yes
+						buddhist_clothes_pop_trigger = yes
+					}
+					clergy_clothes_pop_trigger = yes
+					struggling_pop_trigger = yes
+				}
+			}
 		}
 
 		holyscripture_pop_idle_struggle = {

@@ -101,7 +101,7 @@
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
@@ -214,7 +214,7 @@ je_colonial_administration_button_niger = {
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
@@ -327,7 +327,7 @@ je_colonial_administration_button_ethiopia = {
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
@@ -440,7 +440,7 @@ je_colonial_administration_button_zanj = {
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
@@ -553,7 +553,7 @@ je_colonial_administration_button_southern_africa = {
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
@@ -666,7 +666,7 @@ je_colonial_administration_button_congo = {
 			else = {
 				create_diplomatic_pact = {
 					country = scope:newly_formed_colonial_nation_capital_scope.owner
-					type = puppet
+					type = colony
 				}
 			}
 		}
