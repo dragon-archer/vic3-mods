@@ -1,10 +1,12 @@
 {
 	"name": "GDP Ownership Display",
 	"id": "dragon-archer.ui.ownership",
-	"version": "1.7.240923",
-	"supported_game_version": "1.7.*",
+	"version": "1.8.241123",
+	"supported_game_version": "1.8.*",
 	"short_description": "",
-	"tags": ["Graphics"],
+	"tags": [
+		"Graphics"
+	],
 	"relationships": [],
 	"game_custom_data": {
 		"multiplayer_synchronized": true
