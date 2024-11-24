@@ -57,6 +57,7 @@ modern_sewerage = {
 		country_max_weekly_construction_progress_add = 10 # 5
 		market_land_trade_capacity_add = 10
 		state_pollution_reduction_health_mult = -0.1
+		state_harvest_condition_flood_impact_mult = -0.1
 	}
 
 	unlocking_technologies = {
@@ -80,6 +81,7 @@ steel_frame_buildings = {
 		state_building_construction_site_max_level_add = 5
 		country_max_weekly_construction_progress_add = 10 # 5
 		market_land_trade_capacity_add = 10
+		state_harvest_condition_flood_impact_mult = -0.05
 	}
 
 	unlocking_technologies = {
