@@ -1,8 +1,8 @@
 {
 	"name": "Customizable Private Construction",
 	"id": "dragon-archer.cpc",
-	"version": "1.7.240725",
-	"supported_game_version": "1.7.*",
+	"version": "1.8.241124",
+	"supported_game_version": "1.8.*",
 	"short_description": "",
 	"tags": [],
 	"relationships": [],
