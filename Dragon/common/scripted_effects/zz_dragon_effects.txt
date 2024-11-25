@@ -180,7 +180,7 @@ da_ban_military = {
 		text = da_ban_military_tt
 		set_variable = da_ban_military_var
 	}
-	every_firm_subject = {
+	every_subject_or_below = {
 		limit = {
 			any_scope_building = {
 				OR = {
@@ -251,7 +251,7 @@ da_ban_shipyard = {
 		text = da_ban_shipyard_tt
 		set_variable = da_ban_shipyard_var
 	}
-	every_firm_subject = {
+	every_subject_or_below = {
 		limit = {
 			any_scope_building = {
 				OR = {
