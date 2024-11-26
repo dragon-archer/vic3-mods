@@ -149,6 +149,22 @@ da_merge_cultures_if_extended = {
 	}
 }
 
+da_merge_cultures_rel_diff_1 = {
+	da_merge_cultures = { _1 = $_1$ _2 = $_2$ }
+}
+
+da_merge_cultures_rel_diff_2 = {
+	da_merge_cultures = { _1 = $_1$ _2 = $_2$ }
+}
+
+da_merge_cultures_lang_diff_1 = {
+	da_merge_cultures_if_extended = { _1 = $_1$ _2 = $_2$ }
+}
+
+da_merge_cultures_lang_rel_diff = {
+	da_merge_cultures_if_extended = { _1 = $_1$ _2 = $_2$ }
+}
+
 da_reload_effect = {
 	cu:north_german = { set_variable = da_test_reload_var }
 	every_player = { post_notification = da_reloaded_notification }
@@ -169,10 +185,10 @@ da_reload_effect = {
 		limit = { has_global_variable = da_usa_cultures_merged_var }
 		da_merge_usa_cultures = yes
 	}
-	if = {
-		limit = { has_global_variable = da_hre_cultures_merged_var }
-		da_merge_hre_cultures = yes
-	}
+	# if = {
+	# 	limit = { has_global_variable = da_hre_cultures_merged_var }
+	# 	da_merge_hre_cultures = yes
+	# }
 	if = {
 		limit = { has_global_variable = da_bra_nor_cultures_merged_var }
 		da_merge_cultures = { _1 = cu:brazilian _2 = cu:nordestino }
@@ -195,7 +211,7 @@ da_reload_effect = {
 da_merge_german_cultures = {
 	set_global_variable = da_ger_cultures_merged_var
 	da_merge_cultures = { _1 = cu:north_german _2 = cu:south_german }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:alemannic }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:north_german _2 = cu:alemannic }
 }
 
 da_merge_italian_cultures = {
@@ -203,19 +219,19 @@ da_merge_italian_cultures = {
 	da_merge_cultures = { _1 = cu:north_italian _2 = cu:south_italian }
 }
 
-da_merge_hre_cultures = {
-	set_global_variable = da_hre_cultures_merged_var
-	da_merge_cultures_if_extended = { _1 = cu:serb _2 = cu:slovene }
-	da_merge_cultures_if_extended = { _1 = cu:polish _2 = cu:czech }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:polish }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:dutch }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:north_italian }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:serb }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:wallonian }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:french }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:hungarian }
-	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:romanian }
-}
+# da_merge_hre_cultures = {
+# 	set_global_variable = da_hre_cultures_merged_var
+# 	da_merge_cultures_if_extended = { _1 = cu:serb _2 = cu:slovene }
+# 	da_merge_cultures_if_extended = { _1 = cu:polish _2 = cu:czech }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:polish }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:dutch }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:north_italian }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:serb }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:wallonian }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:french }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:hungarian }
+# 	da_merge_cultures_if_extended = { _1 = cu:north_german _2 = cu:romanian }
+# }
 
 da_merge_usa_cultures = {
 	set_global_variable = da_usa_cultures_merged_var
@@ -234,113 +250,154 @@ da_merge_minor_cultures = {
 		custom_tooltip = da_merge_minor_cultures.tt.normal
 	}
 	# Europe
-	da_merge_cultures = { _1 = cu:dutch _2 = cu:flemish }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:dutch _2 = cu:flemish } # catholic -> protestant
+	# wallonian
 	da_merge_cultures = { _1 = cu:dutch _2 = cu:boer }
+	da_merge_cultures = { _1 = cu:south_italian _2 = cu:maltese }
+	# alemannic
 	da_merge_cultures = { _1 = cu:swedish _2 = cu:danish }
 	da_merge_cultures = { _1 = cu:swedish _2 = cu:norwegian }
 	da_merge_cultures = { _1 = cu:swedish _2 = cu:icelandic }
-	da_merge_cultures = { _1 = cu:sami _2 = cu:ugrian }
-	da_merge_cultures = { _1 = cu:sami _2 = cu:karelian }
-	da_merge_cultures = { _1 = cu:sami _2 = cu:mordvin }
-	da_merge_cultures = { _1 = cu:sami _2 = cu:mari }
-	da_merge_cultures = { _1 = cu:sami _2 = cu:udmurt }
+	# finnish
+	da_merge_cultures = { _1 = cu:karelian _2 = cu:mordvin }
+	da_merge_cultures = { _1 = cu:karelian _2 = cu:mari }
+	da_merge_cultures = { _1 = cu:karelian _2 = cu:udmurt }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:karelian _2 = cu:sami }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:karelian _2 = cu:ugrian } # animist -> protestant
 	da_merge_cultures = { _1 = cu:british _2 = cu:scottish }
-	da_merge_cultures_if_extended = { _1 = cu:british _2 = cu:welsh }
-	da_merge_cultures = { _1 = cu:south_italian _2 = cu:maltese }
-	da_merge_cultures_if_extended = { _1 = cu:spanish _2 = cu:basque }
-	da_merge_cultures_if_extended = { _1 = cu:spanish _2 = cu:catalan }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:irish _2 = cu:welsh }
+	# australian
+	# basque
+	da_merge_cultures_lang_diff_1 = { _1 = cu:spanish _2 = cu:catalan }
 	da_merge_cultures = { _1 = cu:portuguese _2 = cu:galician }
+
 	da_merge_cultures = { _1 = cu:french _2 = cu:occitan }
 	da_merge_cultures = { _1 = cu:french _2 = cu:cajun }
-	da_merge_cultures_if_extended = { _1 = cu:french _2 = cu:breton }
-	da_merge_cultures_if_extended = { _1 = cu:french _2 = cu:francoprovencal }
-	da_merge_cultures = { _1 = cu:serb _2 = cu:croat }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:french _2 = cu:breton }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:french _2 = cu:francoprovencal }
+
 	da_merge_cultures = { _1 = cu:serb _2 = cu:bulgarian }
-	da_merge_cultures = { _1 = cu:serb _2 = cu:bosniak }
-	da_merge_cultures_if_extended = { _1 = cu:polish _2 = cu:slovak }
-	da_merge_cultures = { _1 = cu:czech _2 = cu:sorb }
-	da_merge_cultures_if_extended = { _1 = cu:lithuanian _2 = cu:latvian }
-	da_merge_cultures_if_extended = { _1 = cu:lithuanian _2 = cu:estonian }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:serb _2 = cu:bosniak }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:serb _2 = cu:croat } # catholic -> orthodox
+	da_merge_cultures = { _1 = cu:croat _2 = cu:slovene } # catholic -> orthodox
+	# albanian
+	# romanian
+	da_merge_cultures = { _1 = cu:hungarian _2 = cu:szekely }
+	da_merge_cultures = { _1 = cu:polish _2 = cu:slovak }
+	da_merge_cultures = { _1 = cu:polish _2 = cu:sorb }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:polish _2 = cu:czech } # protestant -> catholic
+	da_merge_cultures_rel_diff_1 = { _1 = cu:lithuanian _2 = cu:latvian } # protestant -> catholic
 	da_merge_cultures = { _1 = cu:russian _2 = cu:byelorussian }
 	da_merge_cultures = { _1 = cu:russian _2 = cu:ukrainian }
-	da_merge_cultures = { _1 = cu:georgian _2 = cu:armenian }
-	da_merge_cultures = { _1 = cu:georgian _2 = cu:circassian }
-	da_merge_cultures = { _1 = cu:georgian _2 = cu:chechen }
-	da_merge_cultures_if_extended = { _1 = cu:azerbaijani _2 = cu:north_caucasian }
-	da_merge_cultures_if_extended = { _1 = cu:sephardic _2 = cu:ashkenazi }
-	da_merge_cultures = { _1 = cu:bashkir _2 = cu:chuvash }
-
-	# Asia
-	da_merge_cultures_if_extended = { _1 = cu:misri _2 = cu:maghrebi }
-	da_merge_cultures = { _1 = cu:misri _2 = cu:mashriqi }
+	# estonian
+	# greek
+	da_merge_cultures_rel_diff_1 = { _1 = cu:georgian _2 = cu:armenian } # oriental_orthodox -> orthodox
+	da_merge_cultures_rel_diff_2 = { _1 = cu:georgian _2 = cu:circassian }
+	da_merge_cultures = { _1 = cu:circassian _2 = cu:chechen }
+	da_merge_cultures_lang_rel_diff = { _1 = cu:azerbaijani _2 = cu:north_caucasian }
+	# sepahrdic
+	# turkish
+	da_merge_cultures = { _1 = cu:misri _2 = cu:maghrebi }
 	da_merge_cultures = { _1 = cu:misri _2 = cu:bedouin }
 	da_merge_cultures = { _1 = cu:misri _2 = cu:berber }
-	da_merge_cultures = { _1 = cu:misri _2 = cu:yemenite }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:misri _2 = cu:mashriqi } # shia -> sunni
+	da_merge_cultures = { _1 = cu:mashriqi _2 = cu:yemenite }
+
+	da_merge_cultures = { _1 = cu:persian _2 = cu:kurdish }
+	da_merge_cultures = { _1 = cu:persian _2 = cu:mazanderani }
+	da_merge_cultures = { _1 = cu:persian _2 = cu:luri }
+
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:uzbek }
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:kirgiz }
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:tajik }
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:uighur }
-	da_merge_cultures = { _1 = cu:kazak _2 = cu:pashtun }
-	da_merge_cultures = { _1 = cu:kazak _2 = cu:baluchi }
-	da_merge_cultures = { _1 = cu:kazak _2 = cu:hazara }
 	da_merge_cultures = { _1 = cu:kazak _2 = cu:turkmen }
-	da_merge_cultures = { _1 = cu:persian _2 = cu:kurdish }
-	da_merge_cultures = { _1 = cu:persian _2 = cu:mazanderani }
-	da_merge_cultures = { _1 = cu:persian _2 = cu:luri }
-	da_merge_cultures = { _1 = cu:siberian _2 = cu:yakut }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:bihari }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:oriya }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:sinhala }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:avadhi }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:kanauji }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:panjabi }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:kazak _2 = cu:pashtun } #TODO
+	da_merge_cultures = { _1 = cu:pashtun _2 = cu:baluchi }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:pashtun _2 = cu:hazara } # shia -> sunni
+	# tatar
+	da_merge_cultures = { _1 = cu:mongol _2 = cu:buryat }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:mongol _2 = cu:tuvan }
+	# kalmyk
+	da_merge_cultures_lang_rel_diff = { _1 = cu:yakut _2 = cu:siberian } # animist -> orthodox
+
+	da_merge_cultures_lang_rel_diff = { _1 = cu:tibetan _2 = cu:yi }
+	da_merge_cultures_lang_rel_diff = { _1 = cu:tibetan _2 = cu:nepali }
+
+	da_merge_cultures_lang_diff_1 = { _1 = cu:assamese _2 = cu:manipuri }
+
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:bihari }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:oriya }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:avadhi }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:rajput }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:bundeli }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:pahari }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:bageli }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:chhattisgarhi }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:gujarati }
+	da_merge_cultures = { _1 = cu:hindustani _2 = cu:marathi }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:hindustani _2 = cu:sinhala }
+	da_merge_cultures_rel_diff_1 = { _1 = cu:hindustani _2 = cu:panjabi }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:hindustani _2 = cu:bengali }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:kashmiri }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:gujarati }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:marathi }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:sindi }
-	da_merge_cultures = { _1 = cu:bengali _2 = cu:rajput }
+	da_merge_cultures = { _1 = cu:bengali _2 = cu:deccani }
 	da_merge_cultures = { _1 = cu:bengali _2 = cu:kho }
-	da_merge_cultures = { _1 = cu:assamese _2 = cu:manipuri }
 	da_merge_cultures = { _1 = cu:kannada _2 = cu:malayalam }
-	da_merge_cultures = { _1 = cu:kannada _2 = cu:tamil }
 	da_merge_cultures = { _1 = cu:kannada _2 = cu:telegu }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:dayak }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:batak }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:filipino }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:moro }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:moluccan }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:malay }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:bornean }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:sumatran }
-	da_merge_cultures = { _1 = cu:javan _2 = cu:balinese }
+	da_merge_cultures = { _1 = cu:kannada _2 = cu:gondi }
+	da_merge_cultures = { _1 = cu:kannada _2 = cu:tamil }
+	# vietnamese
 	da_merge_cultures = { _1 = cu:khmer _2 = cu:mon }
-	da_merge_cultures = { _1 = cu:khmer _2 = cu:khmu }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:khmer _2 = cu:khmu }
+
+	da_merge_cultures = { _1 = cu:malay _2 = cu:javan }
+	da_merge_cultures = { _1 = cu:malay _2 = cu:moro }
+	da_merge_cultures = { _1 = cu:malay _2 = cu:bornean }
+	da_merge_cultures = { _1 = cu:malay _2 = cu:sumatran }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:filipino }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:balinese }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:batak }
+	da_merge_cultures = { _1 = cu:batak _2 = cu:dayak }
+	# malagasy
 	da_merge_cultures = { _1 = cu:thai _2 = cu:lao }
 	da_merge_cultures = { _1 = cu:thai _2 = cu:shan }
-	da_merge_cultures = { _1 = cu:burmese _2 = cu:kachin }
 	da_merge_cultures = { _1 = cu:burmese _2 = cu:karen }
-	da_merge_cultures_if_extended = { _1 = cu:han _2 = cu:hakka }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:burmese _2 = cu:kachin }
+	da_merge_cultures = { _1 = cu:kachin _2 = cu:lushai }
+	da_merge_cultures = { _1 = cu:kachin _2 = cu:naga }
+	# japanese
+	# manchu
+	da_merge_cultures_lang_diff_1 = { _1 = cu:han _2 = cu:hakka }
 	da_merge_cultures = { _1 = cu:hakka _2 = cu:min }
 	da_merge_cultures = { _1 = cu:hakka _2 = cu:yue }
-	da_merge_cultures_if_extended = { _1 = cu:tibetan _2 = cu:yi }
-	da_merge_cultures = { _1 = cu:mongol _2 = cu:buryat }
-
-	# Oceania
-	da_merge_cultures = { _1 = cu:polynesian _2 = cu:hawaiian }
+	# korean
+	# ainu
+	# miao
+	# zhuang
+	da_merge_cultures_rel_diff_2 = { _1 = cu:polynesian _2 = cu:hawaiian }
 	da_merge_cultures = { _1 = cu:polynesian _2 = cu:melanesian }
 	da_merge_cultures = { _1 = cu:polynesian _2 = cu:micronesian }
 	da_merge_cultures = { _1 = cu:polynesian _2 = cu:maori }
 	da_merge_cultures = { _1 = cu:polynesian _2 = cu:yuanzhumin }
-
-	# North America
-	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:dakota }
-	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:muskogean }
-	da_merge_cultures_if_extended = { _1 = cu:cherokee _2 = cu:algonquian }
+	# aborigine
 	da_merge_cultures = { _1 = cu:zapotec _2 = cu:mayan }
 	da_merge_cultures = { _1 = cu:zapotec _2 = cu:nahua }
 	da_merge_cultures = { _1 = cu:zapotec _2 = cu:tarascan }
-	da_merge_cultures = { _1 = cu:zapotec _2 = cu:mixtec }
-	da_merge_cultures = { _1 = cu:zapotec _2 = cu:miskito }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:zapotec _2 = cu:mixtec }
+	da_merge_cultures = { _1 = cu:mixtec _2 = cu:miskito }
+	da_merge_cultures = { _1 = cu:quechua _2 = cu:aimara }
+	da_merge_cultures = { _1 = cu:quechua _2 = cu:guajiro }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:quechua _2 = cu:amazonian }
+	da_merge_cultures = { _1 = cu:amazonian _2 = cu:guarani }
+	da_merge_cultures = { _1 = cu:amazonian _2 = cu:patagonian }
+	da_merge_cultures = { _1 = cu:amazonian _2 = cu:tupinamba }
+	da_merge_cultures = { _1 = cu:amazonian _2 = cu:muisca }
+	da_merge_cultures = { _1 = cu:amazonian _2 = cu:cariban }
+
+	da_merge_cultures_lang_rel_diff = { _1 = cu:cherokee _2 = cu:metis }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:cherokee _2 = cu:dakota }
+	da_merge_cultures = { _1 = cu:cherokee _2 = cu:muskogean }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:pueblo }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:inuit }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:cree }
@@ -350,77 +407,90 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:nez_perce }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:siouan }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:comanche }
+	da_merge_cultures = { _1 = cu:dakota _2 = cu:algonquian }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:iroquoian }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:caddoan }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:paiute }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:hokan }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:apache }
 	da_merge_cultures = { _1 = cu:dakota _2 = cu:oodham }
-
-	# South America
-	# TODO Find if south america support merge
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:guarani }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:aimara }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:amazonian }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:patagonian }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:guajiro }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:tupinamba }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:muisca }
-	da_merge_cultures_if_extended = { _1 = cu:quechua _2 = cu:cariban }
-
-	# Africa
+	# yankee
+	# dixie
+	da_merge_cultures = { _1 = cu:central_american _2 = cu:mexican }
+	da_merge_cultures = { _1 = cu:central_american _2 = cu:caribeno }
+	da_merge_cultures = { _1 = cu:north_andean _2 = cu:ecuadorian }
+	da_merge_cultures = { _1 = cu:north_andean _2 = cu:venezuelan }
+	da_merge_cultures = { _1 = cu:north_andean _2 = cu:colombian }
+	da_merge_cultures = { _1 = cu:south_andean _2 = cu:peruvian }
+	da_merge_cultures = { _1 = cu:south_andean _2 = cu:bolivian }
+	da_merge_cultures = { _1 = cu:south_andean _2 = cu:chilean }
+	da_merge_cultures = { _1 = cu:platinean _2 = cu:argentine }
+	da_merge_cultures = { _1 = cu:platinean _2 = cu:paraguayan }
+	da_merge_cultures = { _1 = cu:platinean _2 = cu:uruguayan }
+	# brazilian
+	da_merge_cultures = { _1 = cu:afro_american _2 = cu:afro_caribbean }
+	# afro_caribeno
+	# afro_brazilian
+	# afro_antillean
 	da_merge_cultures = { _1 = cu:akan _2 = cu:bambara }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:bassa }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:dyula }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:edo }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:ewe }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:fon }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:fulbe }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:hausa }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:ibibio }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:ibo }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:kissi }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:kru }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:mande }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:mossi }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:senufo }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:songhai }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:tiv }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:tuareg }
-	da_merge_cultures = { _1 = cu:akan _2 = cu:wolof }
 	da_merge_cultures = { _1 = cu:akan _2 = cu:yoruba }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:akan _2 = cu:dyula }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:fulbe }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:hausa }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:mande }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:songhai }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:tuareg }
+	da_merge_cultures = { _1 = cu:dyula _2 = cu:wolof }
+
 	da_merge_cultures = { _1 = cu:haratin _2 = cu:bidan }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:fang }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:luba }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:lunda }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:mongo }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:equatorial_bantu }
-	da_merge_cultures = { _1 = cu:bakongo _2 = cu:fluvian_bantu }
+
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:bakongo }
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:fang }
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:luba }
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:lunda }
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:mongo }
+	da_merge_cultures = { _1 = cu:equatorial_bantu _2 = cu:fluvian_bantu }
 	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:kanuri }
 	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:sara }
 	da_merge_cultures = { _1 = cu:baguirmi _2 = cu:teda }
-	da_merge_cultures = { _1 = cu:amhara _2 = cu:afar }
-	da_merge_cultures = { _1 = cu:amhara _2 = cu:oromo }
-	da_merge_cultures = { _1 = cu:amhara _2 = cu:sidama }
-	da_merge_cultures = { _1 = cu:amhara _2 = cu:tigray }
+
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:azande }
-	da_merge_cultures = { _1 = cu:nilotic _2 = cu:beja }
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:dinka }
-	da_merge_cultures = { _1 = cu:nilotic _2 = cu:fur }
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:luo }
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:maasai }
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:nuer }
 	da_merge_cultures = { _1 = cu:nilotic _2 = cu:nuba }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:nilotic _2 = cu:beja }
+	da_merge_cultures = { _1 = cu:beja _2 = cu:fur }
+
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:oromo }
+	da_merge_cultures = { _1 = cu:amhara _2 = cu:tigray }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:amhara _2 = cu:afar }
+	da_merge_cultures = { _1 = cu:afar _2 = cu:sidama }
+
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:kikuyu }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:ruanda }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:rundi }
-	da_merge_cultures = { _1 = cu:baganda _2 = cu:sukuma }
-	da_merge_cultures = { _1 = cu:baganda _2 = cu:swahili }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:unyamwezi }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:lacustrine_bantu }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:chewa }
 	da_merge_cultures = { _1 = cu:baganda _2 = cu:herero }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:baganda _2 = cu:sukuma }
+	da_merge_cultures = { _1 = cu:sukuma _2 = cu:swahili }
+
 	da_merge_cultures = { _1 = cu:somali _2 = cu:sudanese }
+
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:makua }
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:nguni }
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:ovimbundu }
@@ -433,4 +503,10 @@ da_merge_minor_cultures = {
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:yao }
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:zulu }
 	da_merge_cultures = { _1 = cu:lomwe _2 = cu:kavango_bantu }
+	da_merge_cultures_lang_diff_1 = { _1 = cu:lomwe _2 = cu:khoisan }
+	# anglo_canadian
+	# franco_canadian
+	# corsican
+	# pathan
+	# assyrian
 }

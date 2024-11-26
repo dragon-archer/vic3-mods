@@ -34,14 +34,14 @@ da_on_merge_cultures = {
 
 da_on_country_formed = {
 	effect = {
+		# if = {
+		# 	limit = {
+		# 		exists = c:HRE
+		# 		c:HRE ?= ROOT
+		# 	}
+		# 	da_merge_hre_cultures = yes
+		# }
 		if = {
-			limit = {
-				exists = c:HRE
-				c:HRE ?= ROOT
-			}
-			da_merge_hre_cultures = yes
-		}
-		else_if = {
 			limit = {
 				exists = c:GER
 				c:GER ?= ROOT

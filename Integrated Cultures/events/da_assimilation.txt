@@ -2,6 +2,7 @@
 
 # Intro event for assimilation
 # Annual assimilation report
+# TODO: Differentiate between accepted and discriminated pops
 da_assimilation.1 = {
 	type = country_event
 	placement = ROOT
@@ -187,19 +188,19 @@ da_assimilation.1 = {
 				}
 				every_scope_pop = {
 					limit = { NOT = { culture = scope:prim_cu } }
-					if = {
-						limit = { culture_accepted = yes }
+					# if = {
+					# 	limit = { culture_accepted = yes }
 						change_pop_culture = {
 							target = scope:prim_cu
-							value = da_assimilation_accepted_rate
+							value = da_assimilation_rate
 						}
-					}
-					else = {
-						change_pop_culture = {
-							target = scope:prim_cu
-							value = da_assimilation_discriminated_rate
-						}
-					}
+					# }
+					# else = {
+					# 	change_pop_culture = {
+					# 		target = scope:prim_cu
+					# 		value = da_assimilation_discriminated_rate
+					# 	}
+					# }
 				}
 			}
 		}
@@ -229,19 +230,19 @@ da_assimilation.1 = {
 				}
 				every_scope_pop = {
 					limit = { NOT = { religion = root.religion } }
-					if = {
-						limit = { religion_accepted = yes }
+					# if = {
+					# 	limit = { religion_accepted = yes }
 						change_pop_religion = {
 							target = root.religion
-							value = da_conversion_accepted_rate
+							value = da_conversion_rate
 						}
-					}
-					else = {
-						change_pop_religion = {
-							target = root.religion
-							value = da_conversion_discriminated_rate
-						}
-					}
+					# }
+					# else = {
+					# 	change_pop_religion = {
+					# 		target = root.religion
+					# 		value = da_conversion_discriminated_rate
+					# 	}
+					# }
 				}
 			}
 		}

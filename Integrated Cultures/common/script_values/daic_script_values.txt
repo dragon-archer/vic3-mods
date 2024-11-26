@@ -16,31 +16,32 @@ da_assimilation_homeland_factor = {
 
 da_assimilation_rate = {
 	value = da_assimilation_base_rate
-	multiply = {
-		value = 1
-		add = modifier:country_da_assimilation_mult
-	}
+	# multiply = {
+		# value = 1
+		# add = modifier:country_da_assimilation_mult
+	# }
+	multiply = da_assimilation_homeland_factor
 	min = 0
 }
 
 da_assimilation_accepted_rate = {
 	value = da_assimilation_base_rate
-	multiply = {
-		value = 1
-		add = owner.modifier:country_da_assimilation_mult
-		add = owner.modifier:country_da_assimilation_accepted_mult
-	}
+	# multiply = {
+		# value = 1
+		# add = owner.modifier:country_da_assimilation_mult
+		# add = owner.modifier:country_da_assimilation_accepted_mult
+	# }
 	multiply = da_assimilation_homeland_factor
 	min = 0
 }
 
 da_assimilation_discriminated_rate = {
 	value = da_assimilation_base_rate
-	multiply = {
-		value = 1
-		add = owner.modifier:country_da_assimilation_mult
-		add = owner.modifier:country_da_assimilation_discriminated_mult
-	}
+	# multiply = {
+		# value = 1
+		# add = owner.modifier:country_da_assimilation_mult
+		# add = owner.modifier:country_da_assimilation_discriminated_mult
+	# }
 	multiply = da_assimilation_homeland_factor
 	min = 0
 }
@@ -49,6 +50,10 @@ da_assimilation_discriminated_rate = {
 da_conversion_base_rate = 0.02
 da_conversion_accepted_factor = 2
 da_conversion_discriminated_factor = 1
+
+da_conversion_rate = {
+	value = da_conversion_base_rate
+}
 
 da_conversion_accepted_rate = {
 	value = da_conversion_base_rate
