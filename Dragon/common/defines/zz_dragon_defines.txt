@@ -32,6 +32,12 @@ NAI = {
 	# PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_MULT = 0.75 # 0.5 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
 	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 60
 	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_MULT = 0.5 # 0.25 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
+
+	OWNER_COMPANY_SCORE_MULT = 10.0 # 3.0									# Multiply owner company score by this, the higher this is, the more likely a company building is chosen instead of other owning building types
+	OWNER_COMPANY_MIN_LEVELS_IN_OWN_STATE = 10						# How many levels should the company building invest in buildings in its own state
+	OWNER_COMPANY_MIN_LEVELS_IN_OWN_STATE_PENALTY_MULT = 0.5 # 0.05		# Multiply owner company score by this if the number of levels in its own state is below minimum
+	OWNER_COMPANY_MIN_LEVELS_IN_OWN_COUNTRY = 100					# How many levels should the company building invest in buildings in its own country
+	OWNER_COMPANY_MIN_LEVELS_IN_OWN_COUNTRY_PENALTY_MULT = 0.5 # 0.05		# Multiply owner company score by this if the number of levels in its own country is below minimum
 }
 
 NCountry = {
