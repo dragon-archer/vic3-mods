@@ -14,8 +14,6 @@ base_values = {
 
 	country_secession_progress_add = 0.1
 
-	state_education_access_wealth_add = 0.005
-
 	country_law_enactment_max_setbacks_add = 3
 
 	country_minting_add = 500
@@ -24,10 +22,10 @@ base_values = {
 	state_tax_capacity_add = 100
 	state_infrastructure_add = 3
 	state_infrastructure_from_automobiles_consumption_add = 0.25
-
-	state_poor_expected_sol = 5
-	state_middle_expected_sol = 10
-	state_rich_expected_sol = 15
+	
+	state_lower_strata_expected_sol_add = 5
+	state_middle_strata_expected_sol_add = 10
+	state_upper_strata_expected_sol_add = 15
 	state_expected_sol_from_literacy = 5
 
 	state_farmers_investment_pool_contribution_add = 0.05
@@ -47,9 +45,9 @@ base_values = {
 	building_economy_of_scale_level_cap_add = 20
 
 	state_market_access_price_impact = 0.75
-
-	country_company_throughput_bonus_add = 0.1
-	country_company_construction_efficiency_bonus_add = 0.25
+	
+	country_company_throughput_bonus_add = 0.25
+	country_company_construction_efficiency_bonus_add = 0.5
 
 	country_max_weekly_construction_progress_add = 10
 
@@ -59,7 +57,7 @@ base_values = {
 
 	state_urbanization_per_level_add = 100
 
-	unit_experience_gain_add = 1.0
+	unit_experience_gain_add = 0.5
 
 	#DA
 	building_nationalization_investment_return_add = 0.25
@@ -75,7 +73,7 @@ state_turmoil = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_tax_waste_add = 0.25
 	state_migration_pull_mult = -0.15
-	state_construction_mult = -0.15
+	state_construction_mult = -0.15 # -0.33
 }
 
 # Applied if state is above 'high turmoil' threshold
@@ -83,7 +81,7 @@ state_turmoil_high = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_tax_waste_add = 0.5
 	state_migration_pull_mult = -0.25
-	state_construction_mult = -0.25
+	state_construction_mult = -0.25 # -0.5
 }
 
 # Applied if state is above 'extreme turmoil' threshold
@@ -91,7 +89,7 @@ state_turmoil_extreme = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_tax_waste_add = 0.75
 	state_migration_pull_mult = -0.5
-	state_construction_mult = -0.5
+	state_construction_mult = -0.5 # -0.75
 }
 
 # Scales with number of excess innovation points
@@ -106,17 +104,6 @@ market_capital_state = {
 	state_infrastructure_mult = 0.25
 	state_market_access_price_impact = 1 # Market capital should always have full market access
 	state_migration_pull_mult = 0.5
-}
-
-the_algerian_fiasco = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	country_prestige_mult = -0.3
-}
-
-literacy_penalty = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	state_birth_rate_mult = -0.1 	# scaled by pop literacy
-	state_radicals_from_sol_change_mult = 0.2 # Literate pops are more likely to complain
 }
 
 #### New
@@ -148,8 +135,6 @@ da_communism_colony_modifier = {
 	building_group_bg_plantations_throughput_add = 0.2
 	building_group_bg_mining_throughput_add = 0.2
 	state_migration_pull_mult = 0.5
-	state_loyalists_from_sol_change_mult = 0.5
-	state_radicals_from_sol_change_mult = -0.5
 }
 
 da_communism_colony_modifier_ig = {
@@ -186,8 +171,8 @@ da_cpi_mod = {
 
 da_cpi_rate_mod = {
 	icon = gfx/interface/icons/generic_icons/inflation.dds
-	state_radicals_from_sol_change_mult = 1
-	state_loyalists_from_sol_change_mult = -1
+	# state_radicals_from_sol_change_mult = 1
+	# state_loyalists_from_sol_change_mult = -1
 }
 
 da_inflation_rate_mod = {
