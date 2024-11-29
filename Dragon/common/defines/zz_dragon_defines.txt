@@ -52,18 +52,18 @@ NDiplomacy = {
 	# OBLIGATION_MONTHS = 600 # 120
 
 	INFAMY_THRESHOLD_INFAMOUS = 50 # 25
-	INFAMY_THRESHOLD_NOTORIOUS = 75 # 50
+	INFAMY_THRESHOLD_NOTORIOUS = 100 # 50
 	INFAMY_THRESHOLD_PARIAH = 150 # 100
 	BASE_YEARLY_INFAMY_DECAY_RATE = 7.5 # 5.0
 
-	TENSION_THRESHOLD_VOLATILE = 90
-	TENSION_DECAY_RATE = 10 # Per year
+	# TENSION_THRESHOLD_VOLATILE = 90 # 75
+	# TENSION_DECAY_RATE = 10 # 5 # Per year
 	# TENSION_INCREASE_MIN = 1 # Tension increases by a min of this when a province is colonized
 	# TENSION_INCREASE_MAX = 3 # Tension increases by a max of this when a province is colonized
-	TENSION_NUM_PROVINCE_SCALING_BASE = 5 # Below this amount of provinces a decentralized country gets additional tension when their provinces are colonized
-	TENSION_NUM_PROVINCE_SCALING_RATE = 1.5 # Max multiplier increase in tension per province taken from having only a few provinces
-	TENSION_INCREASE_RATE_ADJACENT = 0.25 # Multiplied to tension increase when it is neighboring countries' provinces that are colonized
-	TENSION_UPRISING_CHANCE = 0.01 # Chance of war breaking out instead of the next province being colonized (base when tension is at least TENSION_THRESHOLD_VOLATILE)
+	# TENSION_NUM_PROVINCE_SCALING_BASE = 5 # Below this amount of provinces a decentralized country gets additional tension when their provinces are colonized
+	# TENSION_NUM_PROVINCE_SCALING_RATE = 1.5 # Max multiplier increase in tension per province taken from having only a few provinces
+	# TENSION_INCREASE_RATE_ADJACENT = 0.25 # Multiplied to tension increase when it is neighboring countries' provinces that are colonized
+	# TENSION_UPRISING_CHANCE = 0.01 # Chance of war breaking out instead of the next province being colonized (base when tension is at least TENSION_THRESHOLD_VOLATILE)
 
 	SWAY_OFFER_WARGOAL_MANEUVERS_COST_OPEN_MARKET = 15 # 20
 	SWAY_OFFER_WARGOAL_MANEUVERS_COST_BAN_SLAVERY = 15 # 20
@@ -109,10 +109,10 @@ NEconomy = {
 	# BUILDING_CASH_RESERVES_FILL_TIME_LOW_ROI = 156 # 78	# Base number of weeks to fill a building's cash reserves when ROI is low. Final number of weeks is directly interpolated if ROI is between low and medium. Must be > 0.
 
 	NATIONALIZATION_PER_LEVEL_COST = 300 # 500				# How much it costs to nationalize one level of a building per construction point
-	COMPANY_PRODUCTIVITY_RATIO_HIGH_THRESHOLD = 1 # 1.25	# Companies whose productivity exceeds this factor of the global average will be considered high-productivity companies
-	COMPANY_PRODUCTIVITY_RATIO_LOW_THRESHOLD = 0.5 # 0.75		# Companies whose productivity is below this factor of the global average will be considered low-productivity companies
-	COMPANY_PRODUCTIVITY_ABSOLUTE_HIGH_THRESHOLD = 20 # 25	# Companies whose productivity exceeds this amount will ALWAYS be considered high-productivity companies
-	COMPANY_PRODUCTIVITY_ABSOLUTE_LOW_THRESHOLD = 3 # 5		# Companies whose productivity is below this amount will ALWAYS be considered low-productivity companies
+	# COMPANY_PRODUCTIVITY_RATIO_HIGH_THRESHOLD = 1 # 1.25	# Companies whose productivity exceeds this factor of the global average will be considered high-productivity companies
+	# COMPANY_PRODUCTIVITY_RATIO_LOW_THRESHOLD = 0.5 # 0.75		# Companies whose productivity is below this factor of the global average will be considered low-productivity companies
+	# COMPANY_PRODUCTIVITY_ABSOLUTE_HIGH_THRESHOLD = 20 # 25	# Companies whose productivity exceeds this amount will ALWAYS be considered high-productivity companies
+	# COMPANY_PRODUCTIVITY_ABSOLUTE_LOW_THRESHOLD = 3 # 5		# Companies whose productivity is below this amount will ALWAYS be considered low-productivity companies
 	# COMPANY_PROSPERITY_WEEKLY_INCREASE = 10 # 5				# High-productivity companies have their prosperity increase by this amount per week
 	# COMPANY_PROSPERITY_WEEKLY_DECREASE = 2 # 5				# Low-productivity companies have their prosperity increase by this amount per week
 }
@@ -135,7 +135,6 @@ NPolitics = {
 
 NPops = {
 	ASSIMILATION_RATE = 0.01 # 0.002				# Percentage of pops who will Assimilate into a different Culture each month, if eligible
-	ASSIMILATION_UNINCORPORATED_MULT = 0.25 # 0.1	# ASSIMILATION_RATE is multiplied by this in unincorporated states
 	MIN_ASSIMILATION = 10 # 1						# If there is any assmiliation at least this many people will assimilate
 	CONVERSION_RATE = 0.01 # 0.002					# Percentage of pops who will Convert into a different Religion each month, if eligible
 	CONVERSION_UNINCORPORATED_MULT = 0.25 #0.1 		# CONVERSION_RATE is multiplied by this in unincorporated states

@@ -6,19 +6,23 @@
 		scope:journal_entry = {
 			NOT = { has_variable = has_been_abandoned }
 		}
+		OR = {
+			has_journal_entry = je_law_imposition
+			has_journal_entry = je_british_dictate_law
+		}
 	}
 
 	possible = {
 		custom_tooltip = {
 			text = law_imposition_already_enacting_law
-			NOT = { currently_enacting_law = imposed_law }
+			NOT = { currently_enacting_law ?= imposed_law }
 		}
 	}
 
 	effect = {
 		if = {
 			limit = {
-				NOT = { currently_enacting_law = imposed_law }
+				NOT = { currently_enacting_law ?= imposed_law }
 				enacting_any_law = yes
 			}
 			cancel_enactment = yes
@@ -94,11 +98,15 @@ button_refuse_law_imposition = {
 		scope:journal_entry = {
 			NOT = { has_variable = has_been_abandoned }
 		}
+		OR = {
+			has_journal_entry = je_law_imposition
+			has_journal_entry = je_british_dictate_law
+		}
 	}
 
 	effect = {
 		if = {
-			limit = { currently_enacting_law = imposed_law }
+			limit = { currently_enacting_law ?= imposed_law }
 			cancel_enactment = yes
 		}
 		imposed_law = {
@@ -106,18 +114,18 @@ button_refuse_law_imposition = {
 		}
 		change_relations = {
 			country = scope:foreign_imposition_country
-			value = -20 # -50
+			value = -20 # -50 #DA
 		}
 		if = {
 			limit = { is_subject_of = scope:foreign_imposition_country }
-			add_liberty_desire = 5 # 10
+			add_liberty_desire = 5 # 10 #DA
 		}
 		else_if = {
 			limit = {
 				power_bloc ?= scope:foreign_imposition_country.power_bloc
 			}
 			power_bloc = {
-				add_cohesion_percent = -0.05 # -0.10
+				add_cohesion_percent = -0.05 # -0.10 #DA
 			}
 		}
 		every_political_lobby = {
@@ -148,7 +156,7 @@ button_refuse_law_imposition = {
 		base = -25
 		modifier = {
 			trigger = {
-				NOT = { currently_enacting_law = imposed_law }
+				NOT = { currently_enacting_law ?= imposed_law }
 			}
 			add = 15
 		}

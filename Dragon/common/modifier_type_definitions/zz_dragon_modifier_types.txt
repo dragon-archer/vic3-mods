@@ -1,9 +1,0 @@
-﻿# For 00_army_model
-country_soldiers_pol_str_mult = {
-	decimals = 1
-	color = neutral
-	percent = yes
-	game_data = {
-		ai_value = 0
-	}
-}

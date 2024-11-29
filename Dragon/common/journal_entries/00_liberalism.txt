@@ -12,10 +12,7 @@ je_liberalism_1 = {
 
 	possible = {
 		any_interest_group = {
-			OR = {
-				is_being_bolstered = yes
-				is_in_government = yes
-			}
+			is_in_government = yes
 			OR = {
 				trigger_if = {
 					limit = {
@@ -119,7 +116,7 @@ je_liberalism_3 = {
 			has_law = law_type:law_right_of_assembly
 			has_law = law_type:law_protected_speech
 		}
-		NOT = { has_law = law_type:law_state_religion }
+		NOT = { has_law = law_type:law_state_religion } #DA
 		any_scope_building = {
 			is_building_type = building_university
 			level >= 3

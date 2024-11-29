@@ -418,9 +418,9 @@ pm_military_shipbuilding_steam_2 = {
 	building_modifiers = {
 		workforce_scaled = {
 			#input
-			goods_input_steel_add = 50
-			goods_input_electricity_add = 35
-			goods_input_engines_add = 15
+			goods_input_steel_add = 40
+			goods_input_electricity_add = 30
+			goods_input_engines_add = 20
 
 			# output goods
 			goods_output_ironclads_add = 70
@@ -704,8 +704,6 @@ pm_film_art = {
 	# required_input_goods = electricity
 }
 
-# 06_urban_center
-
 pm_principle_freedom_of_movement_3 = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
@@ -751,31 +749,6 @@ pm_electric_saw_mills = {
 	}
 
 	# required_input_goods = electricity
-}
-
-pm_chainsaws = {
-	texture = "gfx/interface/icons/production_method_icons/chainsaws.dds"
-	unlocking_technologies = {
-		combustion_engine
-	}
-	disallowing_laws = {
-		law_industry_banned
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_engines_add = 1 #
-			goods_input_tools_add = 5 # 10
-			# goods_input_oil_add = 5
-		}
-
-		level_scaled = {
-			# employment
-			building_employment_laborers_add = -1500
-			building_employment_machinists_add = 250 # 200
-			# building_employment_engineers_add = 200
-		}
-	}
 }
 
 pm_refrigerated_storage_building_fishing_wharf = {

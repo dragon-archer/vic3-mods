@@ -155,6 +155,61 @@ da.1000 = { # Table
 	}
 
 	option = {
+		name = da.1000.change_ig_trait
+		ig:ig_petty_bourgeoisie = {
+			remove_ideology = ideology_reactionary
+			add_ideology = ideology_modernizer
+		}
+		ig:ig_trade_unions = {
+			set_ig_trait = ig_trait:ig_trait_bourse_du_travail
+		}
+		ig:ig_rural_folk = {
+			set_ig_trait = ig_trait:ig_trait_fellahin
+		}
+		ig:ig_petty_bourgeoisie = {
+			set_ig_trait = ig_trait:ig_trait_bah_humbug
+			set_ig_trait = ig_trait:ig_trait_civil_service
+			set_ig_trait = ig_trait:ig_trait_old_lady_of_threadneedle_street
+		}
+		ig:ig_intelligentsia = {
+			set_ig_trait = ig_trait:ig_trait_restoration
+			set_ig_trait = ig_trait:ig_trait_crisis_of_identity
+		}
+		ig:ig_industrialists = {
+			set_ig_trait = ig_trait:ig_trait_zaibatsu_withdrawal
+			set_ig_trait = ig_trait:ig_trait_ventilate_unify_beautify
+		}
+		ig:ig_armed_forces = {
+			# set_ig_trait = ig_trait:ig_trait_elan_vital
+			set_ig_trait = ig_trait:ig_trait_coronelismo
+		}
+		ig:ig_devout = {
+			set_ig_trait = ig_trait:ig_trait_yeshivot
+			# set_ig_trait = ig_trait:ig_trait_asceticism
+			set_ig_trait = ig_trait:ig_trait_haibutsu_kishaku
+		}
+		ig:ig_landowners = {
+			set_ig_trait = ig_trait:ig_trait_junkerdom
+		}
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
+		name = da.1000.update_ruler_trait
+		ruler = {
+			add_trait = meticulous
+			add_trait = wrathful
+			add_trait = ambitious
+			add_trait = innovative
+			add_trait = masterful_diplomat
+			add_trait = expert_political_operator
+			add_trait = firebrand
+			add_trait = master_bureaucrat
+		}
+		hidden_effect = { trigger_event = { id = da.1000 popup = yes } }
+	}
+
+	option = {
 		name = da.1000.quit
 		default_option = yes
 	}

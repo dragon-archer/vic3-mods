@@ -1,4 +1,4 @@
-﻿
+﻿# TODO: Outdated, last updated for 1.7
 #Shortage goods, balance(delta) is negative (-) .
 #Surplus goods, balance(delta) is positive (+) .
 groceries_state_goods_price = {

@@ -32,8 +32,10 @@ da_on_law_enactment_pass = {
 	effect = {
 		if = {
 			limit = {
-				is_subject = yes
-				overlord = { is_player = yes }
+				OR = {
+					overlord ?= { is_player = yes }
+					power_bloc ?= { power_bloc_leader ?= { is_player = yes } }
+				}
 			}
 			da_post_notification = { _ = da_law_pass }
 		}
@@ -44,8 +46,10 @@ da_on_law_enactment_fail = {
 	effect = {
 		if = {
 			limit = {
-				is_subject = yes
-				overlord = { is_player = yes }
+				OR = {
+					overlord ?= { is_player = yes }
+					power_bloc ?= { power_bloc_leader ?= { is_player = yes } }
+				}
 			}
 			da_post_notification = { _ = da_law_fail }
 		}
@@ -56,8 +60,10 @@ da_on_law_enactment_ended = {
 	effect = {
 		if = {
 			limit = {
-				is_subject = yes
-				overlord = { is_player = yes }
+				OR = {
+					overlord ?= { is_player = yes }
+					power_bloc ?= { power_bloc_leader ?= { is_player = yes } }
+				}
 			}
 			da_post_notification = { _ = da_law_ended }
 		}
@@ -66,7 +72,7 @@ da_on_law_enactment_ended = {
 
 da_misc_monthly = {
 	effect = {
-		da_restore_historical_capital = yes
+		# da_restore_historical_capital = yes
 	}
 }
 
