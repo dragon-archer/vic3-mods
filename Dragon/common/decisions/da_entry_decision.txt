@@ -1,5 +1,6 @@
 ﻿da_enable_je = {
 	is_shown = {
+		always = no
 		is_player = yes
 		NOT = { has_journal_entry = je_da_economy }
 	}

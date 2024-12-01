@@ -167,7 +167,7 @@ da.1000 = { # Table
 			set_ig_trait = ig_trait:ig_trait_fellahin
 		}
 		ig:ig_petty_bourgeoisie = {
-			set_ig_trait = ig_trait:ig_trait_bah_humbug
+			# set_ig_trait = ig_trait:ig_trait_bah_humbug
 			set_ig_trait = ig_trait:ig_trait_civil_service
 			set_ig_trait = ig_trait:ig_trait_old_lady_of_threadneedle_street
 		}

@@ -3,17 +3,19 @@ da_merge_minor_countries = {
 	if = {
 		limit = { NOT = { has_global_variable = da_merged_minor_countries_var } }
 		set_global_variable = da_merged_minor_countries_var
-		if = { # Force making Hannover independent
-			limit = { da_is_in_extended_mode = yes }
+		# if = { # Force making Hannover independent
+		# 	limit = { da_is_in_extended_mode = yes }
 			if = {
 				limit = { c:GBR ?= { ruler = { has_variable = is_billy } } }
 				c:GBR.ruler = { kill_character = yes }
 			}
-		}
+		# }
 		c:PRU ?= {
 			every_country = {
 				limit = {
 					NOT = { this = prev }
+					NOT = { c:UBD ?= this }
+					NOT = { c:LUX ?= this }
 					any_primary_culture = { this = cu:north_german }
 				}
 				prev ?= { da_annex_if_exists = { _ = prev } }
@@ -60,6 +62,7 @@ da_merge_minor_countries = {
 				}
 				prev ?= { da_annex_if_exists = { _ = prev } }
 			}
+			s:STATE_YEMEN = { every_scope_state = { set_state_owner = c:NEJ } }
 		}
 		c:UCA ?= {
 			if = {
