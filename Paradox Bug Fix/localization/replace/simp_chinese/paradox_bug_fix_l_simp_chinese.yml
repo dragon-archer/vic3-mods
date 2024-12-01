@@ -110,6 +110,8 @@
  # modifiers
  modifier_building_group_bg_monuments_throughput_add: "$bg_monuments$[concept_throughput]"
  modifier_building_group_bg_monuments_throughput_add_desc: "对$bg_monuments$投入和产出的增益或惩罚"
+ ## new
+ vote: "选票"
 
  # states
  STATE_SOUTHERN_MANCHURIA: "吉林"
