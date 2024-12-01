@@ -358,6 +358,7 @@ da_merge_minor_cultures = {
 	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:filipino }
 	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:balinese }
 	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:batak }
+	da_merge_cultures_rel_diff_2 = { _1 = cu:malay _2 = cu:moluccan }
 	da_merge_cultures = { _1 = cu:batak _2 = cu:dayak }
 	# malagasy
 	da_merge_cultures = { _1 = cu:thai _2 = cu:lao }
