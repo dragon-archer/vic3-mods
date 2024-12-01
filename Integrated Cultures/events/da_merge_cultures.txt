@@ -6,15 +6,12 @@ da_merge_cultures.1 = { # Actual merge & launch report
 	immediate = {
 		if = { # Avoid spam
 			limit = {
-				NOR = {
-					has_global_variable = da_recently_merged_cultures
-					da_newly_reloaded = yes
-				}
+				NOT = { has_global_variable = da_recently_merged_cultures }
 			}
 			set_global_variable = { name = da_recently_merged_cultures value = yes days = 2 }
 			da_merge_cultures_impl = yes
 			if = {
-				limit = { da_merge_total_global > 0 }
+				limit = { da_merge_num_pops_global > 10 }
 				every_player = { trigger_event = { id = da_merge_cultures.2 popup = yes } }
 			}
 		}
