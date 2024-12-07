@@ -2224,7 +2224,7 @@ ideology_vanguardist = {
 	}
 
 	interest_group_leader_trigger = {
-		ideology_vanguardist_scripted_trigger = yes
+		ideology_vanguardist_valid_trigger = yes
 	}
 
 	non_interest_group_leader_trigger = {
@@ -2250,7 +2250,7 @@ ideology_vanguardist = {
 			}
 		}
 		interest_group = {
-			ideology_vanguardist_scripted_trigger = yes
+			ideology_vanguardist_valid_trigger = yes
 		}
 	}
 
@@ -3154,7 +3154,7 @@ ideology_market_liberal = {
 		law_tenant_farmers = neutral
 		law_homesteading = neutral
 		law_commercialized_agriculture = approve
-	}}
+	}
 
 	country_trigger = {
 		has_technology_researched = stock_exchange
@@ -3986,10 +3986,8 @@ ideology_humanitarian = {
 				owner = {
 					has_technology_researched = socialism
 				}
-				scope:interest_group = {
-					is_interest_group_type = ig_trade_unions
-					ig_approval < 5
-				}
+				is_interest_group_type = ig_trade_unions
+				ig_approval < 5
 			}
 			add = -50
 		}
