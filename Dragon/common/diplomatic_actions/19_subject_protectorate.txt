@@ -10,7 +10,7 @@ protectorate = {
 	}
 
 	pact = {
-		cost = 25
+		cost = 10
 		has_junior_participant = yes
 		recipient_pays_maintenance = no
 		income_transfer = 0.1

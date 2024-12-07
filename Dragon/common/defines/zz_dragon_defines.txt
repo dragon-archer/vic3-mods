@@ -33,7 +33,8 @@ NAI = {
 	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 60
 	# PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_MULT = 0.5 # 0.25 # Multiply score by this if construction time would take more than PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD weeks at full construction industry usage (ignores MAX_WEEKLY_CONSTRUCTION_PROGRESS)
 
-	OWNER_COMPANY_SCORE_MULT = 100.0 # 3.0									# Multiply owner company score by this, the higher this is, the more likely a company building is chosen instead of other owning building types
+	OWNER_COMPANY_SCORE_MULT = 30.0	# 3.0								# Multiply owner company score by this in case of new construction, the higher this is, the more likely a company building is chosen instead of other owning building types
+	OWNER_COMPANY_PRIVATIZATION_SCORE_MULT = 70.0	# 7.0				# Multiply owner company score by this in case of privatization, the higher this is, the more likely a company building is chosen instead of other owning building types
 	OWNER_COMPANY_MIN_LEVELS_IN_OWN_STATE = 10						# How many levels should the company building invest in buildings in its own state
 	OWNER_COMPANY_MIN_LEVELS_IN_OWN_STATE_PENALTY_MULT = 1 # 0.05		# Multiply owner company score by this if the number of levels in its own state is below minimum
 	OWNER_COMPANY_MIN_LEVELS_IN_OWN_COUNTRY = 100					# How many levels should the company building invest in buildings in its own country
@@ -145,6 +146,8 @@ NPops = {
 	CONVERSION_RATE = 0.01 # 0.002					# Percentage of pops who will Convert into a different Religion each month, if eligible
 	CONVERSION_UNINCORPORATED_MULT = 0.25 #0.1 		# CONVERSION_RATE is multiplied by this in unincorporated states
 	MIN_CONVERSION = 10 # 1
+
+	COLONY_SPEED_PER_PROVINCE_DIFF_FROM_STANDARD = 0.01 # 0.02	# For every province the state region has above or below COLONY_SPEED_PROVINCE_SIZE_STANDARD, increase or decrease colonization speed by this rate (as a percentage)
 
 	# WORKING_ADULT_RATIO_SKEW_MAXIMUM = 3.0 # 2.0		# When the ratio of working adults to dependents is skewed, it tends to correct itself, this value clamps the maximum effect of this
 	MARKET_MIGRATION_MIN_POP_FRACTION_TO_MOVE = 0.01 # 0.05							# If the people wanting to migrate constitues less than this fraction of a pop, no new pop will be created and they won't migrate.
